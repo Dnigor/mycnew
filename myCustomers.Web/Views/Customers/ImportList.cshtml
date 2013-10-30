@@ -1,0 +1,180 @@
+﻿@using myCustomers.Features
+@model IEnumerable<PendingImportCustomerDTO> 
+@{
+  ViewBag.Title = Resources.GetString("IMPORTLIST_PAGETITLE");
+  var featuresService = ServiceLocator.Current.GetInstance<IFeaturesConfigService>();
+  bool areSubscriptionsAvailable = featuresService.GetImportCustomersFeatures().Subscriptions;
+}
+
+@helper ConsentUrl(string textKey)
+{
+    var culture = System.Globalization.CultureInfo.CurrentUICulture;
+    var url = "~/Content/copyright/Consent." + culture + ".pdf";
+    var consentUrl = VirtualPathUtility.ToAbsolute(url);
+    <a target="_blank" href="@consentUrl">@Resources.GetString(textKey)</a>
+}
+
+<div class="navbar" style="margin-top: 10px;">
+  <div class="navbar-inner">
+      <a class="brand" href="#" data-bind="visible: !isImportedCustomersVisible()">@Resources.GetString("IMPORTCUSTOMERS_SELECTCONTACTS")</a>
+       <a class="brand" href="#" data-bind="visible: isImportedCustomersVisible">
+         @(areSubscriptionsAvailable ? Resources.GetString("IMPORTCUSTOMERS_RESULTSSUBSCRIPTIONS") : Resources.GetString("IMPORTCUSTOMERS_RESULTS"))
+       </a>
+    <ul class="nav pull-right">
+      <li class="divider-vertical"></li>
+      <li><a style="padding-left: 0; padding-right: 0" class="btn-help" href="#" onclick="$('#helpContent').toggle(); return false;"><i class="icon-question-sign"></i>@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+   <div id="helpContent" class="well" style="display:none;">
+      <button type="button" class="close"  onclick="$('#helpContent').hide();return false;">&times;</button>
+      @Html.Raw(Resources.GetString("IMPORTCUSTOMERS_HOWTOUSE"))
+   </div> 
+      
+      <div class="alert alert-info" style="display:none;"  data-bind="visible: isUploadedCustomersVisible">@Resources.GetString("IMPORTCUSTOMERS_INFO_ALERT")</div>
+      <div class="alert" style="display:none;"  data-bind="visible: (!isUploadedCustomersVisible() && !isImportedCustomersVisible())">
+          <h4>@Resources.GetString("IMPORTCUSTOMERS_WARNING")</h4>
+          @Resources.GetString("IMPORTCUSTOMERS_WARNING_ALERT")
+      </div>     
+      <table class="table table-hover" style="display:none;" data-bind="visible: isUploadedCustomersVisible">
+        <thead>
+          <tr>
+            <th>@Resources.GetString("IMPORTCUSTOMERS_ACTION")</th>
+            <th>@Resources.GetString("IMPORTCUSTOMERS_CONTACT")</th>
+            <th>@Resources.GetString("IMPORTCUSTOMERS_EXISTINGCUSTOMER")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: pagedCustomers">
+		
+			 <tr>
+				<td>
+					<select class="input input-small" data-bind="value: $root.selectAction($data)">
+						<option value="Skip">@Resources.GetString("IMPORTCUSTOMERS_SKIP")</option>
+						<option value="Merge" data-bind="enable: $data.IsMergeAvailable">@Resources.GetString("IMPORTCUSTOMERS_MERGE")</option>
+						<option value="Add" data-bind="enable: $data.IsAddAvailable">@Resources.GetString("IMPORTCUSTOMERS_ADD")</option>
+					</select>
+				</td>
+				<td>
+				    <span data-bind="text: [$data.FirstName, $data.LastName].join(' ')"></span> <br />
+					<span data-bind="text: $data.Email"></span>
+				</td>
+				<td>
+				    <span data-bind="text: [$data.ExistingCustomerFirstName, $data.ExistingCustomerLastName].join(' ')"></span><br /> 
+					<span data-bind="text: $data.ExistingCustomerEmail"></span>				
+				</td>
+				
+			 </tr>
+
+       
+        </tbody>
+      </table>
+      <div data-bind="visible: isImportedCustomersVisible" style="display:none;">
+          <div style="display:none;" class="alert alert-success" data-bind="visible: total() != 0">@Html.Raw(Resources.GetString("IMPORTCUSTOMERS_SUCCESS")) <span data-bind="text: total"></span> @Resources.GetString("IMPORTCUSTOMERS_CUSTOMERS").</div>
+          <div style="display:none;" class="alert" data-bind="visible: total() == 0">@Html.Raw(Resources.GetString("IMPORTCUSTOMERS_NOIMPORTED"))</div>
+        <div class="alert alert-info">
+          <h5>@Resources.GetString("IMPORTCUSTOMERS_SUMMARY")</h5>
+          <ul>  
+            <li><span data-bind="text: added"></span> @Resources.GetString("IMPORTCUSTOMERS_ADDED")</li>
+            <li><span data-bind="text: skipped"></span> @Resources.GetString("IMPORTCUSTOMERS_SKIPPED")</li>
+            <li><span data-bind="text: merged"></span> @Resources.GetString("IMPORTCUSTOMERS_MERGED")</li>
+            <li><span data-bind="text: notimported"></span> @Resources.GetString("IMPORTCUSTOMERS_NOTIMPORTED")</li>
+          </ul>
+        </div>  
+
+        <table class="table table-hover" >
+        <thead>
+          <tr>
+            <th style="vertical-align:top;">@Resources.GetString("IMPORTCUSTOMERS_ACTION")</th>
+            <th style="vertical-align:top;">@Resources.GetString("IMPORTCUSTOMERS_CONTACT")</th>
+             @if (areSubscriptionsAvailable)
+             {
+              <th>@Html.Raw(Resources.GetString("IMPORTCUSTOMERS_BEAUTENEWS"))</th>
+              <th>@Html.Raw(Resources.GetString("IMPORTCUSTOMERS_ECARDS"))</th>
+              <th>@Html.Raw(Resources.GetString("IMPORTCUSTOMERS_REMINDERS"))</th>
+             }
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: pagedCustomers">
+          <tr>
+            <td>
+              <span data-bind="text: $root.importActionTranslations[$data.ImportAction]"></span>
+            </td>
+            <td>
+              <span data-bind="text: [$data.FirstName, $data.LastName].join(' ')"></span>
+            </td>
+            <!-- ko foreach: $data.Subscriptions -->
+            <td>
+            @if (areSubscriptionsAvailable)
+            {
+              <input type="checkbox" data-bind="checked: $root.updateSubscription($data), enable: $root.isSubscriptionEnabled($data)"/>
+            }
+            </td>
+            <!-- /ko -->
+         
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+      <!-- Pager (no server requests - no command pattern) -->
+    <table class="table table-pager">
+      <tr>
+        <td class="pager-buttons">
+          <button class="btn" type="button" data-bind="click: prevPage, enable: isPrevPageEnabled"><i class="icon-caret-left"></i> @Resources.GetString("PAGER_PREVIOUS")</button>
+          <button class="btn" type="button" data-bind="click: nextPage, enable: isNextPageEnabled">@Resources.GetString("PAGER_NEXT") <i class="icon-caret-right"></i></button>         
+        </td>
+        <td class="pager-status" data-bind="text: app.localizeFormat('IMPORTCUSTOMERSLIST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+        <td class="pager-pagesize-label">
+          <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+        </td>
+        <td class="pager-pagesize-select">
+          <select class="input-mini" data-bind="value: pageSize">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+      <div class="form-actions" style="padding-left:20px;" data-bind="visible: isUploadedCustomersVisible">
+          <label>
+              <input type="checkbox" data-bind="checked: acknowledge" style="margin-top:0; margin-right:10px;"/>
+              @Html.Raw(String.Format(Resources.GetString("IMPORTCUSTOMERS_ACKNOWLEDGE"), ConsentUrl("IMPORTCUSTOMERS_ACKNOWLEDGE_LINK")))
+          </label>
+        <button class="btn btn-primary" data-bind="command: importCustomersCommand">@Resources.GetString("IMPORTCUSTOMERS_IMPORTCUSTOMERS")</button>
+        <a href="@Url.Action("index", "customers")" class="btn btn-link">@Resources.GetString("CANCEL")</a>
+      </div>
+        @if (areSubscriptionsAvailable)
+        {
+            <div class="form-actions" style="padding-left: 20px; display: none;" data-bind="visible: isImportedCustomersVisible">        
+                <a href="#" class="btn btn-primary" data-bind="command: submitSubscriptionsCommand">@Resources.GetString("IMPORTCUSTOMERS_SUBMIT_SUBSCRIPTION")</a>
+                <a href="@Url.Action("index", "customers")" class="btn btn-link">@Resources.GetString("CANCEL")</a>
+            </div>
+        }
+
+  </div> 
+</div>
+
+@section scripts{
+<script type="text/javascript">
+    $(function () {
+
+        var config = {
+            ajaxService           : new myc.AjaxService(),
+            pendingCustomers      : ko.observableArray(@Html.Raw(Json.Encode(Model))),
+            importStartPage       : '@Url.Action("index", "customers")',
+            importCustomersUrl    : '@Url.Action("ImportCustomers", "Customers")',
+            submitSubscriptionsUrl: '@Url.Content("~/api/subscriptions/submitsubscriptions")',
+        };
+        var viewModel = new myc.ImportList(config);
+        ko.applyBindings(viewModel);
+
+    });
+</script>
+}

@@ -1,0 +1,46 @@
+﻿@using Microsoft.Practices.ServiceLocation;
+@using myCustomers.Contexts;
+@using System.Globalization;
+@using System.Threading;
+@using myCustomers;
+
+@{
+  var subsidiaryAccessor = ServiceLocator.Current.GetInstance<ISubsidiaryAccessor>();
+  var appSettings        = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var currentLanguage    = Thread.CurrentThread.CurrentUICulture;
+  var languages          = appSettings.GetValue("Globalization.UICultures").Split(',').Select(l => l.Split('|')).Select(l => new { Language = l[0], MappedCulture = new CultureInfo(CultureMapper.MapCulture(l[0], subsidiaryAccessor.GetSubsidiaryCode())), DisplayLanguage = l.Length > 1 ? l[1] : null });
+  var subsidiary         = subsidiaryAccessor.GetSubsidiaryCode();
+  var inTouchBaseUrl     = new Uri(Request.Url, appSettings.GetValue("InTouch.BaseUrl"));
+  var version            = typeof(myCustomers.Web.MvcApplication).Assembly.GetName().Version;
+}
+
+@helper InTouchUrl(string urlKey, string textKey)
+{
+  var appSettings    = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var inTouchBaseUrl = new Uri(Request.Url, appSettings.GetValue("InTouch.BaseUrl"));
+  var url            = new Uri(inTouchBaseUrl, appSettings.GetValue(urlKey));
+  <a class="muted" href="@url">@Resources.GetString(textKey)</a>
+}
+
+<footer class="footer">
+     @if (appSettings.GetValue<bool>("Feature.Footer.Links"))
+     {
+         <ul class="footer-links">
+             @foreach (var language in languages.Where(l => l.MappedCulture.Name != currentLanguage.Name))
+             {
+              <li><a class="muted" href="@Url.Action("language", "dashboard", new { id = language.Language })">@(language.DisplayLanguage ?? language.MappedCulture.NativeName.Substring(0, @language.MappedCulture.NativeName.IndexOf('(')))</a></li>
+              <li><span class="muted">|</span></li>
+             }
+             <li>@InTouchUrl("InTouch.SiteMap", "INTOUCH_SITEMAP")</li>
+             <li><span class="muted">|</span></li>
+             <li>@InTouchUrl("InTouch.Terms", "INTOUCH_TERMS")</li>
+             <li><span class="muted">|</span></li>
+             <li>@InTouchUrl("InTouch.Contact", "INTOUCH_CONTACT")</li>
+             <li><span class="muted">|</span></li>
+             <li>@InTouchUrl("InTouch.FAQ", "INTOUCH_FAQ")</li>
+             <li><span class="muted">|</span></li>
+             <li><a class="muted" href="#" onclick=" $('#logoutForm').submit() ">@Resources.GetString("NAV_LOGOUT")</a></li>
+         </ul>
+     }
+    <p><span class="muted">v@(version) &copy; @Resources.GetString("FOOTER_MARYKAY")</span></p>
+</footer>

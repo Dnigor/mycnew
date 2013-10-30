@@ -1,0 +1,12 @@
+﻿@model EditCustomerViewModel
+<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_CONTACTTIME")</label>
+  <div class="controls">
+    @foreach (var time in Model.ContactTimes)
+    {
+    <label class="checkbox">
+      <input data-bind="checked: preferredContactTimes" type="checkbox" value="@time.Key" />&nbsp;@time.Value
+    </label>
+    }
+  </div>
+</div>

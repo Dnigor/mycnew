@@ -1,0 +1,12 @@
+﻿@model EditCustomerViewModel
+<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_SHOPPREF")</label>
+  <div class="controls">
+    @foreach (var method in Model.ShoppingMethods)
+    {
+    <label class="checkbox">
+      <input data-bind="checked: preferredShoppingMethods" type="checkbox" value="@method.Key" />&nbsp;@method.Value
+    </label>
+    }
+  </div>
+</div>

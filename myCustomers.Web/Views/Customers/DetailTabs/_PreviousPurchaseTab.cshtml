@@ -1,0 +1,39 @@
+﻿<div class="tab-pane customerdetail-tab-pane-padding" id="prevPurchasedTab" data-bind="css: { active: $root.currentTab() == 'prevPurchasedTab' }">
+  <p class="lead">@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS")</p>
+  <div data-bind="with: productsData">
+    <div id="previouslyOrderedProducts" data-bind="with: previouslyOrdered">
+      <div class="alert alert-info" style="display: none;" data-bind="visible: isEmpty">
+        <em>@Resources.GetString("CUSTOMERDETAIL_TAB_NOPREVIOUSLYORDEREDPRODUCTS")</em>
+      </div>
+      <table class="table table-hover-well products" style="display: none; margin-top: 15px;" data-bind="visible: !isEmpty()">
+        <thead>
+          <tr>
+            <th style="white-space: nowrap;">@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_PARTNUMBER")</th>
+            <th>@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_NAME")</th>
+            <th style="text-align: right; white-space: nowrap">@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_SUGGESTEDRETAIL")</th>
+            <th style="text-align: right; white-space: nowrap">@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_ORDERDATE")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: products">
+          <tr style="cursor: pointer;" data-bind="click: toggleDetail" title="@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_CLICKTOVIEWPRODUCTDETAILS")">
+            <td data-bind="text: dispPartId"></td>
+            <td class="description" style="width: 100%;">
+              <span data-bind="html: name"></span>
+              <span data-bind="html: shade"></span>
+            </td>
+            <td style="text-align: right;" data-bind="currency: price"></td>
+            <td style="text-align: right;" data-bind="shortDate: lastOrderDateUtc"></td>
+          </tr>
+          <tr class="detail" style="border: 0; margin: 0; padding: 0;">
+            <td colspan="5" style="border: 0; margin: 0; padding: 0;">
+              <div class="media" style="border-top: solid #DDD 1px; display: none; padding: 10px;" data-bind="visible: isDetailVisible">
+                <img class="pull-left" style="height: 152px; width: 114px;" data-bind="attr: { src: listImage }" />
+                <div class="media-body" data-bind="html: desc"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

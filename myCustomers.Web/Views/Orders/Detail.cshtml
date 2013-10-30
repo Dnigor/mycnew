@@ -1,0 +1,422 @@
+﻿@using myCustomers;
+@using myCustomers.Contexts;
+@using myCustomers.Features;
+
+@model OrderDetailViewModel
+@{
+  ViewBag.Title = (Model.Order.OrderSource == Quartet.Entities.OrderSource.Online ? @Resources.GetString("ORDERDETAILS_ONLINE_TITLE") : @Resources.GetString("ORDERDETAILS_SALESTICKET_TITLE"));
+  //var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var subsidiary = ServiceLocator.Current.GetInstance<ISubsidiaryAccessor>().GetSubsidiaryCode();
+  var consultantContext = ServiceLocator.Current.GetInstance<IConsultantContext>();
+}
+<div class="navbar" style="margin-top: 10px;">
+  <div class="navbar-inner">
+    <span class="brand">@ViewBag.Title&nbsp;-&nbsp;@Model.Order.ConfirmationNumber</span>
+    <ul class="nav pull-right">
+      <li class="divider-vertical"></li>
+      <li><a style="padding-left: 0; padding-right: 0" class="btn-help" href="#" onclick="$('#helpContent').toggle(); return false;"><i class="icon-question-sign"></i>&nbsp;@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="helpContent" class="well" style="display: none;">
+  <button type="button" class="close" onclick="$('#helpContent').hide();return false;">&times;</button>
+  @Html.Raw(Resources.GetLocalizedContent("OrderDetailHelp"))
+</div>
+
+@Html.Partial("_Actions")
+
+<div class="row" style="margin-bottom: 20px">
+  <div class="span5">
+    @Html.Partial("_HCard", Model.Customer)
+  </div>
+
+  <div class="span4">
+    @if (!string.IsNullOrEmpty(@Model.Order.OrderConfirmationPreference))
+    {
+      <label>@Resources.GetString("ORDERCONFIRMATIONPREFERENCE_LABEL")</label>
+      @Resources.GetString("ORDERCONFIRMATIONPREFERENCE_{0}", Model.Order.OrderConfirmationPreference)
+    }
+  </div>
+
+  <div class="span3">
+    <table class="pull-right" style="border-collapse: separate; border-spacing: 5px;">
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+          <label>@Resources.GetString("ORDERDATE_LABEL")</label>
+        </td>
+        <td class="utcdate" style="vertical-align: top;">@Model.Order.OrderDateUtc.ToStrictIsoDate()</td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top; text-align: right;">
+          <label>@Resources.GetString("ORDERSTATUS_LABEL")</label>
+        </td>
+        <td style="vertical-align: top;">@Resources.GetString("ORDERSTATUS_{0}", @Model.Order.OrderStatus)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+@if (Model.ShowCustomerDirections)
+{
+  <div class="alert alert-info customer-directions">
+    <h5>@Resources.GetString("CUSTOMERDIRECTIONS_TITLE")</h5>
+    <ul>
+      @if (!string.IsNullOrEmpty(Model.Order.CustomerComment))
+      {
+        <li>
+          <label>@Resources.GetString("CUSTOMERDIRECTIONS_COMMENTS_LABEL")</label>
+          @Model.Order.CustomerComment
+        </li>
+      }
+      @if (Model.Order.IsInterestedInSample)
+      {
+        <li>
+          <label>@Resources.GetString("CUSTOMERDIRECTIONS_FREESAMPLES_LABEL")</label>
+          @Resources.GetString("CUSTOMERDIRECTIONS_FREESAMPLES_TEXT")
+        </li>
+      }
+      @if (Model.Order.IsInterestedInGift && Model.Features.GiftMessage)
+      {
+        <li>
+          <label>@Resources.GetString("CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_LABEL")</label>
+          @Resources.GetString("CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_TEXT")
+        </li>
+      }
+      @if (@Model.Order.DeliveryPreference.HasValue)
+      {
+        <li>
+          <label>@Resources.GetString("CUSTOMERDIRECTIONS_DELIVERYPREFERENCE_LABEL")</label>
+          @if (@Model.Order.DeliveryPreference == Quartet.Entities.CustomerDeliveryPreference.Other)
+          {
+            @Model.Order.DeliveryPreferenceDetailIfOther
+          }
+          else
+          {
+            @Resources.GetString("DELIVERYPREFERENCE_{0}", Model.Order.DeliveryPreference)
+          }
+        </li>
+      }
+      @if (@Model.Order.IsGift && Model.Features.GiftMessage)
+      {
+        <li>
+          <label>@Resources.GetString("CUSTOMERDIRECTIONS_GIFTMESSAGE_LABEL")</label>
+          @Model.Order.GiftMessage
+        </li>
+      }
+    </ul>
+  </div>
+}
+
+@if (Model.Features.CDS)
+{
+  <div class="form-horizontal">
+    <fieldset style="margin-bottom: 20px">
+      <legend>@Resources.GetString("FULFILLMENT_LABEL")</legend>
+      <div class="row">
+        <div class="span12">
+          <div class="control-group">
+            <label class="control-label">@Resources.GetString("FULFILLMENTMETHOD_LABEL")</label>
+            <div class="controls" style="margin-top: 5px;">
+              @if (Model.Order.ShipCDS)
+              {
+                <div>@Resources.GetString("FULFILLMENTOPTION_CDS")</div>
+              }
+              else
+              {
+                <div>@Resources.GetString("FULFILLMENTOPTION_MYINVENTORY")</div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+}
+
+<fieldset style="margin-bottom: 20px">
+  <legend>@Resources.GetString("PRODUCTS_HEADING")</legend>
+
+  @if (Model.Order.Items == null || Model.Order.Items.Length == 0)
+  {
+    <div class="alert alert-warning">
+      @Resources.GetString("ORDER_NOPRODUCTS")
+    </div>
+  }
+  else
+  {
+    @Html.Partial("_ReadOnlyProductList")
+  }
+</fieldset>
+
+<fieldset style="margin-bottom: 20px">
+  <legend>@Resources.GetString("DELIVERY_HEADING")</legend>
+
+  <div class="row">
+    <div class="span12">
+      <div class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label">@Resources.GetString("DATE_LABEL")</label>
+          <div class="controls" style="padding-top: 5px;">
+            @if (Model.Order.DeliveryDateUtc.HasValue)
+            {
+              @Model.Order.DeliveryDateUtc.Value.ToLocalTime().ToShortDateString()
+            }
+            else
+            {
+              @Resources.GetString("DELIVERYDATE_MISSING")
+            }
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">@Resources.GetString("ADDRESS_LABEL")</label>
+          <div class="controls" style="padding-top: 5px;">
+            @if (Model.Order.DeliveryAddress != null)
+            {
+              @Html.AppSettingsPartial("PartialView.DisplayAddress_Razor", Model.Order.DeliveryAddress)
+            }
+            else
+            {
+              @Resources.GetString("DELIVERYADDRESS_MISSING")
+            }
+          </div>
+        </div>
+
+        @if (@Model.Order.IsGift && Model.Features.GiftMessage)
+        {
+          <div class="control-group">
+            <label class="control-label">@Resources.GetString("ISGIFT_LABEL")</label>
+            <div class="controls" style="padding-top: 5px;">@Resources.GetString("ISGIFT_{0}", Model.Order.IsGift.ToString().ToUpper())</div>
+          </div>
+          <div class="control-group" id="giftMessageForm">
+            <label class="control-label">@Resources.GetString("GIFTMESSAGE_LABEL")</label>
+            <div class="controls" style="padding-top: 5px;">
+              @if (Model.Order.IsGift)
+              {
+                <pre style="margin: 0; overflow-y: auto; max-height: 150px; padding: 5px;">@Model.Order.GiftMessage</pre>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset style="margin-bottom: 20px">
+  <legend>@Resources.GetString("PAYMENT_HEADING")</legend>
+
+  <div class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("ORDERPAYMENT_STATUS")</label>
+      <div class="controls" style="padding-top: 5px;">
+        @Resources.GetString("ORDERPAYMENTSTATUS_{0}", Model.Order.PaymentStatus)
+      </div>
+    </div>
+
+    @if (Model.Order.CashPayments.Length > 0)
+    {
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("LABEL_CASH")</label>
+
+        <div class="controls">
+          <table class="table table-bordered table-condensed table-autosize" style="margin: 0;">
+            <thead>
+              <tr>
+                <th>@Resources.GetString("AMOUNT")</th>
+                <th>@Resources.GetString("DATE")</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach (var payment in Model.Order.CashPayments)
+              {
+                <tr>
+                  <td>@string.Format(Model.CurrencyFormat, payment.Amount)</td>
+                  <td class="utcdate">@payment.PaymentDateUtc.ToStrictIsoDate()</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    }
+
+    @if (Model.Order.CheckPayments.Length > 0)
+    {
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("LABEL_CHECKS")</label>
+        <div class="controls">
+          <table class="table table-bordered table-condensed table-autosize" style="margin: 0;">
+            <thead>
+              <tr>
+                <th>@Resources.GetString("AMOUNT")</th>
+                <th>@Resources.GetString("CHECKNUMBER")</th>
+                <th>@Resources.GetString("DATE")</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach (var payment in Model.Order.CheckPayments)
+              {
+                <tr>
+                  <td>@string.Format(Model.CurrencyFormat, payment.Amount)</td>
+                  <td>@payment.CheckNumber</td>
+                  <td class="utcdate">@payment.PaymentDateUtc.ToStrictIsoDate()</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    }
+
+    @if (Model.Order.CreditCardPayments.Length > 0)
+    {
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("LABEL_CREDITCARD")</label>
+        <div class="controls">
+          <ul class="inline" style="margin: 0">
+            @foreach (var payment in Model.Order.CreditCardPayments)
+            {
+              string statusCssClass = null;
+              switch (payment.Status)
+              {
+                case Quartet.Entities.PaymentStatus.Approved:
+                  statusCssClass = "alert-success";
+                  break;
+                case Quartet.Entities.PaymentStatus.Declined:
+                  statusCssClass = "alert-error";
+                  break;
+                case Quartet.Entities.PaymentStatus.Pending:
+                  statusCssClass = "alert";
+                  break;
+              }
+              <li style="padding: 0; margin: 0 5px 10px 0; vertical-align: top">
+                <table class="table table-bordered table-condensed table-autosize" style="width: 400px; overflow-x: hidden; margin: 0;">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" style="font-weight:bold;text-align:center" title="@payment.TransactionStatus" class="@statusCssClass">
+                        @Resources.GetString("PAYMENTSTATUS_{0}", payment.Status)
+                        @if (payment.Status == Quartet.Entities.PaymentStatus.Declined && !string.IsNullOrEmpty(payment.TransactionStatus))
+                        {
+                          <text>(Code: </text>@payment.TransactionStatus<text>)</text>
+                        }
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_TRANSACTIONID_LABEL")</td>
+                      <td>
+                        @if (!string.IsNullOrEmpty(payment.TransactionId) && payment.TransactionId != "0")
+                        {
+                          <a target="_blank" href="@payment.ProPayLink">@payment.TransactionId</a>
+                        }
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_INVOICEID_LABEL")</td>
+                      <td>@payment.InvoiceId</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_PAYMENTDATE_LABEL")</td>
+                      <td>@(payment.PaymentDateUtc.HasValue ? payment.PaymentDateUtc.Value.ToString("d") : null)</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_CARDHOLDERNAME_LABEL")</td>
+                      <td>@payment.CardHolderName</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_BILLINGADDRESS_LABEL")</td>
+                      <td>@payment.BillingAddress</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_BILLINGZIP_LABEL")</td>
+                      <td>@payment.BillingZip</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_LAST4DIGITS_LABEL")</td>
+                      <td>@payment.Last4Digits</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_CCTYPE_LABEL")</td>
+                      <td>@Resources.GetString("CCTYPE_{0}", payment.Type)</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_CCEXPDATE_LABEL")</td>
+                      <td>@payment.ExpDate</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align: right; white-space: nowrap">@Resources.GetString("CCPAYMENT_AMOUNT_LABEL")</td>
+                      <td>@string.Format(Model.CurrencyFormat, payment.Amount)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</fieldset>
+
+@if (!string.IsNullOrWhiteSpace(Model.Order.Notes))
+{
+  <fieldset style="margin-top: 20px;">
+    <legend>@Resources.GetString("ORDERNOTES_HEADING")</legend>
+
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("ORDERNOTES_LABEL")</label>
+      <div class="controls" style="padding-top: 5px;">
+        <pre style="padding: 5px;">@Model.Order.Notes</pre>
+      </div>
+      <small class="muted" style="display: block">@Resources.GetString("ORDER_NOTES_WARNING")</small>
+    </div>
+  </fieldset>
+}
+
+@if (Model.Order.Followups != null && Model.Order.Followups.Length > 0)
+{
+  <fieldset style="margin-bottom: 20px;">
+    <legend>@Resources.GetString("ORDERFOLLOWUP_HEADING")</legend>
+
+    @foreach (var followup in Model.Order.Followups)
+    {
+      <div>@Model.Order.MapFollowupDate(followup.PeriodUnit, followup.Value).ToLocalTime().ToShortDateString()</div>
+    }
+  </fieldset>
+}
+
+@section scripts {
+  @Html.Partial("_ConfirmModal")
+  @Html.Partial("_ProgressModal")
+
+  <script type="text/javascript">
+    $(function() {
+      var config = {
+        ajaxService                   : new myc.AjaxService(),
+        orderId                       : '@Model.Order.OrderId',
+        orderStatus                   : '@Model.Order.OrderStatus',
+        sendORDERConfirmationEmailUrl : '@Url.Action("sendconfirmationemail", "orders")',
+        createInvoiceUrl              : '@Url.Action("createinvoice", "orders")',
+        orderIsDeleted                : '@Model.Order.IsDeleted',
+        orderIsArchived               : '@Model.Order.IsArchived',
+        deleteOrderUrl                : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "commands", action = "deleteorder" })',
+        undeleteOrderUrl              : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "commands", action = "undeleteorder" })',
+        archiveOrderUrl               : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "commands", action = "archiveorder" })',
+        unarchiveOrderUrl             : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "commands", action = "unarchiveorder" })',
+        updateOrderStatusUrl          : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "commands", action = "updateorderstatus" })',
+        cdsSubmitUrl                  : '@Url.RouteUrl(new { httproute = "CDSApi", controller = "CDS", action = "submit" })',
+        giftMessage                   : '@Model.Order.GiftMessage',
+        decimalSeparator              : '@System.Globalization.CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator'
+      };
+
+      var viewModel = new myc.OrderDetail(config);
+      ko.applyBindings(viewModel);
+
+      // REVIEW: turn this into a ko binding
+      $('#timepicker').timepicker({ showMeridian: '@Model.Features.ShowConfirmationTimePickerInMilitaryTime.ToString().ToLowerInvariant()' != 'true' });
+
+      $(".utcdate").text(function(i, d) { return app.formatShortDate(d); });
+    });
+  </script>
+}

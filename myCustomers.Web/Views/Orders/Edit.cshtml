@@ -1,0 +1,234 @@
+﻿@using myCustomers;
+
+@model EditOrderViewModel
+@{
+  ViewBag.Title = Model.IsNew ? Resources.GetString("NEW_SALESTICKET") : Model.OrderSource == "ONLINE" ? Resources.GetString("EDIT_ONLINEORDER") : Resources.GetString("EDIT_SALESTICKET");
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+}
+
+<!-- ko template: { name: 'editTemplate', "if": isLoaded } -->
+<!-- /ko -->
+
+@if (Model.Features.CreditCard)
+{
+<div id="editCCPaymentModal" style="display:none;" class="modal" data-bind="with: editCCPaymentViewModel">
+  <div class="modal-header">
+    <h3>@Resources.GetString("EDITCCPAYMENT_TITLE")</h3>
+  </div>
+  <div class="modal-body">
+    <div class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("CCPAYMENT_CARDHOLDERNAME_LABEL")</label>
+        <div class="controls">
+          <input type="text" data-bind="value: cardHolderName, showValidationFor: cardHolderName, valueUpdate: 'afterkeydown', validationPlacement: 'bottom'" />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("CCPAYMENT_BILLINGADDRESS_LABEL")</label>
+        <div class="controls">
+          <input type="text" data-bind="value: billingAddress, showValidationFor: billingAddress, valueUpdate: 'afterkeydown', validationPlacement: 'top'" />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("CCPAYMENT_BILLINGZIP_LABEL")</label>
+        <div class="controls">
+          <input type="text" data-bind="value: billingZip, showValidationFor: billingZip, valueUpdate: 'afterkeydown', validationPlacement: 'top'" />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("CCPAYMENT_CCNUMBER_LABEL")</label>
+        <div class="controls">
+          <input type="text" maxlength="16" data-bind="value: creditCardNumber, valueUpdate: 'afterkeydown', hasLostFocus: creditCardNumberHasLostFocus, showValidationFor: creditCardNumber, validationPlacement: 'top'" /><br />
+          <img src="~/content/images/visa.png" data-bind="visible: showVisa" />
+          <img src="~/content/images/mastercard.png" data-bind="visible: showMaster" />
+          <img src="~/content/images/discover.png" data-bind="visible: showDiscover" />
+          <img src="~/content/images/amex.png" data-bind="visible: showAmex" />
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("CCPAYMENT_CCEXPDATE_LABEL")</label>
+        <div class="controls">
+          <select class="input-mini" data-bind="value: expMonth, options: Enumerable.Range(1,12).ToArray()">
+          </select>
+          /
+          <select class="input-small" data-bind="value: expYear, options: Enumerable.Range(new Date().getFullYear(), 10).ToArray()">
+          </select>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">@Resources.GetString("CCPAYMENT_AMOUNT_LABEL")</label>
+        <div class="controls">
+          <input type="text" class="input-mini" data-bind="paymentAmount: amount, showValidationFor: amount" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-link" data-bind="click: cancel">@Resources.GetString("CANCEL")</button>
+    <button class="btn" data-bind="click: save, enable: validationState.isValid">@Resources.GetString("EDITCCPAYMENT_SAVE")</button>
+    <button class="btn btn-primary" data-bind="click: process, enable: validationState.isValid, visible: enableProcessing">@Resources.GetString("EDITCCPAYMENT_PROCESS")</button>
+  </div>
+</div>
+}
+
+@if (Model.Features.VerifyAddress)
+{
+<div id="recommendAddressModal" style="display:none;" class="modal" data-bind="with: selectRecommendedAddressViewModel">
+  <div class="modal-header">
+    <h3>@Resources.GetString("DELIVERYADDRESS_RECOMMEND_TITLE")</h3>
+  </div>
+  <div class="modal-body">
+    <p>@Resources.GetString("DELIVERYADDRESS_RECOMMEND_DESCRIPTION")</p>
+    <table class="table">
+      <tr>
+        <td style="border:none">
+          <h5>@Resources.GetString("DELIVERYADDRESS_RECOMMEND_CURRENT_TITLE")</h5>
+          <div class="vcard" data-bind="with:address">
+            <div class="adr">
+              <div class="street-address" data-bind="text:street"></div>
+              <span class="locality" data-bind="text:city"></span>,
+              <span class="region" data-bind="text:regionCode"></span>
+              <span class="postal-code" data-bind="text:postalCode"></span>
+              <div class="country-code" data-bind="text:countryCode"></div>
+            </div>
+          </div>
+        </td>
+        <td style="border:none">
+          <h5>@Resources.GetString("DELIVERYADDRESS_RECOMMEND_NEW_TITLE")</h5>
+          <div class="vcard" data-bind="with:recommendedAddress">
+            <div class="adr">
+              <div class="street-address" data-bind="text:street"></div>
+              <span class="locality" data-bind="text:city"></span>,
+              <span class="region" data-bind="text:regionCode"></span>
+              <span class="postal-code" data-bind="text:postalCode"></span>
+              <div class="country-code" data-bind="text:countryCode"></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-link" data-bind="click:close">@Resources.GetString("DELIVERYADDRESS_RECOMMEND_REJECT")</a>
+    <a href="#" class="btn btn-primary" data-bind="click:accept">@Resources.GetString("DELIVERYADDRESS_RECOMMEND_ACCEPT")</a>
+  </div>
+</div>
+}
+
+@section scripts
+{
+  @Html.Partial("_ConfirmModal")
+  @Html.Partial("_ProgressModal")
+
+  <script id="editTemplate" type="text/html">
+    <div class="navbar" style="margin-top:10px;">
+      <div class="navbar-inner">
+        <span class="brand">@ViewBag.Title&nbsp;<span style="display:none;" data-bind="visible: confirmationNumber">&nbsp;-&nbsp;<span data-bind="text: confirmationNumber"></span></span></span>
+        <ul class="nav pull-right">
+          <li class="divider-vertical"></li>
+          <li><a style="padding-left:0;padding-right:0" class="btn-help" href="#" onclick="$('#helpContent').toggle(); return false;"><i class="icon-question-sign"></i> @Resources.GetString("PAGEHEADER_HELP_LINKTEXT")</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="helpContent" class="well" style="display:none;">
+      <button type="button" class="close"  onclick="$('#helpContent').hide();return false;">&times;</button>
+      @if (Model.IsNew)
+      {
+        @Html.Raw(Resources.GetLocalizedContent("OrderNewHelp"))
+      }
+      else
+      {
+        @Html.Raw(Resources.GetLocalizedContent("OrderEditHelp"))
+      }
+    </div>
+
+    @Html.Partial("Edit/_Header")
+    @Html.Partial("Edit/_Fulfillment")
+    @Html.Partial("Edit/_Products")
+    @Html.Partial("Edit/_Delivery")
+    @Html.Partial("Edit/_Payment")
+    @Html.Partial("Edit/_Notes")
+    @Html.Partial("Edit/_Followups")
+
+    <div class="form-horizontal">
+      <div class="form-actions">
+        <!-- ko if: !isCDS() && orderStatus() === 'UnderReview' -->
+        <button class="btn btn-primary" type="button" data-bind="command: markCompleteCommand">@Resources.GetString("MARKAS_COMPLETE")</button>
+        <!-- /ko -->
+        <!-- ko if: !isCDS() && orderStatus() === 'Processed' -->
+        <button class="btn btn-primary" type="button" data-bind="command: markShippedCommand">@Resources.GetString("MARKAS_SHIPPED")</button>
+        <!-- /ko -->
+
+        @if (Model.Features.CDS)
+        {
+        <!-- ko if: isCDS() && orderStatus() === 'UnderReview' -->
+        <button class="btn btn-primary" type="button" data-bind="command: submitCDSCommand, enabled: submitCDSCommand.canExecute">@Resources.GetString("SUBMIT_CDS")</button>
+        <!-- /ko -->
+        }
+
+        <button class="btn" type="button" data-bind="command: saveOrderCommand">@Resources.GetString("SAVE_ORDER")</button>
+        <a href="javascript:history.back()" class="btn btn-link">@Resources.GetString("CANCEL")</a>
+        <br />
+        <small class="muted">@Resources.GetString("SAVE_ORDER_BUTTON_CONFIRMCOPY")</small>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/javascript">
+    $(function () {
+      var ajaxService = new myc.AjaxService();
+      var config = {
+        consultantId        : '@Model.Consultant.ConsultantID',
+        consultantKey       : '@Model.Consultant.ConsultantKey',
+        orderId             : '@Model.OrderId',
+        customerId          : '@Model.Customer.CustomerId',
+        customerName        : '@string.Format("{0} {1}", Model.Customer.FirstName, Model.Customer.LastName)',
+        isEligibleForCDS    : @(Model.IsEligibleForCDS ? "true" : "false"),
+        ajaxService         : ajaxService,
+        customerApiUrl      : '@Url.RouteUrl(new { httproute = "customersapi", controller = "customers", id = Model.Customer.CustomerId })',
+        ordersApiUrl        : '@Url.RouteUrl(new { httproute = "ordersapi", controller = "orders" })',
+        cancelUrl           : '@(Model.OrderId.HasValue ? @Url.Action("detail", "orders", new { id = Model.OrderId.Value }) : @Url.Action("index", "dashboard"))',
+        invoiceUrl          : '@Url.Action("createinvoice", "orders")',
+        archiveApiUrl       : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "commands", action = "archiveorders" })',
+        unarchiveApiUrl     : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "commands", action = "unarchiveorders" })',
+        verifyAddress       : @(Model.Features.VerifyAddress ? "true" : "false"),
+        verifyAddressUrl    : '@Url.RouteUrl(new { httproute = "ValidationApi", controller = "validation", action = "verifyaddress" })',
+        saveCCPaymentUrl    : '@Url.RouteUrl(new { httproute = "CCPaymentApi", controller = "ccpayment", action = "save", orderId = "_orderId_" })',
+        processCCPaymentUrl : '@Url.RouteUrl(new { httproute = "CCPaymentApi", controller = "ccpayment", action = "process", orderId = "_orderId_" })',
+        cdsSubmitUrl        : '@Url.RouteUrl(new { httproute = "CDSApi", controller = "cds", action = "submit" })',
+        proPayAccountType   : @(Model.Consultant.ConsultantCCAccount != null && Model.Consultant.ConsultantCCAccount.ProPayAccountType != null ? Model.Consultant.ConsultantCCAccount.ProPayAccountType.ProPayAccountTypeID ?? 0 : 0),
+
+        addProductsForm : new myc.AddProductsForm({
+          productCatalog : new myc.ProductCatalog({
+            apiUrl       : '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "products" })',
+            ajaxService  : ajaxService,
+            pageSize     : @appSettings.GetValue("ProductCatalog.PageSize")
+          }),
+
+          previouslyOrdered : new myc.PreviouslyOrderedProducts({
+            apiUrl      : '@Url.RouteUrl(new { httproute = "RecentlyOrderedProductsApi", controller = "recentlyorderedproducts", custid = Model.Customer.CustomerId })',
+            ajaxService : ajaxService
+          }),
+
+          recommendedProducts : new myc.RecommendedProducts({
+            apiUrl      : '@Url.RouteUrl(new { httproute = "RecommendedProductsApi", controller = "recommendedproducts", custid = Model.Customer.CustomerId })',
+            ajaxService : ajaxService
+          }),
+
+          wishListProducts : new myc.WishListProducts({
+            apiUrl      : '@Url.RouteUrl(new { httproute = "WishListProductsApi", controller = "wishlistproducts", custid = Model.Customer.CustomerId })',
+            ajaxService : ajaxService
+          })
+        }),
+
+        gwp : @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.GiftWithPurchase, System.Web.Http.GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings))
+      };
+
+      var vm = new myc.EditOrder(config);
+      ko.applyBindings(vm);
+      vm.load();
+      window.viewModel = vm;
+    });
+  </script>
+}

@@ -1,0 +1,16 @@
+﻿<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_EMAIL")</label>
+
+  <div class="controls">
+    <div>
+      <input 
+        type="text" 
+        id="customerEmail" 
+        class="input-large" 
+        maxlength="255" 
+        data-bind="value: emailAddress, valueUpdate: 'keyup', hasBeenFocused: emailHasBeenFocused, showValidationFor: emailAddress" 
+        data-content="@Html.Raw(@Resources.GetString("ADDCUSTOMER_EMAIL_LEGALMESSAGE"))" 
+        data-trigger="focus" />
+    </div>
+  </div>
+</div>

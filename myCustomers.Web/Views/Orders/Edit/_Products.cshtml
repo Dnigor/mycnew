@@ -1,0 +1,115 @@
+﻿@model EditOrderViewModel
+
+<fieldset style="margin-bottom: 20px;">
+  <legend>
+    @Resources.GetString("PRODUCTS_HEADING")
+    <!-- ko if: canEditProducts -->
+    <button class="btn btn-link pull-right" type="button" style="display:none;padding:0;line-height:40px;" onclick="app.scrollTo('#productCatalog')" data-bind="visible: !$root.isProductCatalogVisible(), click: $root.showProductCatalog">@Resources.GetString("ADDPRODUCTS")</button>
+    <!-- /ko -->
+  </legend>
+
+  <div class="row">
+    <div id="orderItems">
+      <div id="productList" class="span12">
+        <!-- ko if: canEditProducts -->
+        @Html.Partial("Edit/_ProductCatalog")
+
+        @if (Model.IsEligibleForCDS)
+        {
+        <div class="alert alert-error" style="display:none" data-bind="visible: !productsAreValidForCDS()">
+          @Html.Raw(Resources.GetString("VALIDATION_CDSORDER_PRODUCTS"))
+        </div>
+        <div class="alert alert-error" style="display:none" data-bind="visible: !sampleProductsAreValidForCDS()">
+          @Html.Raw(Resources.GetString("VALIDATION_CDSORDER_SAMPLEPRODUCTS"))
+        </div>
+        }
+        <!-- /ko -->
+
+        <!-- ko if: !hasItems() -->
+        <div class="alert" style="display:none;font-size:16px;" data-bind="visible: !hasItems(), css: { 'alert-warning': !app.showValidationErrors() && !items.isValid(), 'alert-error': app.showValidationErrors() && !items.isValid() }">
+          <table>
+            <tr>
+              <td style="padding:10px 30px 10px 10px;"><i class="icon-large icon-2x" data-bind="css: { 'icon-info-sign': !app.showValidationErrors() && !items.isValid(), 'icon-exclamation-sign': app.showValidationErrors() && !items.isValid() }"></i></td>
+              <td style="width:100%">
+                @Html.Raw(Resources.GetString("ORDER_NOPRODUCTS"))
+                <!-- ko if: canEditProducts -->
+                <button class="btn" type="button" style="display:none;" onclick="app.scrollTo('#productCatalog')" data-bind="visible: !$root.isProductCatalogVisible(), click: $root.showProductCatalog">@Resources.GetString("ADDPRODUCTS")</button>
+                <!-- /ko -->
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- /ko -->
+
+        <table class="table" style="display:none;" data-bind="visible: hasItems">
+          <thead>
+            <tr>
+              <th></th>
+              <th>@Resources.GetString("HEADING_PARTNUMBER")</th>
+              <th>@Resources.GetString("HEADING_PRODUCTNAME")</th>
+              <th>@Resources.GetString("HEADING_QUANTITY")</th>
+              <th>@Resources.GetString("HEADING_PRICE")</th>
+              <th style="text-align:right;">@Resources.GetString("HEADING_LINETOTAL")</th>
+            </tr>
+          </thead>
+          <tbody data-bind="foreach: items">
+            <tr>
+              <td style="white-space:nowrap;">
+                <!-- ko if: $root.canEditProducts -->
+                <button class="btn btn-link" style="padding:0;" title="remove from order" data-bind="click: $root.removeProduct">@Resources.GetString("REMOVE")</button>
+                <!-- /ko -->
+              </td>
+              <td data-bind="text: dispPartId"></td>
+              <td class="description" style="width:100%;">
+                <span data-bind="html: name"></span>
+                <span data-bind="html: shade"></span>
+                @if (Model.IsEligibleForCDS)
+                {
+                <span class="label label-important" style="display:none;cursor:help" data-bind="visible: !availableForCDS()" title="@Resources.GetString("UNAVAILABLEFORCDS_TIP")"><i class="icon-ban-circle"></i>&nbsp;@Resources.GetString("UNAVAILABLEFORCDS_BADGE")</span>
+                <span class="label label-info" style="display:none" data-bind="visible: cdsFree">@Resources.GetString("LABEL_CDSSAMPLE_FREE")</span>
+                <span class="label label-info" style="display:none" data-bind="visible: cdsPaid">@Resources.GetString("LABEL_CDSSAMPLE_PAID")</span>
+                }
+              </td>
+              <td style="text-align: right;">
+                <span class="input-append no-select" data-bind="visible: !isGWP()">
+                  <input type="text" maxlength="3" class="input-mini" style="width: 18px;" data-bind="value: qty, enable: $root.canEditProducts" />
+                  <!-- ko if: $root.canEditProducts -->
+                  <span class="add-on" data-bind="command: incrementQtyCommand"><i class="icon-chevron-up icon-pointer"></i></span>
+                  <span class="add-on" data-bind="command: decrementQtyCommand"><i class="icon-chevron-down icon-pointer"></i></span>
+                  <!-- /ko -->
+                </span>
+              </td>
+              <td style="text-align:right;white-space:nowrap;white-space:nowrap;" data-bind="currency: price"></td>
+              <td style="text-align:right;white-space:nowrap;white-space:nowrap;" data-bind="currency: total"></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" style="text-align: right">@Resources.GetString("ORDER_TOTAL")</td>
+              <td style="text-align: right;white-space:nowrap;" data-bind="currency: total"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ko if: canEditProducts -->
+  @if (Model.Features.GWP)
+  {
+    <!-- ko if: showGWP -->
+    <div class="row" data-bind="with: giftWithPurchase">
+      <div class="alert alert-info">
+        <div class="media">
+          <img class="pull-right" style="width:114px;height:152px;" data-bind="attr: { src: imageUrl }" />
+          <h3>@Resources.GetString("ALERT_ADDGWP")</h3>
+          <h5><span data-bind="text: name"></span>&nbsp;<span data-bind="text: shade"></span></h5>
+          <div class="media-body" data-bind="html: description"></div>
+        </div>
+        <button class="btn btn-success" data-bind="click: $parent.addGWP">@Resources.GetString("ADDGWP_BUTTON")</button>
+      </div>
+    </div>
+    <!-- /ko -->
+  }
+  <!-- /ko -->
+</fieldset>

@@ -1,0 +1,54 @@
+﻿@{
+  ViewBag.Title = Resources.GetString("DASHBOARD_TITLE");
+  var subsidiaryAccessor = ServiceLocator.Current.GetInstance<ISubsidiaryAccessor>();
+}
+<div class="hero-unit" style="background-image: url('@Url.Content("~/content/images/Hero_" + subsidiaryAccessor.GetSubsidiaryCode() + ".jpg")')">
+  <div class="hero-copy">
+    <h1>@Html.Raw(Resources.GetString("DASHBOARD_WELCOME"))</h1>
+    <p>@Resources.GetString("DASHBOARD_WELCOMETEXT")</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span4">
+    <a class="dashboardModule" href="@Url.Action("Index", "Customers")">
+      <h2>
+        @Html.Raw(Resources.GetString("DASHBOARD_CUSTOMERS"))
+      </h2>
+      <div class="dashboardModule-text">@Resources.GetString("DASHBOARD_CUSTOMERSTEXT")</div>
+    </a>
+    <p><a class="btn btn-primary" href="@Url.Action("Index", "Customers")">@Html.Raw(Resources.GetString("DASHBOARD_MANAGECUSTOMERS"))</a></p>
+  </div>
+  <div class="span4">
+    <a class="dashboardModule" href="@Url.Action("Index", "Orders")">
+      <h2>
+        @Html.Raw(Resources.GetString("DASHBOARD_ORDERS"))
+        <span class="badge badge-important dashboard-count" style="display:none" data-bind="visible: ordersCount() !== 0, text: ordersCount"></span>
+      </h2>
+      <div class="dashboardModule-text">@Resources.GetString("DASHBOARD_ORDERSTEXT")</div>
+    </a>
+    <p><a class="btn btn-primary" href="@Url.Action("Index", "Orders")">@Html.Raw(Resources.GetString("DASHBOARD_MANAGEORDERS"))</a></p>
+  </div>
+  <div class="span4">
+    <a class="dashboardModule" href="@Url.Action("Index", "Tasks")">
+      <h2>@Html.Raw(Resources.GetString("DASHBOARD_REMINDERS"))</h2>
+      <div class="dashboardModule-text">@Resources.GetString("DASHBOARD_REMINDERSTEXT")</div>
+    </a>
+    <p><a class="btn btn-primary" href="@Url.Action("Index", "Tasks")">@Html.Raw(@Resources.GetString("DASHBOARD_MANAGEREMINDERS"))</a></p>
+  </div>
+</div>
+
+@section scripts {
+  <script type="text/javascript">
+    $(function() {
+      var config = {
+        actions: {
+          apiUrl: '@Url.RouteUrl(new { httproute = "DashboardApi", controller="Dashboard", action = "counts" })',
+        },
+      };
+      var model = new myc.Dashboard(config);
+      ko.applyBindings(model);
+      model.getCountsCommand.execute();
+    });
+  </script>
+}

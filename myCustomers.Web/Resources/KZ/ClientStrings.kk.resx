@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GENDER_FEMALE" xml:space="preserve">
+    <value>Әйел</value>
+  </data>
+  <data name="GENDER_MALE" xml:space="preserve">
+    <value>Ер</value>
+  </data>
+  <data name="ABBR_HOMEPHONE" xml:space="preserve">
+    <value>үй:</value>
+  </data>
+  <data name="ABBR_MOBILEPHONE" xml:space="preserve">
+    <value>ұялы:</value>
+  </data>
+  <data name="ABBR_OTHERPHONE" xml:space="preserve">
+    <value>қос:</value>
+  </data>
+  <data name="ABBR_WORKPHONE" xml:space="preserve">
+    <value>жұм:</value>
+  </data>
+  <data name="ADDCUSTOMER_ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтой</value>
+  </data>
+  <data name="ADDCUSTOMER_BIRTHDAY" xml:space="preserve">
+    <value>Туылған күн</value>
+  </data>
+  <data name="ADDCUSTOMER_GRADUATION" xml:space="preserve">
+    <value>Оқу бітіру</value>
+  </data>
+  <data name="ADDCUSTOMER_NEWBABY" xml:space="preserve">
+    <value>Жаңа туылған сәби</value>
+  </data>
+  <data name="ADDCUSTOMER_NEWJOB" xml:space="preserve">
+    <value>Жаңа жұмыс</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER" xml:space="preserve">
+    <value>Басқа</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER_DESCRIPTION" xml:space="preserve">
+    <value>Сипаттамасы</value>
+  </data>
+  <data name="ADDCUSTOMER_VACATION" xml:space="preserve">
+    <value>Демалыс</value>
+  </data>
+  <data name="ADDCUSTOMER_WEDDING" xml:space="preserve">
+    <value>Той</value>
+  </data>
+  <data name="AJAX_ERROR" xml:space="preserve">
+    <value>Бұл операцияны орындау барысында қателік жіберілді. Өтінеміз, қайталаңыз.</value>
+  </data>
+  <data name="AJAX_ERROR_TITLE" xml:space="preserve">
+    <value>Қате</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>Өзгерту</value>
+  </data>
+  <data name="CONFIRM_MARKCOMPLETE_BODY" xml:space="preserve">
+    <value>Бұл тапсырысты аяқтағыңыз келетініне сенімдісіз бе? &lt;br/&gt;&lt;br/&gt;&lt;small class="muted"&gt; Бұл тапсырысты кез келген уақытта көре және түзете аласыз. &lt;small/&gt;</value>
+  </data>
+  <data name="CONFIRM_MARKCOMPLETE_TITLE" xml:space="preserve">
+    <value>Тапсырысты аяқтауды растау</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMERS_BODY" xml:space="preserve">
+    <value>Бұл файлды себетке салғыңыз келетініне сенімдісіз бе? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Назар аударыңыз, егер "OK" батырмасын басатын болсаңыз, осы клиентке(терге) қатысты барлық ақпарат, соның ішінде байланыс ақпараты, тапсырыстар тарихы, жеке ақпараты, сайттағы логины, өнімге қайтара тапсырыс беру туралы ескертпе де себетке салынады. Клиент туралы ақпаратты түбегейлі жою үшін «Себет» иконкасын басып, «Клиентті түбегейлі алып тастау» батырмасын басу керек.</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Клиенттерді алып тастау</value>
+  </data>
+  <data name="CONFIRM_DELETEFROMGROUP_BODY" xml:space="preserve">
+    <value>Таңдалған клиенттерді топтан алып тастағыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_RESTORECUSTOMERS_BODY" xml:space="preserve">
+    <value>Қалпына келтіргіңіз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_RESTORECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Клиенттерді қалпына келтіру</value>
+  </data>
+  <data name="CONFIRM_PURGECUSTOMERS_BODY" xml:space="preserve">
+    <value>Таңдалған клиентті(терді) түбегейлі алып тастағыңыз келетініне сенімдісіз бе? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Назар аударыңыз, егер "OK" батырмасын басатын болсаңыз, осы клиентке(терге) қатысты барлық ақпаратты, соның ішінде байланыс ақпаратын, тапсырыстар тарихын, жеке ақпаратты, сайттағы логинын, өнімге қайтара тапсырыс беру туралы ескертпені толығымен жоясыз.</value>
+  </data>
+  <data name="CONFIRM_PURGECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Тапсырыстарды себеттен толық жою</value>
+  </data>
+  <data name="CONFIRM_PURGEORDERS_BODY" xml:space="preserve">
+    <value>Таңдалған тапсырыстарды себеттен толық жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_PURGEORDERS_TITLE" xml:space="preserve">
+    <value>Клиенттерді себеттен толық алып тастау</value>
+  </data>
+  <data name="CONFIRM_RESTOREORDERS_TITLE" xml:space="preserve">
+    <value>Тапсырыстарды қалпына келтіру</value>
+  </data>
+  <data name="CONFIRM_RESTOREORDERS_BODY" xml:space="preserve">
+    <value>Қалпына келтіргіңіз келетініне сенімдісіз бе? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Қалпына келтірілген тапсырыстарды табу үшін тапсырыстар тізімін басыңыз.</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMER_BODY" xml:space="preserve">
+    <value>Бұл клиентті алып тастағыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMER_TITLE" xml:space="preserve">
+    <value>Клиентті жою</value>
+  </data>
+  <data name="CONFIRM_DELETEORDERS_BODY" xml:space="preserve">
+    <value>Таңдалған тапсырыстарды жлйғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_DELETEORDERS_TITLE" xml:space="preserve">
+    <value>Тапсырыстарды жою</value>
+  </data>
+  <data name="CONFIRM_DELETEORDER_BODY" xml:space="preserve">
+    <value>Бұл тапсырысты жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_DELETEORDER_TITLE" xml:space="preserve">
+    <value>Тапсырысты жою</value>
+  </data>
+  <data name="CONFIRM_REMOVEADDRESS_BODY" xml:space="preserve">
+    <value>Мекен-жайды алып тастағыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEADDRESS_TITLE" xml:space="preserve">
+    <value>Мекен-жайды алып тастауды растау</value>
+  </data>
+  <data name="CONFIRM_REMOVEDELIVERYADDRESS_BODY" xml:space="preserve">
+    <value>жеткізу мекен-жайын алып тастағыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEDELIVERYADDRESS_TITLE" xml:space="preserve">
+    <value>Жеткізу мекен-жайын алып тастауды растау</value>
+  </data>
+  <data name="CONFIRM_REMOVEEMAIL_BODY" xml:space="preserve">
+    <value>Электрондық адресті жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEEMAIL_TITLE" xml:space="preserve">
+    <value>Электрондық адресті жоюды растау</value>
+  </data>
+  <data name="CONFIRM_REMOVEFOLLOWUP_BODY" xml:space="preserve">
+    <value>Орындау туралы ескертпені жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEFOLLOWUP_TITLE" xml:space="preserve">
+    <value>Орындау туралы ескертпені жоюды растау</value>
+  </data>
+  <data name="CONFIRM_REMOVESOCIALNETWORK_BODY" xml:space="preserve">
+    <value>Әлеуметті желіге сілтемені жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVESOCIALNETWORK_TITLE" xml:space="preserve">
+    <value>Әлеуметті желіге сілтемені жоюды растау</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERITEM_BODY" xml:space="preserve">
+    <value>Тапсырыстан өнімді алып тастағыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERITEM_TITLE" xml:space="preserve">
+    <value>Өнімді алып тастауды растау</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERNOTES_BODY" xml:space="preserve">
+    <value>Тапсырыс туралы жазбаларды жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERNOTES_TITLE" xml:space="preserve">
+    <value>Тапсырыс туралы жазбаларды жоюды растау</value>
+  </data>
+  <data name="CONFIRM_REMOVEPAYMENT_BODY" xml:space="preserve">
+    <value>Тапсырысты төлеудің таңдалған типін жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPAYMENT_TITLE" xml:space="preserve">
+    <value>Төлемді жоюды растау</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONENUMBER_BODY" xml:space="preserve">
+    <value>Телефон номерін жойғыңыз келетініне сен імдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONENUMBER_TITLE" xml:space="preserve">
+    <value>Телефон номерін жоюды растау</value>
+  </data>
+  <data name="CONFIRM_UNDELETECUSTOMER_BODY" xml:space="preserve">
+    <value>Бұл клиентті алып тастауды тоқтатқыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_UNDELETECUSTOMER_TITLE" xml:space="preserve">
+    <value>Клиентті қайтару</value>
+  </data>
+  <data name="CONFIRM_UNDELETEORDER_BODY" xml:space="preserve">
+    <value>Бұл тапсырысты жоюды тоқтатқыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_UNDELETEORDER_TITLE" xml:space="preserve">
+    <value>Тапсырысты жоюды тоқтату</value>
+  </data>
+  <data name="CUSTOMERLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} клиент - Бет {1} ({2})</value>
+  </data>
+  <data name="IMPORTCUSTOMERSLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} байланыс - Бет {1} ({2})</value>
+  </data>
+  <data name="PRODUCTSLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} өнім - Бет {1} ({2})</value>
+  </data>
+  <data name="DELETE_NOTES_CONFIRMATION_BODY" xml:space="preserve">
+    <value>Бұл жазбаны жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="DELETE_NOTES_CONFIRMATION_TITLE" xml:space="preserve">
+    <value>Жазбаны жою</value>
+  </data>
+  <data name="ERROR_CSV_FILE_EXPECTED" xml:space="preserve">
+    <value>Файл CSV форматында болуы керек</value>
+  </data>
+  <data name="ERROR_NOTIFY_TITLE" xml:space="preserve">
+    <value>Қате</value>
+  </data>
+  <data name="INVALID_URL_FORMAT" xml:space="preserve">
+    <value>Сайттың адресі қате форматта енгізілді</value>
+  </data>
+  <data name="NOTESLIST_ITEM_TITLE" xml:space="preserve">
+    <value>{0} {1} {2}-ге</value>
+  </data>
+  <data name="NOTESLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Жазбалар - {2}-ден {1} бет</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ORDERDETAIL_DELETE" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="ORDERDETAIL_UNDELETE" xml:space="preserve">
+    <value>Жойылғандар тізімінен қайтару</value>
+  </data>
+  <data name="SAVEORDER_SUCCESS" xml:space="preserve">
+    <value>Тапсырыс сәтті сақталды</value>
+  </data>
+  <data name="CUSTOMER_SAVESUCCESS_MSG" xml:space="preserve">
+    <value>Құттықтаймыз! Сіз клиентіңіз туралы мәліметтерді сақтадыңыз.</value>
+  </data>
+  <data name="ORDER_UPDATESTATUS_SUCCESS" xml:space="preserve">
+    <value>Тапсырыстың статусы жаңартылды</value>
+  </data>
+  <data name="MARKCOMPLETE_SUCCESS" xml:space="preserve">
+    <value>Тапсырыс сәтті өзгертілді және "Өңделген" ретінде белгіленді.</value>
+  </data>
+  <data name="ORDERLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Тапсырыстар -   {2}-ден {1} бет</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_COMPLETED" xml:space="preserve">
+    <value>Толық төленген</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_NA" xml:space="preserve">
+    <value>Төленбеген</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_PARTIAL" xml:space="preserve">
+    <value>Жартылай төленген</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_CUSTOMERWILLPICKUP" xml:space="preserve">
+    <value>Өзі алып кету</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_DELIVERTOHOMEORWORK" xml:space="preserve">
+    <value>Үйге/жұмысқа</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_OTHER" xml:space="preserve">
+    <value>Басқа</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SETUPAPPOINTMENTFORCONSULTATIONANDDELIVERY" xml:space="preserve">
+    <value>Консультация мен жеткізу сипаттамасын бейімдеу</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SHIPTOCUSTOMERADDRESS" xml:space="preserve">
+    <value>Клиент тұратын жерге жеткізу</value>
+  </data>
+  <data name="ORDERSOURCE_ONLINE" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="ORDERSOURCE_SALESTICKET" xml:space="preserve">
+    <value>Тапсырыс бланкі</value>
+  </data>
+  <data name="ORDERSTATUS_PROCESSED" xml:space="preserve">
+    <value>Өңделді</value>
+  </data>
+  <data name="ORDERSTATUS_SHIPPEDDELIVERED" xml:space="preserve">
+    <value>Жіберілді/жеткізілді</value>
+  </data>
+  <data name="ORDERSTATUS_SUBMITTED" xml:space="preserve">
+    <value>Жаңа</value>
+  </data>
+  <data name="ORDERSTATUS_UNDERREVIEW" xml:space="preserve">
+    <value>Күту</value>
+  </data>
+  <data name="PHONENUMBERTYPE_HOME" xml:space="preserve">
+    <value>Үй</value>
+  </data>
+  <data name="PHONENUMBERTYPE_MOBILE" xml:space="preserve">
+    <value>Ұялы</value>
+  </data>
+  <data name="PHONENUMBERTYPE_OTHER" xml:space="preserve">
+    <value>Басқа</value>
+  </data>
+  <data name="PHONENUMBERTYPE_WORK" xml:space="preserve">
+    <value>Жұмыс</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_MAKEUP" xml:space="preserve">
+    <value>Макияж</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_SKINCARE" xml:space="preserve">
+    <value>Теріге күтім жасау</value>
+  </data>
+  <data name="REMINDERS_PREFIX" xml:space="preserve">
+    <value>үшін</value>
+  </data>
+  <data name="REMINDERS_TITLE_REQUIRED" xml:space="preserve">
+    <value>Тақырыбын енгізу керек.</value>
+  </data>
+  <data name="SEARCH_ERROR" xml:space="preserve">
+    <value>Іздеу барысында қате жіберілді. Өтінеміз, тағы да қайталап көріңіз.</value>
+  </data>
+  <data name="SEARCH_ERROR_TITLE" xml:space="preserve">
+    <value>Іздеу қателігі</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_SUCCESS" xml:space="preserve">
+    <value>Алынғаны расталатын электрондық хат сәтті жіберілді</value>
+  </data>
+  <data name="SORT_AMOUNT" xml:space="preserve">
+    <value>Сомасы</value>
+  </data>
+  <data name="SORT_DATEADDED" xml:space="preserve">
+    <value>Қосылған күні</value>
+  </data>
+  <data name="SORT_DATEREGISTERED" xml:space="preserve">
+    <value>Тіркеу күні</value>
+  </data>
+  <data name="SORT_DIRECTION_TOOLTIP" xml:space="preserve">
+    <value>Сұрыптау тәртібін ауыстыру</value>
+  </data>
+  <data name="SORT_FIRSTNAME" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="SORT_LASTNAME" xml:space="preserve">
+    <value>Тегі</value>
+  </data>
+  <data name="SORT_LASTORDERDATE" xml:space="preserve">
+    <value>Соңғы тапсырыс күні</value>
+  </data>
+  <data name="SORT_ORDERDATE" xml:space="preserve">
+    <value>Тапсырыс берілген күн</value>
+  </data>
+  <data name="SORT_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Төлем статусы</value>
+  </data>
+  <data name="SORT_ORDERSTATUS" xml:space="preserve">
+    <value>Тапсырыстың статусы</value>
+  </data>
+  <data name="SORT_ORDERTYPE" xml:space="preserve">
+    <value>Тапсырыс көзі</value>
+  </data>
+  <data name="SORT_PROFILEDATE" xml:space="preserve">
+    <value>Профиль күні</value>
+  </data>
+  <data name="SORT_RELEVANCE" xml:space="preserve">
+    <value>Көкейтесті</value>
+  </data>
+  <data name="SUCCESS_DELETE_ORDERS" xml:space="preserve">
+    <value>Тапсырыстар жойылды</value>
+  </data>
+  <data name="SUCCESS_MESSAGE_NEWTASK" xml:space="preserve">
+    <value>Тапсырма қосылды</value>
+  </data>
+  <data name="SUCCESS_MESSAGE_TITLE" xml:space="preserve">
+    <value>Табыс</value>
+  </data>
+  <data name="VALIDATION_ADDRESSEE_REQUIRED" xml:space="preserve">
+    <value>Адресатты енгізу қажет</value>
+  </data>
+  <data name="VALIDATION_FIRSTNAME_PATTERN" xml:space="preserve">
+    <value>Аты форматқа сәйкес келмейді</value>
+  </data>
+  <data name="VALIDATION_LASTNAME_PATTERN" xml:space="preserve">
+    <value>Фамилиясы форматқа сәйкес келмейді</value>
+  </data>
+  <data name="VALIDATION_MIDDLENAME_PATTERN" xml:space="preserve">
+    <value>Әкесінің аты форматқа сәйкес келмейді</value>
+  </data>
+  <data name="VALIDATION_FIRSTNAME_REQUIRED" xml:space="preserve">
+    <value>Атын енгізу керек</value>
+  </data>
+  <data name="VALIDATION_LASTNAME_REQUIRED" xml:space="preserve">
+    <value>Фамилияны енгізу қажет</value>
+  </data>
+  <data name="VALIDATION_ADDRESS_ONEOF" xml:space="preserve">
+    <value>Көшені, қаланы, облысты/аймақты және индексті енгізу қажет</value>
+  </data>
+  <data name="VALIDATION_NUMBER" xml:space="preserve">
+    <value>Номерді енгізу қажет</value>
+  </data>
+  <data name="VALIDATION_ORDERDATE_REQUIRED" xml:space="preserve">
+    <value>Тапсырыстың күнін енгізу қажет</value>
+  </data>
+  <data name="WRONG_DATE" xml:space="preserve">
+    <value>Күні қате</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_BEAUTENEWS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_MKECARDS" xml:space="preserve">
+    <value>Электрондық ашықхаттар</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_PRODUCTREORDERREMINDER" xml:space="preserve">
+    <value>Қайтара тапсырыс беру туралы ескертпе</value>
+  </data>
+  <data name="INVOICE_CREATE_ERROR" xml:space="preserve">
+    <value>Шот-фактураны жасауды қате жіберілді. Өтінеміз, тағы да қайталап көріңіз.</value>
+  </data>
+  <data name="VALIDATION_EXTENSION_PATTERN" xml:space="preserve">
+    <value>Қосымша номер қате форматта енгізілді</value>
+  </data>
+  <data name="VALIDATION_URL" xml:space="preserve">
+    <value>Сайттың адресу қате</value>
+  </data>
+  <data name="VALIDATION_NUMBER_PATTERN" xml:space="preserve">
+    <value>Номер қате форматта енгізілді</value>
+  </data>
+  <data name="VALIDATION_NUMBER_REQUIRED" xml:space="preserve">
+    <value>Номерді енгізу қажет</value>
+  </data>
+  <data name="VALIDATION_TASKTITLE_REQUIRED" xml:space="preserve">
+    <value>Тақырыбын міндетті түрде енгізу керек</value>
+  </data>
+  <data name="VALIDATION_NUMBERTYPE_REQUIRED" xml:space="preserve">
+    <value>Номердің типін енгізу қажет</value>
+  </data>
+  <data name="VALIDATION_SOCIALNETRWORK_PATTERN" xml:space="preserve">
+    <value>Әлеуметтік желіге сілтеме жарамсыз</value>
+  </data>
+  <data name="PROMPT_DISCARDCHANGES" xml:space="preserve">
+    <value>Сізде сақталмаған өзгерістер бар.</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONE_BODY" xml:space="preserve">
+    <value>Бұл телефон номерін жойғыңыз келетініне сен імдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONE_TITLE" xml:space="preserve">
+    <value>Телефон номерін жою</value>
+  </data>
+  <data name="CONFIRM_REMOVESPECIALOCCASION_BODY" xml:space="preserve">
+    <value>маңызды датаны жойғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_REMOVESPECIALOCCASION_TITLE" xml:space="preserve">
+    <value>маңызды датаны жою.</value>
+  </data>
+  <data name="IMPORTANTDATE_GRADUATION" xml:space="preserve">
+    <value>Оқу бітіру</value>
+  </data>
+  <data name="IMPORTANTDATE_NEWBABY" xml:space="preserve">
+    <value>Баланың туған күні</value>
+  </data>
+  <data name="IMPORTANTDATE_NEWJOB" xml:space="preserve">
+    <value>Жаңа жұмыс</value>
+  </data>
+  <data name="IMPORTANTDATE_OTHER" xml:space="preserve">
+    <value>Басқа күн</value>
+  </data>
+  <data name="IMPORTANTDATE_VACATION" xml:space="preserve">
+    <value>Демалыс</value>
+  </data>
+  <data name="IMPORTANTDATE_WEDDING" xml:space="preserve">
+    <value>Той</value>
+  </data>
+  <data name="VALIDATION_DUPEMAIL" xml:space="preserve">
+    <value>Бұл электрондық адресті басқа клиент пайдаланады</value>
+  </data>
+  <data name="INVALID_NAME" xml:space="preserve">
+    <value>Атында сандар болмауы керек.</value>
+  </data>
+  <data name="VALIDATION_PHONEEXTENSION" xml:space="preserve">
+    <value>Қосымша номердің форматы қате</value>
+  </data>
+  <data name="VALIDATION_PHONENUMBER" xml:space="preserve">
+    <value>Телефон номерінің форматы қате</value>
+  </data>
+  <data name="ERROR_CSV_FILE_REQUIRED" xml:space="preserve">
+    <value>Файл CSV форматында болуы керек</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDER_BODY" xml:space="preserve">
+    <value>Бұл тапсырысты тапсырыстар базасына қосқыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDER_TITLE" xml:space="preserve">
+    <value>Тапсырыстар базасына қосу</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDER_BODY" xml:space="preserve">
+    <value>Бұл тапсырысты архивтен шығарғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDER_TITLE" xml:space="preserve">
+    <value>Тапсырысты архивтен шығару</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDERS_BODY" xml:space="preserve">
+    <value>Таңдалған тапсырыстарды тапсырыстар базасына қосқыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDERS_TITLE" xml:space="preserve">
+    <value>Тапсырыстар базасына қосу</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDERS_BODY" xml:space="preserve">
+    <value>Таңдалған тапсырыстарды мұрағаттан қайтарғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDERS_TITLE" xml:space="preserve">
+    <value>Тапсырыстарды мұрағаттан қайтару</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMERS_BODY" xml:space="preserve">
+    <value>Таңдалған клиенттерді клиенттер базасына қосқыңыз келетініне сенімдісіз бе? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt; Клиентті базадан табу үшін, қосымшаны ашыңыз: Клиенттер --&gt; Сүзгіні басыңыз --&gt; мұрағатты таңдаңыз.&lt;/small&gt;</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Клиенттер базасына қосу</value>
+  </data>
+  <data name="VALIDATION_REQUIRED" xml:space="preserve">
+    <value>Бұл алаңшаны міндетті түрде толтыру керек</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMER_BODY" xml:space="preserve">
+    <value>Базаға осы клиентті қосқыңыз келетініне сенімдісіз бе? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt; Клиентті базадан табу үшін, қосымшаны ашыңыз: Клиенттер --&gt; Сүзгіні басыңыз --&gt; архивті таңдаңыз.&lt;/small&gt;</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMER_TITLE" xml:space="preserve">
+    <value>Клиенттер базасына қосу</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMER_BODY" xml:space="preserve">
+    <value>Бұл клиентті архивтен қайтарғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMER_TITLE" xml:space="preserve">
+    <value>Клиенттер базасынан алып тастау</value>
+  </data>
+  <data name="ORDERDETAIL_ARCHIVE" xml:space="preserve">
+    <value>Мұрағат</value>
+  </data>
+  <data name="ORDERDETAIL_UNARCHIVE" xml:space="preserve">
+    <value>Базадан алып тастау</value>
+  </data>
+  <data name="EDITCUSTOMER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value>Бұл клиент туралы деректерді сақтау үшін қателерді түзетуіңіз қажет.</value>
+  </data>
+  <data name="EDITCUSTOMER_VALIDATION_MESSAGE_TITLE" xml:space="preserve">
+    <value>Клиент туралы деректерді енгізудің дұрыстығын тексеру</value>
+  </data>
+  <data name="EDITORDER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value>Тапсырысты сақтау үшін қызылмен көрсетілген, қате енгізілген деректерді түзетуіңіз қажет.</value>
+  </data>
+  <data name="EDITORDER_VALIDATION_TITLE" xml:space="preserve">
+    <value>Тапсырыстың жарамдылық мерзімі аяқталды</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMERS_BODY" xml:space="preserve">
+    <value>Таңдалған клиентті архивтен шығарғыңыз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Клиентті архивтен шығару</value>
+  </data>
+  <data name="ARCHIVECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Клиенттер базаға сәтте қосылды.</value>
+  </data>
+  <data name="UNARCHIVECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Клиенттер мұрағаттан сәтті қайтарылды</value>
+  </data>
+  <data name="ARCHIVEORDERS_SUCCESS" xml:space="preserve">
+    <value>Тапсырыстар базаға сәтті қосылды.</value>
+  </data>
+  <data name="UNARCHIVEORDERS_SUCCESS" xml:space="preserve">
+    <value>Тапсырыстар мұрағаттан сәтті қайтарылды</value>
+  </data>
+  <data name="PAYMENT_STATUS_SUCCESS" xml:space="preserve">
+    <value>Төлем статусы бойынша өзгерістер сәтті енгізілді. Тізім біршама уақыттан кейін жаңартылады.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOTIFY_SUCCESS" xml:space="preserve">
+    <value>Сіз {0} клиентті сәтті импорттадыңыз</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_INVALIDTYPE" xml:space="preserve">
+    <value>Сурет  jpg, gif, bmp немесе png форматында болуы керек.</value>
+  </data>
+  <data name="ORDER_UPDATESTATUS_TITLE" xml:space="preserve">
+    <value>Тапсырыс жаңартылды</value>
+  </data>
+  <data name="EDITORDER_TITLE" xml:space="preserve">
+    <value>Тапсырысты түзету</value>
+  </data>
+  <data name="CUSTOMER_SAVESUCCESS_TITLE" xml:space="preserve">
+    <value>Клиенттің профилі сақталды.</value>
+  </data>
+  <data name="CONFIRM_UPDATEPAYMENTSTATUS_BODY" xml:space="preserve">
+    <value>Таңдалған тапсырыстардың статусын өзгерткіңіз келетініне сенімдісіз бе?</value>
+  </data>
+  <data name="CONFIRM_UPDATEPAYMENTSTATUS_TITLE" xml:space="preserve">
+    <value>Төлем статусын өзгерту</value>
+  </data>
+  <data name="PROGRESS_ARCHIVECUSTOMER" xml:space="preserve">
+    <value>Таңдалған клиенттерді архивтеу</value>
+  </data>
+  <data name="PROGRESS_ARCHIVEORDER" xml:space="preserve">
+    <value>Таңдалған тапсырыстарды архивтеу</value>
+  </data>
+  <data name="PROGRESS_UNARCHIVECUSTOMER" xml:space="preserve">
+    <value>Таңдалған клиенттерді архивтен шығару</value>
+  </data>
+  <data name="PROGRESS_UNARCHIVEORDER" xml:space="preserve">
+    <value>Таңдалған тапсырыстарды архивтен шығару</value>
+  </data>
+  <data name="PROGRESS_UPDATEPAYMENTSTATUS" xml:space="preserve">
+    <value>Таңдалған тапсырыстар үшін төлем статусын өзгерту</value>
+  </data>
+  <data name="INVALID_EMAIL" xml:space="preserve">
+    <value>Қате е-mail</value>
+  </data>
+  <data name="CONFIRM_MARKSHIPPED_BODY" xml:space="preserve">
+    <value>Бұл тапсырысты жіберілген/жеткізілген ретінде белгілейтіндігіңізге сенімдісіз бе? &lt;br/&gt;&lt;br/&gt;&lt;small class="muted"&gt;Сіз бұл тапсырысты кез келген уақытта көре аласыз және оған түзету енгізе аласыз.&lt;small/&gt;</value>
+  </data>
+  <data name="CONFIRM_MARKSHIPPED_TITLE" xml:space="preserve">
+    <value>Жіберілген/жеткізілген ретінде белгілеуді растау</value>
+  </data>
+  <data name="MARKSHIPPED_SUCCESS" xml:space="preserve">
+    <value>Тапсырыс сәтті жаңартылды және жеткізу параметрлері орнатылды</value>
+  </data>
+  <data name="NOTIFY_ADDPRODUCT_SUCCESS" xml:space="preserve">
+    <value>Өнім сәтті қосылды</value>
+  </data>
+  <data name="NOTIFY_UPDATEPRODUCT_SUCCESS" xml:space="preserve">
+    <value>Өнім саны сәтті жаңартылды</value>
+  </data>
+  <data name="ORDER_EDIT" xml:space="preserve">
+    <value>Тапсырысты түзету</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADD" xml:space="preserve">
+    <value>Қосу</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGE" xml:space="preserve">
+    <value>Біріктіру</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIP" xml:space="preserve">
+    <value>Өткізіп жіберу</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_FRAGRANCE" xml:space="preserve">
+    <value>Хош иіс</value>
+  </data>
+  <data name="REMOVEWISHLIST_SUCCESS" xml:space="preserve">
+    <value>Өнім Қалаулар парағынан сәтті алынып тасталды</value>
+  </data>
+  <data name="INVALID_DATE" xml:space="preserve">
+    <value>Қате күн</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_ERROR">
+    <value>Сіз email жіберер алдында қатені түзетуіңіз керек</value>
+  </data>
+  <data name="SOCIALNETWORK_FACEBOOK">
+    <value>Facebook-ке қосу үшін басау</value>
+  </data>
+  <data name="SOCIALNETWORK_OTHER">
+    <value>Басқа әлеуметтік желіге қосу үшін басу</value>
+  </data>
+  <data name="SOCIALNETWORK_TWITTER">
+    <value></value>
+  </data>
+  <data name="SOCIALNETWORK_VK">
+    <value>ВКонтакте-ге қосу үшін басу</value>
+  </data>
+  <data name="ORDER_LOADING" xml:space="preserve">
+    <value>Тапсырысты жүктеу</value>
+  </data>
+</root>

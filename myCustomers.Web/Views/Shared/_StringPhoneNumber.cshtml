@@ -1,0 +1,6 @@
+﻿@model String
+@{
+  var settings    = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var phoneRegion = settings.GetValue("Globalization.PhoneRegion");
+}
+<span class="value">@PhoneFormatter.FormatLocal(Model, phoneRegion)</span>

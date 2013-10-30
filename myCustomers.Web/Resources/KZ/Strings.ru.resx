@@ -1,0 +1,2521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDDELIVERYADDRESS_LABEL" xml:space="preserve">
+    <value>Добавить новый адрес…</value>
+  </data>
+  <data name="ADDORDERNOTES_LABEL" xml:space="preserve">
+    <value>добавить личные заметки</value>
+  </data>
+  <data name="ADDPAYMENT_LABEL" xml:space="preserve">
+    <value>Добавить платёж…</value>
+  </data>
+  <data name="ADDRESS_LABEL" xml:space="preserve">
+    <value>Адрес:</value>
+  </data>
+  <data name="BTN_ADDCUSTOMER" xml:space="preserve">
+    <value>Новый Клиент</value>
+  </data>
+  <data name="BTN_ADDORDER" xml:space="preserve">
+    <value>Новый Заказ</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_COMMENTS_LABEL" xml:space="preserve">
+    <value>Комментарии:</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_DELIVERYPREFERENCE_LABEL" xml:space="preserve">
+    <value>Предпочтения доставки</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_FREESAMPLES_LABEL" xml:space="preserve">
+    <value>Пробники:</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_FREESAMPLES_TEXT" xml:space="preserve">
+    <value>Да, я хотела бы получать бесплатные пробники </value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value>Записка к подарку:</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_LABEL" xml:space="preserve">
+    <value>Подарок при покупке:</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_TEXT" xml:space="preserve">
+    <value>Да, я хотела бы получить бесплатный подарок с заказом</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_TITLE" xml:space="preserve">
+    <value>Инструкции:</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_ECARD" xml:space="preserve">
+    <value>Отправить электронную открытку</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_EXPORT" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT_LIST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT_LABELS" xml:space="preserve">
+    <value>Ярлыки</value>
+  </data>
+  <data name="FILTER_ANNIVERSARY_LABEL" xml:space="preserve">
+    <value>Юбилей:</value>
+  </data>
+  <data name="FILTER_BIRTHDAY_LABEL" xml:space="preserve">
+    <value>День рождения:</value>
+  </data>
+  <data name="CUSTOMERLIST_ADVANCEDSEARCH_ANNIVERSARY_LABEL" xml:space="preserve">
+    <value>годовщина:</value>
+  </data>
+  <data name="SEARCH_PLACEHOLDER" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_ADDRESS" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_LASTORDERED" xml:space="preserve">
+    <value>Дата последнего заказа</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_NAMEANDEMAIL" xml:space="preserve">
+    <value>Имя и E-mail</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_PHONE" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="CUSTOMERLIST_HELPMODAL_INFORMATIONALTEXT" xml:space="preserve">
+    <value>Добавить справочную информацию, объясняющую, как работает поиск, на случай, если Консультанту нужна подсказка</value>
+  </data>
+  <data name="CUSTOMERLIST_HELPMODAL_TITLE" xml:space="preserve">
+    <value>Поиск клиента</value>
+  </data>
+  <data name="CUSTOMERLIST_NORESULTS_ALERT" xml:space="preserve">
+    <value>Не найдено ни одного клиента по данному критерию поиска</value>
+  </data>
+  <data name="CUSTOMERLIST_PAGETITLE" xml:space="preserve">
+    <value>Клиенты</value>
+  </data>
+  <data name="CUSTOMERLIST_ROWDETAIL_ADDORDER_LINK" xml:space="preserve">
+    <value>Добавить Заказ</value>
+  </data>
+  <data name="CUSTOMERLIST_ROWDETAIL_ANNIVERSARY" xml:space="preserve">
+    <value>Юбилей:</value>
+  </data>
+  <data name="CUSTOMERLIST_ROWDETAIL_BIRTHDAY" xml:space="preserve">
+    <value>День рождения:</value>
+  </data>
+  <data name="CUSTOMERLIST_SEARCHING" xml:space="preserve">
+    <value>Поиск…</value>
+  </data>
+  <data name="ADDCUSTOMER_EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ADDCUSTOMER_EMAIL_LINK_TITLE" xml:space="preserve">
+    <value>Добавить адрес электронной почты</value>
+  </data>
+  <data name="ADDCUSTOMER_FIRSTNAME" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="ADDCUSTOMER_LASTNAME" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="ADDCUSTOMER_MIDDLENAME" xml:space="preserve">
+    <value>Отчество</value>
+  </data>
+  <data name="ADDCUSTOMER_PHONE" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="ADDCUSTOMER_PHONE_TYPE_LABEL" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO" xml:space="preserve">
+    <value>Фотография</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_LINK_TITLE" xml:space="preserve">
+    <value>Добавить адрес</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_STREET_TITLE" xml:space="preserve">
+    <value>Улица</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_CITY_PLACEHOLDER" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_STATE_PLACEHOLDER" xml:space="preserve">
+    <value>Область</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_ZIP_PLACEHOLDER" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="ADDCUSTOMER_PROFILE_DATE" xml:space="preserve">
+    <value>Дата создания профиля</value>
+  </data>
+  <data name="ADDCUSTOMER_SET_PROFILE_DATE" xml:space="preserve">
+    <value>Задать дату профиля</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_LINKTITLE" xml:space="preserve">
+    <value>добавить фотографию</value>
+  </data>
+  <data name="ADDCUSTOMER_SAVE_BUTTON" xml:space="preserve">
+    <value>Сохранить профиль клиента</value>
+  </data>
+  <data name="DATE_LABEL" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="DELIVERYDATE_MISSING" xml:space="preserve">
+    <value>Не определена</value>
+  </data>
+  <data name="DELIVERYADDRESS_MISSING" xml:space="preserve">
+    <value>Не выбран</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_CUSTOMERWILLPICKUP" xml:space="preserve">
+    <value>Получение</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_DELIVERTOHOMEORWORK" xml:space="preserve">
+    <value>Домашний / рабочий</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_OTHER" xml:space="preserve">
+    <value>другой</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SETUPAPPOINTMENTFORCONSULTATIONANDDELIVERY" xml:space="preserve">
+    <value>Назначить встречу для консультации и доставки</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SHIPTOCUSTOMERADDRESS" xml:space="preserve">
+    <value>Доставить по адресу Клиента</value>
+  </data>
+  <data name="DELIVERY_HEADING" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="EDIT_ONLINEORDER" xml:space="preserve">
+    <value>Редактировать онлайн-заказ</value>
+  </data>
+  <data name="EDIT_SALESTICKET" xml:space="preserve">
+    <value>Редактировать бланк заказа</value>
+  </data>
+  <data name="FORMAT_FULLNAME_SHORT" xml:space="preserve">
+    <value>{0} {2}</value>
+  </data>
+  <data name="FULFILLMENTOPTION_CDS" xml:space="preserve">
+    <value>Служба доставки</value>
+  </data>
+  <data name="FULFILLMENTOPTION_MYINVENTORY" xml:space="preserve">
+    <value>Мой склад</value>
+  </data>
+  <data name="FULFILLMENT_LABEL" xml:space="preserve">
+    <value>Исполнение:</value>
+  </data>
+  <data name="GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value>Записка к подарку:</value>
+  </data>
+  <data name="GIFTORDER_LABEL" xml:space="preserve">
+    <value>Заказ подарка:</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_FACEBOOK" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_IMPORT_FRIENDS" xml:space="preserve">
+    <value>Импорт Друзей</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_OUTLOOK" xml:space="preserve">
+    <value>Outlook (CSV)</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_PAGETITLE" xml:space="preserve">
+    <value>Импорт клиентов</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SELECT_CUSTOMERS_FROM" xml:space="preserve">
+    <value>Откуда Вы бы хотели выбрать клиента?</value>
+  </data>
+  <data name="ISGIFT_FALSE" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="ISGIFT_LABEL" xml:space="preserve">
+    <value>Подарок:</value>
+  </data>
+  <data name="ISGIFT_TRUE" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="MONTHLIST_SELECT" xml:space="preserve">
+    <value>--Выберите--</value>
+  </data>
+  <data name="NAV_CUSTOMERS" xml:space="preserve">
+    <value>Клиенты</value>
+  </data>
+  <data name="NAV_LOGOUT" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="NAV_ORDERS" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="INTOUCH_PROFILE" xml:space="preserve">
+    <value>профиль</value>
+  </data>
+  <data name="NAV_TASKS" xml:space="preserve">
+    <value>Напоминания</value>
+  </data>
+  <data name="NEW_SALESTICKET" xml:space="preserve">
+    <value>Новая заявка</value>
+  </data>
+  <data name="ORDERDATE_LABEL" xml:space="preserve">
+    <value>Дата заказа:</value>
+  </data>
+  <data name="ORDERFOLLOWUP_HEADING" xml:space="preserve">
+    <value>Напоминание о выполнении</value>
+  </data>
+  <data name="ORDERLIST_ADVANCEDSEARCH_DELETED_LABEL" xml:space="preserve">
+    <value>Удаленный</value>
+  </data>
+  <data name="ORDERLIST_ADVANCEDSEARCH_ORDERDATE_LABEL" xml:space="preserve">
+    <value>Дата заказа:</value>
+  </data>
+  <data name="ORDERLIST_ADVANCEDSEARCH_PRODUCT_LABEL" xml:space="preserve">
+    <value>этот товар:</value>
+  </data>
+  <data name="ORDERLIST_ADVANCEDSEARCH_PRODUCT_PLACEHOLDER" xml:space="preserve">
+    <value>Timewise Волшебный набор </value>
+  </data>
+  <data name="ORDERLIST_AMOUNT" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="ORDERLIST_CUSTOMER" xml:space="preserve">
+    <value>Клиент</value>
+  </data>
+  <data name="ORDERLIST_DATE" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="ORDERLIST_NORESULTS" xml:space="preserve">
+    <value>Не найдено ни одного заказа по данному критерию поиска</value>
+  </data>
+  <data name="ORDERLIST_PAYMENT" xml:space="preserve">
+    <value>Оплата</value>
+  </data>
+  <data name="ORDERLIST_SOURCE" xml:space="preserve">
+    <value>Источник</value>
+  </data>
+  <data name="ORDERLIST_STATUS" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="ORDERLIST_TITLE" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="ORDERNOTES_HEADING" xml:space="preserve">
+    <value>Отметить заказ</value>
+  </data>
+  <data name="ORDERNOTES_LABEL" xml:space="preserve">
+    <value>Заметки:</value>
+  </data>
+  <data name="ORDERNUMBER_LABEL" xml:space="preserve">
+    <value>Номер заказа:</value>
+  </data>
+  <data name="ORDERPAYMENTS_LABEL" xml:space="preserve">
+    <value>Платежи:</value>
+  </data>
+  <data name="ORDERPAYMENT_STATUS" xml:space="preserve">
+    <value>Статус:</value>
+  </data>
+  <data name="FILTER_ORDERTYPE_LABEL" xml:space="preserve">
+    <value>Источник заказа:</value>
+  </data>
+  <data name="ORDERSOURCE_ONLINE" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="ORDERSOURCE_SALESTICKET" xml:space="preserve">
+    <value>Заявка</value>
+  </data>
+  <data name="FILTER_ORDERSTATUS_LABEL" xml:space="preserve">
+    <value>Статус Заказа:</value>
+  </data>
+  <data name="ORDERSTATUS_SUBMITTED" xml:space="preserve">
+    <value>Новый</value>
+  </data>
+  <data name="ORDERSTATUS_UNDERREVIEW" xml:space="preserve">
+    <value>Ожидание</value>
+  </data>
+  <data name="ORDERSTATUS_PROCESSED" xml:space="preserve">
+    <value>Обработанные</value>
+  </data>
+  <data name="ORDERSTATUS_SHIPPEDDELIVERED" xml:space="preserve">
+    <value>Доставлен</value>
+  </data>
+  <data name="ORDER_NOPRODUCTS" xml:space="preserve">
+    <value>В данном заказе отсутствует продукция</value>
+  </data>
+  <data name="PAGER_NEXT" xml:space="preserve">
+    <value>Cледующая</value>
+  </data>
+  <data name="PAGER_PAGESIZE_LABEL" xml:space="preserve">
+    <value>Количество строк на листе:</value>
+  </data>
+  <data name="PAGER_PREVIOUS" xml:space="preserve">
+    <value>Предыдущая</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_COMPLETED" xml:space="preserve">
+    <value>Полностью оплаченный</value>
+  </data>
+  <data name="FILTER_ORDERPAYMENTSTATUS_LABEL" xml:space="preserve">
+    <value>Статус оплаты:</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_PARTIAL" xml:space="preserve">
+    <value>Частично оплаченный</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_NA" xml:space="preserve">
+    <value>Неоплаченный</value>
+  </data>
+  <data name="PAYMENTS_LABEL" xml:space="preserve">
+    <value>Платежи:</value>
+  </data>
+  <data name="PAYMENTTYPE_CASH" xml:space="preserve">
+    <value>Наличные</value>
+  </data>
+  <data name="PAYMENTTYPE_CHECK" xml:space="preserve">
+    <value>Чек</value>
+  </data>
+  <data name="PAYMENTTYPE_CREDITCARD" xml:space="preserve">
+    <value>Кредитная карточка</value>
+  </data>
+  <data name="PAYMENT_HEADING" xml:space="preserve">
+    <value>Оплата</value>
+  </data>
+  <data name="PHONETYPE_HOME" xml:space="preserve">
+    <value>Домашний</value>
+  </data>
+  <data name="PHONETYPE_MOBILE" xml:space="preserve">
+    <value>Мобильный</value>
+  </data>
+  <data name="PHONETYPE_OTHER" xml:space="preserve">
+    <value>Другой</value>
+  </data>
+  <data name="PHONETYPE_WORK" xml:space="preserve">
+    <value>Рабочий</value>
+  </data>
+  <data name="PRIMARY_BADGE" xml:space="preserve">
+    <value>Основной</value>
+  </data>
+  <data name="PRODUCTLIST_FOOTER_TOTAL" xml:space="preserve">
+    <value>Сумма в розничных ценах:</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_NAME" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_PARTNUMBER" xml:space="preserve">
+    <value>Код продукции</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_QUANTITY" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_REORDERREMINDER" xml:space="preserve">
+    <value>Упорядочить напоминания</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_RETAILTOTAL" xml:space="preserve">
+    <value>Итого в розничных ценах</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Рекомендованная розничная цена</value>
+  </data>
+  <data name="PRODUCTS_HEADING" xml:space="preserve">
+    <value>Продукция</value>
+  </data>
+  <data name="SELECT_NONE" xml:space="preserve">
+    <value>--Выберите--</value>
+  </data>
+  <data name="REMINDERLIST_TITLE" xml:space="preserve">
+    <value>Напоминания</value>
+  </data>
+  <data name="REMINDERLIST_PAGETITLE" xml:space="preserve">
+    <value>Напоминания</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ALL" xml:space="preserve">
+    <value>--Все категории--</value>
+  </data>
+  <data name="REMINDERLIST_FILTERTITLE" xml:space="preserve">
+    <value>Просмотреть приближающиеся напоминания</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_TITLE" xml:space="preserve">
+    <value>Название:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_DESCRIPTION" xml:space="preserve">
+    <value>Описание:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_DUEON" xml:space="preserve">
+    <value>Заканчивается</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_FORCUSTOMER" xml:space="preserve">
+    <value>Для клиента:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_SAVE" xml:space="preserve">
+    <value>Сохранить напоминание</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_CLICK" xml:space="preserve">
+    <value>Нажмите</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HERE" xml:space="preserve">
+    <value>здесь</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_VIEWALL" xml:space="preserve">
+    <value>чтобы просмотреть все просроченные напоминания</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HIDEALL" xml:space="preserve">
+    <value>чтобы скрыть все просроченные напоминания</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_SELECTALL" xml:space="preserve">
+    <value>Пометить все пропущенные напоминания как выполненные</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HIDE" xml:space="preserve">
+    <value>Скрыть просроченные напоминания</value>
+  </data>
+  <data name="REMINDERLIST_VIEWMORE" xml:space="preserve">
+    <value>смотреть еще ...</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_TITLE" xml:space="preserve">
+    <value>Название:</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_DESCRIPTION" xml:space="preserve">
+    <value>Описание:</value>
+  </data>
+  <data name="REMINDERLIST_WITHOUTDUEDATE" xml:space="preserve">
+    <value>Напоминания без даты</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_DUEON" xml:space="preserve">
+    <value>Заканчивается</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_SAVE" xml:space="preserve">
+    <value>Сохранить изменения</value>
+  </data>
+  <data name="REMINDERLIST_UPDATESUCCESS" xml:space="preserve">
+    <value>Напоминание обновлено!</value>
+  </data>
+  <data name="REMINDERLIST_ADDSUCCESS" xml:space="preserve">
+    <value>Напоминание добавлено!</value>
+  </data>
+  <data name="REMINDERLIST_ACTION_TITLEISREQUIRED" xml:space="preserve">
+    <value>Название является обязательным полем</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER" xml:space="preserve">
+    <value>Новое Напоминание</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_PREFERRED_LANGUAGE" xml:space="preserve">
+    <value>Добавить предпочитаемый язык</value>
+  </data>
+  <data name="ADDCUSTOMER_LANGUAGE" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="ADDCUSTOMER_SELECT_LANGUAGE" xml:space="preserve">
+    <value>Выберите язык</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_UPLOADFILE" xml:space="preserve">
+    <value>ИМПОРТ КЛИЕНТОВ</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDOTHERDATES" xml:space="preserve">
+    <value>Добавить другие даты или события</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_ANNIVERSARY" xml:space="preserve">
+    <value>Дата свадьбы</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_ANOTHER_SOTIALNET" xml:space="preserve">
+    <value>Добавить ещё</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_BIRTHDAY" xml:space="preserve">
+    <value>Добавить день рождения клиента</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_NOTE" xml:space="preserve">
+    <value>Добавить заметку о клиенте</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_OCCUPATION" xml:space="preserve">
+    <value>Добавить род занятия или должность</value>
+  </data>
+  <data name="ADDCUSTOMER_NOTE" xml:space="preserve">
+    <value>Заметка и комментарий</value>
+  </data>
+  <data name="ADDCUSTOMER_OCCUPATION" xml:space="preserve">
+    <value>Род занятий или наименование</value>
+  </data>
+  <data name="ADDCUSTOMER_OCCUPATION_DESCRIPTION" xml:space="preserve">
+    <value>Описание наименования</value>
+  </data>
+  <data name="ADDCUSTOMER_IMPORTANTDATES" xml:space="preserve">
+    <value>Важные даты</value>
+  </data>
+  <data name="ADDCUSTOMER_SHOWMORE" xml:space="preserve">
+    <value>Показать остальные поля (Вы можете заполнить их позже)</value>
+  </data>
+  <data name="ADDCUSTOMER_SOTIALNET" xml:space="preserve">
+    <value>Социальные сети</value>
+  </data>
+  <data name="PAYMENTTYPE_PERSONALCHECK" xml:space="preserve">
+    <value>Именной чек</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_INTERESTS" xml:space="preserve">
+    <value>Добавить интересы клиента</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_SHOPPREF" xml:space="preserve">
+    <value>Предпочтительный способ покупки</value>
+  </data>
+  <data name="ADDCUSTOMER_GENDER" xml:space="preserve">
+    <value>Пол</value>
+  </data>
+  <data name="ADDCUSTOMER_GENDER_FEMALE" xml:space="preserve">
+    <value>Женщина</value>
+  </data>
+  <data name="ADDCUSTOMER_GENDER_MALE" xml:space="preserve">
+    <value>Мужчина</value>
+  </data>
+  <data name="ADDCUSTOMER_INTERESTS" xml:space="preserve">
+    <value>Также меня интересуют</value>
+  </data>
+  <data name="ADDCUSTOMER_SELECT_GENDER" xml:space="preserve">
+    <value>Выберите пол клиента</value>
+  </data>
+  <data name="ADDCUSTOMER_SHOPPREF" xml:space="preserve">
+    <value>Предпочтительный способ покупки</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_CONTACTBY" xml:space="preserve">
+    <value>Добавить способ связи</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_CONTACTFRIQUENCY" xml:space="preserve">
+    <value>Как часто связываться с клиентом</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_CONTACTTIME" xml:space="preserve">
+    <value>Добавить предпочтительное время для связи</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_PLACEOFWORK" xml:space="preserve">
+    <value>Добавить место работы</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_REFERREDBY" xml:space="preserve">
+    <value>Обращение к клиенту</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_SPOUSE" xml:space="preserve">
+    <value>Данные супруга</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_SUBSCRIPTION" xml:space="preserve">
+    <value>Добавить подписку на рассылку</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTBY" xml:space="preserve">
+    <value>Связаться по</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTFRIQUENCY" xml:space="preserve">
+    <value>Частота </value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTTIME" xml:space="preserve">
+    <value>Предпочтительное время связи</value>
+  </data>
+  <data name="ADDCUSTOMER_PLACEOFWORK" xml:space="preserve">
+    <value>Место работы</value>
+  </data>
+  <data name="ADDCUSTOMER_PLACEOFWORK_PLACEHOLDER" xml:space="preserve">
+    <value>Местонахождение коммерческого предприятия</value>
+  </data>
+  <data name="ADDCUSTOMER_REFERREDBY" xml:space="preserve">
+    <value>Кто рекомендовал</value>
+  </data>
+  <data name="ADDCUSTOMER_REFERREDBY_NAME" xml:space="preserve">
+    <value>Имя хозяйки класса или подруги</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE" xml:space="preserve">
+    <value>Супруг</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_NAME" xml:space="preserve">
+    <value>имя</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_PHONENUMBER" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION" xml:space="preserve">
+    <value>Подписки</value>
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION_BEAUTY" xml:space="preserve">
+    <value>Новости из мира красоты</value>
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION_ECARD" xml:space="preserve">
+    <value>Электронные открытки и письма</value>
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION_PRODREORDER" xml:space="preserve">
+    <value>Напоминание о повторном заказе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGETITLE" xml:space="preserve">
+    <value>Подробная информация о клиенте</value>
+  </data>
+  <data name="IMPORTLIST_PAGETITLE" xml:space="preserve">
+    <value>Список Импорта</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDANOTEABOUT" xml:space="preserve">
+    <value>Добавить заметку о</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDTHISNOTE" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_CLICKTOEDIT" xml:space="preserve">
+    <value>редактировать</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_DELETE" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_DELETENOTE" xml:space="preserve">
+    <value>удалить заметку</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_EDITNOTE" xml:space="preserve">
+    <value>редактировать заметку</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_SAVE" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="CUSTOMERDETAIL_RETURN" xml:space="preserve">
+    <value>назад</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_ACTIVITYSUMMARY" xml:space="preserve">
+    <value>Итоги деятельности</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFORMATION" xml:space="preserve">
+    <value>Информация о клиенте</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_NOTES" xml:space="preserve">
+    <value>Заметки</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_ORDERS" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED" xml:space="preserve">
+    <value>Заказанные ранее</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRODUCTS" xml:space="preserve">
+    <value>Продукция</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDED" xml:space="preserve">
+    <value>Рекомендуемые</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST" xml:space="preserve">
+    <value>Лист желаний</value>
+  </data>
+  <data name="EXPORTLIST_DOCUMENTTITLE" xml:space="preserve">
+    <value>Клиенты</value>
+  </data>
+  <data name="EXPORTLIST_DOWNLOADFILENAME" xml:space="preserve">
+    <value>Экспорт лист</value>
+  </data>
+  <data name="EXPORTLIST_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Страница &amp;Р (&amp;N)</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAILSUBJECT" xml:space="preserve">
+    <value>Подтверждение заказа</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTDELIVERYSTATEMENT" xml:space="preserve">
+    <value>Пожалуйста, свяжитесь со мной, чтобы организовать удобное время доставки.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTPAYMENTSTATEMENT" xml:space="preserve">
+    <value>Пожалуйста, свяжитесь со мной. Мне нужна ваша помощь для дальнейшей обработки Вашего платежа.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTPROCESSINGSTATEMENT" xml:space="preserve">
+    <value>Пожалуйста, свяжитесь со мной. Мне нужна ваша помощь для дальнейшей обработки заказа.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEASDESIREDSTATEMENT" xml:space="preserve">
+    <value>Я высоко ценю ваш бизнес и уважаю ваше время и ваши предпочтения в покупках. Если вы когда-нибудь пожелаете индивидуальное обслуживание, в том числе советы по уходу за кожей и красоте, пожалуйста свяжитесь со мной.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERISGIFTSTATEMENT" xml:space="preserve">
+    <value>Это заказ, который создан в качестве подарка для другого человека? Если это так, нажмите на кнопку ниже, чтобы отправить персональное сообщение о подарке сейчас, чтобы уведомить получателя уже сейчас.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERPROCESSEDSTATEMENT" xml:space="preserve">
+    <value>Ваш заказ будет обработан.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERSHIPPEDSTATEMENT" xml:space="preserve">
+    <value>Ваш заказ был отправлен.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERTOTAL_STATEMENTFORMAT" xml:space="preserve">
+    <value>Общая сумма вашего заказа {1} {0}.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_PROPOSEDDELIVERYSCHEDULESTATEMENTFORMAT" xml:space="preserve">
+    <value>Я доступна с {0} до {1}, чтобы доставить Ваш заказ. Это удобное для вас время?</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ADDRESSOFSELLER" xml:space="preserve">
+    <value>Адрес Продавца</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ADJUSTMENTSLABEL" xml:space="preserve">
+    <value>Изменения:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_AMOUNTHEADER" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_BUYERSSIGNATURELABEL" xml:space="preserve">
+    <value>Дата подписания соглашения с покупателем</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_CANCELTRANSACTIONTEXT" xml:space="preserve">
+    <value>ЭТИМ Я ОТМЕНЯЮ ДАННУЮ ТРАНЗАКЦИЮ</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_DATEHEADER" xml:space="preserve">
+    <value>Дата:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_DATELABEL" xml:space="preserve">
+    <value>(Дата)</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ESTIMATEDVALUELABEL" xml:space="preserve">
+    <value>Рекомендуемая розничная стоимость:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NAMEOFSELLERLABEL" xml:space="preserve">
+    <value>Имя Продавца</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NOTICEOFCANCELLATIONTEXT" xml:space="preserve">
+    <value>Уведомление об отмене (введите дату платежа)</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ORDERNUMBERLABEL" xml:space="preserve">
+    <value>Заказ #:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH1" xml:space="preserve">
+    <value>Мы предоставляем 100 процентную гарантию качества нашей продукции. Потребители, которые пользуются продукцией  Mary Kay ® являются одними из самых лояльных в мире, поскольку продукция Mary Kay ® безопасна, эффективна и дает желаемый результат. За продукцией, которую реализуют Независимые Консультанты по красоте стоит ТОО «Мэри Кэй (Казахстан)». Если по какой-либо причине вы не совсем удовлетворены какой-либо продукцией Mary Kay ®, она может быть бесплатно заменена на такую же или другую или ее полная стоимость будет возвращена после возврата продукции вашему Независимому Консультанту по красоте.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH3" xml:space="preserve">
+    <value>Для получения информации по вопросам обмена или возврата продукции вы можете обратиться в справочную службу для клиентов, позвонив по номеру 8-800-080-52-55.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH5" xml:space="preserve">
+    <value>Если Вы расторгаете договор, любые платежи (денежные или в натуральной форме), сделанные в рамках соглашения, и любые документы, подписанные вами, будут возвращены в течение 10 РАБОЧИХ ДНЕЙ после получения продавцом уведомления о расторжении, и любой залог, обеспечивающий эту транзакцию, будет отменён </value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH6" xml:space="preserve">
+    <value>Если Вы расторгаете договор, Вы должны предоставить продавцу доступ ко всем товарам, доставленным Вам в рамках этого договора, у себя дома, в таком же состоянии, в каком Вы их получили, или Вы можете самостоятельно вернуть товары продавцу согласно его инструкциям, за его счёт</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH8" xml:space="preserve">
+    <value>Для отмены этого заказа, отправьте подписанную (с указанием даты) копию уведомления об отмене или любое другое письменное уведомление, или телеграмму на имя и юридический адрес продавца НЕ ПОЗДНЕЕ ТРЕТЬЕГО РАБОЧЕГО ДНЯ С ДАТЫ ЗАКАЗА, УКАЗАННОЙ НИЖЕ</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRICEDISCLAIMER" xml:space="preserve">
+    <value>* Рекомендуемые розничные цены</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRICEHEADER" xml:space="preserve">
+    <value>Цена*</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRODUCTNAMEHEADER" xml:space="preserve">
+    <value>Название продукции</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_QTYHEADER" xml:space="preserve">
+    <value>Кол-во.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SALESTAXLABEL" xml:space="preserve">
+    <value>НДС:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SATISFACTIONGUARANTEEHEADER" xml:space="preserve">
+    <value>Гарантия качества Mary Kay®</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SOLDBYLABEL" xml:space="preserve">
+    <value>Кем продано</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SOLDTOLABEL" xml:space="preserve">
+    <value>Кому продано</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_TOTALLABEL" xml:space="preserve">
+    <value>Итого:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_TRADEMARKTEXT" xml:space="preserve">
+    <value>© 2002, 2004, 2005 Mary Kay Inc.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_WORKSHEETHEADER_CONFIRMATIONNUMBER_FORMAT" xml:space="preserve">
+    <value>Заказ #:</value>
+  </data>
+  <data name="PRINTLIST_DOCUMENTTITLE" xml:space="preserve">
+    <value>Клиенты</value>
+  </data>
+  <data name="PRINTLIST_DOWNLOADFILENAME" xml:space="preserve">
+    <value>Экспорт лист</value>
+  </data>
+  <data name="PRINTLIST_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Страница &amp;P (&amp;N)</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDORDER" xml:space="preserve">
+    <value>Добавить Заказ</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDRESSES" xml:space="preserve">
+    <value>Адреса:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDRESSES_PRIMARY" xml:space="preserve">
+    <value>Первый</value>
+  </data>
+  <data name="CUSTOMERDETAIL_CONTACTINFO" xml:space="preserve">
+    <value>Контактная информация</value>
+  </data>
+  <data name="CUSTOMERDETAIL_CUSTOMERSINCE" xml:space="preserve">
+    <value>Дата профиля клиента:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_DELETECUSTOMER" xml:space="preserve">
+    <value>Удалить клиента</value>
+  </data>
+  <data name="CUSTOMERDETAIL_EDITCUSTOMER" xml:space="preserve">
+    <value>Редактировать профиль клиента</value>
+  </data>
+  <data name="CUSTOMERDETAIL_EMAIL" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_HIDECUSTOMERSUBSCRIPTIONS" xml:space="preserve">
+    <value>Скрыть подписки</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NEWVIRTUALMAKEOVER" xml:space="preserve">
+    <value>Новый Виртуальный Макияж:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ORDERSUNAVAILABLEFORDELETEDCUSTOMERS" xml:space="preserve">
+    <value>Заказы не доступны для удаленных клиентов</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_OF" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_ORDERSPAGETEXT" xml:space="preserve">
+    <value>Заказы - страница</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PHONE" xml:space="preserve">
+    <value>Телефон:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REFERREDBY" xml:space="preserve">
+    <value>Приглашена</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_NOPREVIOUSLYORDEREDPRODUCTS" xml:space="preserve">
+    <value>Клиент не размещал заказы ранее</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS" xml:space="preserve">
+    <value>Ранее заказанная продукция</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value>Просмотреть информацию о продукте</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_NAME" xml:space="preserve">
+    <value>имя</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_ORDERDATE" xml:space="preserve">
+    <value>Дата заказа:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_PARTNUMBER" xml:space="preserve">
+    <value>Код продукции</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Рекомендуемая цена</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_AMOUNT" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_CLICKTOVIEWORDERDETAILS" xml:space="preserve">
+    <value>Просмотреть детали заказа</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_CONFIRMATIONNUMBER" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_DATE" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_DETAILS" xml:space="preserve">
+    <value>Детали</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_NOORDERS" xml:space="preserve">
+    <value>У клиента отсутствуют заказы</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_PAYMENT" xml:space="preserve">
+    <value>Оплата</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_STATUS" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS" xml:space="preserve">
+    <value>Рекомендованная продукция</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value>Просмотреть информацию о продукте</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_NAME" xml:space="preserve">
+    <value>имя</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_NOPRODUCTS" xml:space="preserve">
+    <value>Не найдено рекомендаций</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_PARTNUMBER" xml:space="preserve">
+    <value>Код продукции</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Рекомендуемая цена</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value>Просмотреть информацию о продукте</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_NAME" xml:space="preserve">
+    <value>имя</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_NOPRODUCTS" xml:space="preserve">
+    <value>У этого клиента нет сохранённого листа желаний. Пожалуйста, нажмите "Добавить в лист желаний" за неё, или она может создать его самостоятельно на Вашей персональной странице</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_PARTNUMBER" xml:space="preserve">
+    <value>Код продукции</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_PRODUCTS" xml:space="preserve">
+    <value>Продукция из листа желаний</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Рекомендуемая цена</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_WISHLIST" xml:space="preserve">
+    <value>Лист желаний</value>
+  </data>
+  <data name="CUSTOMERDETAIL_UNDELETECUSTOMER" xml:space="preserve">
+    <value>Восстановить клиента</value>
+  </data>
+  <data name="CUSTOMERDETAIL_VIEWCUSTOMERSUBSCRIPTIONS" xml:space="preserve">
+    <value>Посмотреть подписки клиента</value>
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDIN" xml:space="preserve">
+    <value>Выбрано</value>
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDOUTBYCONSULTANT" xml:space="preserve">
+    <value>Отказ</value>
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDOUTBYCUSTOMER" xml:space="preserve">
+    <value>Отказ</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_BEAUTENEWS" xml:space="preserve">
+    <value>Новости из мира красоты</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_MKECARDS" xml:space="preserve">
+    <value>Электронные открытки</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_PRODUCTREORDERREMINDER" xml:space="preserve">
+    <value>Напоминание о повторном заказе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_BESTDAYSTOREACHME" xml:space="preserve">
+    <value>Удобный день, чтобы связаться со мной:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_BESTTIMETOREACHME" xml:space="preserve">
+    <value>Удобное время, чтобы связаться со мной:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTPERSONALINFO" xml:space="preserve">
+    <value>Контакт / Персональная информация</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_IDLIKETOLEARNMOREABOUT" xml:space="preserve">
+    <value> Хотелось бы узнать больше о:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_ILIKETOSHOP" xml:space="preserve">
+    <value>Я предпочитаю покупать:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_IPREFERTOHEARFROMMYCONSULTANT" xml:space="preserve">
+    <value>От моего Консультанта по красоте  хотелось бы услышать:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYEMPLOYERIS" xml:space="preserve">
+    <value>Место работы:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYGENDERIS" xml:space="preserve">
+    <value>Мой пол:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYOCCUPATIONIS" xml:space="preserve">
+    <value>Мой род занятия:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYSPOUSESPECIALSOMEONEIS" xml:space="preserve">
+    <value>Мой супруг/близкий человек:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PREFERREDLANGUAGE" xml:space="preserve">
+    <value>Мой предпочтительный язык общения:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PREFERREDMETHODSOFCONTACT" xml:space="preserve">
+    <value>Мой предпочтительный способ связи:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SOCIAL" xml:space="preserve">
+    <value>Социальный</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASIONS" xml:space="preserve">
+    <value>Приближающиеся события:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_YOUMAYCONTAACTSPOUSESPECIALSOMEONEHIMHER" xml:space="preserve">
+    <value>Вы можете спросить у этого человека об идее для подарка </value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_YOUMAYCONTACTSPOUSESPECIALSOMEONE" xml:space="preserve">
+    <value>Вы можете спросить у моего супруга/близкого человека об идее для подарка </value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_FRIDAY" xml:space="preserve">
+    <value>Пятница</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_MONDAY" xml:space="preserve">
+    <value>Понедельник</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_SATURDAY" xml:space="preserve">
+    <value>Суббота</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_SUNDAY" xml:space="preserve">
+    <value>Воскресенье</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_THURSDAY" xml:space="preserve">
+    <value>Четверг</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_TUESDAY" xml:space="preserve">
+    <value>Вторник</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_WEDNESDAY" xml:space="preserve">
+    <value>Среда</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_EVERYTHREEMONTHS" xml:space="preserve">
+    <value>Каждые три месяца</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_EVERYTWOMONTHS" xml:space="preserve">
+    <value>Каждые два месяца</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_MONTHLY" xml:space="preserve">
+    <value>Ежемесячно</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_ONLYWHENIAMREADY" xml:space="preserve">
+    <value>Только когда я готова</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_WHENNEWPRODUCTSAREAVAILABLE" xml:space="preserve">
+    <value>Когда новая продукция будет доступна</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_PHONE" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_SOCIAL" xml:space="preserve">
+    <value>Социальные медиа</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_STANDARDPOST" xml:space="preserve">
+    <value>Письмо</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTTIME_AM" xml:space="preserve">
+    <value>До обеда</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTTIME_PM" xml:space="preserve">
+    <value>После обеда</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_GENDER_FEMALE" xml:space="preserve">
+    <value>Женщина</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_GENDER_MALE" xml:space="preserve">
+    <value>Мужчина</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_BOOKMARK" xml:space="preserve">
+    <value>Закладка</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_FACEBOOK" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_GOOGLE" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_LINKEDIN" xml:space="preserve">
+    <value>Linked in</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_OTHER" xml:space="preserve">
+    <value>другой</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_PINTEREST" xml:space="preserve">
+    <value>Pinterest</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_PROFILEIMAGE" xml:space="preserve">
+    <value>Изображение профиля </value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_TWITTER" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_VK" xml:space="preserve">
+    <value>Вконтакте</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_YOUTUBE" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_INPERSON" xml:space="preserve">
+    <value>Персонально</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_ONLINE" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_PARTY" xml:space="preserve">
+    <value>На классе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_PHONE" xml:space="preserve">
+    <value>По телефону</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_ANNIVERSARY" xml:space="preserve">
+    <value>юбилей</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_BIRTHDAY" xml:space="preserve">
+    <value>день рождения</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_GRADUATION" xml:space="preserve">
+    <value>Окончание учебы</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_NEWBABY" xml:space="preserve">
+    <value>Рождение ребенка</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_NEWJOB" xml:space="preserve">
+    <value>Новая работа</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_OTHER" xml:space="preserve">
+    <value>другой</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_VACATION" xml:space="preserve">
+    <value>отпуск</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_WEDDING" xml:space="preserve">
+    <value>свадьба</value>
+  </data>
+  <data name="DASHBOARD_CUSTOMERS" xml:space="preserve">
+    <value>Клиенты</value>
+  </data>
+  <data name="DASHBOARD_CUSTOMERSTEXT" xml:space="preserve">
+    <value>Просматривайте список своих клиентов и добавляйте или редактируйте информацию в профиле ваших клиентов, включая номера телефонов, адреса электронной почты, предпочтения и многое другое</value>
+  </data>
+  <data name="DASHBOARD_MANAGECUSTOMERS" xml:space="preserve">
+    <value>Управление списком клиентов  </value>
+  </data>
+  <data name="DASHBOARD_MANAGEORDERS" xml:space="preserve">
+    <value>Управление заказами</value>
+  </data>
+  <data name="DASHBOARD_MANAGEREMINDERS" xml:space="preserve">
+    <value>Управление напоминаниями</value>
+  </data>
+  <data name="DASHBOARD_ORDERS" xml:space="preserve">
+    <value>Заказы</value>
+  </data>
+  <data name="DASHBOARD_ORDERSTEXT" xml:space="preserve">
+    <value>Управляйте своими заявками и заказами, полученными через Персональный сайт /приложение MyMK</value>
+  </data>
+  <data name="DASHBOARD_PAGETITLE" xml:space="preserve">
+    <value>Панель приборов</value>
+  </data>
+  <data name="DASHBOARD_REMINDERS" xml:space="preserve">
+    <value>Напоминания</value>
+  </data>
+  <data name="DASHBOARD_REMINDERSTEXT" xml:space="preserve">
+    <value>Напоминания помогут вам всегда быть на вершине успеха в бизнесе! Больше того, мы можем автоматически создавать некоторые напоминания для Вас.</value>
+  </data>
+  <data name="DASHBOARD_TITLE" xml:space="preserve">
+    <value>Мои Клиенты</value>
+  </data>
+  <data name="DASHBOARD_WELCOME" xml:space="preserve">
+    <value>Добро пожаловать
+в приложение
+«Мои клиенты»!
+</value>
+  </data>
+  <data name="DASHBOARD_WELCOMETEXT" xml:space="preserve">
+    <value>Здесь вы можете управлять информацией о своих клиентах и их заказах </value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PERSONALPROFILE" xml:space="preserve">
+    <value>Персональный профиль</value>
+  </data>
+  <data name="ADDCHECKPAYMENT_LABEL" xml:space="preserve">
+    <value>добавить платёж чеком</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ANNIVERSARY" xml:space="preserve">
+    <value>Празднование годовщины</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_BIRTHDAY" xml:space="preserve">
+    <value>Празднование дня рождения</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_HOST" xml:space="preserve">
+    <value>Запрос на участие в классе</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_MYREMINDERS" xml:space="preserve">
+    <value>Персональные напоминания</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ORDERDELIVERY" xml:space="preserve">
+    <value>Напоминание о доставке заказа</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ORDERFOLLOWUP" xml:space="preserve">
+    <value>Напоминание по выполнению заказа</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_SAMPLEDELIVERY" xml:space="preserve">
+    <value>Доставка пробников</value>
+  </data>
+  <data name="CUSTOMER_ADDRESSHEADER" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="CUSTOMER_BIRTHDAYHEADER" xml:space="preserve">
+    <value>День Рождения</value>
+  </data>
+  <data name="CUSTOMER_BIRTHMONTHHEADER" xml:space="preserve">
+    <value>Месяц рождения</value>
+  </data>
+  <data name="CUSTOMER_CELLPHONEHEADER" xml:space="preserve">
+    <value>Сотовый номер</value>
+  </data>
+  <data name="CUSTOMER_CITYHEADER" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="CUSTOMER_EMAILHEADER" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="CUSTOMER_FIRSTNAMEHEADER" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="CUSTOMER_HOMEPHONEHEADER" xml:space="preserve">
+    <value>Домашний телефон</value>
+  </data>
+  <data name="CUSTOMER_LASTNAMEHEADER" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="CUSTOMER_NAMEHEADER" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="CUSTOMER_PHONENUMBERHEADER" xml:space="preserve">
+    <value>Номера телефонов</value>
+  </data>
+  <data name="CUSTOMER_STATEHEADER" xml:space="preserve">
+    <value>Область</value>
+  </data>
+  <data name="CUSTOMER_STREETADDRESSHEADER" xml:space="preserve">
+    <value>Улица</value>
+  </data>
+  <data name="CUSTOMER_SUITEHEADER" xml:space="preserve">
+    <value>Номер квартиры/офиса/комнаты</value>
+  </data>
+  <data name="CUSTOMER_WORKPHONEHEADER" xml:space="preserve">
+    <value>Рабочий телефон</value>
+  </data>
+  <data name="CUSTOMER_ZIPCODEHEADER" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_PROFILE_QUESTIONS" xml:space="preserve">
+    <value>Заполнить опросник профиля</value>
+  </data>
+  <data name="ADDCUSTOMER_PROFILE_QUESTIONS" xml:space="preserve">
+    <value>Анкета клиента:</value>
+  </data>
+  <data name="REMINDERLIST_END_GUEST" xml:space="preserve">
+    <value>и её гость</value>
+  </data>
+  <data name="REMINDERLIST_PREFIX_FOR" xml:space="preserve">
+    <value>для</value>
+  </data>
+  <data name="REMINDERLIST_PREFIX_FROM" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="REMINDERLIST_PREFIX_WITH" xml:space="preserve">
+    <value>с</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_ANNIVERSARY" xml:space="preserve">
+    <value>Празднование годовщины</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_BIRTHDAY" xml:space="preserve">
+    <value>Празднование дня рождения</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_DELIVERYREMINDER" xml:space="preserve">
+    <value>Напоминание о доставке заказа</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_FOLLOWUP" xml:space="preserve">
+    <value>Выполнить</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_HOST" xml:space="preserve">
+    <value>Запрос на участие в классе по красоте</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_NEWWEBSITEREGISTRATION" xml:space="preserve">
+    <value>Новая регистрация на сайте</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_UPDATEWEBSITEREGISTRATION" xml:space="preserve">
+    <value>Обновить регистрацию на сайте</value>
+  </data>
+  <data name="REMINDERLIST_URLTEXT_ORDER" xml:space="preserve">
+    <value>Заказ</value>
+  </data>
+  <data name="REMINDERLIST_URLTEXT_PRODUCTSAMPLE" xml:space="preserve">
+    <value>Пробник продукции</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOCUSTOMERINFO_LABEL" xml:space="preserve">
+    <value>Дополнительная информация отсутствует</value>
+  </data>
+  <data name="ORDERLIST_DELETE_BUTTON" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_TYPEAHEAD" xml:space="preserve">
+    <value>Введите для выбора клиента</value>
+  </data>
+  <data name="ADDCUSTOMER_ANNIVERSARY" xml:space="preserve">
+    <value>юбилей</value>
+  </data>
+  <data name="ADDCUSTOMER_BIRTHDAY" xml:space="preserve">
+    <value>день рождения</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER_DESCRIPTION" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="REMINDERLIST_REMINDERS_NOTFOUND" xml:space="preserve">
+    <value>Напоминаний нет</value>
+  </data>
+  <data name="REMINDERLIST_WITHOUTDUEDATE_NOTFOUND" xml:space="preserve">
+    <value>Нет напоминаний без даты выполнения</value>
+  </data>
+  <data name="VIEW_PROFILE_IMAGES" xml:space="preserve">
+    <value>Посмотреть фотографию профиля</value>
+  </data>
+  <data name="ADDCUSTOMER_CREATE_BUTTON" xml:space="preserve">
+    <value>Сохранить профиль клиента</value>
+  </data>
+  <data name="HEADER_HELP" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="HEADER_SEARCH_INTOUCH" xml:space="preserve">
+    <value>Поиск InTouch</value>
+  </data>
+  <data name="HEADER_SEARCH_PRODUCT_CENTRAL" xml:space="preserve">
+    <value>Поиск Центрального продукта</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_NOTFOUND" xml:space="preserve">
+    <value>У вас нет просроченных напоминаний</value>
+  </data>
+  <data name="HEADER_SHOPPING_BAG" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="HEADER_WELCOME" xml:space="preserve">
+    <value>Добро пожаловать!</value>
+  </data>
+  <data name="ADDCASHPAYMENT_LABEL" xml:space="preserve">
+    <value>добавить платёж наличными </value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDREMINDER" xml:space="preserve">
+    <value>Добавить Напоминание</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS" xml:space="preserve">
+    <value>Напоминания</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_ADDTASK" xml:space="preserve">
+    <value>Добавить Напоминание</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_DESCRIPTION" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_DUEON" xml:space="preserve">
+    <value>Заканчивается</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_MORE" xml:space="preserve">
+    <value>ещё…</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_TITLE" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="INTOUCH_CONTACT" xml:space="preserve">
+    <value>Связаться с нами</value>
+  </data>
+  <data name="INTOUCH_FAQ" xml:space="preserve">
+    <value>Часто задаваемые вопросы</value>
+  </data>
+  <data name="INTOUCH_HELP" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="INTOUCH_SHOPPINGBAG" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="INTOUCH_SITEMAP" xml:space="preserve">
+    <value>Карта сайта</value>
+  </data>
+  <data name="INTOUCH_TERMS" xml:space="preserve">
+    <value>Условия </value>
+  </data>
+  <data name="REMINDERLIST_BUTTON_TODAY" xml:space="preserve">
+    <value>Сегодня</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TASKS_EDITTASK" xml:space="preserve">
+    <value>Изменить задачу</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_SAVETASK" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_CONTAINS" xml:space="preserve">
+    <value>содержит</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ITEMSFOR" xml:space="preserve">
+    <value>продукт(ы) для</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ITSSTATUSIS" xml:space="preserve">
+    <value>Статус - </value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ORDER" xml:space="preserve">
+    <value>Заказ</value>
+  </data>
+  <data name="INVITETOREGISTEREMAIL_SUBJECT" xml:space="preserve">
+    <value>Приятно познакомиться</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_ACTIVITYPAGETEXT" xml:space="preserve">
+    <value>Действия - Страница</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_CREATED" xml:space="preserve">
+    <value>Создано</value>
+  </data>
+  <data name="ANNIVERSARY" xml:space="preserve">
+    <value>Юбилей</value>
+  </data>
+  <data name="BIRTHDAY" xml:space="preserve">
+    <value>День рождения</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ADDEDNOTE" xml:space="preserve">
+    <value>Добавленная заметка:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOACTIVITYSUMMARY_LABEL" xml:space="preserve">
+    <value>Для этого клиента отсутствует информация о действиях</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_EARNHOSTESSREWARDS" xml:space="preserve">
+    <value>Напоминание о подарке для хозяйки класса</value>
+  </data>
+  <data name="REMOVE" xml:space="preserve">
+    <value>удалить</value>
+  </data>
+  <data name="ADDRESS_MESSAGE_ATLEASTONE" xml:space="preserve">
+    <value>Требуется заполнить хотя бы одно поле адреса</value>
+  </data>
+  <data name="ADDRESS_ADDRESSEE_LABEL" xml:space="preserve">
+    <value>Получатель
+</value>
+  </data>
+  <data name="ADDRESS_YES_BUTTON" xml:space="preserve">
+    <value>да</value>
+  </data>
+  <data name="ADDRESS_NO_BUTTON" xml:space="preserve">
+    <value>нет</value>
+  </data>
+  <data name="ADDRESS_STREET_LABEL" xml:space="preserve">
+    <value>Улица</value>
+  </data>
+  <data name="ADDRESS_CITY_LABEL" xml:space="preserve">
+    <value>Город</value>
+  </data>
+  <data name="ADDRESS_POSTALCODE_LABEL" xml:space="preserve">
+    <value>Почтовый индекс</value>
+  </data>
+  <data name="ADDRESS_PHONE_LABEL" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="ADDRESS_ISPRIMARY_LABEL" xml:space="preserve">
+    <value>Основной</value>
+  </data>
+  <data name="PAGEHEADER_HELP_LINKTEXT" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="PAGEHEADER_IMPORTCUSTOMER_TITLE" xml:space="preserve">
+    <value>импорт существующих клиентов</value>
+  </data>
+  <data name="PAGEHEADER_OR_TITLE" xml:space="preserve">
+    <value>или </value>
+  </data>
+  <data name="PAGEHEADER_ADDCUSTOMER_TITLE" xml:space="preserve">
+    <value>Новый Клиент</value>
+  </data>
+  <data name="PAGEHEADER_EDITCUSTOMER_TITLE" xml:space="preserve">
+    <value>Редактировать профиль клиента</value>
+  </data>
+  <data name="IMPORT_PROMPT" xml:space="preserve">
+    <value>Быстрый импорт контактов в Ваш список клиентов из следующих источников и/или форматов</value>
+  </data>
+  <data name="IMPORT_FROMFACEBOOK_LINKTEXT" xml:space="preserve">
+    <value>Импорт из Facebook</value>
+  </data>
+  <data name="IMPORT_FRIENDSFROMFACEBOOK_PROMPT" xml:space="preserve">
+    <value>Вы можете импортировать контакты друзей из Facebook</value>
+  </data>
+  <data name="IMPORT_IMPORTANT_PROMPT" xml:space="preserve">
+    <value>Важно:</value>
+  </data>
+  <data name="IMPORT_FROMFACEBOOK_INSTRUCTIONS" xml:space="preserve">
+    <value>Перед импортом контактов из Facebook Вы будете перенаправлены на станицу входа в Facebook. Пожалуйста, войдите в Facebook под своей учётной записью. После входа в Facebook вам будут доступны возможные варианты действий…</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_LINKTEXT" xml:space="preserve">
+    <value>Импорт из Outlook</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_PROMPT" xml:space="preserve">
+    <value>Вы можете импортировать контакты друзей из приложений Outlook 2003, 2007 и Outlook Express.</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_INSTRUCTIONS" xml:space="preserve">
+    <value>Перед тем, как импортировать контакты, пожалуйста, экспортируйте их в формате Outlook CSV</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_CHOOSEFILE" xml:space="preserve">
+    <value>Выберите файл…</value>
+  </data>
+  <data name="PHONENUMBER_PLACEHOLDER" xml:space="preserve">
+    <value>(000) 0000000</value>
+  </data>
+  <data name="PLACEHOLDER_DATE" xml:space="preserve">
+    <value>дд.мм.гггг</value>
+  </data>
+  <data name="PLACEHOLDER_BIRTHDAY" xml:space="preserve">
+    <value>дд.мм</value>
+  </data>
+  <data name="PLACEHOLDER_ANNIVERSARY" xml:space="preserve">
+    <value>дд.мм</value>
+  </data>
+  <data name="EMAIL_FORMAT_PLACEHOLDER" xml:space="preserve">
+    <value>email@domain.com</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACKNOWLEDGE" xml:space="preserve">
+    <value>Я признаю, что у меня есть согласие от этих клиентов на использование и хранение их контактной информации, в том числе на серверах компании Mary Kay.&lt;br /&gt;{0} для заполнения формы и инструкции о согласии клиента.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACTION" xml:space="preserve">
+    <value>Действие</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADD" xml:space="preserve">
+    <value>Добавить  </value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADDED" xml:space="preserve">
+    <value>клиент(ы) добавлен(ы)</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_BEAUTENEWS" xml:space="preserve">
+    <value>Beaut-e-News&lt;br /&gt;Рассылка</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_CONTACT" xml:space="preserve">
+    <value>Контакт</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_CUSTOMERS" xml:space="preserve">
+    <value>клиенты</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ECARDS" xml:space="preserve">
+    <value>Персональные письма&lt;br /&gt;и Электронные открытки</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_EXISTINGCUSTOMER" xml:space="preserve">
+    <value>Существующий клиент</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_HOWTOUSE" xml:space="preserve">
+    <value>&lt;strong&gt;Как пользоваться этой страницей&lt;/strong&gt;
+      &lt;ol&gt;
+        &lt;li&gt;Определите, какие из контактов могут стать лучшими клиентами&lt;/li&gt;
+        &lt;li&gt;Выберите "Добавить" в выпадающем списке для этих контактов. Если Вы видите вариант "Объединить", это означает, что у Вас уже есть клиент с такими контактными данными. Вы можете выбрать вариант Объединить, Пропустить или Добавить как нового клиента.&lt;/li&gt;
+        &lt;li&gt;Для просмотра всего списка Вы можете просматривать разные страницы, кликая на номера страниц или на стрелки над кнопками Импорт и Отмена&lt;/li&gt;
+        &lt;li&gt;После выбора всех необходимых клиентов, нажмите кнопку Импорт. Если Вы согласны с условиями импорта Клиентов, приложение Мои клиенты добавит все контакты с выбранным вариантом действий Добавить, объединит контакты с существующими для тех, у кого выбран вариант Объединить, и не изменит информацию для варианта Пропустить&lt;/li&gt;
+      &lt;/ol&gt;</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_IMPORTCUSTOMERS" xml:space="preserve">
+    <value>Завершить Импорт</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGE" xml:space="preserve">
+    <value>Соединить</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_INFO_ALERT" xml:space="preserve">
+    <value>Просмотрите список контактов и выберите, если вы хотите добавить, объединить или пропустить контакт</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_WARNING_ALERT" xml:space="preserve">
+    <value>Отсутствуют контакты для импорта</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_WARNING" xml:space="preserve">
+    <value>Внимание!</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGED" xml:space="preserve">
+    <value>клиент(ы) объединен(ы)</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOTIMPORTED" xml:space="preserve">
+    <value>клиент(ы) не импортирован(ы)</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_REMINDERS" xml:space="preserve">
+    <value>Напоминание о повторном заказе</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_RESULTSSUBSCRIPTIONS" xml:space="preserve">
+    <value>Импорт Клиентов - Результат / Подписки</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SELECTCONTACTS" xml:space="preserve">
+    <value>Импорт Клиентов - Выберите Контакты для Импорта</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIP" xml:space="preserve">
+    <value>Пропустить</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIPPED" xml:space="preserve">
+    <value>клиент(ы) пропущен(ы)</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SUBMIT_SUBSCRIPTION" xml:space="preserve">
+    <value>Подтвердить подписку</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>&lt;strong&gt;Готово!&lt;/strong&gt;  Импортирован список контактов</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOIMPORTED" xml:space="preserve">
+    <value>&lt;strong&gt;Предупреждение!&lt;/strong&gt;  Не был импортирован ни один клиент</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SUMMARY" xml:space="preserve">
+    <value>Результаты Импорта:</value>
+  </data>
+  <data name="CLOSE" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="HEADING_LINETOTAL" xml:space="preserve">
+    <value>Всего в розничных ценах</value>
+  </data>
+  <data name="HEADING_PARTNUMBER" xml:space="preserve">
+    <value>Код продукции</value>
+  </data>
+  <data name="HEADING_PRICE" xml:space="preserve">
+    <value>Рекомендуемая розничная цена</value>
+  </data>
+  <data name="HEADING_PRODUCTNAME" xml:space="preserve">
+    <value>Наименование продукции</value>
+  </data>
+  <data name="HEADING_QUANTITY" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="HEADING_REORDERREMINDERDATE" xml:space="preserve">
+    <value>Упорядочить напоминание</value>
+  </data>
+  <data name="ORDER_TOTAL" xml:space="preserve">
+    <value>Итого в розничных ценах</value>
+  </data>
+  <data name="PRODUCT_CATALOG" xml:space="preserve">
+    <value>Каталог продукции</value>
+  </data>
+  <data name="ADDPRODUCTS" xml:space="preserve">
+    <value>Добавить Продукцию</value>
+  </data>
+  <data name="ADDPRODUCT_BUTTON" xml:space="preserve">
+    <value>Добавить  </value>
+  </data>
+  <data name="MARKAS_COMPLETE" xml:space="preserve">
+    <value>Пометить как выполненный</value>
+  </data>
+  <data name="MARKAS_SHIPPED" xml:space="preserve">
+    <value>Пометить как доставленный</value>
+  </data>
+  <data name="HEADING_ORDERDATE" xml:space="preserve">
+    <value>Дата заказа:</value>
+  </data>
+  <data name="HEADING_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Рекомендуемая розничная цена</value>
+  </data>
+  <data name="OF" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="PAGE" xml:space="preserve">
+    <value>Страница</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_ALL" xml:space="preserve">
+    <value>Весь список</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_BESTSELLERS" xml:space="preserve">
+    <value>Бестселлеры</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_BODYANDSUN" xml:space="preserve">
+    <value>Тело и Солнце</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_FRAGRANCE" xml:space="preserve">
+    <value>Ароматы</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_GIFTS" xml:space="preserve">
+    <value>Подарки</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_MAKEUP" xml:space="preserve">
+    <value>Макияж</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_MENS" xml:space="preserve">
+    <value>Мужская</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_NEW" xml:space="preserve">
+    <value>Новая продукция</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_SKINCARE" xml:space="preserve">
+    <value>Уход за кожей</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_SPECIALOFFERS" xml:space="preserve">
+    <value>Специальные предложения</value>
+  </data>
+  <data name="PRODUCTCATALOG_CLICKTOVIEWDETAILS" xml:space="preserve">
+    <value>Просмотреть информацию о продукте</value>
+  </data>
+  <data name="PRODUCTCATALOG_PREVIOUSLYORDERED_NOTFOUND" xml:space="preserve">
+    <value>Клиент не размещал заказы ранее</value>
+  </data>
+  <data name="PRODUCTCATALOG_RECOMMENDED_NOTFOUND" xml:space="preserve">
+    <value>Рекомендованная продукция не указана</value>
+  </data>
+  <data name="PRODUCTCATALOG_SEARCH_NOTFOUND" xml:space="preserve">
+    <value>Не найдено ни одного товара по данному критерию поиска</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_ALL" xml:space="preserve">
+    <value>Весь список</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_PREVIOUSLYORDERED" xml:space="preserve">
+    <value>Ранее заказанная</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_RECOMMENDED" xml:space="preserve">
+    <value>Рекомендуемая</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_WISHLIST" xml:space="preserve">
+    <value>Лист желаний</value>
+  </data>
+  <data name="PRODUCTCATALOG_WISHLIST_NOTFOUND" xml:space="preserve">
+    <value>Лист желаний клиента пуст</value>
+  </data>
+  <data name="PRODUCTS" xml:space="preserve">
+    <value>Продукция</value>
+  </data>
+  <data name="SAVE_ORDER" xml:space="preserve">
+    <value>Сохранить и просмотреть заказ</value>
+  </data>
+  <data name="SEARCH_CLEAR" xml:space="preserve">
+    <value>очистить условия поиска</value>
+  </data>
+  <data name="WISHLISTPRODUCT_BADGE" xml:space="preserve">
+    <value>лист желаний</value>
+  </data>
+  <data name="ERROR_CSV_FILE_PARSE" xml:space="preserve">
+    <value>Невозможно прочитать CSV файл</value>
+  </data>
+  <data name="ADDRESS_COUNTRY_LABEL" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="ADDRESS_REGION_LABEL" xml:space="preserve">
+    <value>Область/регион</value>
+  </data>
+  <data name="DELIVERYADDRESS_ADD" xml:space="preserve">
+    <value>добавить адрес доставки</value>
+  </data>
+  <data name="DELIVERYADDRESS_REMOVE" xml:space="preserve">
+    <value>удалить адрес доставки</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS" xml:space="preserve">
+    <value>выберите адрес из профиля клиента</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS_BUTTON" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS_TITLE" xml:space="preserve">
+    <value>Адреса клиента</value>
+  </data>
+  <data name="FOOTER_MARYKAY" xml:space="preserve">
+    <value>Mary Kay 2013</value>
+  </data>
+  <data name="REMINDERLIST_MASSUPDATESUCCESS" xml:space="preserve">
+    <value>Задачи были завершены</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_TITLE" xml:space="preserve">
+    <value>Итоги деятельности</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ORDERS_TITLE" xml:space="preserve">
+    <value>Заказы клиента</value>
+  </data>
+  <data name="ORDERFOLLOWUP_ADD_BUTTON" xml:space="preserve">
+    <value>добавить напоминание о выполнении</value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_222" xml:space="preserve">
+    <value>2 +2 +2</value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_CUSTOM" xml:space="preserve">
+    <value>Пользователь  </value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_NONE" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="ORDERDETAILS_ONLINE_TITLE" xml:space="preserve">
+    <value>Онлайн-заказ</value>
+  </data>
+  <data name="ORDERDETAILS_SALESTICKET_TITLE" xml:space="preserve">
+    <value>Заявка</value>
+  </data>
+  <data name="FILTER" xml:space="preserve">
+    <value>Фильтр</value>
+  </data>
+  <data name="FILTER_DELETED" xml:space="preserve">
+    <value>Удаленный</value>
+  </data>
+  <data name="FILTER_DELETED_LABEL" xml:space="preserve">
+    <value>Удаленный</value>
+  </data>
+  <data name="FILTER_NONE" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="FILTER_ORDERDATE" xml:space="preserve">
+    <value>Дата заказа:</value>
+  </data>
+  <data name="FILTER_ORDERDATE_FILTER" xml:space="preserve">
+    <value>Дата Заказа:</value>
+  </data>
+  <data name="FILTER_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Статус оплаты</value>
+  </data>
+  <data name="FILTER_ORDERSTATUS" xml:space="preserve">
+    <value>Статус заказа</value>
+  </data>
+  <data name="FILTER_ORDERTYPE" xml:space="preserve">
+    <value>Источник заказа</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_BUTTON" xml:space="preserve">
+    <value>Изменить Статус Платежа</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_NEWSTATUS_LABEL" xml:space="preserve">
+    <value>Новый статус:</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_PROMPT" xml:space="preserve">
+    <value>Выберите новый статус оплаты для завершения операции</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SELECTALL_TOOLTIP" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="SORT_AMOUNT" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="SORT_DIRECTION_TOOLTIP" xml:space="preserve">
+    <value>Переключить порядок сортировки</value>
+  </data>
+  <data name="SORT_FIRSTNAME" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="SORT_LASTNAME" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="SORT_ORDERDATE" xml:space="preserve">
+    <value>Дата заказа</value>
+  </data>
+  <data name="SORT_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Статус оплаты</value>
+  </data>
+  <data name="SORT_ORDERSTATUS" xml:space="preserve">
+    <value>Статус заказа</value>
+  </data>
+  <data name="SORT_ORDERTYPE" xml:space="preserve">
+    <value>Источник заказа</value>
+  </data>
+  <data name="SORT_RELEVANCE" xml:space="preserve">
+    <value>Актуальный</value>
+  </data>
+  <data name="SORT_TOOLTIP" xml:space="preserve">
+    <value>Выберите поле для сортировки</value>
+  </data>
+  <data name="FILTER_ADVANCED" xml:space="preserve">
+    <value>Расширенный</value>
+  </data>
+  <data name="FILTER_ORDERDATE_LABEL" xml:space="preserve">
+    <value>Дата заказа:</value>
+  </data>
+  <data name="ORDERFOLLOWUP_LABEL" xml:space="preserve">
+    <value>Выполнить:</value>
+  </data>
+  <data name="ORDERSTATUS_LABEL" xml:space="preserve">
+    <value>Статус заказа</value>
+  </data>
+  <data name="PAYMENTSTATUS_LABEL" xml:space="preserve">
+    <value>Статус оплаты:</value>
+  </data>
+  <data name="CUSTOMERLIST_LISTTAB" xml:space="preserve">
+    <value>Список</value>
+  </data>
+  <data name="ORDERLIST_LISTTAB" xml:space="preserve">
+    <value>Список</value>
+  </data>
+  <data name="CUSTOMERLIST_NOTESTAB" xml:space="preserve">
+    <value>Заметки</value>
+  </data>
+  <data name="CUSTOMERLIST_SELECTCUSTOMER_PAGETITLE" xml:space="preserve">
+    <value>Новый Заказ - Выбор Клиента</value>
+  </data>
+  <data name="CUSTOMERLIST_SHOWPROFILEIMAGES_TOOLTIP" xml:space="preserve">
+    <value>показать/скрыть изображения профиля</value>
+  </data>
+  <data name="FILTER_ANNIVERSARY" xml:space="preserve">
+    <value>Юбилей</value>
+  </data>
+  <data name="FILTER_BIRTHDAY" xml:space="preserve">
+    <value>день рождения</value>
+  </data>
+  <data name="FILTER_DATEADDED" xml:space="preserve">
+    <value>Дата добавления</value>
+  </data>
+  <data name="FILTER_DATEADDED_LABEL" xml:space="preserve">
+    <value>Дата добавления</value>
+  </data>
+  <data name="FILTER_DATEREGISTERED" xml:space="preserve">
+    <value>Дата регистрации</value>
+  </data>
+  <data name="FILTER_DATEREGISTERED_LABEL" xml:space="preserve">
+    <value>Дата регистрации</value>
+  </data>
+  <data name="FILTER_LASTORDERDATE" xml:space="preserve">
+    <value>Дата последнего заказа</value>
+  </data>
+  <data name="FILTER_LASTORDERDATE_LABEL" xml:space="preserve">
+    <value>Дата последнего заказа</value>
+  </data>
+  <data name="NOTESSEARCH_NORESULTS_ALERT" xml:space="preserve">
+    <value>Не найдено ни одной заметки по данному критерию поиска</value>
+  </data>
+  <data name="SORT_DATEADDED" xml:space="preserve">
+    <value>Дата добавления</value>
+  </data>
+  <data name="SORT_DATEREGISTERED" xml:space="preserve">
+    <value>Дата регистрации</value>
+  </data>
+  <data name="SORT_LASTORDERDATE" xml:space="preserve">
+    <value>Дата последнего заказа</value>
+  </data>
+  <data name="SORT_PROFILEDATE" xml:space="preserve">
+    <value>Профиль дата</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ORDERS_TYPE" xml:space="preserve">
+    <value>Тип:</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_CHANGE" xml:space="preserve">
+    <value>изменить</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_INVALIDSIZE" xml:space="preserve">
+    <value>Превышен размер картинки!</value>
+  </data>
+  <data name="ADDRESS_ADDTOCUSTOMERPROFILE" xml:space="preserve">
+    <value>Добавить к профилю</value>
+  </data>
+  <data name="ACCEPT" xml:space="preserve">
+    <value>принять</value>
+  </data>
+  <data name="EDITORDER_CREATEINVOICE_LABEL" xml:space="preserve">
+    <value>Создать инвойс</value>
+  </data>
+  <data name="INVOICE_ADDGIFTMESSAGE_LINK" xml:space="preserve">
+    <value>добавить записку к подарку</value>
+  </data>
+  <data name="INVOICE_ADDMESSAGE_LINK" xml:space="preserve">
+    <value>добавить текст, отображаемый на инвойсе</value>
+  </data>
+  <data name="INVOICE_FORMAT_LABEL" xml:space="preserve">
+    <value>Формат:</value>
+  </data>
+  <data name="INVOICE_GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value>Записка к подарку:</value>
+  </data>
+  <data name="INVOICE_MESSAGE_LABEL" xml:space="preserve">
+    <value>Текст Инвойса</value>
+  </data>
+  <data name="CUSTOMERDETAIL_SUBSCRIPTIONS" xml:space="preserve">
+    <value>Подписки</value>
+  </data>
+  <data name="INVOICE_CREATE_BUTTON" xml:space="preserve">
+    <value>Создать Инвойс</value>
+  </data>
+  <data name="INVOICE_CREATE_LINK" xml:space="preserve">
+    <value>Создать инвойс</value>
+  </data>
+  <data name="ORDERINVOICE_CREATED" xml:space="preserve">
+    <value>&lt;strong&gt;Готово!&lt;/strong&gt;  Инвойс создан</value>
+  </data>
+  <data name="ORDER_AT" xml:space="preserve">
+    <value>в</value>
+  </data>
+  <data name="ORDER_AVAILABLE" xml:space="preserve">
+    <value>Я доступна в</value>
+  </data>
+  <data name="ORDER_CONVENIENTTIME" xml:space="preserve">
+    <value>Пожалуйста, свяжитесь со мной, чтобы организовать удобное время доставки.</value>
+  </data>
+  <data name="ORDER_DESIREDSERVICE" xml:space="preserve">
+    <value>Я ценю Вашу занятость и с уважением отношусь к Вашему времени и предпочтениям в покупках. Если Вы чувствуете необходимость в персонализированном сервисе, включая уход за кожей и консультации по красоте, и хотите быть уверены в полном удовлетворении, пожалуйста, свяжитесь со мной в любое удобное Вам время</value>
+  </data>
+  <data name="ORDER_EDIT" xml:space="preserve">
+    <value>Редактировать заказ</value>
+  </data>
+  <data name="ORDER_MARK_PROCESSED" xml:space="preserve">
+    <value>Отметить как обработанный</value>
+  </data>
+  <data name="ORDER_MARK_SHIPPED" xml:space="preserve">
+    <value>Отметить как доставленный</value>
+  </data>
+  <data name="ORDER_ISGIFT" xml:space="preserve">
+    <value>Этот заказ предназначен в подарок кому-то другому? Если да, нажмите на кнопку снизу, чтобы отправить персональное сообщение и обрадовать их тем, что подарок уже в пути</value>
+  </data>
+  <data name="ORDER_ISTIMECONVENIENT" xml:space="preserve">
+    <value>доставить Ваш заказ. Это удобное для вас время?</value>
+  </data>
+  <data name="ORDER_PROCESSED" xml:space="preserve">
+    <value>Ваш заказ будет обработан.</value>
+  </data>
+  <data name="ORDER_PROCESSORDER" xml:space="preserve">
+    <value>Пожалуйста, свяжитесь со мной. Мне нужна Ваша помощь для дальнейшей обработки заказа.</value>
+  </data>
+  <data name="ORDER_PROCESSPAYMENT" xml:space="preserve">
+    <value>Пожалуйста, свяжитесь со мной. Мне нужна Ваша помощь для дальнейшей обработки Вашего платежа.</value>
+  </data>
+  <data name="ORDER_SAVED" xml:space="preserve">
+    <value>&lt;strong&gt;Готово!&lt;/strong&gt;  Заказ сохранён</value>
+  </data>
+  <data name="ORDER_SELECTMESSAGES" xml:space="preserve">
+    <value>Выберите одно из сообщений для отправки клиенту письма с подтверждением заказа: </value>
+  </data>
+  <data name="ORDER_SENDCONFIRMATIONEMAIL" xml:space="preserve">
+    <value>Отправить письмо с подтверждением</value>
+  </data>
+  <data name="ORDER_SENT" xml:space="preserve">
+    <value>&lt;strong&gt;Готово!&lt;/strong&gt; Выслано письмо с подтверждением заказа.</value>
+  </data>
+  <data name="ORDER_SHIPPED" xml:space="preserve">
+    <value>Ваш заказ был отправлен.</value>
+  </data>
+  <data name="ORDER_TOTAL_IS" xml:space="preserve">
+    <value>Ваша общая сумма заказа</value>
+  </data>
+  <data name="SEND_EMAIL" xml:space="preserve">
+    <value>Отправить  e-mail</value>
+  </data>
+  <data name="SMS_BUTTON_TEXT" xml:space="preserve">
+    <value>СМС</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_PHONE" xml:space="preserve">
+    <value>добавить номер телефона</value>
+  </data>
+  <data name="MAKE_PRIMARY" xml:space="preserve">
+    <value>сделать основным</value>
+  </data>
+  <data name="PRIMARY" xml:space="preserve">
+    <value>Основной</value>
+  </data>
+  <data name="ADDCUSTOMER_PHONE_NUMBER_LABEL" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_SPECIALOCCASION" xml:space="preserve">
+    <value>добавить важную дату</value>
+  </data>
+  <data name="SPECIALOCCASION_DESCRIPTION_PLACEHOLDER" xml:space="preserve">
+    <value>выпускной, рождение ребенка, новая работа, отпуск, свадьба и т.д.</value>
+  </data>
+  <data name="ADDRESS_STATE_LABEL" xml:space="preserve">
+    <value>Область</value>
+  </data>
+  <data name="ADDRESS_UNITNUMBER_LABEL" xml:space="preserve">
+    <value>Номер дома / Строение/ Квартира / Подъезд / Этаж / Код подъезда</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_ADD" xml:space="preserve">
+    <value>добавить ещё один адрес</value>
+  </data>
+  <data name="ADDCUSTOMER_SOCIALNETWORK" xml:space="preserve">
+    <value>Социальные сети</value>
+  </data>
+  <data name="GENDER_FEMALE" xml:space="preserve">
+    <value>Женщина</value>
+  </data>
+  <data name="GENDER_MALE" xml:space="preserve">
+    <value>Мужчина</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTDAY" xml:space="preserve">
+    <value>Дни для связи</value>
+  </data>
+  <data name="ADDCUSTOMER_CANSENDSMS" xml:space="preserve">
+    <value>СМС</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PROFILEANSWERLABEL_OTHER" xml:space="preserve">
+    <value>Прочее:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PROFILEANSWERLABEL_OTHERS" xml:space="preserve">
+    <value>Другие:</value>
+  </data>
+  <data name="SORT_BY" xml:space="preserve">
+    <value>Сортировать по:</value>
+  </data>
+  <data name="ARCHIVE_ORDER" xml:space="preserve">
+    <value>Архив</value>
+  </data>
+  <data name="UNARCHIVE_ORDER" xml:space="preserve">
+    <value>Разархивировать</value>
+  </data>
+  <data name="ARCHIVE_ORDERS" xml:space="preserve">
+    <value>Архив</value>
+  </data>
+  <data name="UNARCHIVE_ORDERS" xml:space="preserve">
+    <value>Разархивировать</value>
+  </data>
+  <data name="DELETE_ORDERS" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ARCHIVE_CUSTOMERS" xml:space="preserve">
+    <value>Архив</value>
+  </data>
+  <data name="DELETEDORDERS_DELETE" xml:space="preserve">
+    <value>Полностью удалить заказ из корзины</value>
+  </data>
+  <data name="DELETEDORDERS_RESTORE" xml:space="preserve">
+    <value>Восстановить</value>
+  </data>
+  <data name="ORDERLIST_DELETEDORDERS_TOOLTIP" xml:space="preserve">
+    <value>Удалить заказы</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_DELETE" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="CUSTOMERLIST_DELETEDCUSTOMERS_TOOLTIP" xml:space="preserve">
+    <value>Удалить клиентов</value>
+  </data>
+  <data name="DELETEDCUSTOMERS_RESTORE" xml:space="preserve">
+    <value>Восстановить</value>
+  </data>
+  <data name="DELETEDCUSTOMERS_DELETE" xml:space="preserve">
+    <value>Полностью удалить клиента из корзины</value>
+  </data>
+  <data name="DELETEDCUSTOMERS_NORESULTS_ALERT" xml:space="preserve">
+    <value>Удаленные клиенты не найдены</value>
+  </data>
+  <data name="DELETEDORDERS_NORESULTS_ALERT" xml:space="preserve">
+    <value>Удаленные заказы не найдены</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_RESULTS" xml:space="preserve">
+    <value>Импорт Клиентов - Результат</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ARCHIVECUSTOMER" xml:space="preserve">
+    <value>Архивировать клиента</value>
+  </data>
+  <data name="CUSTOMERDETAIL_UNARCHIVECUSTOMER" xml:space="preserve">
+    <value>Разархивировать клиента</value>
+  </data>
+  <data name="FILTER_ARCHIVED" xml:space="preserve">
+    <value>Архивированный</value>
+  </data>
+  <data name="FILTER_ARCHIVED_LABEL" xml:space="preserve">
+    <value>Архивированный</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NEWVIRTUALMAKEOVER_AGREEMENT" xml:space="preserve">
+    <value>Я понимаю, что я обязана получить разрешение от клиента на использование её фотографии в Виртуальном Макияже Mary Kay® с целью создания примера виртуального макияжа. В случае, если я загружаю фотографию, я буду использовать эту фотографию только так, как явно разрешено моим клиентом</value>
+  </data>
+  <data name="DECLINE" xml:space="preserve">
+    <value>Отклонить</value>
+  </data>
+  <data name="UNARCHIVE_CUSTOMER" xml:space="preserve">
+    <value>Разархивировать</value>
+  </data>
+  <data name="UNARCHIVE_CUSTOMERS" xml:space="preserve">
+    <value>Разархивировать</value>
+  </data>
+  <data name="ERROR_500_TITLE" xml:space="preserve">
+    <value>Неизвестная ошибка сервера</value>
+  </data>
+  <data name="ERROR_404_TITLE" xml:space="preserve">
+    <value>Страница не найдена</value>
+  </data>
+  <data name="REGISTERED" xml:space="preserve">
+    <value>Зарегистрирована</value>
+  </data>
+  <data name="FILTER_PRODUCT" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="FILTER_PRODUCT_LABEL" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="ADDCUSTOMER_SAVE_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Нажимая кнопку «Сохранить профиль клиента», я подтверждаю, что имею соответствующее разрешение на ввод и хранение этой информации о клиентах, в том числе на серверах компании Mary Kay. {0}, чтобы распечатать и заполнить форму согласия клиента.</value>
+  </data>
+  <data name="ADDCUSTOMER_LEGALMESSAGE_LINK" xml:space="preserve">
+    <value>Нажмите здесь</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Заметки не должны содержать конфиденциальной информации о ваших клиентах (например, номера кредитных карт)</value>
+  </data>
+  <data name="SAVE_ORDER_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Сохраняя этот заказ, я подтверждаю, что у меня есть необходимые полномочия и согласие на ввод и хранение информации о клиенте</value>
+  </data>
+  <data name="INVOICE_CREATE_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Сумма заказа, стоимость доставки и налогов будут сохранены только на вашем инвойсе на вашем компьютере</value>
+  </data>
+  <data name="DELIVERY_ADDRESS_ADDRESSEE_LABEL" xml:space="preserve">
+    <value>Имя получателя</value>
+  </data>
+  <data name="FLASH_REQUIRED" xml:space="preserve">
+    <value>Для загружки фотографий необходимо установить приложение Adobe Flash. Пожалуйста, обновите Ваш браузер или скачайте Adobe Flash здесь:</value>
+  </data>
+  <data name="EXPORTLIST_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EXPORTLIST_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_MARYKAYCONTACTTEXT" xml:space="preserve">
+    <value>ТОО «Мэри Кэй (Казахстан)».</value>
+  </data>
+  <data name="PRINTLIST_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="PRINTLIST_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="REMINDERLIST_FILTER_BUSINESS" xml:space="preserve">
+    <value>Информация о возможностях бизнеса</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PWSREGISTRATION" xml:space="preserve">
+    <value>Регистрация на Персональном сайте</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PWSUPDATEREGISTRATION" xml:space="preserve">
+    <value>Обновление регистрации на Персональном сайте</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_SAMPLEREQUEST" xml:space="preserve">
+    <value>Заказ пробников на Персональном сайте</value>
+  </data>
+  <data name="REMINDERLIST_INCORRECT_CUSTOMERID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_REMTITLE_BUSINESS" xml:space="preserve">
+    <value>информация о возможностях бизнеса</value>
+  </data>
+  <data name="SITE_NAME" xml:space="preserve">
+    <value>Мои клиенты</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_PCP" xml:space="preserve">
+    <value>Предпочтительная программа для клиента</value>
+  </data>
+  <data name="INVALID_ANNIVERSARY" xml:space="preserve">
+    <value>Юбилей указан некорректно</value>
+  </data>
+  <data name="INVALID_BIRTHDAY" xml:space="preserve">
+    <value>День рождения указан некорректно</value>
+  </data>
+  <data name="LABEL_CASH" xml:space="preserve">
+    <value>Платежи наличными:</value>
+  </data>
+  <data name="LABEL_CHECKS" xml:space="preserve">
+    <value>Платежи чеком:</value>
+  </data>
+  <data name="AMOUNT" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="DATE" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="CHECKNUMBER" xml:space="preserve">
+    <value>Проверить номер</value>
+  </data>
+  <data name="FILTER_PROFILEDATE" xml:space="preserve">
+    <value>Дата создания профиля</value>
+  </data>
+  <data name="PHONETYPE_HOME_ABBR" xml:space="preserve">
+    <value>Д.</value>
+  </data>
+  <data name="PHONETYPE_MOBILE_ABBR" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="PHONETYPE_OTHER_ABBR" xml:space="preserve">
+    <value>Др.</value>
+  </data>
+  <data name="PHONETYPE_WORK_ABBR" xml:space="preserve">
+    <value>Р.</value>
+  </data>
+  <data name="ANNIVERSARY_DAY" xml:space="preserve">
+    <value>день</value>
+  </data>
+  <data name="ANNIVERSARY_YEAR" xml:space="preserve">
+    <value>год</value>
+  </data>
+  <data name="BIRTHDAY_DAY" xml:space="preserve">
+    <value>день</value>
+  </data>
+  <data name="BIRTHDAY_YEAR" xml:space="preserve">
+    <value>год</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_UNDO" xml:space="preserve">
+    <value>отменить</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_REMOVE" xml:space="preserve">
+    <value>удалить</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADD_WISHLIST" xml:space="preserve">
+    <value>Добавить в лист желаний</value>
+  </data>
+  <data name="ORDER_NOTES_WARNING" xml:space="preserve">
+    <value>* Заметки сохраняются у Вас в файле и не отражаются на чеке для клиента.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_ODNOKLASSNIKI" xml:space="preserve">
+    <value>Odnoklassniki</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_EXCEL_FILENAME" xml:space="preserve">
+    <value>Customers_{0:yyyyMMdd}.xls</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_LABELS_FILENAME" xml:space="preserve">
+    <value>CustomerLabels_{0:yyyyMMdd}.pdf</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_PRINT_FILENAME" xml:space="preserve">
+    <value>Customers_{0:yyyyMMdd}.pdf</value>
+  </data>
+  <data name="FORMAT_FULLNAME" xml:space="preserve">
+    <value>{0} {1} {2}</value>
+  </data>
+  <data name="SOCIALNETWORK_OTHER" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="SOCIALNETWORK_FACEBOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_TWITTER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_VK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_EMAIL_LEGALMESSAGE" xml:space="preserve">
+    <value>Указав e-mail клиента выше, я осознаю и соглашаюсь, что на этот адрес компанией Mary Kay, но от моего имени, будет отправлено письмо клиенту с предложением подписаться на получение новостей.&lt;br/&gt;Внимание! Если у вас нет согласия этого клиента на получение рассылок, пожалуйста, оставьте это поле пустым.</value>
+  </data>
+  <data name="ADDCUSTOMER_CHANGE_PHOTO_CONFIRMCOPY" xml:space="preserve">
+    <value>Размещая фотографию, вы соглашаетесь на ее отображение здесь.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACKNOWLEDGE_LINK" xml:space="preserve">
+    <value>Нажмите здесь</value>
+  </data>
+  <data name="PAYMENTS_MISSING" xml:space="preserve">
+    <value>Не указано</value>
+  </data>
+  <data name="FILTER_PROFILEDATE_LABEL" xml:space="preserve">
+    <value>Дата  профиля</value>
+  </data>
+  <data name="ORDER_INVALID_DELIVERY_DATE" xml:space="preserve">
+    <value>Дата доставки не может быть пустой</value>
+  </data>
+  <data name="ORDER_INVALID_TOTAL_AMOUNT" xml:space="preserve">
+    <value>Общая стоимость заказа не может быть пустой</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NOTETEXT" xml:space="preserve">
+    <value>При покупке на общую сумму 4 000 тенге или больше, вы, как покупатель, можете отменить эту сделку в любое время в течение трех календарных дней с момента покупки. Смотрите прилагаемую форму-уведомление об операции аннулирования заказа, разъясняющую это право.</value>
+  </data>
+  <data name="ORDERPAYMENT_REMOVE" xml:space="preserve">
+    <value>удалить</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERPAYMENT_REMOVE_TITLE" xml:space="preserve">
+    <value>Удалить платеж чеком</value>
+  </data>
+  <data name="ORDERPAYMENT_REMOVE_CASH_TITLE" xml:space="preserve">
+    <value>Удалить платеж наличными</value>
+  </data>
+  <data name="INVOICE_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Страница &amp;P (&amp;N)</value>
+  </data>
+  <data name="INVOICE_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="INVOICE_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRR" xml:space="preserve">
+    <value>Напоминания о заказе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_CANCELPRRUPDATELINK" xml:space="preserve">
+    <value>отменить</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_DELEELINK" xml:space="preserve">
+    <value>стереть</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_EDITLINK" xml:space="preserve">
+    <value>изменить</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_PARTNUMBER" xml:space="preserve">
+    <value>Номер заказа</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_PRODUCTNAME" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_REMINDERDATE" xml:space="preserve">
+    <value>Напоминания о дате</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_SAVEPRRUPDATELINK" xml:space="preserve">
+    <value>сохранить</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PRR" xml:space="preserve">
+    <value>Напоминания о заказе</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_PRR" xml:space="preserve">
+    <value>Напоминание о заказе</value>
+  </data>
+</root>

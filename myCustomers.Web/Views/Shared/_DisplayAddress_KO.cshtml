@@ -1,0 +1,36 @@
+﻿@model bool
+@{
+  var showCountryCodeWithAddressFeature = Model;
+}
+<!-- ko if: $data.PrimaryAddress-->
+<div class="vcard" data-bind="with: $data.PrimaryAddress">
+  <div class="adr">
+    <div class="street-address">
+      <span data-bind="text: Street"></span>
+      <span data-bind="text: UnitNumber"></span>
+    </div>
+    <span class="locality" data-bind="text: City"></span>,
+    <span class="region" data-bind="text: RegionCode"></span>
+    <span class="postal-code" data-bind="text: PostalCode"></span>
+    @if (showCountryCodeWithAddressFeature)
+    {
+      <div class="street-address">
+        <span class="country-code" data-bind="text: CountryCode"></span>
+      </div>
+    }
+  </div>
+</div>
+<!-- /ko -->
+<!-- ko if: $data.AddressKey -->
+<div class="vcard">
+  <div class="adr" data-bind="visible: $data.AddressKey != null">
+    <div class="street-address">
+      <span data-bind="text: $data.Street"></span>
+      <span data-bind="text: $data.UnitNumber"></span>
+    </div>
+    <span class="locality" data-bind="text: $data.City"></span>,
+    <span class="region" data-bind="text: $data.RegionCode"></span>
+    <span class="postal-code" data-bind="text: $data.PostalCode"></span>
+  </div>
+</div>
+<!-- /ko -->

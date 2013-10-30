@@ -1,0 +1,30 @@
+﻿<deploy xmlns="http://marykay.com/Panda/20090121">
+	<webApps>
+		<webApp name="myCustomers">
+			<serverRole>Web</serverRole>
+			<siteName>KZ</siteName>
+			<webRoot>myCustomers</webRoot>
+      <appPool>myCustomers-KZ</appPool>
+			<authentication>Anonymous</authentication>
+			<dotNetVersion>v4.0.30319</dotNetVersion>
+      <clean>true</clean>
+			<cleanFiles>true</cleanFiles>
+			<PdbExclusion>false</PdbExclusion>
+		</webApp>
+	</webApps>
+  <appPools>
+    <appPool name="myCustomers-KZ" region="EU">
+      <serverRole>Web</serverRole>
+      <PipelineMode>Integrated</PipelineMode>
+      <ManagedRuntimeVersion>v4.0</ManagedRuntimeVersion>
+      <enable32bit>False</enable32bit>
+      <clean>true</clean>
+      <userName>USA\eMrkt-RunTimeUser</userName>
+      <password>AsAbB9EpGWhPHOp9gVJkrQ==</password>
+      <userName environment="Staging">stgdmz\eMktsRunTime</userName>
+      <password environment="Staging">bGWp72ZYv4q9ehbB+5OOMA==</password>
+      <userName environment="Production">usadmz\eMkts-prodRunTime</userName>
+      <password environment="Production">dAtCvkBfsIKKyQT/S10NIQ==</password>
+    </appPool>
+  </appPools>
+</deploy>

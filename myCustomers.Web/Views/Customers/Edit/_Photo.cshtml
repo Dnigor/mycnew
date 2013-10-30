@@ -1,0 +1,35 @@
+﻿@model string
+<div id="profilePhoto" style="position: relative">
+  <div style="position:absolute;top:0;right:0" data-bind="with: $parent">
+    <table>
+      <tr>
+        <td id="photoPreview" class="img-polaroid" style="width:160px;height:200px;vertical-align:middle;text-align:center">
+          <img src="~/content/images/portrait_blank.png" width="160" height="200" style="width:160px;height:200px;display:none;" data-bind="visible: showBlankPhoto" />
+          @if (!string.IsNullOrEmpty(Model))
+          {
+          <img src="@Model" width="160" height="200" style="width:160px;height:200px;display:none;" data-bind="visible: showOriginalPhoto" />
+          }
+        </td>
+      </tr>
+    </table>
+
+    <div style="display:none" data-bind="visible: (FileAPI.support.cors || FileAPI.support.flash)">
+        <div class="btn btn-link js-fileapi-wrapper change-photo">
+            <div>@Resources.GetString("ADDCUSTOMER_PHOTO_CHANGE")</div>
+            <input name="photo" type="file" accept=".jpg,.jpeg,.gif,.png" data-bind="event: { change: changePhoto }" />
+        </div>
+        <button class="btn btn-link" style="display:none" data-bind="command: removePhotoCommand, visible: removePhotoCommand.canExecute">@Resources.GetString("ADDCUSTOMER_PHOTO_REMOVE")</button>
+        <button class="btn btn-link" style="display:none" data-bind="command: undoChangePhotoCommand, visible: undoChangePhotoCommand.canExecute">@Resources.GetString("ADDCUSTOMER_PHOTO_UNDO")</button>
+        <div style="width: 160px;">
+            <small class="muted">@Resources.GetString("ADDCUSTOMER_CHANGE_PHOTO_CONFIRMCOPY")</small>
+        </div>
+    </div>
+
+    <div style="display:none" data-bind="visible: !(FileAPI.support.cors || FileAPI.support.flash)">
+      <div style="width:160px;font-size:8pt;">@Resources.GetString("FLASH_REQUIRED")</div>
+      <a href="http://www.adobe.com/go/getflashplayer/">
+        <img src="~/content/images/get_adobe_flash_player.png" />
+      </a>
+    </div>
+  </div>
+</div>

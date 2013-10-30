@@ -1,0 +1,53 @@
+﻿@model EditOrderViewModel
+
+<div class="row" style="margin-bottom:20px;">
+  <div class="span8">
+    @Html.Partial("_HCard", Model.Customer)
+  </div>
+
+  <div class="span4">
+    <ul class="unstyled pull-right">
+      <li style="text-align:right;margin-bottom:10px;">
+        <label style="display:inline;">@Resources.GetString("ORDERDATE_LABEL")</label>
+        <input type="text" maxlength="10" style="margin:0;" class="input-small" data-bind="enable: canEditOrderDate, datepicker: orderDate, considerTime: true, showValidationFor: orderDate" />
+      </li>
+      <li style="text-align:right;">
+        <label style="display:inline;">@Resources.GetString("ORDERSTATUS_LABEL")</label>
+        <span data-bind="localize: orderStatus, resourceKey: 'ORDERSTATUS_{0}'"></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ko if: showCustomerDirections -->
+<div class="alert alert-info customer-directions">
+  <h5>@Resources.GetString("CUSTOMERDIRECTIONS_TITLE")</h5>
+  <ul>
+    <li style="display: none;" data-bind="visible: customerComment">
+      <label>@Resources.GetString("CUSTOMERDIRECTIONS_COMMENTS_LABEL")</label>
+      <span data-bind="text: customerComment"></span>
+    </li>
+
+    <li style="display: none;" data-bind="visible: isInterestedInSample">
+      <label>@Resources.GetString("CUSTOMERDIRECTIONS_FREESAMPLES_LABEL")</label>
+      @Resources.GetString("CUSTOMERDIRECTIONS_FREESAMPLES_TEXT")
+    </li>
+
+    <li style="display: none;" data-bind="visible: isInterestedInGift">
+      <label>@Resources.GetString("CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_LABEL")</label>
+      @Resources.GetString("CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_TEXT")
+    </li>
+        
+    <li style="display: none;" data-bind="visible: deliveryPreference">
+      <label>@Resources.GetString("CUSTOMERDIRECTIONS_DELIVERYPREFERENCE_LABEL")</label>
+      <span style="display: none;" data-bind="visible: (deliveryPreference() === 'Other'), text: deliveryPreferenceDetailIfOther"></span>
+      <span style="display: none;" data-bind="visible: (deliveryPreference() !== 'Other'), localize: deliveryPreference, resourceKey: 'DELIVERYPREFERENCE_{0}'"></span>
+    </li>
+
+    <li style="display: none;" data-bind="visible: isGift">
+      <label>@Resources.GetString("CUSTOMERDIRECTIONS_GIFTMESSAGE_LABEL")</label>
+      <span data-bind="text: giftMessage"></span>
+    </li>
+  </ul>
+</div>
+<!-- /ko -->

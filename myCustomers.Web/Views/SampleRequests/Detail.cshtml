@@ -1,0 +1,95 @@
+﻿@model SampleRequestDetailViewModel
+
+<div class="navbar" style="margin-top: 10px;">
+    <div class="navbar-inner">
+        <a class="brand" href="#">@Resources.GetString("SAMPLEREQUESTDETAIL_TITLE")</a>
+        <ul class="nav pull-right">
+            <li data-bind="busy: isBusy">
+                <div class="spinner">
+                    <img src="~/content/images/spinner.gif" />
+                </div>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+                <a class="help-toggle-link" href="#" onclick=" $('#helpContent').toggle(); return false; ">
+                    <i class="icon-question-sign"></i>@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="helpContent" class="well" style="display: none;">
+    <button type="button" class="close" onclick=" $('#helpContent').hide();return false; ">&times;</button>
+    @Html.Raw(Resources.GetLocalizedContent("SampleRequestInstructions"))
+</div>
+
+<div class="row" style="display: none; margin-bottom: 20px;" data-bind="visible: isVisible">
+    <div class="span8">
+        @if (Model.Customer != null)
+        {
+            @Html.Partial("_HCard", Model.Customer)
+        }
+    </div>
+    <div class="span4">
+        @Html.Partial("_SampleRequestHeader")
+    </div>
+</div>
+
+<div class="row" style="display: none;" data-bind="visible: isVisible">
+    <div class="span12">
+        <div class="alert alert-block alert-error" style="display:none;" data-bind="visible: validationMessage">
+            <p data-bind="text: validationMessage"></p>
+        </div>
+        <fieldset style="margin-bottom: 20px">
+            <legend>@Resources.GetString("SAMPLEREQUEST_TABLE_TITLE")</legend>
+
+            <div class="row">
+                <div id="sample" class="span12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>@Resources.GetString("SAMPLEREQUEST_TABLECOL_DESCRIPTION")</th>
+                                <th>@Resources.GetString("SAMPLEREQUEST_TABLE_TITLE")</th>
+                                <th>@Resources.GetString("SAMPLEREQUEST_TABLECOL_FOLLOWUP")</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span data-bind="text: productName"></span></td>
+                                <td>1</td>
+                                <td>
+                                    <input type="text" class="span2" data-bind="datepicker: followUpDateUtc">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    
+</div>
+<div class="row" style="display: none;" data-bind="visible: isVisible">
+    <div class="span12">
+        <div class="form-actions">
+            <button class="btn btn-primary" data-bind="command: save">@Resources.GetString("SAMPLEREQUEST_FORM_SAVEANDCLOSE")</button>
+            <a class="btn btn-link">@Resources.GetString("SAMPLEREQUEST_FORM_CANCEL")</a>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var config = {
+            sampleRequestId: '@Model.SampleRequestId',
+            ordersIndexUrl : '@Url.Action("Index", "Orders")',
+            getByIdSampleRequestUrl: '@Url.RouteUrl(new {httproute = "DefaultApi", controller = "SampleRequest", action = "GetById"})',
+            sampleRequestPostUrl: '@Url.Action("Save", "SampleRequests")'
+        };
+
+        var model = new myc.SampleRequestDetail(config);
+
+        ko.applyBindings(model);
+    </script>    
+}

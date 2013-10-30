@@ -1,0 +1,530 @@
+﻿.uneditable-input {
+  background: none;
+}
+
+.error {
+  border: 1px solid #f00 !important;
+  background-color: #f2dede !important;
+}
+
+.error-message {
+  color:white;
+  background-color: #b94a48;
+}
+
+.navbar .brand {
+  font-size: 24px;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+  color: #ffffff;
+}
+
+.navbar-secondary .navbar-inner {
+  border: none;
+  background-image: none;
+  background-color:#666;
+  filter: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 5px 0;
+  margin-top: 70px;
+  border-top: 1px solid #E5E5E5;
+}
+
+.footer-links {
+  margin: 10px 0;
+}
+
+.footer-links li:first-child {
+  padding-left: 0;
+}
+
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+
+table.pager {
+  margin: 0;
+  padding: 0;
+}
+
+.action-buttons {
+  padding:0;
+  background-color: #f5f5f5;
+  white-space: nowrap;
+}
+
+.pager-buttons {
+  background-color: #f5f5f5;
+  white-space: nowrap;
+}
+
+td.pager-status {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0 0 0 0;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td.pager-pagesize-label {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 15px 0 0 0;
+  white-space: nowrap;
+  text-align: right;
+  vertical-align: top;
+}
+
+td.pager-pagesize-select {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 10px 10px 0 5px;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+div.vcard .fn {
+  display: block;
+  font-weight: bold;
+}
+
+div.vcard .email {
+  display: block;
+}
+
+div.vcard .adr {
+  display: block;
+}
+
+div.vcard .tel {
+  display: block;
+}
+
+div.customer-directions label {
+  display: inline;
+  font-weight: bold;
+}
+
+table.table-payments td {
+  padding-right: 20px;
+  white-space: nowrap;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.table-hover-well tbody tr:hover td,
+.table-hover-well tbody tr:hover th {
+  background-color: #eee;
+}
+
+.completedTasks {
+  text-decoration: line-through;
+}
+
+.withoutLink, .withoutLink:hover {
+  color: #333333;
+  cursor: default;
+  text-decoration: none;
+}
+
+.withoutLinkOverDue, .withoutLinkOverDue:hover {
+  color: #c09853;
+  cursor: default;
+  text-decoration: none;
+}
+
+.well-nobackground {
+  background-color: transparent;
+}
+
+.btn-primary.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Customer detail styles */
+.customerdetail-tab-pane-padding {
+  padding-left: 0px;
+  padding-top: 20px;
+}
+
+div.customerdetail-nav-header {
+  display: block;
+  padding: 3px 15px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  padding-left: 22px;
+  border-bottom: solid 1px #ddd;
+}
+
+div.customerdetail-nav-content {
+  padding-left: 22px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+}
+
+div.customerdetail-nav-content dl dt {
+  font-weight: normal;
+}
+
+.hero-unit {
+  background-repeat: no-repeat;
+  height: 220px;
+  padding-left: 0;
+}
+
+.hero-copy {
+  width: 360px;
+  height: 310px;
+  margin-left: 20px;
+  margin-top: -45px;
+  overflow: hidden;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: 45px;
+}
+
+a.dashboardModule {
+  text-decoration: none;
+  color: black;
+}
+
+a.dashboardModule:hover {
+  color: #005580;
+}
+
+a.dashboardModule .badge {
+  vertical-align: middle;
+}
+
+a.dashboardModule .dashboardModule-text {
+  height: 150px;
+}
+
+.image-option {
+  display: inline-block;
+  padding: 0;
+  vertical-align: top;
+  cursor: pointer !important;
+}
+
+.image-option label {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  cursor: pointer !important;
+}
+
+.image-option label img {
+  margin: 2px;
+  padding: 4px;
+  cursor: pointer !important;
+}
+
+.image-option label span {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: block;
+  cursor: pointer !important;
+}
+
+.image-option input {
+  display:inline;
+  position:absolute;
+  left: -9999px;
+}
+
+.table-autosize {
+  width: auto;
+}
+
+.item-reminder {
+  margin-left: 20px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.overdue-reminder {
+   display: block;
+   margin-bottom: 5px;
+}
+
+.pre-no-border {
+  border: none;
+  background-color: transparent;
+  word-break: normal;
+  word-wrap: break-word;
+}
+
+.vertical-form-elements {
+  margin-top: 5px;
+}
+
+.vertical-form-elements .row-enlarged-to-bottom {
+  margin-bottom: 10px;
+}
+
+.vertical-form-elements .row-form-elements-action {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.maxchar {
+  position: relative;
+  display: inline-block;
+}
+
+.maxchar textarea {
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.maxchar span {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.consultant-name {
+  font-size: 18px;
+  color: #FFFFFF;
+  margin: 20px 0 0 0;
+}
+
+.dashboard-count {
+  margin-left: 20px;
+}
+
+/*
+.alert-error {
+  background-color: #BD362F;
+}
+*/
+
+label:not([for]) {
+cursor: default;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.form-address {
+  display: inline-block;
+  margin-bottom: 10px;
+  vertical-align:top;
+  border: solid rgb(204,204,204) 1px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.form-address-buttons {
+  padding: 0;
+  margin: 0;
+}
+
+.form-address-buttons button {
+  padding: 0;
+}
+
+.form-address table tbody tr td input {
+  background-color:transparent;
+  border:none;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.form-address table tbody tr td input:focus {
+  transition: none;
+  animation: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/*::-ms-clear {
+  display: none;
+}*/
+
+input[type="text"] {
+  color: rgb(60,60,60) !important
+}
+
+.placeholder {
+  font-style: italic;
+  color: #888 !important;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  font-style: italic;
+  color: #888 !important;
+}
+
+::-moz-placeholder, input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  font-style: italic;
+  color: #888 !important;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  font-style: italic;
+  color: #888 !important;
+}
+
+#profilePhoto button {
+  padding: 0;
+  margin: 0;
+}
+
+.change-photo {
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.change-photo div {
+  z-index: 1;
+  position: relative;
+  line-height: 24px;
+  text-align: center;
+}
+
+.change-photo input {
+  top: 0;
+  right: -40px;
+  z-index: 2;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  font-size: 50px;
+}
+
+.icon-pointer {
+  cursor: pointer;
+}
+
+.btn-help {
+  font-weight: bold !important;
+  color: #0088cc !important;
+}
+
+.spinner {
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.help-toggle-link {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.sample-request-header {
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+.sample-request-header__date-requested-label {
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.sample-request-header__date-requested-field {
+     vertical-align: top;
+}
+
+.sample-request-header__date-delivered-label {
+    text-align: right; vertical-align: middle;
+}
+.sample-request-header__date-delivered-field {
+    vertical-align: top;
+}
+.sample-request-header__date-delivered-field__input {
+    width: 145px !important;
+}
+.sample-request-header__status-label {
+    text-align: right; vertical-align: middle;
+}
+.sample-request-header__status-field {
+    vertical-align: top;
+}
+.sample-request-header__status-field__select {
+    width: 155px;
+}
+.hasDatepicker {
+    width: 100px;
+}
+
+.social-network-item {
+    margin-bottom:5px;
+    white-space: nowrap;   
+}
+
+.termsLogo {
+    width: 20%; 
+    height: 20%;
+}
+
+.group-close:hover, .group-close:focus {
+    color: #ffffff;
+    cursor: pointer;
+    opacity: 0.4;
+    text-decoration: none;
+}
+
+.group-close {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    padding: 0;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #000000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    padding-left: 0px;
+}
+
+.group-spacing {
+    padding-top: 1px;
+    margin-bottom: 7px;
+}
+
+.group-label {
+    padding-left: 7px;
+}
+
+.navbar .nav .link-disabled,
+.navbar .nav .link-disabled:hover,
+.navbar .nav .link-disabled:focus {
+    color: #999999;
+    cursor: default;
+}
+

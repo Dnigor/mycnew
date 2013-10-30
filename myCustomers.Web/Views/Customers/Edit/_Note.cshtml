@@ -1,0 +1,11 @@
+﻿<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_NOTE")</label>
+
+  <div class="controls">
+    <div class="maxchar">
+      <textarea maxlength="1000" data-bind="value: note, valueUpdate: 'keyup', attr: { maxlength: note.maxCharacterCount }" rows="5" style="width:750px;overflow:auto;"></textarea>
+      <span data-bind="text: note.remainingCharacterCount"></span>
+    </div>
+    <small class="muted">@Resources.GetString("CUSTOMERDETAIL_NOTES_BUTTON_CONFIRMCOPY")</small>
+  </div>
+</div>

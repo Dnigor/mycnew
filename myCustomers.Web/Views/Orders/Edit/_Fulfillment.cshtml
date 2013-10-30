@@ -1,0 +1,47 @@
+﻿@using myCustomers;
+
+@model EditOrderViewModel
+@{
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+}
+
+@if (Model.Features.CDS)
+{
+  <div class="form-horizontal">
+    <fieldset style="margin-bottom: 20px">
+      <legend>@Resources.GetString("FULFILLMENT_LABEL")</legend>
+      <div class="row">
+        <div class="span12">
+          <div class="control-group">
+            <label class="control-label">@Resources.GetString("FULFILLMENTMETHOD_LABEL")</label>
+            <div class="controls">
+              <label class="radio">
+                <input type="radio" name="deliveryOption" value="CDS" data-bind="checked: fulfillmentOption, enable: function() { return isEligibleForCDS() && canEditFulfillment(); }" /> @Html.Raw(Resources.GetString("FULFILLMENTOPTION_CDS"))
+                @if (!Model.IsEligibleForCDS)
+                {
+                  <div style="font-size:10px;">
+                    @Html.Raw(Resources.GetString("FULFILLMENTOPTION_CDS_INELIGIBLE"))
+                  </div>
+                }
+              </label>
+              <label class="radio">
+                <input type="radio" name="deliveryOption" value="MyInventory" data-bind="checked: fulfillmentOption, enable: canEditFulfillment" /> @Resources.GetString("FULFILLMENTOPTION_MYINVENTORY")
+              </label>
+            </div>
+            <div class="controls">
+              <div style="display:none" class="alert alert-error" data-bind="visible: !fulfillmentOption.isValid() && (fulfillmentOption.isModified() || app.showValidationErrors), text: app.localize(fulfillmentOption.error())"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    @if (Model.Features.CreditCard && !Model.HasActiveProPayAccount)
+    {
+      <div class="alert alert-info">
+        @Html.Raw(Resources.GetString("PROPAY_SIGNUP"))
+        <a class="btn btn-success" href="@appSettings.GetValue("ProPay.SignupLink")" target="_blank">@Resources.GetString("PROPAY_SIGNUP_BUTTON")</a>
+      </div>
+    }
+  </div>
+}

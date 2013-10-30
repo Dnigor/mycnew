@@ -1,0 +1,31 @@
+﻿<table class="pull-right sample-request-header">
+    <tr>
+        <td class="sample-request-header__date-requested-label">
+            <label>@Resources.GetString("SAMPLEREQUEST_DATEREQUESTED_LABEL")</label>
+        </td>
+        <td class="sample-request-header__date-requested-field">
+            <span data-bind="text: requestDateUtc"></span>
+        </td>
+    </tr>
+    <tr>
+        <td class="sample-request-header__date-delivered-label">
+            <label>@Resources.GetString("SAMPLEREQUEST_DELIVERYDATE_LABEL")</label>
+        </td>
+        <td class="sample-request-header__date-delivered-field">
+            <input type="text" 
+                   class="span2 sample-request-header__date-delivered-field__input" 
+                data-bind="datepicker: deliveryDateUtc">
+        </td>
+    </tr>
+    <tr>
+        <td class="sample-request-header__status-label">
+            <label>@Resources.GetString("SAMPLEREQUEST_STATUS_LABEL")</label>
+        </td>
+        <td class="sample-request-header__status-field">
+            <select class="span2 sample-request-header__status-field__select" data-bind="value: isCompleted">
+                <option value="1">@Resources.GetString("SAMPLEREQUEST_STATUS_COMPLETED")</option>
+                <option value="0">@Resources.GetString("SAMPLEREQUEST_STATUS_INCOMPLETE")</option>
+            </select>
+        </td>
+    </tr>
+</table>

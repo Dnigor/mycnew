@@ -1,0 +1,29 @@
+﻿@using System.Globalization;
+@{
+  Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>@Resources.GetString("ERROR_404_TITLE")</title>
+  @Styles.Render("~/content/css")
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="nav-logo" style="margin-top: 10px;">
+          <a href="#"><img src="~/content/images/header_mkintouch.png" border="0"></a>
+        </div>
+        <a href="~/" class="brand" style="color: #ffffff">@Resources.GetString("SITE_NAME")</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    @Html.Raw(Resources.GetLocalizedContent("404"))
+  </div>
+</body>
+</html>

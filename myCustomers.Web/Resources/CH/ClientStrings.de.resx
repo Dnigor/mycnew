@@ -1,0 +1,855 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABBR_HOMEPHONE" xml:space="preserve">
+    <value>F:</value>
+  </data>
+  <data name="ABBR_MOBILEPHONE" xml:space="preserve">
+    <value>M:</value>
+  </data>
+  <data name="ABBR_OTHERPHONE" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ABBR_WORKPHONE" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ADDTOGROUP_MODAL_BUTTONADD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDTOGROUP_MODAL_DROPDOWNLABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDTOGROUP_MODAL_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDTOGROUP_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="APPROVED" xml:space="preserve">
+    <value>Genehmigt</value>
+  </data>
+  <data name="ARCHIVECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Die Kunden wurden archiviert. </value>
+  </data>
+  <data name="ARCHIVEORDERS_SUCCESS" xml:space="preserve">
+    <value>Die Bestellungen wurden archiviert</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="CCPAYMENT_ALERT_DECLINED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_PROCESSING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_SAVING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_AMEX" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_DISCOVER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_MASTER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_VISA" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CHECKING_DELIVERYADDRESS" xml:space="preserve">
+    <value>Versandadresse checken</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMERS_BODY" xml:space="preserve">
+    <value>Möchten Sie diese Kunden wirklich archivieren? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Archivierte Kunden finden Sie unter Kunden --&gt; Klicken Sie auf Filter--&gt; Wählen Sie Archiv.&lt;/small&gt;</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Kunden archivieren</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMER_BODY" xml:space="preserve">
+    <value>Möchten Sie diese Kunden wirklich archivieren? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Archivierte Kunden finden Sie unter Kunden --&gt; Klicken Sie auf Filter--&gt; Wählen Sie Archiv.&lt;/small&gt;</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMER_TITLE" xml:space="preserve">
+    <value>Kunde archivieren</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDERS_BODY" xml:space="preserve">
+    <value>Möchten Sie die ausgewählte Bestellung wirklich archivieren?</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDERS_TITLE" xml:space="preserve">
+    <value>Bestellungen archivieren</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDER_BODY" xml:space="preserve">
+    <value>Möchten Sie diese Bestellung wirklich archivieren?</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDER_TITLE" xml:space="preserve">
+    <value>Bestellung archivieren</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMERS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie dies löschen möchten? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Alle Informationen zu diesem Kunden werden gelöscht; Bestellungen, Erinnerungen, Produktnachbestellung, etc. Um gelöschte Kunden wieder zu finden, klicken Sie auf den Papierkorb.</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Kunden löschen</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMER_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie dies löschen möchten? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Alle Informationen zu diesem Kunden werden gelöscht; Bestellungen, Erinnerungen, Produktnachbestellung, etc. Um gelöschte Kunden wieder zu finden, klicken Sie auf den Papierkorb.</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMER_TITLE" xml:space="preserve">
+    <value>Kunden löschen</value>
+  </data>
+  <data name="CONFIRM_DELETEFROMGROUP_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie diesen Kunden aus der Gruppe löschen möchten?</value>
+  </data>
+  <data name="CONFIRM_DELETEFROMGROUP_TITLE" xml:space="preserve">
+    <value>Von der Gruppe entfernen</value>
+  </data>
+  <data name="CONFIRM_DELETEGROUPS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie die gelöschten Gruppen löschen möchten?</value>
+  </data>
+  <data name="CONFIRM_DELETEGROUPS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETEORDERS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie die ausgewählten Bestellungen löschen möchten?</value>
+  </data>
+  <data name="CONFIRM_DELETEORDERS_TITLE" xml:space="preserve">
+    <value>Bestellungen löschen</value>
+  </data>
+  <data name="CONFIRM_DELETEORDER_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie die Bestellung löschen möchten?</value>
+  </data>
+  <data name="CONFIRM_DELETEORDER_TITLE" xml:space="preserve">
+    <value>Bestellung löschen</value>
+  </data>
+  <data name="CONFIRM_MARKCOMPLETE_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie zur Abwicklung der Bestellung?</value>
+  </data>
+  <data name="CONFIRM_MARKCOMPLETE_TITLE" xml:space="preserve">
+    <value>Bestätigen Sie als erledigt markieren</value>
+  </data>
+  <data name="CONFIRM_MARKSHIPPED_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie diese Bestellung als verschickt markieren möchten? &lt;br/&gt;&lt;br/&gt;&lt;small class="muted"&gt;Sie können diese Bestellung ansehen und bearbeiten.&lt;small/&gt;</value>
+  </data>
+  <data name="CONFIRM_MARKSHIPPED_TITLE" xml:space="preserve">
+    <value>Als verschickt markieren</value>
+  </data>
+  <data name="CONFIRM_REMOVEADDRESS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie die Adresse löschen möchten?</value>
+  </data>
+  <data name="CONFIRM_REMOVEADDRESS_TITLE" xml:space="preserve">
+    <value>Entfernen der Adresse bestätigen</value>
+  </data>
+  <data name="CONFIRM_REMOVEFOLLOWUP_BODY" xml:space="preserve">
+    <value>Möchten Sie die Erinnerung zum Nachfassen wirklich löschen?</value>
+  </data>
+  <data name="CONFIRM_REMOVEFOLLOWUP_TITLE" xml:space="preserve">
+    <value>Bestätigen Sie, dass Sie die Erinnerung zum Nachfassen löschen möchten</value>
+  </data>
+  <data name="CONFIRM_REMOVEFROMGROUP_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEFROMGROUP_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEORDERITEM_BODY" xml:space="preserve">
+    <value>Möchten Sie das Produkt wirklich aus der Bestellung entfernen?</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERITEM_TITLE" xml:space="preserve">
+    <value>Bestätigen Sie, dass Sie das Produkt entfernen möchten</value>
+  </data>
+  <data name="CONFIRM_REMOVEPAYMENT_BODY" xml:space="preserve">
+    <value>Möchten Sie die Zahlung wirklich aus der Bestellung  löschen?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPAYMENT_TITLE" xml:space="preserve">
+    <value>Bestätigen Sie das Löschen der Zahlung</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONE_BODY" xml:space="preserve">
+    <value>Möchten Sie diese Telefonnummer wirklich entfernen?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONE_TITLE" xml:space="preserve">
+    <value>Telefonnummer entfernen</value>
+  </data>
+  <data name="CONFIRM_RESTORECUSTOMERS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie archivieren möchten? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Um archivierte Kunden zu finden, klicken Sie auf die Kundenliste.</value>
+  </data>
+  <data name="CONFIRM_RESTORECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Kunden archivieren</value>
+  </data>
+  <data name="CONFIRM_RESTOREORDERS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie archivieren möchten? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Um archivierte Bestellungen zu finden, klicken Sie auf die Liste Ihrer Bestellungen.</value>
+  </data>
+  <data name="CONFIRM_RESTOREORDERS_TITLE" xml:space="preserve">
+    <value>Bestellungen wiederherstellen</value>
+  </data>
+  <data name="CONFIRM_SAVEORDERBEFOREPAYMENT_BODY" xml:space="preserve">
+    <value>Die Bestellung muss gespeichert werden, bevor Sie die Bezahlung abschließen möchten. Möchten Sie die Bestellung speichern und mit der Kreditkartenbezahlun fortfahren?</value>
+  </data>
+  <data name="CONFIRM_SAVEORDER_TITLE" xml:space="preserve">
+    <value>Bestellung speichern?</value>
+  </data>
+  <data name="CONFIRM_SUBMITCDS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_SUBMITCDS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMERS_BODY" xml:space="preserve">
+    <value>Möchten Sie die ausgewählten Kunden wirklich aus dem Archiv holen?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Kunde aus dem Archiv holen</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMER_BODY" xml:space="preserve">
+    <value>Möchten Sie die ausgewählten Kunden wirklich aus dem Archiv holen?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMER_TITLE" xml:space="preserve">
+    <value>Kunden aus Archiv zurückholen</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDERS_BODY" xml:space="preserve">
+    <value>Möchten Sie die ausgewählten Bestellungen wirklich aus dem Archiv holen?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDERS_TITLE" xml:space="preserve">
+    <value>Bestellungen wiederherstellen</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDER_BODY" xml:space="preserve">
+    <value>Möchten Sie die ausgewählten Bestellungen wirklich aus dem Archiv holen?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDER_TITLE" xml:space="preserve">
+    <value>Bestellung aus dem Archiv holen</value>
+  </data>
+  <data name="CONFIRM_UNDELETECUSTOMER_BODY" xml:space="preserve">
+    <value>Möchten Sie die Undelete dieser Kunde?</value>
+  </data>
+  <data name="CONFIRM_UNDELETECUSTOMER_TITLE" xml:space="preserve">
+    <value>Löschen des Kunden rückgängig machen</value>
+  </data>
+  <data name="CONFIRM_UNDELETEORDER_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass das Löschen dieser Bestellung rückgängig machen möchten?</value>
+  </data>
+  <data name="CONFIRM_UNDELETEORDER_TITLE" xml:space="preserve">
+    <value>Löschen der Bestellung rückgängig machen</value>
+  </data>
+  <data name="CONFIRM_UPDATEPAYMENTSTATUS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie den Status der ausgewählten Bestellungen  aktualisieren möchten?</value>
+  </data>
+  <data name="CONFIRM_UPDATEPAYMENTSTATUS_TITLE" xml:space="preserve">
+    <value>Bezahlstatus aktualsieren</value>
+  </data>
+  <data name="CUSTOMERLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Kunden - Seite {1} von {2}</value>
+  </data>
+  <data name="CUSTOMER_SAVESUCCESS_MSG" xml:space="preserve">
+    <value>Herzlichen Glückwunsch, Sie haben Ihren Kunden gespeichert.</value>
+  </data>
+  <data name="CUSTOMER_SAVESUCCESS_TITLE" xml:space="preserve">
+    <value>Kundenprofil gespeichert</value>
+  </data>
+  <data name="DECLINED" xml:space="preserve">
+    <value>Verweigert</value>
+  </data>
+  <data name="DELETECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Der Kunde wurde erfolgreich gelöscht.</value>
+  </data>
+  <data name="DELETEFROMGROUP_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEGROUPS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEORDERS_SUCCESS" xml:space="preserve">
+    <value>Die Bestellung wurde erfolgreich gelöscht.</value>
+  </data>
+  <data name="DELETE_NOTES_CONFIRMATION_BODY" xml:space="preserve">
+    <value>Möchten Sie diese Notiz wirklich löschen?</value>
+  </data>
+  <data name="DELETE_NOTES_CONFIRMATION_TITLE" xml:space="preserve">
+    <value>Notiz löschen</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_CUSTOMERWILLPICKUP" xml:space="preserve">
+    <value>Abholung</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_DELIVERTOHOMEORWORK" xml:space="preserve">
+    <value>Zuhause/Arbeit</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_OTHER" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SETUPAPPOINTMENTFORCONSULTATIONANDDELIVERY" xml:space="preserve">
+    <value>Termin für Beratung und Produktauslieferung vereinbaren</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SHIPTOCUSTOMERADDRESS" xml:space="preserve">
+    <value>An Kundenadresse schicken</value>
+  </data>
+  <data name="EDITCUSTOMER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value>Sie müssen die Validierung Fehler vor dem Speichern diesen Kunden zu beheben</value>
+  </data>
+  <data name="EDITCUSTOMER_VALIDATION_MESSAGE_TITLE" xml:space="preserve">
+    <value>Kunden Validation</value>
+  </data>
+  <data name="EDITORDER_TITLE" xml:space="preserve">
+    <value>Bestellung ändern</value>
+  </data>
+  <data name="EDITORDER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value>Bitte vervollständigen Sie die rot markierten Angaben, um die Bestellung zu speichern. </value>
+  </data>
+  <data name="EDITORDER_VALIDATION_TITLE" xml:space="preserve">
+    <value>Ungültige Bestellung</value>
+  </data>
+  <data name="EDIT_CUSTOMER_INVALID_DUPLICATE_GROUP_NAME" xml:space="preserve">
+    <value>Der Gruppenname ist ungültig oder existiert bereits.</value>
+  </data>
+  <data name="ERROR" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="ERROR_CSV_FILE_EXPECTED" xml:space="preserve">
+    <value>CSV wird erwartet</value>
+  </data>
+  <data name="ERROR_CSV_FILE_REQUIRED" xml:space="preserve">
+    <value>CSV ist notwendig</value>
+  </data>
+  <data name="ERROR_NOTIFY_TITLE" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="IMPORTANTDATE_GRADUATION" xml:space="preserve">
+    <value>Schulabschluss</value>
+  </data>
+  <data name="IMPORTANTDATE_NEWBABY" xml:space="preserve">
+    <value>Geburt des Kindes</value>
+  </data>
+  <data name="IMPORTANTDATE_NEWJOB" xml:space="preserve">
+    <value>Neuer Job</value>
+  </data>
+  <data name="IMPORTANTDATE_OTHER" xml:space="preserve">
+    <value>Weiterer wichtiger Termin</value>
+  </data>
+  <data name="IMPORTANTDATE_VACATION" xml:space="preserve">
+    <value>Urlaub ab</value>
+  </data>
+  <data name="IMPORTANTDATE_WEDDING" xml:space="preserve">
+    <value>Hochzeitstag</value>
+  </data>
+  <data name="IMPORTCUSTOMERSLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Kontakte - Seite {1} von {2}</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADD" xml:space="preserve">
+    <value>Hinzufügen</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGE" xml:space="preserve">
+    <value>Zusammenführen</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOTIFY_SUCCESS" xml:space="preserve">
+    <value>Erfolgreich! Sie haben {0} Kunden importiert. </value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIP" xml:space="preserve">
+    <value>Behalten</value>
+  </data>
+  <data name="INVALID_ADDRESS" xml:space="preserve">
+    <value>Die Adresse erfordert mindestens einen Adressaen und mindestens eines dieser Felder: Straße, Stadt, PLZ oder Land.  </value>
+  </data>
+  <data name="INVALID_ANNIVERSARY" xml:space="preserve">
+    <value>Ungültiger Jahrestag</value>
+  </data>
+  <data name="INVALID_BIRTHDAY" xml:space="preserve">
+    <value>Ungültiger Geburtstag</value>
+  </data>
+  <data name="INVALID_AMOUNT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_CCNUM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_DATE" xml:space="preserve">
+    <value>ungültiges Datum</value>
+  </data>
+  <data name="INVALID_EMAIL" xml:space="preserve">
+    <value>Ungültige E-Mail</value>
+  </data>
+  <data name="INVALID_NAME" xml:space="preserve">
+    <value>Name darf keine Zahlen oder Sonderzeichen enthalten</value>
+  </data>
+  <data name="INVOICE_CREATE_ERROR" xml:space="preserve">
+    <value>Es ist ein Fehler bei der Erstellung der Quittung aufgetreten. Bitte probieren Sie es später erneut.</value>
+  </data>
+  <data name="MARKCOMPLETE_SUCCESS" xml:space="preserve">
+    <value>Die Bestellung wurde erfolgreich aktualisiert und als bearbeitet markiert.</value>
+  </data>
+  <data name="MARKSHIPPED_SUCCESS" xml:space="preserve">
+    <value>Die Bestellung wurde erfolgreich aktualisiert und als verschickt markiert.</value>
+  </data>
+  <data name="NOTESLIST_ITEM_TITLE" xml:space="preserve">
+    <value>{0] {1} von {2}</value>
+  </data>
+  <data name="NOTESLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Notizen - Seite {1} von {2}</value>
+  </data>
+  <data name="NOTIFY_ADDPRODUCT_SUCCESS" xml:space="preserve">
+    <value>Produkte wurden erfolgreich hinzugefügt.</value>
+  </data>
+  <data name="NOTIFY_UPDATEPRODUCT_SUCCESS" xml:space="preserve">
+    <value>Anzahl der Produkte wurde erfolgreich aktualisiert</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ORDERDETAIL_ARCHIVE" xml:space="preserve">
+    <value>Archiv</value>
+  </data>
+  <data name="ORDERDETAIL_DELETE" xml:space="preserve">
+    <value>Löschen</value>
+  </data>
+  <data name="ORDERDETAIL_UNARCHIVE" xml:space="preserve">
+    <value>Wiederherstellen</value>
+  </data>
+  <data name="ORDERDETAIL_UNDELETE" xml:space="preserve">
+    <value>Löschen rückgängig machen</value>
+  </data>
+  <data name="ORDERLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Bestellungen - Seite {1} von {2}</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_COMPLETED" xml:space="preserve">
+    <value>Vollständig bezahlt</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_NA" xml:space="preserve">
+    <value>Noch nicht bezahlt</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_PARTIAL" xml:space="preserve">
+    <value>Teilweise bezahlt</value>
+  </data>
+  <data name="ORDERSOURCE_ONLINE" xml:space="preserve">
+    <value>Persönliche Website</value>
+  </data>
+  <data name="ORDERSOURCE_SALESTICKET" xml:space="preserve">
+    <value>eigene Eingabe</value>
+  </data>
+  <data name="ORDERSTATUS_PROCESSED" xml:space="preserve">
+    <value>Bearbeitet</value>
+  </data>
+  <data name="ORDERSTATUS_SHIPPEDDELIVERED" xml:space="preserve">
+    <value>Versendet/Ausgeliefert</value>
+  </data>
+  <data name="ORDERSTATUS_SUBMITTED" xml:space="preserve">
+    <value>Neu</value>
+  </data>
+  <data name="ORDERSTATUS_UNDERREVIEW" xml:space="preserve">
+    <value>Offen</value>
+  </data>
+  <data name="ORDER_EDIT" xml:space="preserve">
+    <value>Bestellung ändern</value>
+  </data>
+  <data name="ORDER_UPDATESTATUS_SUCCESS" xml:space="preserve">
+    <value>Der Status der Bestellung wurde geändert.</value>
+  </data>
+  <data name="ORDER_UPDATESTATUS_TITLE" xml:space="preserve">
+    <value>Bestellung geändert</value>
+  </data>
+  <data name="PAYMENT_STATUS_SUCCESS" xml:space="preserve">
+    <value>Der Status Ihrer Bezahlung wurde aktualisiert, bitte klicken Sie auf Bestellungen um die Änderungen zu sehen.</value>
+  </data>
+  <data name="PHONENUMBERTYPE_HOME" xml:space="preserve">
+    <value>Festnetz</value>
+  </data>
+  <data name="PHONENUMBERTYPE_MOBILE" xml:space="preserve">
+    <value>Mobil</value>
+  </data>
+  <data name="PHONENUMBERTYPE_OTHER" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="PHONENUMBERTYPE_WORK" xml:space="preserve">
+    <value>Arbeit</value>
+  </data>
+  <data name="PROCESSCCPAYMENT_DECLINED" xml:space="preserve">
+    <value>Wiederholen</value>
+  </data>
+  <data name="PROCESSCCPAYMENT_PENDING" xml:space="preserve">
+    <value>Prozess</value>
+  </data>
+  <data name="PRODUCTSLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Produkte - Seite {1} von {2}</value>
+  </data>
+  <data name="PROGRESS_ADDTOGROUP" xml:space="preserve">
+    <value>Ausgewählte Kunden zu Gruppe hinzufügen</value>
+  </data>
+  <data name="PROGRESS_ARCHIVECUSTOMER" xml:space="preserve">
+    <value>Ausgewählte Kunden archivieren</value>
+  </data>
+  <data name="PROGRESS_ARCHIVEORDER" xml:space="preserve">
+    <value>Ausgewählte Bestellungen werden archiviert</value>
+  </data>
+  <data name="PROGRESS_DELETECUSTOMERS" xml:space="preserve">
+    <value>Ausgewählte Kunden löschen</value>
+  </data>
+  <data name="PROGRESS_DELETEFROMGROUP" xml:space="preserve">
+    <value>Ausgewählte Kunden von der Gruppe entfernen</value>
+  </data>
+  <data name="PROGRESS_DELETEGROUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_DELETEORDERS" xml:space="preserve">
+    <value>Ausgewählte Bestellungen löschen</value>
+  </data>
+  <data name="PROGRESS_RESTORECUSTOMERS" xml:space="preserve">
+    <value>Ausgewählte Kunden löschen</value>
+  </data>
+  <data name="PROGRESS_RESTOREORDERS" xml:space="preserve">
+    <value>Ausgewählte Bestellungen löschen</value>
+  </data>
+  <data name="PROGRESS_UNARCHIVECUSTOMER" xml:space="preserve">
+    <value>Ausgewählte Kunden aus dem Archiv holen…</value>
+  </data>
+  <data name="PROGRESS_UNARCHIVEORDER" xml:space="preserve">
+    <value>Ausgewählte Bestellungen werden dearchiviert</value>
+  </data>
+  <data name="PROGRESS_UPDATEPAYMENTSTATUS" xml:space="preserve">
+    <value>Bezahlstatus für ausgewählte Bestellungen ändern …</value>
+  </data>
+  <data name="PROMPT_DISCARDCHANGES" xml:space="preserve">
+    <value>Sie haben Ihre Änderungen nicht gespeichert. </value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_FRAGRANCE" xml:space="preserve">
+    <value>Düfte</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_MAKEUP" xml:space="preserve">
+    <value>Make-up</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_SKINCARE" xml:space="preserve">
+    <value>Hautpflege</value>
+  </data>
+  <data name="REMINDERS_PREFIX" xml:space="preserve">
+    <value>für</value>
+  </data>
+  <data name="REMOVEWISHLIST_SUCCESS" xml:space="preserve">
+    <value>Produkt wurde erfolgreich von der Wunschliste entfernt.</value>
+  </data>
+  <data name="RESTORECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Die Kunden wurden erfolgreich wiederhergestellt.</value>
+  </data>
+  <data name="RESTOREORDERS_SUCCESS" xml:space="preserve">
+    <value>Die Bestellungen wurden erfolgreich wiederhergestellt.</value>
+  </data>
+  <data name="SAMPLEREQUEST_COMPLETE" xml:space="preserve">
+    <value>Vollständig</value>
+  </data>
+  <data name="SAMPLEREQUEST_INCOMPLETE" xml:space="preserve">
+    <value>Unvollständig</value>
+  </data>
+  <data name="SAMPLEREQUEST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Anfrage für Produktproben - Seite {1} von {2}</value>
+  </data>
+  <data name="SAVEORDER_SUCCESS" xml:space="preserve">
+    <value>Die Bestellung wurde gespeichert.</value>
+  </data>
+  <data name="SAVING_ORDER" xml:space="preserve">
+    <value>Bestellung speichern …</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_ERROR" xml:space="preserve">
+    <value>Sie müssen den Validierungsfehler beheben, bevor eine Bestätigungs-E-Mail verschickt werden kann</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_SUCCESS" xml:space="preserve">
+    <value>Bestätigungs-E-Mail wurde erfolgreich verschickt</value>
+  </data>
+  <data name="SOCIALNETWORK_FACEBOOK" xml:space="preserve">
+    <value>Klicken Sie um Facebook hinzuzufügen</value>
+  </data>
+  <data name="SOCIALNETWORK_GOOGLEPLUS" xml:space="preserve">
+    <value>Klicken Sie um Google+ hinzuzufügen</value>
+  </data>
+  <data name="SOCIALNETWORK_OTHER" xml:space="preserve">
+    <value>Klicken Sie um andere soziale Netzwerke hinzuzufügen</value>
+  </data>
+  <data name="SOCIALNETWORK_TWITTER" xml:space="preserve">
+    <value>Klicken Sie um einen Twitter Link hinzuzufügen</value>
+  </data>
+  <data name="SOCIALNETWORK_VK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SORT_AMOUNT" xml:space="preserve">
+    <value>Betrag</value>
+  </data>
+  <data name="SORT_DATEADDED" xml:space="preserve">
+    <value>Erstelldatum</value>
+  </data>
+  <data name="SORT_FIRSTNAME" xml:space="preserve">
+    <value>Vorname</value>
+  </data>
+  <data name="SORT_LASTNAME" xml:space="preserve">
+    <value>Nachname</value>
+  </data>
+  <data name="SORT_LASTORDERDATE" xml:space="preserve">
+    <value>Datum der letzten Bestellung</value>
+  </data>
+  <data name="SORT_ORDERDATE" xml:space="preserve">
+    <value>Datum der Bestellung</value>
+  </data>
+  <data name="SORT_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Status der Zahlung</value>
+  </data>
+  <data name="SORT_ORDERSTATUS" xml:space="preserve">
+    <value>Status der Bestellung</value>
+  </data>
+  <data name="SORT_ORDERTYPE" xml:space="preserve">
+    <value>Bestellung eingegangen über</value>
+  </data>
+  <data name="SORT_PROFILEDATE" xml:space="preserve">
+    <value>Profildaten</value>
+  </data>
+  <data name="SORT_RELEVANCE" xml:space="preserve">
+    <value>Relevanz</value>
+  </data>
+  <data name="SUBMITCDSORDER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITCDSORDER_VALIDATION_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITTING_CDSORDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_BEAUTENEWS" xml:space="preserve">
+    <value>Be@uty-News</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_MKECARDS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_PRODUCTREORDERREMINDER" xml:space="preserve">
+    <value>Erinnerungen für Produknachbestellungen</value>
+  </data>
+  <data name="UNARCHIVECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Die Kunden wurden aus dem Archiv geholt. </value>
+  </data>
+  <data name="UNARCHIVEORDERS_SUCCESS" xml:space="preserve">
+    <value>Die Bestellungen wurden erfolgreich aus dem Archiv wiederhergestellt.</value>
+  </data>
+  <data name="VALIDATION_ADDRESSEE_REQUIRED" xml:space="preserve">
+    <value>Bitte geben Sie einen Empfänger an</value>
+  </data>
+  <data name="VALIDATION_ADDRESS_ONEOF" xml:space="preserve">
+    <value>Bitte fügen Sie Straße, Stadt, Bundesland oder Postleitzahl hinzu</value>
+  </data>
+  <data name="VALIDATION_DUPEMAIL" xml:space="preserve">
+    <value>Diese E-Mail-Adress wird bereits von einem anderen Kunden verwendet.</value>
+  </data>
+  <data name="VALIDATION_NUMBER" xml:space="preserve">
+    <value>Eine Nummer ist notwendig</value>
+  </data>
+  <data name="VALIDATION_ORDER_FULFILLMENTOPTION_REQUIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_PHONEEXTENSION" xml:space="preserve">
+    <value>Ungültige Durchwahl</value>
+  </data>
+  <data name="VALIDATION_PHONENUMBER" xml:space="preserve">
+    <value>Ungültige Telefonnummer</value>
+  </data>
+  <data name="VALIDATION_REQUIRED" xml:space="preserve">
+    <value>Das Feld ist ein Pflichtfeld</value>
+  </data>
+  <data name="VALIDATION_TASKTITLE_REQUIRED" xml:space="preserve">
+    <value>Titel ist notwendig</value>
+  </data>
+  <data name="VALIDATION_URL" xml:space="preserve">
+    <value>Ungültige URL</value>
+  </data>
+  <data name="ORDER_LOADING" xml:space="preserve">
+    <value>Bestellung lädt …</value>
+  </data>
+  <data name="ADDCUSTOMER_ANNIVERSARY" xml:space="preserve">
+    <value>Hochzeitstag</value>
+  </data>
+  <data name="ADDCUSTOMER_BIRTHDAY" xml:space="preserve">
+    <value>Geburtstag</value>
+  </data>
+  <data name="ADDCUSTOMER_GRADUATION" xml:space="preserve">
+    <value>Schulabschluss</value>
+  </data>
+  <data name="ADDCUSTOMER_NEWBABY" xml:space="preserve">
+    <value>Geburt des Kindes</value>
+  </data>
+  <data name="ADDCUSTOMER_NEWJOB" xml:space="preserve">
+    <value>Neuer Job</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER" xml:space="preserve">
+    <value>Andere</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER_DESCRIPTION" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="ADDCUSTOMER_VACATION" xml:space="preserve">
+    <value>Urlaub ab</value>
+  </data>
+  <data name="ADDCUSTOMER_WEDDING" xml:space="preserve">
+    <value>Hochzeitstag</value>
+  </data>
+  <data name="AJAX_ERROR_TITLE" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="CONFIRM_PURGECUSTOMERS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie die ausgewählten Kunden löschen möchten?</value>
+  </data>
+  <data name="CONFIRM_PURGEORDERS_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie die ausgewählten Bestellungen löschen möchten?</value>
+  </data>
+  <data name="CONFIRM_PURGEORDERS_TITLE" xml:space="preserve">
+    <value>Bestellungen löschen</value>
+  </data>
+  <data name="CONFIRM_REMOVEPRR_TITLE" xml:space="preserve">
+    <value>Erinnerung für Nachbestellung entfernen</value>
+  </data>
+  <data name="ERROR_NOTIFY_MESSAGE" xml:space="preserve">
+    <value>Ihre Anfrage konnte nicht bearbeitet werden. Probieren Sie es erneut oder kontaktieren Sie unseren Customer Service unter  +49 (0)89 – 800 900 112 (Montag – Donnerstag, 8:00 – 18:00 Uhr; Freitag, 8:00 – 17:00 Uhr).</value>
+  </data>
+  <data name="INVALID_CCAMOUNT" xml:space="preserve">
+    <value>Ungülige Menge</value>
+  </data>
+  <data name="PROGRESS_PURGECUSTOMERS" xml:space="preserve">
+    <value>Ausgewählte Kunden löschen</value>
+  </data>
+  <data name="PROGRESS_PURGEORDERS" xml:space="preserve">
+    <value>Ausgewählte Bestellungen löschen</value>
+  </data>
+  <data name="PURGECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Die Kunden wurden erfolgreich gelöscht.</value>
+  </data>
+  <data name="PURGEORDERS_SUCCESS" xml:space="preserve">
+    <value>Die Bestellungen wurden erfolgreich gelöscht.</value>
+  </data>
+  <data name="REMOVEPRR_PROGRESS" xml:space="preserve">
+    <value>Erinnerung zur Nachbestellung löschen ...</value>
+  </data>
+  <data name="REMOVEPRR_SUCCESS_MESSAGE" xml:space="preserve">
+    <value>Die Erinnerung zur Nachbestellung wurde entfernt.</value>
+  </data>
+  <data name="SORT_BY" xml:space="preserve">
+    <value>Sortieren nach</value>
+  </data>
+  <data name="SORT_DIRECTION_TOOLTIP" xml:space="preserve">
+    <value>Auswahl umdrehen</value>
+  </data>
+  <data name="UPDATEPRR_PROGRESS" xml:space="preserve">
+    <value>Aktualisierung der Erinnerungen für Nachbestellungen …</value>
+  </data>
+  <data name="UPDATEPRR_SUCCESS_MESSAGE" xml:space="preserve">
+    <value>Das Datum für Nachbestellungen wurde ak</value>
+  </data>
+  <data name="CONFIRM_PURGECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Kunden löschen</value>
+  </data>
+  <data name="CONFIRM_REMOVEPRR_BODY" xml:space="preserve">
+    <value>Sind Sie sicher, dass Sie die Erinnerung zur Nachbestellung entfernen möchten?</value>
+  </data>
+</root>

@@ -1,0 +1,18 @@
+﻿@using System.Globalization;
+@model EditCustomerViewModel
+
+@if (Model.Languages.Length > 1)
+{
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("ADDCUSTOMER_LANGUAGE")</label>
+
+      <div class="controls">
+        <select data-bind="value: preferredLanguage">
+          @foreach (var lang in Model.Languages)
+          {
+            <option value="@lang">@(new CultureInfo(lang).NativeName.Substring(0, new CultureInfo(lang).NativeName.IndexOf('(')))</option>
+          }
+        </select>
+      </div>
+    </div>
+}

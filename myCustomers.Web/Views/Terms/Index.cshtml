@@ -1,0 +1,14 @@
+@{
+  ViewBag.Title = "Terms";
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var InTouchUrl = new Uri(appSettings.GetValue("InTouch.BaseUrl"));
+}
+@Html.Raw(Resources.GetLocalizedContent("Terms"))
+
+<div class="form-actions">
+  <form method="POST" style="margin:0;text-align:right">
+    @Html.Hidden("accepted", true)
+    <button class="btn btn-primary" type="submit">@Resources.GetString("ACCEPT")</button>
+    <a href="@(InTouchUrl)" class="btn btn-link">@Resources.GetString("CANCEL")</a>
+  </form>
+</div>

@@ -1,0 +1,249 @@
+﻿@model EditCustomerViewModel
+@{
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  ViewBag.Title = Model.IsNew ? Resources.GetString("PAGEHEADER_ADDCUSTOMER_TITLE") : Resources.GetString("PAGEHEADER_EDITCUSTOMER_TITLE");
+}
+
+@helper ConsentUrl(string textKey)
+{
+  var culture = System.Globalization.CultureInfo.CurrentUICulture;
+  var url = "~/Content/copyright/Consent." + culture + ".pdf";
+  var consentUrl = VirtualPathUtility.ToAbsolute(url);
+  <a target="_blank" href="@consentUrl">@Resources.GetString(textKey)</a>
+}
+
+<!-- ko template: { name: 'editTemplate', "if": isLoaded } -->
+<!-- /ko -->
+
+@section scripts
+{
+  <script type="text/html" id="editTemplate">
+    <div class="row">
+      <div class="span12">
+        <div class="navbar" style="margin-top: 10px;">
+          <div class="navbar-inner">
+            @if (Model.IsNew)
+            {
+              <a class="brand" style="padding-right: 10px;" href="javascript:void(0)">@Resources.GetString("PAGEHEADER_ADDCUSTOMER_TITLE")</a>
+              <div class="brand">
+                <span style="font-size: 14px; vertical-align: middle">@Resources.GetString("PAGEHEADER_OR_TITLE")</span>
+                <button class="btn btn-link" style="font-size: 14px; padding: 0; margin: 0" type="button" data-bind="click: showImportForm.bind($data, true)">@Resources.GetString("PAGEHEADER_IMPORTCUSTOMER_TITLE")</button>
+              </div>
+            }
+            else
+            {
+              <a class="brand" href="javascript:void(0)">@Resources.GetString("PAGEHEADER_EDITCUSTOMER_TITLE")</a>
+            }
+            <ul class="nav pull-right">
+              <li class="divider-vertical"></li>
+              <li>
+                <a style="padding-left: 0; padding-right: 0" class="btn-help" href="#" onclick="$('#helpContent').toggle(); return false;">
+                  <i class="icon-question-sign"></i>&nbsp;@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="helpContent" class="well" style="display:none;">
+          <button type="button" class="close" onclick="$('#helpContent').hide();return false;">&times;</button>
+          @if (Model.IsNew)
+          {
+            @Html.Raw(Resources.GetLocalizedContent("CustomerNewHelp"))
+          }
+          else
+          {
+            @Html.Raw(Resources.GetLocalizedContent("CustomerEditHelp"))
+          }
+        </div>
+
+        @Html.Partial("_Import")
+
+        <div class="form-horizontal" data-bind="with: customer">
+          @Html.Partial("Edit/_Photo", Model.CustomerProfilePictureUrl ?? string.Empty)
+          @Html.Partial("Edit/_FirstLastMiddleName")
+          @Html.Partial("Edit/_Email")
+          @if (@Model.Features.EmailSubscriptions)
+          {
+            @Html.Partial("Edit/_EmailSubscriptions")
+          }
+          @Html.Partial("Edit/_PhoneNumbers")
+          @Html.Partial("Edit/_Addresses")
+          @Html.Partial("Edit/_PreferredLanguage")
+          @Html.Partial("Edit/_ProfileDate")
+          @Html.Partial("Edit/_Birthday")
+          @Html.Partial("Edit/_Anniversary")
+          @Html.Partial("Edit/_ImportantDates")
+          @Html.Partial("Edit/_Occupation")
+          @Html.Partial("Edit/_Note")
+          @Html.Partial("Edit/_ProfileQuestions")
+
+          <!-- ko ifnot: $root.showAdditionalFields -->
+          <hr />
+          <div class="control-group">
+            <div class="controls">
+              <button class="btn btn-link" style="padding-left:0" data-bind="click: $root.showAdditionalFields.bind($data, true)">
+                @Resources.GetString("ADDCUSTOMER_SHOWMORE")
+              </button>
+            </div>
+          </div>
+          <!-- /ko -->
+          <!-- ko if: $root.showAdditionalFields -->
+          <div style="display:none" data-bind="visible:true">
+            @Html.Partial("Edit/_SocialNetworks")
+
+            @if (@Model.Features.Gender)
+            {
+              @Html.Partial("Edit/_Gender")
+            }
+
+            @Html.Partial("Edit/_LearningTopics")
+
+            @if (@Model.Features.PreferredShoppingMethod)
+            {
+              @Html.Partial("Edit/_ShoppingMethods")
+            }
+
+            @if (@Model.Features.PreferredContactDays)
+            {
+              @Html.Partial("Edit/_ContactDays")
+            }
+
+            @Html.Partial("Edit/_ContactTimes")
+
+            @Html.Partial("Edit/_ContactFrequencies")
+
+            @Html.Partial("Edit/_ContactMethods")
+
+            @if (@Model.Features.Spouse)
+            {
+              @Html.Partial("Edit/_Spouse")
+            }
+
+            @Html.Partial("Edit/_ReferredBy")
+
+            @if (@Model.Features.PlaceOfWork)
+            {
+              @Html.Partial("Edit/_PlaceOfWork")
+            }
+          </div>
+          <!-- /ko -->
+        </div>
+        <div class="form-horizontal">
+          <div class="form-actions" style="display:none" data-bind="visible: true">
+            <button data-bind="command: saveCommand" type="button" class="btn btn-primary">
+              @Resources.GetString(Model.IsNew ? "ADDCUSTOMER_CREATE_BUTTON" : "ADDCUSTOMER_SAVE_BUTTON")
+            </button>
+            <a href="javascript:history.back()" class="btn btn-link">@Resources.GetString("CANCEL")</a>
+            <br />
+            <small class="muted">@Html.Raw(String.Format(Resources.GetString("ADDCUSTOMER_SAVE_BUTTON_CONFIRMCOPY"), @ConsentUrl("ADDCUSTOMER_LEGALMESSAGE_LINK")))</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  @Html.Partial("_ConfirmModal")
+  @Html.Partial("_ProgressModal")
+
+  <script type="text/javascript">
+    var FileAPI = {
+      staticPath: '@Url.Content("~/scripts/")',
+      flashUrl: '@Url.Content("~/scripts/FileAPI.flash.swf")',
+      flashImageUrl: '@Url.Content("~/scripts/FileAPI.flash.image.swf")'
+    };
+  </script>
+
+  <script type="text/javascript" src="~/scripts/fileapi.min.js"></script>
+  <script type="text/javascript" src="~/scripts/fileapi.exif.js"></script>
+
+  <script type="text/html" id="profileQuestionGroup">
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-bind="attr: { href: '#profileQuestionGroup' + key() }, text: text"></a>
+      </div>
+      <div class="accordion-body collapse out" data-bind="attr: { id: 'profileQuestionGroup' + key() }">
+        <div class="accordion-inner">
+          <ol data-bind="template: { name: 'profileQuestion', foreach: questions, as: 'question' }">&nbsp;</ol>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/html" id="profileQuestion">
+    <li>
+      <h5 data-bind="text: text"></h5>
+      <ul class="unstyled" data-bind="template: { name: 'profileQuestion' + type(), foreach: options, as: 'option' }">&nbsp;</ul>
+    </li>
+  </script>
+
+  <script type="text/html" id="profileQuestionFreeText">
+    <li>
+      <label data-bind="text: text"></label>
+      <input type="text" maxlength="120" class="input-xxlarge" data-bind="value: question.answer" />
+    </li>
+  </script>
+
+  <script type="text/html" id="profileQuestionSingleOption">
+    <li>
+      <label class="radio">
+        <input type="radio" name="" data-bind="value: key, checked: question.answer, attr: { name: question.id }" />
+        <span data-bind="text: text"></span>
+      </label>
+      <!-- ko if: allowFreeText -->
+      <input type="text" maxlength="120" data-bind="value: question.answer" />
+      <!-- /ko -->
+    </li>
+  </script>
+
+  <script type="text/html" id="profileQuestionSingleOptionImage">
+    <li class="image-option">
+      <label class="radio" data-bind="attr: { 'for': id }">
+        <img data-bind="attr: { src: imageUrl }, css: { 'img-polaroid': key() === question.answer() }" />
+        <span data-bind="text: text"></span>
+      </label>
+      <input type="radio" name="" data-bind="attr: { id: id, name: question.id }, value: key, checked: question.answer" />
+    </li>
+  </script>
+
+  <script type="text/html" id="profileQuestionMultipleOptions">
+    <li>
+      <label class="checkbox">
+        <input type="checkbox" data-bind="value: key, checked: question.answers" />
+        <span data-bind="text: text"></span>
+      </label>
+      <!-- ko if: allowFreeText -->
+      <input type="text" maxlength="120" data-bind="value: question.answer" />
+      <!-- /ko -->
+    </li>
+  </script>
+
+  <script type="text/ecmascript">
+    $(function() {
+      var config = {
+        isNew:               @(Model.IsNew ? "true" : "false"),
+        customerId:          '@Model.CustomerId',
+        customerApiUrl:      '@Url.RouteUrl(new { httproute = "default", controller = "customers" })',
+        hasPhoto:             @(string.IsNullOrEmpty(Model.CustomerProfilePictureUrl) ? "false" : "true"),
+        questionnaireApiUrl: '@Url.RouteUrl(new { httproute = "QuestionnaireApi", controller = "questionnaire" })',
+        customerDetailsUrl:  '@Url.Action("detail", "customers")',
+        validationUrl:       '@Url.RouteUrl(new { httproute = "ValidationApi", controller = "validation", action = "_action_" })',
+        imageMaxSize:        '@appSettings.GetValue("ImageMaxSize")' * 1024 * 1024,
+        socialNetworksConfig: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.SocialNetworks)),
+        subscriptionsConfig:  @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Subscriptions)),
+        defaultLanguage:     '@Model.Languages[0]',
+
+        csvFileUploadModel: {
+          csvFileUploadUrl:         '@Url.Action("uploadcsvfile", "customers")',
+          csvFileUploadRedirectUrl: '@Url.Action("importlist", "customers")'
+        },
+        ajaxService: new myc.AjaxService()
+      };
+
+      var vm = new myc.EditCustomer(config);
+      ko.applyBindings(vm);
+      vm.init();
+      window.viewModel = vm;
+    });
+  </script>
+}

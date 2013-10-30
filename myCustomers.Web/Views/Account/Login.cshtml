@@ -1,0 +1,138 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Developer Login";
+}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>@ViewBag.Title</title>
+
+  @Styles.Render("~/content/css")
+  @Scripts.Render("~/script/modernizr")
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <div class="nav-logo" style="margin-top: 10px;">
+      	  <a href="#"><img src="~/content/images/Header_MKIntouch.png" border="0"></a>
+        </div>
+
+        <a href="~/" class="brand" style="color:#ffffff">myCustomers</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="background-color:#FFF;">
+    <form id="loginForm" method="post">
+      <fieldset class="form-horizontal">
+        <legend>Login</legend>
+
+        <div class="control-group">
+          <label class="control-label">Subsidiary:</label>
+          <div class="controls">
+            <select name="SubsidiaryCode" data-bind="value: selectedSub, options: subs">
+              <option value=""></option>
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group" data-bind="visible: selectedSub" style="display:none;">
+          <label class="control-label">Language:</label>
+          <div class="controls">
+            <input name="Culture" type="hidden" data-bind="value: culture" />
+            <select name="UICulture" data-bind="options: uiCultures, value: defaultUICulture">
+            </select>
+          </div>
+        </div>
+
+        <div class="control-group" data-bind="visible: selectedSub" style="display:none;">
+          <label class="control-label">Consultant ID:</label>
+          <div class="controls">
+            <input id="ConsultantID" name="ConsultantID" type="text" placeholder="ConsultantID" />
+          </div>
+        </div>
+
+        <div class="control-group" data-bind="visible: selectedSub" style="display:none;">
+          <div class="controls">
+            @if (!ViewData.ModelState.IsValid)
+            {
+              <div class="alert alert-error">@Html.ValidationSummary()</div>
+            }
+            <button type="submit" class="btn btn-primary">Login</button>
+            <div data-bind="visible: testAccounts" style="padding-top:10px;display:none;">
+              <label>Test Accounts:</label>
+              <div data-bind="foreach: testAccounts">
+                <a href="#" onclick="$('#ConsultantID').val($(this).val()); $('#loginForm').submit();" class="btn btn-inverse" data-bind="value: $data, text: $data"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  @Scripts.Render("~/script/globalize")
+  @Scripts.Render("~/script/jquery")
+  @Scripts.Render("~/script/jqueryui")
+  @Scripts.Render("~/script/knockout")
+  @Scripts.Render("~/script/bootstrap")
+  @Scripts.Render("~/script/utils")
+
+  <script type="text/javascript">
+    function LoginViewModel() {
+
+      self.config      = ko.observable({});
+      self.subs        = ko.observableArray([]);
+      self.selectedSub = ko.observable(null);
+
+      self.defaultUICulture = ko.computed(function () {
+        var sub = self.selectedSub();
+        if (sub)
+          return self.config().subsidiaries[self.selectedSub()].defaultUICulture
+        return null;
+      });
+
+      self.uiCultures  = ko.computed(function ()
+      {
+        var sub = self.selectedSub();
+        if (sub)
+          return self.config().subsidiaries[self.selectedSub()].uiCultures
+        return null;
+      });
+
+      self.culture = ko.computed(function () {
+        var sub = self.selectedSub();
+        if (sub)
+          return self.config().subsidiaries[self.selectedSub()].culture
+        return null;
+      });
+
+      self.testAccounts = ko.computed(function ()
+      {
+        var sub = self.selectedSub();
+        if (sub)
+          return self.config().subsidiaries[self.selectedSub()].testAccounts
+        return null;
+      });
+
+      $.get('@Url.Action("config")', function (data) {
+        if (!data.error) {
+          self.config(data)
+          for (var sub in data.subsidiaries)
+            self.subs.push(sub);
+          self.selectedSub('@(System.Configuration.ConfigurationManager.AppSettings["Subsidiary"])');
+        } else {
+          alert(data.error);
+        }
+      });
+    }
+
+    var model = new LoginViewModel();
+    ko.applyBindings(model);
+  </script>
+</body>
+</html>

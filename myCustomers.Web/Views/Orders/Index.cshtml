@@ -1,0 +1,557 @@
+﻿@{
+  ViewBag.Title = Resources.GetString("ORDERLIST_TITLE");
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+}
+
+<div class="navbar" style="margin-top: 10px;">
+  <div class="navbar-inner">
+    <a class="brand" href="#">@Resources.GetString("ORDERLIST_TITLE")</a>
+    <ul class="nav">
+      <li data-bind="css: { active: selectedTab() === 'List' }"><a href="#" data-bind="  click: showOrders">@Resources.GetString("ORDERLIST_LISTTAB")</a></li>
+      @if (appSettings.GetValue<bool>("Feature.OrderList.SampleRequest"))
+      {
+        <li data-bind="css: { active: selectedTab() === 'SampleRequest' }"><a href="#" data-bind="  click: selectedTab.bind($data, 'SampleRequest')">@Resources.GetString("ORDERLIST_SAMPLEREQUESTTAB")</a></li>
+      }
+      @if (appSettings.GetValue<bool>("Feature.OrderList.Delete"))
+      {
+        <li data-bind="css: { active: selectedTab() === 'Deleted' }">
+          <a class="btn-link" title="@Resources.GetString("ORDERLIST_DELETEDORDERS_TOOLTIP")" data-bind="click: showDeletedOrders, css: {'link-disabled': deletedOrdersSearch().itemCount() === 0}">
+            <i class="icon-trash icon-large"></i>&nbsp;<span class="badge badge-important" style="display:none;font-size:8px;vertical-align:super;padding:0px 5px 0px 5px;margin:0" data-bind="visible: deletedOrdersSearch().itemCount() > 0, text: deletedOrdersSearch().itemCount"></span>
+          </a>
+        </li>
+      }
+    </ul>
+    <ul class="nav pull-right">
+      <li data-bind="busy: isBusy">
+        <div style="display: inline-block; margin-top: 10px; margin-right: 5px;">
+          <img src="~/content/images/spinner.gif" />
+        </div>
+      </li>
+      <li style="margin: 5px 0 0 0;" data-bind="visible: selectedTab() === 'List'">
+        <div class="input-append" style="display: inline;">
+          <div class="btn-group">
+            <button class="btn btn-link" type="button" style="display: none;" data-bind="visible: queryString, click: function(d, e) { queryString(''); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+            <input type="text" class="input-large" placeholder="@Resources.GetString("SEARCH_PLACEHOLDER")" data-bind="value: queryString, updateOnEnter: true" />
+            <button class="btn" type="button" data-bind="click: searchCommand.execute"><i class="icon-search"></i></button>
+          </div>
+        </div>
+      </li>
+      <li class="divider-vertical" data-bind="visible: selectedTab() === 'List'"></li>
+      <li class="dropdown" data-bind="visible: selectedTab() === 'List'">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-left: 5px; padding-right: 5px"><i class="icon-filter"></i>&nbsp;@Resources.GetString("FILTER")</a>
+        <ul class="dropdown-menu">
+          <!-- ko if: filterMode -->
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, null)">@Resources.GetString("FILTER_NONE")</a></li>
+          <li class="divider"></li>
+          <!-- /ko -->
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'OrderDate')">@Resources.GetString("FILTER_ORDERDATE")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'OrderStatus')">@Resources.GetString("FILTER_ORDERSTATUS")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'OrderSource')">@Resources.GetString("FILTER_ORDERTYPE")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'PaymentStatus')">@Resources.GetString("FILTER_ORDERPAYMENTSTATUS")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'Product')">@Resources.GetString("FILTER_PRODUCT")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'Archived')">@Resources.GetString("FILTER_ARCHIVED")</a></li>
+          <li class="divider"></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'Advanced')">@Resources.GetString("FILTER_ADVANCED")</a></li>
+        </ul>
+      </li>
+      <li class="divider-vertical"></li>
+      <li><a style="padding-left: 5px; padding-right: 5px" class="btn-help" href="#" onclick="$('#helpContent').toggle(); return false;"><i class="icon-question-sign"></i>&nbsp;@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="helpContent" class="well" style="display: none;">
+  <button type="button" class="close" onclick="$('#helpContent').hide();return false;">&times;</button>
+  @Html.Raw(Resources.GetLocalizedContent("OrderListHelp"))
+</div>
+
+<!-- ko if: filterMode() === 'OrderDate' -->
+<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'OrderDate'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <div class="form-inline" style="margin: 0">
+    <label>@Resources.GetString("FILTER_ORDERDATE_LABEL")</label>
+    <div class="input-append" style="display: inline;">
+      <input type="text" data-bind="datepicker: minOrderDate, showValidationFor: minOrderDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+      <button class="btn" data-bind="visible: minOrderDate, click: function(d,e) { minOrderDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+    </div>
+    &nbsp;
+    <div class="input-append" style="display: inline;">
+      <input type="text" data-bind="datepicker: maxOrderDate, showValidationFor: maxOrderDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+      <button class="btn" data-bind="visible: maxOrderDate, click: function(d,e) { maxOrderDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+    </div>
+  </div>
+</div>
+<!-- /ko -->
+
+<!-- ko if: filterMode() === 'OrderSource' -->
+<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'OrderSource'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <div class="form-horizontal">
+    @Resources.GetString("FILTER_ORDERTYPE_LABEL")
+    <select class="input-medium" data-bind="value: orderSource" style="margin: 0">
+      <option value="">@Resources.GetString("SELECT_NONE")</option>
+      <option value="Online">@Resources.GetString("ORDERSOURCE_ONLINE")</option>
+      <option value="SalesTicket">@Resources.GetString("ORDERSOURCE_SALESTICKET")</option>
+    </select>
+  </div>
+</div>
+<!-- /ko -->
+
+<!-- ko if: filterMode() === 'OrderStatus' -->
+<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'OrderStatus'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <div class="form-horizontal">
+    @Resources.GetString("FILTER_ORDERSTATUS_LABEL")
+    <select class="input-medium" data-bind="value: orderStatus" style="margin: 0">
+      <option value="">@Resources.GetString("SELECT_NONE")</option>
+      <option value="Submitted">@Resources.GetString("ORDERSTATUS_SUBMITTED")</option>
+      <option value="UnderReview">@Resources.GetString("ORDERSTATUS_UNDERREVIEW")</option>
+      <option value="Processed">@Resources.GetString("ORDERSTATUS_PROCESSED")</option>
+      <option value="ShippedDelivered">@Resources.GetString("ORDERSTATUS_SHIPPEDDELIVERED")</option>
+    </select>
+  </div>
+</div>
+<!-- /ko -->
+
+<!-- ko if: filterMode() === 'PaymentStatus' -->
+<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'PaymentStatus'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <div class="form-horizontal">
+    @Resources.GetString("FILTER_ORDERPAYMENTSTATUS_LABEL")
+    <select class="input-medium" data-bind="value: paymentStatus" style="margin: 0">
+      <option value="">@Resources.GetString("SELECT_NONE")</option>
+      <option value="NA">@Resources.GetString("ORDERPAYMENTSTATUS_NA")</option>
+      <option value="Partial">@Resources.GetString("ORDERPAYMENTSTATUS_PARTIAL")</option>
+      <option value="Completed">@Resources.GetString("ORDERPAYMENTSTATUS_COMPLETED")</option>
+    </select>
+  </div>
+</div>
+<!-- /ko -->
+
+<!-- ko if: filterMode() === 'Product' -->
+<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'Product'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <div class="form-horizontal">
+    @Resources.GetString("FILTER_PRODUCT_LABEL")
+    <input type="text" data-bind="value: product, updateOnEnter: true" />
+  </div>
+</div>
+<!-- /ko -->
+
+<!-- ko if: filterMode() === 'Archived' -->
+<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'Archived'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <div class="form-horizontal">
+    <label class="checkbox" style="margin: 0">
+      <input type="checkbox" data-bind="checked: isArchived" />
+      @Resources.GetString("FILTER_ARCHIVED_LABEL")
+    </label>
+  </div>
+</div>
+<!-- /ko -->
+
+<!-- ko if: filterMode() === 'Advanced' -->
+<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'Advanced'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <table style="border-collapse: separate; border-spacing: 10px;">
+    <tr>
+      <td style="text-align: right; vertical-align: middle; white-space: nowrap;">
+        <label>@Resources.GetString("FILTER_ORDERTYPE_LABEL")</label>
+      </td>
+      <td style="text-align: left;">
+        <select class="input-medium" data-bind="value: orderSource" style="margin: 0">
+          <option value="">@Resources.GetString("SELECT_NONE")</option>
+          <option value="Online">@Resources.GetString("ORDERSOURCE_ONLINE")</option>
+          <option value="SalesTicket">@Resources.GetString("ORDERSOURCE_SALESTICKET")</option>
+        </select>
+      </td>
+      <td style="text-align: right; vertical-align: middle; white-space: nowrap;">
+        <label>@Resources.GetString("FILTER_ORDERDATE_LABEL")</label>
+      </td>
+      <td style="text-align: left;">
+        <div class="input-append" style="display: inline;">
+          <input type="text" data-bind="datepicker: minOrderDate, showValidationFor: minOrderDate" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" class="input-small" />
+          <button class="btn" type="button" data-bind="visible: minOrderDate, click: function(d,e) { minOrderDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+        </div>
+        <div class="input-append" style="display: inline; margin-left: 15px;">
+          <input type="text" data-bind="datepicker: maxOrderDate, showValidationFor: maxOrderDate" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" class="input-small" />
+          <button class="btn" type="button" data-bind="visible: maxOrderDate, click: function(d,e) { maxOrderDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; vertical-align: middle; white-space: nowrap;">
+        <label>@Resources.GetString("FILTER_ORDERSTATUS_LABEL")</label>
+      </td>
+      <td style="text-align: left;">
+        <select class="input-medium" data-bind="value: orderStatus" style="margin: 0">
+          <option value="">@Resources.GetString("SELECT_NONE")</option>
+          <option value="Submitted">@Resources.GetString("ORDERSTATUS_SUBMITTED")</option>
+          <option value="UnderReview">@Resources.GetString("ORDERSTATUS_UNDERREVIEW")</option>
+          <option value="Processed">@Resources.GetString("ORDERSTATUS_PROCESSED")</option>
+          <option value="ShippedDelivered">@Resources.GetString("ORDERSTATUS_SHIPPEDDELIVERED")</option>
+        </select>
+      </td>
+      <td style="text-align: right; vertical-align: middle; white-space: nowrap;">
+        <label>@Resources.GetString("FILTER_PRODUCT_LABEL")</label>
+      </td>
+      <td style="text-align: left;">
+        <input type="text" data-bind="value: product, updateOnEnter: true" />
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; vertical-align: middle; white-space: nowrap;">
+        <label>@Resources.GetString("FILTER_ORDERPAYMENTSTATUS_LABEL")</label>
+      </td>
+      <td style="text-align: left;">
+        <select class="input-medium" data-bind="value: paymentStatus" style="margin: 0">
+          <option value="">@Resources.GetString("SELECT_NONE")</option>
+          <option value="NA">@Resources.GetString("ORDERPAYMENTSTATUS_NA")</option>
+          <option value="Partial">@Resources.GetString("ORDERPAYMENTSTATUS_PARTIAL")</option>
+          <option value="Completed">@Resources.GetString("ORDERPAYMENTSTATUS_COMPLETED")</option>
+        </select>
+      </td>
+      <td style="text-align: right; vertical-align: middle; white-space: nowrap;"></td>
+      <td style="text-align: left;">
+        <label class="checkbox">
+          <input type="checkbox" data-bind="checked: isArchived" />
+          @Resources.GetString("FILTER_ARCHIVED_LABEL")
+        </label>
+      </td>
+    </tr>
+  </table>
+</div>
+<!-- /ko -->
+
+<!-- ko if: selectedTab() === 'List' -->
+<!-- No Search Results -->
+<div class="row" style="display: none;" data-bind="visible: noResults">
+  <div class="span12">
+    <div class="alert alert-info">
+      <em>@Resources.GetString("ORDERLIST_NORESULTS")</em>
+    </div>
+  </div>
+</div>
+
+<!-- Search Results -->
+<div class="row" style="display: none;" data-bind="visible: hasResults">
+  <div class="span7">
+    <button class="btn" type="button" data-bind="enable: updatePaymentStatusCommand.canExecute, click: togglePaymentPanel.bind($data, true)"><i class="icon-download-alt"></i>&nbsp;@Resources.GetString("ORDERLIST_CHANGEPAYMENTSTATUS_BUTTON")</button>
+    @*<button class="btn" type="button" data-bind="enable: deleteOrdersCommand.canExecute, visible: !isDeleted(), command: deleteOrdersCommand" style="display:none;"><i class="icon-remove-sign icon-white"></i> @Resources.GetString("ORDERLIST_DELETE_BUTTON")</button>*@
+    <button class="btn" type="button" data-bind="enable: archiveOrdersCommand.canExecute, visible: !isArchived(), command: archiveOrdersCommand"><i class="icon-download-alt"></i>&nbsp;@Resources.GetString("ARCHIVE_ORDERS")</button>
+    <button class="btn" type="button" data-bind="enable: unarchiveOrdersCommand.canExecute, visible: isArchived(), command: unarchiveOrdersCommand"><i class="icon-download-alt"></i>&nbsp;@Resources.GetString("UNARCHIVE_ORDERS")</button>
+    @if (appSettings.GetValue<bool>("Feature.OrderList.Delete"))
+    {
+      <button class="btn" data-bind="enable: deleteOrdersCommand.canExecute, command: deleteOrdersCommand"><i class="icon-remove"></i>&nbsp;@Resources.GetString("DELETE_ORDERS")</button>
+    }
+  </div>
+  <div class="span5">
+    <div class="pull-right" style="height: 30px;">
+      <table>
+        <tr>
+          <td>
+            <div style="padding-bottom: 22px;">@Resources.GetString("SORT_BY")</div>
+          </td>
+          <td>
+            <ul class="nav nav-pills pull-right">
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" title="@Resources.GetString("SORT_TOOLTIP")">
+                  <span data-bind="text: sortField"></span>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- ko if: queryString -->
+                  <li><a href="#" data-bind="click: sortField.bind($data, null)">@Resources.GetString("SORT_RELEVANCE")</a></li>
+                  <li class="divider"></li>
+                  <!-- /ko -->
+                  <li><a href="#" data-bind="click: sortField.bind($data, 'OrderDateUtc')">@Resources.GetString("SORT_ORDERDATE")</a></li>
+                  <li><a href="#" data-bind="click: sortField.bind($data, 'FirstName.Sort')">@Resources.GetString("SORT_FIRSTNAME")</a></li>
+                  <li><a href="#" data-bind="click: sortField.bind($data, 'LastName.Sort')">@Resources.GetString("SORT_LASTNAME")</a></li>
+                  <li><a href="#" data-bind="click: sortField.bind($data, 'OrderSourceSort')">@Resources.GetString("SORT_ORDERTYPE")</a></li>
+                  <li><a href="#" data-bind="click: sortField.bind($data, 'OrderStatusSort')">@Resources.GetString("SORT_ORDERSTATUS")</a></li>
+                  <li><a href="#" data-bind="click: sortField.bind($data, 'PaymentStatusSort')">@Resources.GetString("SORT_ORDERPAYMENTSTATUS")</a></li>
+                  <li><a href="#" data-bind="click: sortField.bind($data, 'EstimatedOrderAmount')">@Resources.GetString("SORT_AMOUNT")</a></li>
+                </ul>
+              </li>
+              <!-- ko if: sortDescending() !== null -->
+              <li>
+                <a title="@Resources.GetString("SORT_DIRECTION_TOOLTIP")" href="#" class="btn btn-link" style="padding-left:0;padding-right:0;margin-left:0;margin-right:0;" data-bind="click: function () { sortDescending(!sortDescending()); }"><i data-bind="  css: { 'icon-circle-arrow-down': sortDescending, 'icon-circle-arrow-up': !sortDescending() }"></i></a>
+              </li>
+              <!-- /ko -->
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- /ko -->
+<div class="row" >
+  <div class="span12">
+    <!-- ko if: selectedTab() === 'List' -->
+    <div style="display: none;" data-bind="visible: hasResults">
+      <form class="form-horizontal">
+        <div data-bind="visible: isUpdatePaymentPanelVisible" class="well well-small" style="padding-bottom: 20px;">
+          <button type="button" class="close" data-bind="click: togglePaymentPanel.bind($data, false)">&times;</button>
+          <p>@Resources.GetString("ORDERLIST_CHANGEPAYMENTSTATUS_PROMPT")</p>
+          <div class="control-group">
+            <label class="control-label" style="width: 160px;">@Resources.GetString("ORDERLIST_CHANGEPAYMENTSTATUS_NEWSTATUS_LABEL")</label>
+            <div class="controls" style="margin-left: 180px;">
+              <select data-bind="value: selectedPaymentStatus">
+                <option value="0">@Resources.GetString("ORDERPAYMENTSTATUS_NA")</option>
+                <option value="1">@Resources.GetString("ORDERPAYMENTSTATUS_PARTIAL")</option>
+                <option value="2">@Resources.GetString("ORDERPAYMENTSTATUS_COMPLETED")</option>
+              </select>
+              <div style="padding-top: 10px;">
+                <button data-bind="enable: updatePaymentStatusCommand.canExecute, command: updatePaymentStatusCommand" class="btn btn-primary">@Resources.GetString("SAVE")</button>
+                <a data-bind="click: togglePaymentPanel.bind($data, false)" class="btn btn-link">@Resources.GetString("CANCEL")</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <table class="table table-hover" style="cursor: default; margin: 0;" data-bind="with: searchResults">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" data-bind="checked: $root.selectAll" title="@Resources.GetString("SELECTALL_TOOLTIP")" />
+            </th>
+            <th>@Resources.GetString("ORDERLIST_DATE")</th>
+            <th>@Resources.GetString("ORDERLIST_CUSTOMER")</th>
+            <th>@Resources.GetString("ORDERLIST_AMOUNT")</th>
+            <th>@Resources.GetString("ORDERLIST_SOURCE")</th>
+            <th>@Resources.GetString("ORDERLIST_STATUS")</th>
+            <th>@Resources.GetString("ORDERLIST_PAYMENT")</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: $data">
+          <tr style="cursor: pointer;" data-bind="with: _source, click: $root.viewOrder">
+            <td data-bind="click: function () { return true; }, clickBubble: false">
+              <input type="checkbox" data-bind="checked: $root.orderChecked($data)" />
+            </td>
+            <td>
+              <div data-bind="shortDate: $data.OrderDateUtc"></div>
+            </td>
+            <td>
+              <strong data-bind="text: [$data.FirstName, $data.MiddleName, $data.LastName].join(' ')"></strong>
+            </td>
+            <td data-bind="currency: $data.EstimatedOrderAmount"></td>
+            <td data-bind="localize: $data.OrderSource, resourceKey: 'ORDERSOURCE_{0}'"></td>
+            <td>
+              <span data-bind="localize: $data.OrderStatus, resourceKey: 'ORDERSTATUS_{0}'"></span>
+              <!-- ko if: ShipCDS -->
+              <span class="label label-info">CDS</span>
+              <!-- /ko -->
+            </td>
+            <td><span data-bind="localize: $data.PaymentStatus, resourceKey: 'ORDERPAYMENTSTATUS_{0}'"></span></td>
+            <td><i class="icon-shopping-cart"></i></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pager -->
+      <table class="table table-pager">
+        <tr>
+          <td class="pager-buttons">
+            <button class="btn" type="button" data-bind="command: prevPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+            <button class="btn" type="button" data-bind="command: nextPageCommand">@Resources.GetString("PAGER_NEXT") <i class="icon-caret-right"></i></button>
+          </td>
+          <td class="pager-status" data-bind="text: app.localizeFormat('ORDERLIST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+          <td class="pager-pagesize-label">
+            <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+          </td>
+          <td class="pager-pagesize-select">
+            <select class="input-mini" data-bind="value: pageSize">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- /ko -->
+
+    <!-- ko if: selectedTab() === 'SampleRequest' -->
+    <!-- ko with: sampleRequestSearch -->
+    <div class="alert alert-info" data-bind="visible: noResults">
+      <em>@Resources.GetString("SAMPLEREQUEST_NORESULTS_ALERT")</em>
+    </div>
+
+    <!-- Pager -->
+    <table class="table table-pager" style="display: none;">
+      <tr>
+        <td class="pager-buttons">
+          <button class="btn" type="button" data-bind="command: prevPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+          <button class="btn" type="button" data-bind="command: nextPageCommand">@Resources.GetString("PAGER_NEXT") <i class="icon-caret-right"></i></button>
+        </td>
+        <td class="pager-status" data-bind="text: app.localizeFormat('SAMPLEREQUEST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+        <td class="pager-pagesize-label">
+          <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+        </td>
+        <td class="pager-pagesize-select">
+          <select class="input-mini" data-bind="value: pageSize">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <table class="table table-hover" style="cursor:pointer;display:none;" data-bind="visible: hasResults">
+      <thead>
+        <tr>
+          <th>@Resources.GetString("SAMPLEREQUEST_DATEREQUESTED")</th>
+          <th>@Resources.GetString("SAMPLEREQUEST_CUSTOMERNAME")</th>
+          <th>@Resources.GetString("SAMPLEREQUEST_STATUS")</th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: searchResults">
+        @*<tr data-bind="with: _source, click: $root.onNoteRowClick, clickBubble: false">*@
+        <tr data-bind="click: $root.navigateToSRDetails">
+          <td><span data-bind="text: app.formatShortDate($data.RequestDateUtc)"></span></td>
+          <td><span data-bind="text: [$data.FirstName, $data.LastName].join(' ')"></span></td>
+          <td><span data-bind="text: $parent.getStatus($data.IsCompleted)"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- /ko -->
+    <!-- /ko -->
+
+    <!-- ko if: selectedTab() === 'Deleted' -->
+    <!-- ko with: deletedOrdersSearch -->
+    <div id="helpContent" class="well" style="display: none;">
+      <button type="button" class="close" onclick=" $('#helpContent').hide();return false; ">&times;</button>
+      <strong>Need Help?</strong>
+      @* @Html.Raw(Resources.GetLocalizedContent("DeletedOrdersListHelp"))*@
+    </div>
+
+    <!-- No Search Results -->
+    <div class="row" style="display: none;" data-bind="visible: noResults">
+      <div class="span12">
+        <div class="alert alert-info">
+          @Resources.GetString("DELETEDORDERS_NORESULTS_ALERT")
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="display: none;" data-bind="visible: hasResults">
+      <div class="span12">
+        <button class="btn" type="button" data-bind="enable: unDeleteOrdersCommand.canExecute, command: unDeleteOrdersCommand"><i class="icon-level-up"></i>&nbsp;@Resources.GetString("DELETEDORDERS_RESTORE")</button>
+        <button class="btn" type="button" data-bind="enable: purgeOrdersCommand.canExecute, command: purgeOrdersCommand"><i class="icon-remove"></i>&nbsp;@Resources.GetString("DELETEDORDERS_DELETE")</button>
+        <table class="table table-hover" style="cursor: default; margin: 0;" data-bind="with: searchResults">
+          <thead>
+            <tr>
+              <th>
+                <input type="checkbox" data-bind="checked: $parent.selectAll" title="@Resources.GetString("SELECTALL_TOOLTIP")" />
+              </th>
+              <th>@Resources.GetString("ORDERLIST_DATE")</th>
+              <th>@Resources.GetString("ORDERLIST_CUSTOMER")</th>
+              <th>@Resources.GetString("ORDERLIST_AMOUNT")</th>
+              <th>@Resources.GetString("ORDERLIST_SOURCE")</th>
+              <th>@Resources.GetString("ORDERLIST_STATUS")</th>
+              <th>@Resources.GetString("ORDERLIST_PAYMENT")</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody data-bind="foreach: $data">
+            <tr data-bind="with: _source">
+              <td data-bind="click: function () { return true; }, clickBubble: false">
+                <input type="checkbox" data-bind="checked: $parents[2].orderDeletedChecked($data)" />
+              </td>
+              <td>
+                <div data-bind="shortDate: $data.OrderDateUtc"></div>
+              </td>
+              <td>
+                <strong data-bind="text: [$data.FirstName, $data.MiddleName, $data.LastName].join(' ')"></strong>
+              </td>
+              <td data-bind="currency: $data.EstimatedOrderAmount"></td>
+              <td data-bind="localize: $data.OrderSource, resourceKey: 'ORDERSOURCE_{0}'"></td>
+              <td>
+                <span data-bind="localize: $data.OrderStatus, resourceKey: 'ORDERSTATUS_{0}'"></span>
+                <!-- ko if: ShipCDS -->
+                <span class="label label-info">CDS</span>
+                <!-- /ko -->
+              </td>
+              <td><span data-bind="localize: $data.PaymentStatus, resourceKey: 'ORDERPAYMENTSTATUS_{0}'"></span></td>
+              <td><i class="icon-shopping-cart"></i></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Pager -->
+        <table class="table table-pager">
+          <tr>
+            <td class="pager-buttons">
+              <button class="btn" type="button" data-bind="command: prevPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+              <button class="btn" type="button" data-bind="command: nextPageCommand">@Resources.GetString("PAGER_NEXT") <i class="icon-caret-right"></i></button>
+            </td>
+            <td class="pager-status" data-bind="text: app.localizeFormat('ORDERLIST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+            <td class="pager-pagesize-label">
+              <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+            </td>
+            <td class="pager-pagesize-select">
+              <select class="input-mini" data-bind="value: pageSize">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- /ko -->
+    <!-- /ko -->
+
+  </div>
+</div>
+
+@section scripts {
+  @Html.Partial("_ConfirmModal")
+  @Html.Partial("_ProgressModal")
+
+  <script type="text/javascript">
+
+    $(function () {
+      var config = {
+        enablePersistence: @(appSettings.GetValue<bool>("Feature.Search.Persistence") ? "true" : "false"),        
+        ajaxService: new myc.AjaxService(),
+        deleteOrdersUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "deleteorders" })',
+        apiUrl: '@Url.Content("~/api/orders")',
+        orderDetailUrl: '@Url.Action("detail", "orders", new { id = "_id_" })',
+        editOrderUrl: '@Url.Action("edit", "orders", new { id = "_id_" })',
+        updatePaymentStatusUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "updatepaymentstatus" })',
+        archiveApiUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "archiveorders" })',
+        unarchiveApiUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "unarchiveorders" })',
+        sampleRequestSearch: new myc.SampleRequestSearch({
+          ajaxService: new myc.AjaxService(),
+          apiUrl: '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "samplerequest" })'
+        }),
+        sampleRequestDetailsUrl: '@Url.Action("Detail", "SampleRequests")',
+        deletedOrdersSearch: new myc.DeletedOrdersSearch({
+          ajaxService: new myc.AjaxService(),
+          apiUrl: '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "orders" })',
+            unDeleteOrdersUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "undeleteorders" })',
+            purgeOrdersUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "purgeorders" })'
+          
+        })
+      };
+
+      var model = new myc.OrderList(config);
+      ko.applyBindings(model);
+
+      model.searchCommand.execute();
+    });
+  </script>
+}

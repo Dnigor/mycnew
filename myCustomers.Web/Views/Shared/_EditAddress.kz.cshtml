@@ -1,0 +1,26 @@
+﻿<div class="form-address">
+  <table>
+    <tbody>
+      <tr data-bind="visible: showAddressee" style="display:none;">
+        <td colspan="2" style="border-bottom:solid #ccc 1px"><input maxlength="50" data-bind="enable: canEdit, value: addressee" class="span6" type="text" placeholder="@Resources.GetString("ADDRESS_ADDRESSEE_LABEL")" /></td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid #ccc 1px;border-right:solid #ccc 1px;"><input maxlength="120" data-bind="enable: canEdit, value: countryCode" class="span3" type="text" placeholder="@Resources.GetString("ADDRESS_COUNTRY_LABEL")" /></td>
+        <td style="border-bottom:solid #ccc 1px;"><input maxlength="20" data-bind="enable: canEdit, value: postalCode" class="span3" type="text" placeholder="@Resources.GetString("ADDRESS_POSTALCODE_LABEL")" /></td>
+      </tr>
+      <tr>
+        <td style="border-bottom:solid #ccc 1px;border-right:solid #ccc 1px;"><input maxlength="120" data-bind="enable: canEdit, value: regionCode" class="span3" type="text" placeholder="@Resources.GetString("ADDRESS_STATE_LABEL")" /></td>
+        <td style="border-bottom:solid #ccc 1px;"><input maxlength="50" data-bind="enable: canEdit, value: city" class="span3" type="text" placeholder="@Resources.GetString("ADDRESS_CITY_LABEL")" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="border-bottom:solid #ccc 1px;"><input maxlength="120" data-bind="enable: canEdit, value: street" style="" class="span6" type="text" placeholder="@Resources.GetString("ADDRESS_STREET_LABEL")" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="border-bottom:solid #ccc 1px;"><input maxlength="120" data-bind="enable: canEdit, value: unitNumber" class="span6" type="text" placeholder="@Resources.GetString("ADDRESS_UNITNUMBER_LABEL")" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input maxlength="20" data-bind="enable: canEdit, value: telephone" class="span3" type="text" placeholder="@Resources.GetString("ADDRESS_PHONE_LABEL")" /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

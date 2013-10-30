@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABBR_HOMEPHONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ABBR_MOBILEPHONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ABBR_OTHERPHONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ABBR_WORKPHONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>ANNULEREN</value>
+  </data>
+  <data name="CONFIRM_MARKCOMPLETE_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u de bestelling te verwerken?</value>
+  </data>
+  <data name="CONFIRM_MARKCOMPLETE_TITLE" xml:space="preserve">
+    <value>Bevestig Mark Zoals Compleet</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMERS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETECUSTOMERS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_RESTORECUSTOMERS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_RESTOREORDERS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_RESTORECUSTOMERS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_RESTOREORDERS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETECUSTOMER_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETECUSTOMER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_PURGECUSTOMERS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_PURGECUSTOMERS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_PURGECUSTOMERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_PURGEORDERS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_PURGEORDERS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_PURGEORDERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETEORDERS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETEORDERS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETEORDER_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETEORDER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEADDRESS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEADDRESS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEFOLLOWUP_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u de follow-up wilt verwijderen?</value>
+  </data>
+  <data name="CONFIRM_REMOVEFOLLOWUP_TITLE" xml:space="preserve">
+    <value>Verwijderen follow-up bevestigen</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERITEM_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u het product uit de bestelling wilt verwijderen?</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERITEM_TITLE" xml:space="preserve">
+    <value>Verwijderen product bevestigen</value>
+  </data>
+  <data name="CONFIRM_REMOVEPAYMENT_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u de betaling van de bestelling wilt verwijderen?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPAYMENT_TITLE" xml:space="preserve">
+    <value>Verwijderen betaling bevestigen</value>
+  </data>
+  <data name="CONFIRM_UNDELETECUSTOMER_BODY" xml:space="preserve">
+    <value>Weet u undelete deze klant?</value>
+  </data>
+  <data name="CONFIRM_UNDELETECUSTOMER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_UNDELETEORDER_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_UNDELETEORDER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Klanten – blz. {1} van {2}</value>
+  </data>
+  <data name="IMPORTCUSTOMERSLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTSLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETE_NOTES_CONFIRMATION_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u deze notitie wilt wissen?</value>
+  </data>
+  <data name="DELETE_NOTES_CONFIRMATION_TITLE" xml:space="preserve">
+    <value>Notitie wissen</value>
+  </data>
+  <data name="ERROR_CSV_FILE_EXPECTED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_NOTIFY_TITLE" xml:space="preserve">
+    <value>Storing</value>
+  </data>
+  <data name="NOTESLIST_ITEM_TITLE" xml:space="preserve">
+    <value>{0} {1} op {2}</value>
+  </data>
+  <data name="NOTESLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Notities – blz. {1} van {2}</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ORDERDETAIL_DELETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERDETAIL_UNDELETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAVEORDER_SUCCESS" xml:space="preserve">
+    <value>Bestelling is met succes opgeslagen.</value>
+  </data>
+  <data name="CUSTOMER_SAVESUCCESS_MSG" xml:space="preserve">
+    <value>Gefeliciteerd u uw klant hebt opgeslagen.</value>
+  </data>
+  <data name="ORDER_UPDATESTATUS_SUCCESS" xml:space="preserve">
+    <value>Bestelstatus is geactualiseerd.</value>
+  </data>
+  <data name="MARKCOMPLETE_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Bestellingen – blz. {1} van {2}</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_COMPLETED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERPAYMENTSTATUS_NA" xml:space="preserve">
+    <value>Onbetaald</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_PARTIAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_CUSTOMERWILLPICKUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_DELIVERTOHOMEORWORK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_SETUPAPPOINTMENTFORCONSULTATIONANDDELIVERY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_SHIPTOCUSTOMERADDRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERSOURCE_ONLINE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERSOURCE_SALESTICKET" xml:space="preserve">
+    <value>Verkoopkaartje</value>
+  </data>
+  <data name="ORDERSTATUS_PROCESSED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERSTATUS_SHIPPEDDELIVERED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERSTATUS_SUBMITTED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERSTATUS_UNDERREVIEW" xml:space="preserve">
+    <value>Onafgehandeld</value>
+  </data>
+  <data name="PHONENUMBERTYPE_HOME" xml:space="preserve">
+    <value>Vaste telefoon</value>
+  </data>
+  <data name="PHONENUMBERTYPE_MOBILE" xml:space="preserve">
+    <value>Mobiel</value>
+  </data>
+  <data name="PHONENUMBERTYPE_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PHONENUMBERTYPE_WORK" xml:space="preserve">
+    <value>Kantoor</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_MAKEUP" xml:space="preserve">
+    <value>Makeup</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_SKINCARE" xml:space="preserve">
+    <value>Huidverzorging</value>
+  </data>
+  <data name="REMINDERS_PREFIX" xml:space="preserve">
+    <value>voor</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_SUCCESS" xml:space="preserve">
+    <value>Bevestigings-email verstuurd</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_ERROR" xml:space="preserve">
+    <value>U moet de validatie fouten korrigeren voordat u de bevestigings-email kunt versturen</value>
+  </data>
+  <data name="SORT_AMOUNT" xml:space="preserve">
+    <value>Bedrag</value>
+  </data>
+  <data name="SORT_DATEADDED" xml:space="preserve">
+    <value>Datum toevoeging</value>
+  </data>
+  <data name="SORT_FIRSTNAME" xml:space="preserve">
+    <value>Voornaam</value>
+  </data>
+  <data name="SORT_LASTNAME" xml:space="preserve">
+    <value>Achternaam</value>
+  </data>
+  <data name="SORT_LASTORDERDATE" xml:space="preserve">
+    <value>Datum laatste bestelling</value>
+  </data>
+  <data name="SORT_ORDERDATE" xml:space="preserve">
+    <value>Besteldatum</value>
+  </data>
+  <data name="SORT_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Betalingsstatus</value>
+  </data>
+  <data name="SORT_ORDERSTATUS" xml:space="preserve">
+    <value>Bestelstatus</value>
+  </data>
+  <data name="SORT_ORDERTYPE" xml:space="preserve">
+    <value>Bestellingsbron</value>
+  </data>
+  <data name="SORT_PROFILEDATE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SORT_RELEVANCE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_ADDRESSEE_REQUIRED" xml:space="preserve">
+    <value>Geadresseerde is vereist</value>
+  </data>
+  <data name="VALIDATION_ADDRESS_ONEOF" xml:space="preserve">
+    <value>Voor het adres is een straat, stad of postcode vereist</value>
+  </data>
+  <data name="VALIDATION_NUMBER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_BEAUTENEWS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_MKECARDS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_PRODUCTREORDERREMINDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVOICE_CREATE_ERROR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_URL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_TASKTITLE_REQUIRED" xml:space="preserve">
+    <value>Titel is nodig</value>
+  </data>
+  <data name="PROMPT_DISCARDCHANGES" xml:space="preserve">
+    <value>Veranderingen nog niet opgeslagen.</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONE_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u dit telefoonnummer wilt verwijderen?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONE_TITLE" xml:space="preserve">
+    <value>Telefoonnummer verwijderen</value>
+  </data>
+  <data name="IMPORTANTDATE_GRADUATION" xml:space="preserve">
+    <value>Afsluiting opleiding</value>
+  </data>
+  <data name="IMPORTANTDATE_NEWBABY" xml:space="preserve">
+    <value>Nieuwe baby</value>
+  </data>
+  <data name="IMPORTANTDATE_NEWJOB" xml:space="preserve">
+    <value>Nieuwe baan</value>
+  </data>
+  <data name="IMPORTANTDATE_OTHER" xml:space="preserve">
+    <value>Andere datum</value>
+  </data>
+  <data name="IMPORTANTDATE_VACATION" xml:space="preserve">
+    <value>Vakantie</value>
+  </data>
+  <data name="IMPORTANTDATE_WEDDING" xml:space="preserve">
+    <value>Bruiloft</value>
+  </data>
+  <data name="VALIDATION_DUPEMAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_NAME" xml:space="preserve">
+    <value>Naam mag geen getallen of bijzondere karakters bevatten</value>
+  </data>
+  <data name="VALIDATION_PHONEEXTENSION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_PHONENUMBER" xml:space="preserve">
+    <value>Ongeldig telefoonnummer</value>
+  </data>
+  <data name="ERROR_CSV_FILE_REQUIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_ARCHIVEORDER_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u deze bestelling wilt archiveren?</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDER_TITLE" xml:space="preserve">
+    <value>Bestelling archiveren</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDER_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u de geselecteerde bestellingen wilt dearchiveren?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDER_TITLE" xml:space="preserve">
+    <value>Bestelling dearchiveren</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDERS_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u de geselecteerde bestellingen wilt archiveren?</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDERS_TITLE" xml:space="preserve">
+    <value>Bestellingen archiveren</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDERS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDERS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMERS_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u wilt archiveren? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Om in de toekomst gearchiveerde klanten te vinden gaat u naar Klanten --&gt; Klik op Filter --&gt; Selecteer Archief.&lt;/small&gt;</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Klanten archiveren</value>
+  </data>
+  <data name="CONFIRM_DELETEGROUPS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETEGROUPS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_REQUIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMER_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMER_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u de geselecteerde klanten wilt dearchiveren?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMER_TITLE" xml:space="preserve">
+    <value>Klanten dearchiveren</value>
+  </data>
+  <data name="ORDERDETAIL_ARCHIVE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERDETAIL_UNARCHIVE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EDITCUSTOMER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value>U moet de validatie fouten te herstellen voordat u opslaat deze klant</value>
+  </data>
+  <data name="EDITCUSTOMER_VALIDATION_MESSAGE_TITLE" xml:space="preserve">
+    <value>klant Validation</value>
+  </data>
+  <data name="EDITORDER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value>U moet de rood gemarkeerde ongeldige punten in orde brengen om deze bestelling te kunnen opslaan</value>
+  </data>
+  <data name="EDITORDER_VALIDATION_TITLE" xml:space="preserve">
+    <value>Ongeldige bestelling</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMERS_BODY" xml:space="preserve">
+    <value>Weet u zeker dat u de geselecteerde klanten wilt dearchiveren?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Klanten dearchiveren</value>
+  </data>
+  <data name="ARCHIVECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>De klanten zijn met succes gearchiveerd.</value>
+  </data>
+  <data name="DELETECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEORDERS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RESTORECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PURGECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PURGEORDERS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RESTOREORDERS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UNARCHIVECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>De klanten zijn met succes gedearchiveerd.</value>
+  </data>
+  <data name="ADDTOGROUP_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEGROUPS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ARCHIVEORDERS_SUCCESS" xml:space="preserve">
+    <value>De bestellingen zijn met succes gearchiveerd.</value>
+  </data>
+  <data name="UNARCHIVEORDERS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENT_STATUS_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_NOTIFY_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_UPDATESTATUS_TITLE" xml:space="preserve">
+    <value>Bestelling geactualiseerd</value>
+  </data>
+  <data name="EDITORDER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_SAVESUCCESS_TITLE" xml:space="preserve">
+    <value>Klantprofiel Opgeslagen</value>
+  </data>
+  <data name="CONFIRM_UPDATEPAYMENTSTATUS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_UPDATEPAYMENTSTATUS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_UPDATEPAYMENTSTATUS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_ARCHIVEORDER" xml:space="preserve">
+    <value>Geselecteerde bestellingen archiveren...</value>
+  </data>
+  <data name="PROGRESS_UNARCHIVEORDER" xml:space="preserve">
+    <value>Geselecteerde orde dearchiveren...</value>
+  </data>
+  <data name="PROGRESS_DELETECUSTOMERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_DELETEORDERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_RESTORECUSTOMERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_RESTOREORDERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_DELETEGROUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_UNARCHIVECUSTOMER" xml:space="preserve">
+    <value>Geselecteerde klanten dearchiveren...</value>
+  </data>
+  <data name="INVALID_EMAIL" xml:space="preserve">
+    <value>Ongeldige e-mail</value>
+  </data>
+  <data name="CONFIRM_MARKSHIPPED_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_MARKSHIPPED_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MARKSHIPPED_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NOTIFY_ADDPRODUCT_SUCCESS" xml:space="preserve">
+    <value>Product werd toegevoegd.</value>
+  </data>
+  <data name="NOTIFY_UPDATEPRODUCT_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_EDIT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_ADD" xml:space="preserve">
+    <value>toevoegen</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGE" xml:space="preserve">
+    <value>samenvoegen</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIP" xml:space="preserve">
+    <value>overslaan</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_FRAGRANCE" xml:space="preserve">
+    <value>Geur</value>
+  </data>
+  <data name="REMOVEWISHLIST_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_FACEBOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_TWITTER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_VK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_DATE" xml:space="preserve">
+    <value>Ongeldige datum</value>
+  </data>
+  <data name="SAMPLEREQUEST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_COMPLETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_INCOMPLETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETEFROMGROUP_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_DELETEFROMGROUP_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEFROMGROUP_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_DELETEFROMGROUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_ADDTOGROUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDTOGROUP_MODAL_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDTOGROUP_MODAL_BUTTONADD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDTOGROUP_MODAL_DROPDOWNLABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_ADDRESS" xml:space="preserve">
+    <value>Adres moet een ontvanger en tenminste een van de volgende vereisden hebben: straat, stadt, provincie, postcode of land.</value>
+  </data>
+  <data name="INVALID_ANNIVERSARY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_BIRTHDAY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_SAVEORDERBEFOREPAYMENT_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_SAVEORDER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROCESSCCPAYMENT_DECLINED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROCESSCCPAYMENT_PENDING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_AMOUNT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_CCNUM" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_AMEX" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_DISCOVER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_MASTER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_VISA" xml:space="preserve">
+    <value />
+  </data>
+  <data name="APPROVED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_ALERT_DECLINED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_PROCESSING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_SAVING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DECLINED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEFROMGROUP_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEFROMGROUP_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EDIT_CUSTOMER_INVALID_DUPLICATE_GROUP_NAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_GOOGLEPLUS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_SUBMITCDS_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_SUBMITCDS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAVING_ORDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITTING_CDSORDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_ORDER_FULFILLMENTOPTION_REQUIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CHECKING_DELIVERYADDRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITCDSORDER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITCDSORDER_VALIDATION_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_SUBMITECARD_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_SUBMITECARD_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITTING_ECARD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ECARD_ERROR_NOTIFY_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROGRESS_ARCHIVECUSTOMER" xml:space="preserve">
+    <value>Geselecteerde klanten archiveren</value>
+  </data>
+  <data name="SUBMITCDSORDER_ERROR_BLOCKEDSHIPPINGADDRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITCDSORDER_ERROR_CONSULTANTNOTELIGIBLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITCDSORDER_ERROR_CONSULTANTNOTFOUND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITCDSORDER_ERROR_INVALIDSHIPPINGADDRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMITCDSORDER_ERROR_UNAVAILABLEITEMSKUS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEPRR_BODY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CONFIRM_REMOVEPRR_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMOVEPRR_PROGRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UPDATEPRR_PROGRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMOVEPRR_SUCCESS_MESSAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UPDATEPRR_SUCCESS_MESSAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_NOTIFY_MESSAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ECARDS_VALIDATION_MESSAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ECARDS_VALIDATION_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_LOADING" xml:space="preserve">
+    <value />
+  </data>
+</root>

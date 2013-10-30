@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myCustomers", "myCustomers\myCustomers.csproj", "{FB861B5B-3850-48A1-B50C-34992A5A11BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myCustomers.Web", "myCustomers.Web\myCustomers.Web.csproj", "{5D216B24-20B5-455E-8B56-7810451406EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myCustomers.Tests", "myCustomers.Tests\myCustomers.Tests.csproj", "{8A55CE28-25DF-4DFB-B828-22EA91197D78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CB0DC4EE-4108-4FD0-9F8D-1E326799033B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMF.Client", "GMF.Client\GMF.Client.csproj", "{24DF3BA9-3C55-44AD-8280-442A62389F72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{129282C5-12EB-4391-BCBE-F00C9F454C96}"
+	ProjectSection(SolutionItems) = preProject
+		PANDA.proj = PANDA.proj
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.mkcorp.com:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = myCustomers.Tests\\myCustomers.Tests.csproj
+		SccProjectName1 = myCustomers.Tests
+		SccLocalPath1 = myCustomers.Tests
+		SccProjectUniqueName2 = myCustomers.Web\\myCustomers.Web.csproj
+		SccProjectName2 = myCustomers.Web
+		SccLocalPath2 = myCustomers.Web
+		SccProjectUniqueName3 = myCustomers\\myCustomers.csproj
+		SccProjectName3 = myCustomers
+		SccLocalPath3 = myCustomers
+		SccProjectUniqueName4 = GMF.Client\\GMF.Client.csproj
+		SccProjectName4 = GMF.Client
+		SccLocalPath4 = GMF.Client
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB861B5B-3850-48A1-B50C-34992A5A11BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB861B5B-3850-48A1-B50C-34992A5A11BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB861B5B-3850-48A1-B50C-34992A5A11BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB861B5B-3850-48A1-B50C-34992A5A11BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D216B24-20B5-455E-8B56-7810451406EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D216B24-20B5-455E-8B56-7810451406EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D216B24-20B5-455E-8B56-7810451406EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D216B24-20B5-455E-8B56-7810451406EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A55CE28-25DF-4DFB-B828-22EA91197D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A55CE28-25DF-4DFB-B828-22EA91197D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A55CE28-25DF-4DFB-B828-22EA91197D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A55CE28-25DF-4DFB-B828-22EA91197D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24DF3BA9-3C55-44AD-8280-442A62389F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DF3BA9-3C55-44AD-8280-442A62389F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DF3BA9-3C55-44AD-8280-442A62389F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DF3BA9-3C55-44AD-8280-442A62389F72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

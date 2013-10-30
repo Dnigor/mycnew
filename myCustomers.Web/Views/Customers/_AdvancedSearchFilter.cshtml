@@ -1,0 +1,77 @@
+﻿@using System.Globalization
+<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'Advanced'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <table style="border-collapse: separate; border-spacing: 10px;">
+    <tr>
+      <td style="text-align: right; vertical-align: middle;">
+        <label>@Resources.GetString("FILTER_PROFILEDATE_LABEL")</label>
+      </td>
+      <td style="text-align: left; vertical-align: middle;">
+        <div class="input-append" style="display: inline;">
+          <input type="text" data-bind="datepicker: minProfileDate, showValidationFor: minProfileDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+          <button class="btn" data-bind="visible: minProfileDate, click: function(d, e) { minProfileDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+        </div>
+        &nbsp;
+        <div class="input-append" style="display: inline;">
+          <input type="text" data-bind="datepicker: maxProfileDate, showValidationFor: maxProfileDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+          <button class="btn" data-bind="visible: maxProfileDate, click: function(d, e) { maxProfileDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+        </div>
+      </td>
+      <td style="text-align: right; vertical-align: middle;">
+        <label>@Resources.GetString("FILTER_BIRTHDAY_LABEL")</label>
+      </td>
+      <td style="text-align: left">
+        <select class="input-medium" data-bind="value: selectedBirthMonth" style="margin: 0">
+          <option value="">@Resources.GetString("MONTHLIST_SELECT")</option>
+          @for (int i = 0; i < CultureInfo.CurrentUICulture.DateTimeFormat.Calendar.GetMonthsInYear(DateTime.Now.Year); i++)
+          {
+            string monthName = CultureInfo.CurrentUICulture.DateTimeFormat.MonthNames[i];
+            <option value="@(i + 1)">@monthName</option>
+          }
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: right; vertical-align: middle;">
+        <label>@Resources.GetString("FILTER_LASTORDERDATE_LABEL")</label>
+      </td>
+      <td style="text-align: left; vertical-align: middle;">
+        <div class="input-append" style="display: inline;">
+          <input type="text" data-bind="datepicker: minLastOrderDate, showValidationFor: minLastOrderDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+          <button class="btn" data-bind="visible: minLastOrderDate, click: function(d, e) { minLastOrderDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+        </div>
+        &nbsp;
+        <div class="input-append" style="display: inline;">
+          <input type="text" data-bind="datepicker: maxLastOrderDate, showValidationFor: maxLastOrderDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+          <button class="btn" data-bind="visible: maxLastOrderDate, click: function(d, e) { maxLastOrderDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+        </div>
+      </td>
+      <td style="text-align: right">
+        <label>@Resources.GetString("FILTER_ANNIVERSARY_LABEL")</label>
+      </td>
+      <td style="text-align: left">
+        <select class="input-medium" data-bind="value: selectedAnniversaryMonth" style="margin: 0">
+          <option value="">@Resources.GetString("MONTHLIST_SELECT")</option>
+          @for (int i = 0; i < CultureInfo.CurrentUICulture.DateTimeFormat.Calendar.GetMonthsInYear(DateTime.Now.Year); i++)
+          {
+            string monthName = CultureInfo.CurrentUICulture.DateTimeFormat.MonthNames[i];
+            <option value="@(i + 1)">@monthName</option>
+          }
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <form class="form-inline" style="margin: 0">
+          <label class="checkbox">
+            <input type="checkbox" data-bind="checked: isArchived" />
+            @Resources.GetString("FILTER_ARCHIVED_LABEL")
+          </label>
+        </form>
+      </td>
+    </tr>
+  </table>
+</div>

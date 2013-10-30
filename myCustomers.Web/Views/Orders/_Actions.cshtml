@@ -1,0 +1,158 @@
+﻿@model OrderDetailViewModel
+
+<div class="well">
+  <a class="btn btn-primary" href="@Url.Action("edit", "orders", new { id = @Model.Order.OrderId })">@Resources.GetString("ORDER_EDIT")</a>
+  @if (!Model.Order.ShipCDS)
+  {
+  <button class="btn" style="display:none" data-bind="command: updateOrderStatus, visible: isShipped">@Resources.GetString("ORDER_MARK_PROCESSED")</button>
+  <button class="btn" style="display:none" data-bind="command: updateOrderStatus, visible: isProcessed">@Resources.GetString("ORDER_MARK_SHIPPED")</button>
+  }
+  @if (Model.Features.ConfirmationEmail && !string.IsNullOrEmpty(Model.Customer.Email))
+  {
+  <button class="btn btn-link" onclick="$('#sendConfirmationEmail').toggle(); $('#printInvoiceForm').hide(); return false;"><i class="icon-envelope"></i>&nbsp;@Resources.GetString("ORDER_SENDCONFIRMATIONEMAIL")</button>
+  }
+  <button class="btn btn-link" onclick="$('#printInvoiceForm').toggle(); $('#sendConfirmationEmail').hide(); return false;"><i class="icon-print"></i>&nbsp;@Resources.GetString("INVOICE_CREATE_LINK")</button>
+  <button class="btn btn-link" style="display: none;" data-bind="command: archiveOrderCommand, visible: !orderIsArchived(), activity: archiveOrderCommand.isExecuting"><i class="icon-folder-open"></i>&nbsp;@Resources.GetString("ARCHIVE_ORDER")</button>
+  <button class="btn btn-link" style="display: none;" data-bind="command: unarchiveOrderCommand, visible: orderIsArchived, activity: unarchiveOrderCommand.isExecuting"><i class="icon-folder-open"></i>&nbsp;@Resources.GetString("UNARCHIVE_ORDER")</button>
+
+  <div id="sendConfirmationEmail" class="well well-small" style="background-color: #fff; margin-top: 10px; display: none;">
+    <button type="button" class="close" onclick="$('#sendConfirmationEmail').hide();return false;">&times;</button>
+    <h5>@Resources.GetString("ORDER_SELECTMESSAGES")
+    </h5>
+    <div style="padding-left: 20px; padding-right: 50px;">
+
+      <input id="orderTotalSelected" type="checkbox" data-bind="checked:orderTotalSelected" style="margin-top: 0">
+      <label for="orderTotalSelected" style="display: inline-block; margin-left: 3px;">@Resources.GetString("ORDER_TOTAL_IS")</label>
+      <input type="text" data-bind="paymentAmount: orderTotalAmount, showValidationFor: orderTotalAmount" class="input-medium" />
+    
+      <label class="checkbox" style="margin-bottom: 10px;">
+        <input type="checkbox" data-bind="checked:orderProcessedSelected">
+        @Resources.GetString("ORDER_PROCESSED")
+      </label>
+
+      <label class="checkbox" style="margin-bottom: 10px;">
+        <input type="checkbox" data-bind="checked:orderShippedSelected">
+        @Resources.GetString("ORDER_SHIPPED")
+      </label>
+
+      @if (Model.Features.GiftMessage)
+      {
+      <label class="checkbox" style="margin-bottom: 10px;">
+        <input type="checkbox" data-bind="checked:orderIsGiftSelected">
+        @Resources.GetString("ORDER_ISGIFT")
+      </label>
+      }
+      
+      <label class="checkbox" style="margin-bottom: 10px;">
+        <input type="checkbox" data-bind="checked:contactMeAboutPaymentSelected">
+        @Resources.GetString("ORDER_PROCESSPAYMENT")
+      </label>
+
+      <label class="checkbox" style="margin-bottom: 10px;">
+        <input type="checkbox" data-bind="checked:contactMeAboutProcessingSelected">
+        @Resources.GetString("ORDER_PROCESSORDER")
+      </label>
+
+      <label class="checkbox" style="margin-bottom: 10px;">
+        <input type="checkbox" data-bind="checked:contactMeAsDesiredSelected">
+        @Resources.GetString("ORDER_DESIREDSERVICE")
+      </label>
+
+      <label class="checkbox" style="margin-bottom: 10px;">
+        <input type="checkbox" data-bind="checked:contactMeAboutDeliverySelected">
+        @Resources.GetString("ORDER_CONVENIENTTIME")
+      </label>
+
+      <input id="proposedDeliveryScheduleSelected" type="checkbox" data-bind="checked: proposedDeliveryScheduleSelected" style="margin-top: -1px">
+      <label for="proposedDeliveryScheduleSelected" style="display: inline-block; margin-left: 3px;">@Resources.GetString("ORDER_AVAILABLE")</label>
+      <input type="text" data-bind="datepicker: proposedDeliveryScheduleDate, showValidationFor: proposedDeliveryScheduleDate" class="input-medium datepicker" />      
+     
+      @Resources.GetString("ORDER_AT")
+      <div class="bootstrap-timepicker">
+        <input data-bind="value: proposedDeliveryScheduleTime" id="timepicker" type="text" class="input-small">
+        <i class="icon-time"></i>
+      </div>
+      @Resources.GetString("ORDER_ISTIMECONVENIENT")
+
+    </div>
+    <div class="form-actions" style="padding-left: 20px;">
+      <button class="btn btn-primary" data-bind="command: sendEmailCommand, activity: sendEmailCommand.isExecuting" onclick="return false;">@Resources.GetString("SEND_EMAIL")</button>
+      <button class="btn btn-link" onclick="$('#sendConfirmationEmail').hide();return false;">@Resources.GetString("CANCEL")</button>
+    </div>
+  </div>
+
+  <div id="printInvoiceForm" class="well well-small" style="background-color: #fff; margin-top: 10px; display: none;">
+    <button type="button" class="close" onclick="$('#printInvoiceForm').hide();return false;">&times;</button>
+    <table style="width: 100%; border-collapse: separate;">
+      <tr valign="top">
+        <td style="text-align: right">
+          <label class="control-label">@Resources.GetString("INVOICE_FORMAT_LABEL")</label>
+        </td>
+        <td style="padding-left: 20px; padding-bottom: 20px;">
+          <div>
+            <label class="radio">
+              <input type="radio" name="invoiceFormat" value="pdf" data-bind="checked: invoiceFormat">
+              PDF
+            </label>
+            <label class="radio">
+              <input type="radio" name="invoiceFormat" value="xls" data-bind="checked: invoiceFormat">
+              Excel
+            </label>
+          </div>
+        </td>
+      </tr>
+
+      <tr valign="top">
+        <td style="text-align: right; width: 25%;">
+          <label class="control-label">@Resources.GetString("INVOICE_MESSAGE_LABEL")</label>
+        </td>
+        <td style="padding-left: 20px; padding-bottom: 20px;">
+          <!-- ko ifnot: isInvoiceMessageVisible -->
+          <button class="btn btn-link" style="padding: 0;" data-bind="click: addInvoiceMessage">@Resources.GetString("INVOICE_ADDMESSAGE_LINK")</button>
+          <!-- /ko -->
+          <div style="display: none;" data-bind="visible: isInvoiceMessageVisible()">
+            <div class="maxchar">
+              <textarea style="height:100px;width:300px" maxlength="250" data-bind="value: invoiceMessage, valueUpdate: 'afterkeydown', attr: { maxlength: invoiceMessage.maxCharacterCount }"></textarea>
+              <span data-bind="text: invoiceMessage.remainingCharacterCount"></span>
+            </div>
+            <br />
+            <button style="padding: 0;" class="btn btn-link" data-bind="click: removeInvoiceMessage">@Resources.GetString("REMOVE")</button>
+          </div>
+         </td>
+      </tr>
+
+      @if (Model.Features.GiftMessage)
+      {
+      <tr valign="top">
+        <td style="text-align: right; width: 25%;">
+          <label class="control-label">@Resources.GetString("INVOICE_GIFTMESSAGE_LABEL")</label>
+        </td>
+        <td style="padding-left: 20px; padding-bottom: 20px;">
+          <!-- ko ifnot: isInvoiceGiftMessageVisible -->
+          <button class="btn btn-link" style="padding: 0;" data-bind="click: addInvoiceGiftMessage">@Resources.GetString("INVOICE_ADDGIFTMESSAGE_LINK")</button>
+          <!-- /ko -->
+          <div style="display: none;" data-bind="visible: isInvoiceGiftMessageVisible()">
+            <div class="maxchar">
+              <textarea style="height:100px;width:300px;" maxlength="250" class="input-xlarge" data-bind="value: invoiceGiftMessage, attr: { maxlength: invoiceGiftMessage.maxCharacterCount }"></textarea>
+              <span data-bind="text: invoiceGiftMessage.remainingCharacterCount"></span>
+            </div>
+            <br />
+            <button style="padding: 0;" class="btn btn-link" data-bind="click: removeInvoiceGiftMessage">@Resources.GetString("REMOVE")</button>
+          </div>
+         </td>
+      </tr>
+      }
+      
+      <tr style="background-color: #f5f5f5;">
+        <td></td>
+        <td style="padding: 20px;">
+          <button class="btn btn-primary" data-bind="command: createInvoiceCommand, activity: createInvoiceCommand.isExecuting">@Resources.GetString("INVOICE_CREATE_BUTTON")</button>
+          <button class="btn btn-link" onclick="$('#printInvoiceForm').hide();return false;">@Resources.GetString("CANCEL")</button>
+          <br />
+          <small class="muted">@Resources.GetString("INVOICE_CREATE_BUTTON_CONFIRMCOPY")</small>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <!-- /ko -->
+</div>

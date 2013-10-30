@@ -1,0 +1,11 @@
+﻿<div class="control-group" data-bind="with: spouse">
+  <label class="control-label">
+    @Resources.GetString("ADDCUSTOMER_SPOUSE")
+  </label>
+
+  <div class="controls">
+    <input type="text" maxlength="256" data-bind="value: spouseName" placeholder="@Resources.GetString("ADDCUSTOMER_SPOUSE_NAME")" /><br />
+    <input type="text" maxlength="20" data-bind="value: phoneNumber" placeholder="@Resources.GetString("ADDCUSTOMER_SPOUSE_PHONENUMBER")" /><br />
+    <input type="text" maxlength="255" class="input-xlarge" data-bind="value: emailAddress" placeholder="@Resources.GetString("ADDCUSTOMER_SPOUSE_EMAIL")" />
+  </div>
+</div>

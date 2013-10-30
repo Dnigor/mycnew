@@ -1,0 +1,45 @@
+﻿<div class="tab-pane customerdetail-tab-pane-padding" id="prrTab" data-bind="css: { active: $root.currentTab() == 'prrTab' }, with: $root.customerPrrView">
+  <div class="alert alert-info" style="display: none;" data-bind="visible: isEmpty()">
+    <em>@Resources.GetString("CUSTOMERDETAIL_TAB_NOPRRPRODUCTS")</em>
+  </div>
+  <table class="table table-hover-well" style="display: none;" data-bind="visible: !isEmpty()">
+    <thead>
+      <tr>
+        <th style="white-space:nowrap">@Resources.GetString("CUSTOMERDETAIL_TAB_PRRPRODUCT_PARTNUMBER")</th>
+        <th style="white-space:nowrap">@Resources.GetString("CUSTOMERDETAIL_TAB_PRRPRODUCT_PRODUCTNAME")</th>
+        <th style="white-space:nowrap">@Resources.GetString("CUSTOMERDETAIL_TAB_PRRPRODUCT_REMINDERDATE")</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody data-bind="template: { name: prrTemplateToUse, foreach: prrCollection }"></tbody>
+  </table>
+</div>
+
+<script type="text/html" id="prrDisplaModeReadonly">
+  <tr>
+    <td data-bind="text: displayPartId"></td>
+    <td style="width:100%" data-bind="text: name"></td>
+    <td data-bind="shortDate: reminderDateUtc"></td>
+    <td style="white-space:nowrap; text-align:right">
+      <button class="btn-link" style="display:none;" data-bind="visible: canEdit, click: $parent.editPrr">@Resources.GetString("CUSTOMERDETAIL_TAB_PRRPRODUCT_EDITLINK")</button>
+    </td>
+    <td style="white-space:nowrap; text-align:right">
+      <button class="btn-link" style="display:none;" data-bind="visible: canEdit, click: $parent.deletePrr">@Resources.GetString("CUSTOMERDETAIL_TAB_PRRPRODUCT_DELEELINK")</button>
+    </td>
+  </tr>
+</script>
+
+<script type="text/html" id="prrDisplaModeEditable">
+  <tr>
+    <td data-bind="text: displayPartId"></td>
+    <td style="width:100%" data-bind="text: name"></td>
+    <td><input data-bind="datepicker: newReminderDate, considerTime: true, showValidationFor: newReminderDate, validationPlacement: 'top', datepickerOptions: { minDate: moment().hour(0).minute(0).second(0).millisecond(0).add('days', 1).toDate() }" type="text" class="input-small" /></td>
+    <td style="white-space:nowrap; text-align:right">
+      <button class="btn btn-link" data-bind="enable: validationState.isValid, click: $parent.savePrrUpdate">@Resources.GetString("CUSTOMERDETAIL_TAB_PRRPRODUCT_SAVEPRRUPDATELINK")</button>&nbsp;
+    </td>
+    <td style="white-space:nowrap; text-align:right">
+      <button class="btn btn-link" data-bind="click: $parent.cancelPrrUpdate">@Resources.GetString("CUSTOMERDETAIL_TAB_PRRPRODUCT_CANCELPRRUPDATELINK")</button>
+    </td>
+  </tr>
+</script>

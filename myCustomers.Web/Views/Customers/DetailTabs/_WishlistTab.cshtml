@@ -1,0 +1,49 @@
+﻿<div class="tab-pane customerdetail-tab-pane-padding" id="wishlistTab" data-bind="css: { active: $root.currentTab() == 'wishlistTab' }">
+  <p class="lead">@Resources.GetString("CUSTOMERDETAIL_TAB_WISHLIST_PRODUCTS")</p>
+
+  <div data-bind="with: productsData">
+    <div data-bind="with: wishListProducts">
+      <div class="alert alert-info" style="display: none;" data-bind="visible: isEmpty">
+        <em>@Resources.GetString("CUSTOMERDETAIL_TAB_WISHLIST_NOPRODUCTS")</em>
+      </div>
+      <table class="table table-hover-well products" style="display: none; margin-top: 15px;" data-bind="visible: !isEmpty()">
+        <thead>
+          <tr>
+            <th style="white-space: nowrap;">@Resources.GetString("CUSTOMERDETAIL_TAB_WISHLIST_PARTNUMBER")</th>
+            <th>@Resources.GetString("CUSTOMERDETAIL_TAB_WISHLIST_NAME")</th>
+            <th style="text-align: right; white-space: nowrap">@Resources.GetString("CUSTOMERDETAIL_TAB_WISHLIST_SUGGESTEDRETAIL")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: products">
+          <tr style="cursor: pointer;" data-bind="click: toggleDetail" title="@Resources.GetString("CUSTOMERDETAIL_TAB_WISHLIST_CLICKTOVIEWPRODUCTDETAILS")">
+            <td data-bind="text: dispPartId"></td>
+            <td class="description" style="width: 100%;">
+              <span data-bind="html: name"></span>
+              <span data-bind="html: shade"></span>
+              <span class="label label-info" style="display: none;" data-bind="visible: isWishList">@Resources.GetString("CUSTOMERDETAIL_TAB_WISHLIST_WISHLIST")</span>
+            </td>
+            <td style="text-align: right;" data-bind="currency: price"></td>
+          </tr>
+          <tr class="detail" style="border: 0; margin: 0; padding: 0;">
+            <td colspan="4" style="border: 0; margin: 0; padding: 0;">
+              <div class="media" style="border-top: solid #DDD 1px; display: none; padding: 10px;" data-bind="visible: isDetailVisible">
+                <img class="pull-left" style="height: 152px; width: 114px;" data-bind="attr: { src: listImage }" />
+                <div class="media-body" data-bind="html: desc"></div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 0;">
+              <button class="btn btn-link" style="padding-left: 0" data-bind="command: $root.removeWishlistProductCommand">@Resources.GetString("REMOVE")</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Add Products -->
+      <div id="productSearch" class="well well-small" style="display: none; margin: 0;">
+        @Html.Partial("_ProductSearch")
+      </div>
+      <button id="productSearchButton" class="btn btn-link" onclick=" $('#productSearchButton, #productSearch, #productSearchCloseButton').toggle(); return false; ">@Resources.GetString("CUSTOMERDETAIL_ADD_WISHLIST")</button>
+    </div>
+  </div>
+</div>

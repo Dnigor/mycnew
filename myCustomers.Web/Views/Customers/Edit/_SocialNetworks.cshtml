@@ -1,0 +1,20 @@
+﻿<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_SOCIALNETWORK")</label>
+  <div class="controls">
+    <ul class="inline unstyled" data-bind="foreach: socialNetworks">
+      <li class="social-network-item" >
+        <img style="width:32px;height:32px;" width="32" height="32" data-bind="attr: { src: $parent.socialNetworksConfig[$data.type()].Icon }" />
+        <input maxlength="100" type="text" class="input-xxlarge" data-bind="value: url, showValidationFor: url, attr: { placeholder: $parent.socialNetworksConfig[$data.type()].Placeholder }, hasFocus: hasFocus" />
+        <button class="btn btn-link" data-bind="click: $parent.removeSocialNetwork">@Resources.GetString("REMOVE")</button>
+      </li>
+    </ul>
+
+    <ul class="inline unstyled" data-bind="foreach: availableSocialNetworkTypes">
+      <li class="icon-2x">
+        <a href="#" data-bind="click: $parent.addSocialNetwork, attr: { title: Tooltip }" style="text-decoration:none;">
+          <img data-bind="attr: { src: Icon, alt: Tooltip }" width="32" height="32"/>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

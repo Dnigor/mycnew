@@ -1,0 +1,195 @@
+﻿@model EditOrderViewModel
+
+<div class="form-horizontal">
+  <fieldset style="margin-bottom: 20px">
+    <legend>@Resources.GetString("PAYMENT_HEADING")</legend>
+
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("PAYMENTSTATUS_LABEL")</label>
+      <div class="controls">
+        <select class="input-medium" style="width: 200px;" data-bind="value: paymentStatus, enable: canEditPayment">
+          <option value="NA">@Resources.GetString("ORDERPAYMENTSTATUS_NA")</option>
+          <option value="Partial">@Resources.GetString("ORDERPAYMENTSTATUS_PARTIAL")</option>
+          <option value="Completed">@Resources.GetString("ORDERPAYMENTSTATUS_COMPLETED")</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("LABEL_CASH")</label>
+
+      <div class="controls">
+        <table class="table table-condensed table-autosize" style="display:none;margin:0;" data-bind="visible: hasCashPayments">
+          <thead>
+            <tr>
+              <th>@Resources.GetString("AMOUNT")</th>
+              <th>@Resources.GetString("DATE")</th>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody data-bind="foreach: cashPayments">
+            <tr>
+              <td><input type="text" class="input-mini" data-bind="enable: $root.canEditPayment, paymentAmount: amount, showValidationFor: amount" /></td>
+              <td>
+                <input type="text" maxlength="10" class="input-small" data-bind="enable: $root.canEditPayment, datepicker: paymentDateUtc, showValidationFor: paymentDateUtc" />
+              </td>
+              <td style="vertical-align:middle;padding:0;margin:0;">
+                <!-- ko if: $root.canEditPayment -->
+                <button 
+                  class="btn btn-link" style="padding:0" 
+                  title="@Resources.GetString("ORDERPAYMENT_REMOVE_CASH_TITLE")" 
+                  type="button" 
+                  data-bind="click: $parent.removeCashPayment"
+                >
+                  @Resources.GetString("ORDERPAYMENT_REMOVE")
+                </button>
+                <!-- /ko -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ko if: canEditPayment -->              
+        <div style="padding-top: 5px;">
+          <button class="btn btn-link" style="margin:0;padding:0;" type="button" data-bind="click: addCashPayment">@Resources.GetString("ADDCASHPAYMENT_LABEL")</button>
+        </div>
+        <!-- /ko -->
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("LABEL_CHECKS")</label>
+      <div class="controls">
+        <table class="table table-condensed table-autosize" style="display:none;margin:0;" data-bind="visible: hasCheckPayments">
+          <thead>
+            <tr>
+              <th>@Resources.GetString("CHECKNUMBER")</th>
+              <th>@Resources.GetString("AMOUNT")</th>
+              <th>@Resources.GetString("DATE")</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody data-bind="foreach: checkPayments">
+            <td><input type="text" maxlength="50" class="input-medium" data-bind="enable: $root.canEditPayment, value: checkNumber" /></td>
+            <td><input type="text" class="input-mini" data-bind="enable: $root.canEditPayment, paymentAmount: amount, showValidationFor: amount" /></td>
+            <td>
+              <input type="text" maxlength="10" class="input-small" data-bind="enable: $root.canEditPayment, datepicker: paymentDateUtc, showValidationFor: paymentDateUtc" />
+            </td>
+              <td style="vertical-align:middle;padding:0;margin:0;">
+                <!-- ko if: $root.canEditPayment -->
+                <button 
+                  title="@Resources.GetString("ORDERPAYMENT_REMOVE_TITLE")" 
+                  class="btn btn-link" style="padding:0" type="button" 
+                  data-bind="click: $parent.removeCheckPayment" 
+                  title="remove payment"
+                >
+                  @Resources.GetString("ORDERPAYMENT_REMOVE")
+                </button>
+                <!-- /ko -->
+              </td>
+          </tbody>
+        </table>
+
+        <!-- ko if: canEditPayment -->     
+        <div style="padding-top: 5px;">
+          <button class="btn btn-link" style="margin:0;padding:0;" type="button" data-bind="click: addCheckPayment">@Resources.GetString("ADDCHECKPAYMENT_LABEL")</button>
+        </div>
+        <!-- /ko -->
+      </div>
+    </div>
+
+    @if (Model.Features.CreditCard)
+    {
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("LABEL_CREDITCARD")</label>
+      <div class="controls">
+        @if (Model.IsEligibleForCDS)
+        {
+        <div class="alert alert-error" style="display:none" data-bind="visible: !paymentsAreValidForCDS()">
+          @Html.Raw(Resources.GetString("VALIDATION_CDSORDER_PAYMENTS"))
+        </div>
+        }
+        <ul class="inline" data-bind="foreach: ccPayments" style="margin:0">
+          <li style="padding:0;margin:0 5px 10px 0;vertical-align:top">
+            <table class="table table-bordered table-condensed table-autosize" style="width:400px;overflow-x:hidden;margin:0;">
+              <tbody>
+                <tr>
+                  <td colspan="2" style="font-weight:bold;text-align:center" data-bind="text: displayStatus, css: { 'alert': status() === 'Declined', 'alert-info': status() === 'Pending', 'alert-success': status() === 'Approved' }"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_TRANSACTIONID_LABEL")</td>
+                  <td>
+                    <a target="_blank" href="#" data-bind="if: displayTransactionId, text: displayTransactionId, attr: { href: proPayLink }"></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_INVOICEID_LABEL")</td>
+                  <td data-bind="text: invoiceId"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_PAYMENTDATE_LABEL")</td>
+                  <td data-bind="shortDate: paymentDateUtc"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_CARDHOLDERNAME_LABEL")</td>
+                  <td data-bind="text: cardHolderName"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_BILLINGADDRESS_LABEL")</td>
+                  <td data-bind="text: billingAddress"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_BILLINGZIP_LABEL")</td>
+                  <td data-bind="text: billingZip"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_LAST4DIGITS_LABEL")</td>
+                  <td data-bind="text: last4Digits"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_CCTYPE_LABEL")</td>
+                  <td data-bind="localize: type, resourceKey: 'CCTYPE_{0}'"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_CCEXPDATE_LABEL")</td>
+                  <td data-bind="shortMonthYearDate: expDate"></td>
+                </tr>
+                <tr>
+                  <td style="text-align:right;white-space:nowrap">@Resources.GetString("CCPAYMENT_AMOUNT_LABEL")</td>
+                  <td data-bind="currency: amount"></td>
+                </tr>
+                <tr style="height:34px" data-bind="visible: status() !== 'Approved'">
+                  <td colspan="2" style="text-align:right;">
+                    <!-- ko if: status() === 'Pending' || status() === 'Declined' -->
+                    <!-- ko if: $parent.enableCCProcessing() -->
+                    <button class="btn btn-link" style="padding:0" type="button" data-bind="click: $parent.processCCPayment, localize: status, resourceKey: 'PROCESSCCPAYMENT_{0}'"></button>
+                    |
+                    <!-- /ko -->
+                    <button class="btn btn-link" style="padding:0" type="button" data-bind="click: $parent.changeCCPayment">@Resources.GetString("CHANGECCPAYMENT_LABEL")</button>
+                    |
+                    <button class="btn btn-link" style="padding:0" type="button" data-bind="click: $parent.removeCCPayment">@Resources.GetString("REMOVECCPAYMENT_LABEL")</button>
+                    <!-- /ko -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+
+        <!-- ko if: canEditPayment -->
+        @if (Model.HasActiveProPayAccount)
+        {
+          <button class="btn btn-link" style="padding-left:0" type="button" data-bind="command: addCCPaymentCommand, visible: addCCPaymentCommand.canExecute">@Resources.GetString("ADDCCPAYMENT_LABEL")</button>
+        }
+        else
+        {
+          <div class="alert alert-info">
+            @Html.Raw(@Resources.GetString("PROPAYREQUIRED_ALERT"))
+          </div>
+        }
+        <!-- /ko -->
+      </div>
+    </div>
+    }
+  </fieldset>
+</div>

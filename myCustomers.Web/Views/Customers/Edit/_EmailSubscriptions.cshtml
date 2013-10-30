@@ -1,0 +1,15 @@
+﻿<div class="control-group">
+  <label class="control-label">
+    @Resources.GetString("ADDCUSTOMER_SUBSCRIPTION")
+  </label>
+  <div class="controls">
+    <ul class="unstyled" data-bind="foreach: subscriptions">
+      <li>
+        <label class="checkbox">
+          <input data-bind="checked: $parent.updateSubscription($data), enable: $parent.canModifySubscription($data)" type="checkbox">
+          <label data-bind="localize: subscriptionType, resourceKey: 'SUBSCRIPTIONTYPE_{0}'" />
+        </label>
+      </li>
+    </ul>
+  </div>
+</div>

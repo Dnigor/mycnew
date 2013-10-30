@@ -1,0 +1,41 @@
+﻿@using myCustomers
+@model HCardViewModel
+<table>
+  <tr>
+    <td style="vertical-align: top;">
+      @LayoutHelpers.ProfileImage(Model.PictureLastUpdatedDateUtc, Model.FirstName, Model.LastName, Model.CustomerId, 96)
+    </td>
+    <td style="padding-left: 20px; vertical-align: top;">
+      @* Using hcard micro-format http://microformats.org/wiki/hcard*@
+      <div class="vcard">
+        <span class="fn n">
+          <a href="@Url.Action("detail", "customers", new {id = @Model.CustomerId})">
+            <span class="given-name">@Model.FirstName</span>
+            <span class="additional-name">@Model.MiddleName</span>
+            <span class="family-name">@Model.LastName</span>
+          </a>
+        </span>
+
+        @if (Model.Features.UseMailtoLinks && !string.IsNullOrEmpty(Model.Email))
+        {
+          <a class="email" href="mailto:@Model.Email">@Model.Email</a>
+        }
+        else if (!string.IsNullOrEmpty(Model.Email))
+        {
+          <span>@Model.Email</span>
+        }
+
+        @if (Model.PrimaryAddress != null)
+        {
+          @Html.AppSettingsPartial("PartialView.DisplayAddress_Razor", Model.PrimaryAddress, new ViewDataDictionary { { "skipWrapper", true } })
+        }
+        @if (Model.PrimaryPhone != null)
+        {
+          <div class="tel">
+            @Html.Partial("_PhoneNumber", @Model.PrimaryPhone)
+          </div>
+        }
+      </div>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,2368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D216B24-20B5-455E-8B56-7810451406EF}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>myCustomers.Web</RootNamespace>
+    <AssemblyName>myCustomers.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <JSLintSkip>\Scripts\i18n\globalize.culture.af-ZA.js|\Scripts\i18n\globalize.culture.af.js|\Scripts\i18n\globalize.culture.am-ET.js|\Scripts\i18n\globalize.culture.am.js|\Scripts\i18n\globalize.culture.ar-AE.js|\Scripts\i18n\globalize.culture.ar-BH.js|\Scripts\i18n\globalize.culture.ar-DZ.js|\Scripts\i18n\globalize.culture.ar-EG.js|\Scripts\i18n\globalize.culture.ar-IQ.js|\Scripts\i18n\globalize.culture.ar-JO.js|\Scripts\i18n\globalize.culture.ar-KW.js|\Scripts\i18n\globalize.culture.ar-LB.js|\Scripts\i18n\globalize.culture.ar-LY.js|\Scripts\i18n\globalize.culture.ar-MA.js|\Scripts\i18n\globalize.culture.ar-OM.js|\Scripts\i18n\globalize.culture.ar-QA.js|\Scripts\i18n\globalize.culture.ar-SA.js|\Scripts\i18n\globalize.culture.ar-SY.js|\Scripts\i18n\globalize.culture.ar-TN.js|\Scripts\i18n\globalize.culture.ar-YE.js|\Scripts\i18n\globalize.culture.ar.js|\Scripts\i18n\globalize.culture.arn-CL.js|\Scripts\i18n\globalize.culture.arn.js|\Scripts\i18n\globalize.culture.as-IN.js|\Scripts\i18n\globalize.culture.as.js|\Scripts\i18n\globalize.culture.az-Cyrl-AZ.js|\Scripts\i18n\globalize.culture.az-Cyrl.js|\Scripts\i18n\globalize.culture.az-Latn-AZ.js|\Scripts\i18n\globalize.culture.az-Latn.js|\Scripts\i18n\globalize.culture.az.js|\Scripts\i18n\globalize.culture.ba-RU.js|\Scripts\i18n\globalize.culture.ba.js|\Scripts\i18n\globalize.culture.be-BY.js|\Scripts\i18n\globalize.culture.be.js|\Scripts\i18n\globalize.culture.bg-BG.js|\Scripts\i18n\globalize.culture.bg.js|\Scripts\i18n\globalize.culture.bn-BD.js|\Scripts\i18n\globalize.culture.bn-IN.js|\Scripts\i18n\globalize.culture.bn.js|\Scripts\i18n\globalize.culture.bo-CN.js|\Scripts\i18n\globalize.culture.bo.js|\Scripts\i18n\globalize.culture.br-FR.js|\Scripts\i18n\globalize.culture.br.js|\Scripts\i18n\globalize.culture.bs-Cyrl-BA.js|\Scripts\i18n\globalize.culture.bs-Cyrl.js|\Scripts\i18n\globalize.culture.bs-Latn-BA.js|\Scripts\i18n\globalize.culture.bs-Latn.js|\Scripts\i18n\globalize.culture.bs.js|\Scripts\i18n\globalize.culture.ca-ES.js|\Scripts\i18n\globalize.culture.ca.js|\Scripts\i18n\globalize.culture.co-FR.js|\Scripts\i18n\globalize.culture.co.js|\Scripts\i18n\globalize.culture.cs-CZ.js|\Scripts\i18n\globalize.culture.cs.js|\Scripts\i18n\globalize.culture.cy-GB.js|\Scripts\i18n\globalize.culture.cy.js|\Scripts\i18n\globalize.culture.da-DK.js|\Scripts\i18n\globalize.culture.da.js|\Scripts\i18n\globalize.culture.de-AT.js|\Scripts\i18n\globalize.culture.de-CH.js|\Scripts\i18n\globalize.culture.de-DE.js|\Scripts\i18n\globalize.culture.de-LI.js|\Scripts\i18n\globalize.culture.de-LU.js|\Scripts\i18n\globalize.culture.de.js|\Scripts\i18n\globalize.culture.dsb-DE.js|\Scripts\i18n\globalize.culture.dsb.js|\Scripts\i18n\globalize.culture.dv-MV.js|\Scripts\i18n\globalize.culture.dv.js|\Scripts\i18n\globalize.culture.el-GR.js|\Scripts\i18n\globalize.culture.el.js|\Scripts\i18n\globalize.culture.en-029.js|\Scripts\i18n\globalize.culture.en-AU.js|\Scripts\i18n\globalize.culture.en-BZ.js|\Scripts\i18n\globalize.culture.en-CA.js|\Scripts\i18n\globalize.culture.en-GB.js|\Scripts\i18n\globalize.culture.en-IE.js|\Scripts\i18n\globalize.culture.en-IN.js|\Scripts\i18n\globalize.culture.en-JM.js|\Scripts\i18n\globalize.culture.en-MY.js|\Scripts\i18n\globalize.culture.en-NZ.js|\Scripts\i18n\globalize.culture.en-PH.js|\Scripts\i18n\globalize.culture.en-SG.js|\Scripts\i18n\globalize.culture.en-TT.js|\Scripts\i18n\globalize.culture.en-US.js|\Scripts\i18n\globalize.culture.en-ZA.js|\Scripts\i18n\globalize.culture.en-ZW.js|\Scripts\i18n\globalize.culture.es-AR.js|\Scripts\i18n\globalize.culture.es-BO.js|\Scripts\i18n\globalize.culture.es-CL.js|\Scripts\i18n\globalize.culture.es-CO.js|\Scripts\i18n\globalize.culture.es-CR.js|\Scripts\i18n\globalize.culture.es-DO.js|\Scripts\i18n\globalize.culture.es-EC.js|\Scripts\i18n\globalize.culture.es-ES.js|\Scripts\i18n\globalize.culture.es-GT.js|\Scripts\i18n\globalize.culture.es-HN.js|\Scripts\i18n\globalize.culture.es-MX.js|\Scripts\i18n\globalize.culture.es-NI.js|\Scripts\i18n\globalize.culture.es-PA.js|\Scripts\i18n\globalize.culture.es-PE.js|\Scripts\i18n\globalize.culture.es-PR.js|\Scripts\i18n\globalize.culture.es-PY.js|\Scripts\i18n\globalize.culture.es-SV.js|\Scripts\i18n\globalize.culture.es-US.js|\Scripts\i18n\globalize.culture.es-UY.js|\Scripts\i18n\globalize.culture.es-VE.js|\Scripts\i18n\globalize.culture.es.js|\Scripts\i18n\globalize.culture.et-EE.js|\Scripts\i18n\globalize.culture.et.js|\Scripts\i18n\globalize.culture.eu-ES.js|\Scripts\i18n\globalize.culture.eu.js|\Scripts\i18n\globalize.culture.fa-IR.js|\Scripts\i18n\globalize.culture.fa.js|\Scripts\i18n\globalize.culture.fi-FI.js|\Scripts\i18n\globalize.culture.fi.js|\Scripts\i18n\globalize.culture.fil-PH.js|\Scripts\i18n\globalize.culture.fil.js|\Scripts\i18n\globalize.culture.fo-FO.js|\Scripts\i18n\globalize.culture.fo.js|\Scripts\i18n\globalize.culture.fr-BE.js|\Scripts\i18n\globalize.culture.fr-CA.js|\Scripts\i18n\globalize.culture.fr-CH.js|\Scripts\i18n\globalize.culture.fr-FR.js|\Scripts\i18n\globalize.culture.fr-LU.js|\Scripts\i18n\globalize.culture.fr-MC.js|\Scripts\i18n\globalize.culture.fr.js|\Scripts\i18n\globalize.culture.fy-NL.js|\Scripts\i18n\globalize.culture.fy.js|\Scripts\i18n\globalize.culture.ga-IE.js|\Scripts\i18n\globalize.culture.ga.js|\Scripts\i18n\globalize.culture.gd-GB.js|\Scripts\i18n\globalize.culture.gd.js|\Scripts\i18n\globalize.culture.gl-ES.js|\Scripts\i18n\globalize.culture.gl.js|\Scripts\i18n\globalize.culture.gsw-FR.js|\Scripts\i18n\globalize.culture.gsw.js|\Scripts\i18n\globalize.culture.gu-IN.js|\Scripts\i18n\globalize.culture.gu.js|\Scripts\i18n\globalize.culture.ha-Latn-NG.js|\Scripts\i18n\globalize.culture.ha-Latn.js|\Scripts\i18n\globalize.culture.ha.js|\Scripts\i18n\globalize.culture.he-IL.js|\Scripts\i18n\globalize.culture.he.js|\Scripts\i18n\globalize.culture.hi-IN.js|\Scripts\i18n\globalize.culture.hi.js|\Scripts\i18n\globalize.culture.hr-BA.js|\Scripts\i18n\globalize.culture.hr-HR.js|\Scripts\i18n\globalize.culture.hr.js|\Scripts\i18n\globalize.culture.hsb-DE.js|\Scripts\i18n\globalize.culture.hsb.js|\Scripts\i18n\globalize.culture.hu-HU.js|\Scripts\i18n\globalize.culture.hu.js|\Scripts\i18n\globalize.culture.hy-AM.js|\Scripts\i18n\globalize.culture.hy.js|\Scripts\i18n\globalize.culture.id-ID.js|\Scripts\i18n\globalize.culture.id.js|\Scripts\i18n\globalize.culture.ig-NG.js|\Scripts\i18n\globalize.culture.ig.js|\Scripts\i18n\globalize.culture.ii-CN.js|\Scripts\i18n\globalize.culture.ii.js|\Scripts\i18n\globalize.culture.is-IS.js|\Scripts\i18n\globalize.culture.is.js|\Scripts\i18n\globalize.culture.it-CH.js|\Scripts\i18n\globalize.culture.it-IT.js|\Scripts\i18n\globalize.culture.it.js|\Scripts\i18n\globalize.culture.iu-Cans-CA.js|\Scripts\i18n\globalize.culture.iu-Cans.js|\Scripts\i18n\globalize.culture.iu-Latn-CA.js|\Scripts\i18n\globalize.culture.iu-Latn.js|\Scripts\i18n\globalize.culture.iu.js|\Scripts\i18n\globalize.culture.ja-JP.js|\Scripts\i18n\globalize.culture.ja.js|\Scripts\i18n\globalize.culture.ka-GE.js|\Scripts\i18n\globalize.culture.ka.js|\Scripts\i18n\globalize.culture.kk-KZ.js|\Scripts\i18n\globalize.culture.kk.js|\Scripts\i18n\globalize.culture.kl-GL.js|\Scripts\i18n\globalize.culture.kl.js|\Scripts\i18n\globalize.culture.km-KH.js|\Scripts\i18n\globalize.culture.km.js|\Scripts\i18n\globalize.culture.kn-IN.js|\Scripts\i18n\globalize.culture.kn.js|\Scripts\i18n\globalize.culture.ko-KR.js|\Scripts\i18n\globalize.culture.ko.js|\Scripts\i18n\globalize.culture.kok-IN.js|\Scripts\i18n\globalize.culture.kok.js|\Scripts\i18n\globalize.culture.ky-KG.js|\Scripts\i18n\globalize.culture.ky.js|\Scripts\i18n\globalize.culture.lb-LU.js|\Scripts\i18n\globalize.culture.lb.js|\Scripts\i18n\globalize.culture.lo-LA.js|\Scripts\i18n\globalize.culture.lo.js|\Scripts\i18n\globalize.culture.lt-LT.js|\Scripts\i18n\globalize.culture.lt.js|\Scripts\i18n\globalize.culture.lv-LV.js|\Scripts\i18n\globalize.culture.lv.js|\Scripts\i18n\globalize.culture.mi-NZ.js|\Scripts\i18n\globalize.culture.mi.js|\Scripts\i18n\globalize.culture.mk-MK.js|\Scripts\i18n\globalize.culture.mk.js|\Scripts\i18n\globalize.culture.ml-IN.js|\Scripts\i18n\globalize.culture.ml.js|\Scripts\i18n\globalize.culture.mn-Cyrl.js|\Scripts\i18n\globalize.culture.mn-MN.js|\Scripts\i18n\globalize.culture.mn-Mong-CN.js|\Scripts\i18n\globalize.culture.mn-Mong.js|\Scripts\i18n\globalize.culture.mn.js|\Scripts\i18n\globalize.culture.moh-CA.js|\Scripts\i18n\globalize.culture.moh.js|\Scripts\i18n\globalize.culture.mr-IN.js|\Scripts\i18n\globalize.culture.mr.js|\Scripts\i18n\globalize.culture.ms-BN.js|\Scripts\i18n\globalize.culture.ms-MY.js|\Scripts\i18n\globalize.culture.ms.js|\Scripts\i18n\globalize.culture.mt-MT.js|\Scripts\i18n\globalize.culture.mt.js|\Scripts\i18n\globalize.culture.nb-NO.js|\Scripts\i18n\globalize.culture.nb.js|\Scripts\i18n\globalize.culture.ne-NP.js|\Scripts\i18n\globalize.culture.ne.js|\Scripts\i18n\globalize.culture.nl-BE.js|\Scripts\i18n\globalize.culture.nl-NL.js|\Scripts\i18n\globalize.culture.nl.js|\Scripts\i18n\globalize.culture.nn-NO.js|\Scripts\i18n\globalize.culture.nn.js|\Scripts\i18n\globalize.culture.no.js|\Scripts\i18n\globalize.culture.nso-ZA.js|\Scripts\i18n\globalize.culture.nso.js|\Scripts\i18n\globalize.culture.oc-FR.js|\Scripts\i18n\globalize.culture.oc.js|\Scripts\i18n\globalize.culture.or-IN.js|\Scripts\i18n\globalize.culture.or.js|\Scripts\i18n\globalize.culture.pa-IN.js|\Scripts\i18n\globalize.culture.pa.js|\Scripts\i18n\globalize.culture.pl-PL.js|\Scripts\i18n\globalize.culture.pl.js|\Scripts\i18n\globalize.culture.prs-AF.js|\Scripts\i18n\globalize.culture.prs.js|\Scripts\i18n\globalize.culture.ps-AF.js|\Scripts\i18n\globalize.culture.ps.js|\Scripts\i18n\globalize.culture.pt-BR.js|\Scripts\i18n\globalize.culture.pt-PT.js|\Scripts\i18n\globalize.culture.pt.js|\Scripts\i18n\globalize.culture.qut-GT.js|\Scripts\i18n\globalize.culture.qut.js|\Scripts\i18n\globalize.culture.quz-BO.js|\Scripts\i18n\globalize.culture.quz-EC.js|\Scripts\i18n\globalize.culture.quz-PE.js|\Scripts\i18n\globalize.culture.quz.js|\Scripts\i18n\globalize.culture.rm-CH.js|\Scripts\i18n\globalize.culture.rm.js|\Scripts\i18n\globalize.culture.ro-RO.js|\Scripts\i18n\globalize.culture.ro.js|\Scripts\i18n\globalize.culture.ru-RU.js|\Scripts\i18n\globalize.culture.ru.js|\Scripts\i18n\globalize.culture.rw-RW.js|\Scripts\i18n\globalize.culture.rw.js|\Scripts\i18n\globalize.culture.sa-IN.js|\Scripts\i18n\globalize.culture.sa.js|\Scripts\i18n\globalize.culture.sah-RU.js|\Scripts\i18n\globalize.culture.sah.js|\Scripts\i18n\globalize.culture.se-FI.js|\Scripts\i18n\globalize.culture.se-NO.js|\Scripts\i18n\globalize.culture.se-SE.js|\Scripts\i18n\globalize.culture.se.js|\Scripts\i18n\globalize.culture.si-LK.js|\Scripts\i18n\globalize.culture.si.js|\Scripts\i18n\globalize.culture.sk-SK.js|\Scripts\i18n\globalize.culture.sk.js|\Scripts\i18n\globalize.culture.sl-SI.js|\Scripts\i18n\globalize.culture.sl.js|\Scripts\i18n\globalize.culture.sma-NO.js|\Scripts\i18n\globalize.culture.sma-SE.js|\Scripts\i18n\globalize.culture.sma.js|\Scripts\i18n\globalize.culture.smj-NO.js|\Scripts\i18n\globalize.culture.smj-SE.js|\Scripts\i18n\globalize.culture.smj.js|\Scripts\i18n\globalize.culture.smn-FI.js|\Scripts\i18n\globalize.culture.smn.js|\Scripts\i18n\globalize.culture.sms-FI.js|\Scripts\i18n\globalize.culture.sms.js|\Scripts\i18n\globalize.culture.sq-AL.js|\Scripts\i18n\globalize.culture.sq.js|\Scripts\i18n\globalize.culture.sr-Cyrl-BA.js|\Scripts\i18n\globalize.culture.sr-Cyrl-CS.js|\Scripts\i18n\globalize.culture.sr-Cyrl-ME.js|\Scripts\i18n\globalize.culture.sr-Cyrl-RS.js|\Scripts\i18n\globalize.culture.sr-Cyrl.js|\Scripts\i18n\globalize.culture.sr-Latn-BA.js|\Scripts\i18n\globalize.culture.sr-Latn-CS.js|\Scripts\i18n\globalize.culture.sr-Latn-ME.js|\Scripts\i18n\globalize.culture.sr-Latn-RS.js|\Scripts\i18n\globalize.culture.sr-Latn.js|\Scripts\i18n\globalize.culture.sr.js|\Scripts\i18n\globalize.culture.sv-FI.js|\Scripts\i18n\globalize.culture.sv-SE.js|\Scripts\i18n\globalize.culture.sv.js|\Scripts\i18n\globalize.culture.sw-KE.js|\Scripts\i18n\globalize.culture.sw.js|\Scripts\i18n\globalize.culture.syr-SY.js|\Scripts\i18n\globalize.culture.syr.js|\Scripts\i18n\globalize.culture.ta-IN.js|\Scripts\i18n\globalize.culture.ta.js|\Scripts\i18n\globalize.culture.te-IN.js|\Scripts\i18n\globalize.culture.te.js|\Scripts\i18n\globalize.culture.tg-Cyrl-TJ.js|\Scripts\i18n\globalize.culture.tg-Cyrl.js|\Scripts\i18n\globalize.culture.tg.js|\Scripts\i18n\globalize.culture.th-TH.js|\Scripts\i18n\globalize.culture.th.js|\Scripts\i18n\globalize.culture.tk-TM.js|\Scripts\i18n\globalize.culture.tk.js|\Scripts\i18n\globalize.culture.tn-ZA.js|\Scripts\i18n\globalize.culture.tn.js|\Scripts\i18n\globalize.culture.tr-TR.js|\Scripts\i18n\globalize.culture.tr.js|\Scripts\i18n\globalize.culture.tt-RU.js|\Scripts\i18n\globalize.culture.tt.js|\Scripts\i18n\globalize.culture.tzm-Latn-DZ.js|\Scripts\i18n\globalize.culture.tzm-Latn.js|\Scripts\i18n\globalize.culture.tzm.js|\Scripts\i18n\globalize.culture.ug-CN.js|\Scripts\i18n\globalize.culture.ug.js|\Scripts\i18n\globalize.culture.uk-UA.js|\Scripts\i18n\globalize.culture.uk.js|\Scripts\i18n\globalize.culture.ur-PK.js|\Scripts\i18n\globalize.culture.ur.js|\Scripts\i18n\globalize.culture.uz-Cyrl-UZ.js|\Scripts\i18n\globalize.culture.uz-Cyrl.js|\Scripts\i18n\globalize.culture.uz-Latn-UZ.js|\Scripts\i18n\globalize.culture.uz-Latn.js|\Scripts\i18n\globalize.culture.uz.js|\Scripts\i18n\globalize.culture.vi-VN.js|\Scripts\i18n\globalize.culture.vi.js|\Scripts\i18n\globalize.culture.wo-SN.js|\Scripts\i18n\globalize.culture.wo.js|\Scripts\i18n\globalize.culture.xh-ZA.js|\Scripts\i18n\globalize.culture.xh.js|\Scripts\i18n\globalize.culture.yo-NG.js|\Scripts\i18n\globalize.culture.yo.js|\Scripts\i18n\globalize.culture.zh-CHS.js|\Scripts\i18n\globalize.culture.zh-CHT.js|\Scripts\i18n\globalize.culture.zh-CN.js|\Scripts\i18n\globalize.culture.zh-Hans.js|\Scripts\i18n\globalize.culture.zh-Hant.js|\Scripts\i18n\globalize.culture.zh-HK.js|\Scripts\i18n\globalize.culture.zh-MO.js|\Scripts\i18n\globalize.culture.zh-SG.js|\Scripts\i18n\globalize.culture.zh-TW.js|\Scripts\i18n\globalize.culture.zh.js|\Scripts\i18n\globalize.culture.zu-ZA.js|\Scripts\i18n\globalize.culture.zu.js|\Scripts\i18n\globalize.cultures.js|\Scripts\i18n\jquery.ui.datepicker-af.js|\Scripts\i18n\jquery.ui.datepicker-ar-DZ.js|\Scripts\i18n\jquery.ui.datepicker-ar.js|\Scripts\i18n\jquery.ui.datepicker-az.js|\Scripts\i18n\jquery.ui.datepicker-be.js|\Scripts\i18n\jquery.ui.datepicker-bg.js|\Scripts\i18n\jquery.ui.datepicker-bs.js|\Scripts\i18n\jquery.ui.datepicker-ca.js|\Scripts\i18n\jquery.ui.datepicker-cs.js|\Scripts\i18n\jquery.ui.datepicker-cy-GB.js|\Scripts\i18n\jquery.ui.datepicker-da.js|\Scripts\i18n\jquery.ui.datepicker-de.js|\Scripts\i18n\jquery.ui.datepicker-el.js|\Scripts\i18n\jquery.ui.datepicker-en-AU.js|\Scripts\i18n\jquery.ui.datepicker-en-GB.js|\Scripts\i18n\jquery.ui.datepicker-en-NZ.js|\Scripts\i18n\jquery.ui.datepicker-eo.js|\Scripts\i18n\jquery.ui.datepicker-es.js|\Scripts\i18n\jquery.ui.datepicker-et.js|\Scripts\i18n\jquery.ui.datepicker-eu.js|\Scripts\i18n\jquery.ui.datepicker-fa.js|\Scripts\i18n\jquery.ui.datepicker-fi.js|\Scripts\i18n\jquery.ui.datepicker-fo.js|\Scripts\i18n\jquery.ui.datepicker-fr-CA.js|\Scripts\i18n\jquery.ui.datepicker-fr-CH.js|\Scripts\i18n\jquery.ui.datepicker-fr.js|\Scripts\i18n\jquery.ui.datepicker-gl.js|\Scripts\i18n\jquery.ui.datepicker-he.js|\Scripts\i18n\jquery.ui.datepicker-hi.js|\Scripts\i18n\jquery.ui.datepicker-hr.js|\Scripts\i18n\jquery.ui.datepicker-hu.js|\Scripts\i18n\jquery.ui.datepicker-hy.js|\Scripts\i18n\jquery.ui.datepicker-id.js|\Scripts\i18n\jquery.ui.datepicker-is.js|\Scripts\i18n\jquery.ui.datepicker-it.js|\Scripts\i18n\jquery.ui.datepicker-ja.js|\Scripts\i18n\jquery.ui.datepicker-ka.js|\Scripts\i18n\jquery.ui.datepicker-kk.js|\Scripts\i18n\jquery.ui.datepicker-km.js|\Scripts\i18n\jquery.ui.datepicker-ko.js|\Scripts\i18n\jquery.ui.datepicker-ky.js|\Scripts\i18n\jquery.ui.datepicker-lb.js|\Scripts\i18n\jquery.ui.datepicker-lt.js|\Scripts\i18n\jquery.ui.datepicker-lv.js|\Scripts\i18n\jquery.ui.datepicker-mk.js|\Scripts\i18n\jquery.ui.datepicker-ml.js|\Scripts\i18n\jquery.ui.datepicker-ms.js|\Scripts\i18n\jquery.ui.datepicker-nb.js|\Scripts\i18n\jquery.ui.datepicker-nl-BE.js|\Scripts\i18n\jquery.ui.datepicker-nl.js|\Scripts\i18n\jquery.ui.datepicker-nn.js|\Scripts\i18n\jquery.ui.datepicker-no.js|\Scripts\i18n\jquery.ui.datepicker-pl.js|\Scripts\i18n\jquery.ui.datepicker-pt-BR.js|\Scripts\i18n\jquery.ui.datepicker-pt.js|\Scripts\i18n\jquery.ui.datepicker-rm.js|\Scripts\i18n\jquery.ui.datepicker-ro.js|\Scripts\i18n\jquery.ui.datepicker-ru.js|\Scripts\i18n\jquery.ui.datepicker-sk.js|\Scripts\i18n\jquery.ui.datepicker-sl.js|\Scripts\i18n\jquery.ui.datepicker-sq.js|\Scripts\i18n\jquery.ui.datepicker-sr-SR.js|\Scripts\i18n\jquery.ui.datepicker-sr.js|\Scripts\i18n\jquery.ui.datepicker-sv.js|\Scripts\i18n\jquery.ui.datepicker-ta.js|\Scripts\i18n\jquery.ui.datepicker-th.js|\Scripts\i18n\jquery.ui.datepicker-tj.js|\Scripts\i18n\jquery.ui.datepicker-tr.js|\Scripts\i18n\jquery.ui.datepicker-uk.js|\Scripts\i18n\jquery.ui.datepicker-vi.js|\Scripts\i18n\jquery.ui.datepicker-zh-CN.js|\Scripts\i18n\jquery.ui.datepicker-zh-HK.js|\Scripts\i18n\jquery.ui.datepicker-zh-TW.js|\Scripts\bootstrap.js|\Scripts\bootstrap.min.js|\Scripts\date.format.js|\Scripts\date.js|\Scripts\daterangepicker.jQuery.js|\Scripts\globalize.js|\Scripts\iso8601.js|\Scripts\jquery-1.9.0.intellisense.js|\Scripts\jquery-1.9.0.js|\Scripts\jquery-1.9.0.min.js|\Scripts\jquery-ui-1.10.0.js|\Scripts\jquery-ui-1.10.0.min.js|\Scripts\jquery.validate-vsdoc.js|\Scripts\jquery.validate.js|\Scripts\jquery.validate.min.js|\Scripts\jquery.validate.unobtrusive.js|\Scripts\jquery.validate.unobtrusive.min.js|\Scripts\json2.js|\Scripts\knockout-2.2.1.debug.js|\Scripts\knockout-2.2.1.js|\Scripts\modernizr-2.6.2.js|\Scripts\specexpress.unobtrusive.js|\Scripts\phoneformat.js|\Scripts\tests\jasmine-html.js|\Scripts\tests\jasmine.js|\Scripts\tests\qunit.js|\Scripts\tests\SpecRunner.html|\Scripts\tests\qrunner.html</JSLintSkip>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabases>false</PublishDatabases>
+    <DesktopBuildPackageLocation>obj\Debug\Package\myCustomers_vNext.zip</DesktopBuildPackageLocation>
+    <DeployIisAppPath>Default Web Site/myCustomers_vNext</DeployIisAppPath>
+    <PrecompileBeforePublish>true</PrecompileBeforePublish>
+    <WDPMergeOption>DonotMerge</WDPMergeOption>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DesktopBuildPackageLocation>obj\Release\Package\myCustomers.zip</DesktopBuildPackageLocation>
+    <DeployIisAppPath>Default Web Site/myCustomers</DeployIisAppPath>
+    <PublishDatabases>false</PublishDatabases>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells, Version=7.4.2.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Aspose.Cells.7.4.2\lib\net40-client\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.3.1.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.Extras.CommonServiceLocator.3.0.1\lib\net40\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.WebApi.3.1.0\lib\net40\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Endeca.Data, Version=2.1.3.0, Culture=neutral, PublicKeyToken=6d02be8724ca751c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartet.Client.2.0.80\lib\Net40-Full\Endeca.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Endeca.Data.Content, Version=2.1.3.0, Culture=neutral, PublicKeyToken=6d02be8724ca751c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartet.Client.2.0.80\lib\Net40-Full\Endeca.Data.Content.dll</HintPath>
+    </Reference>
+    <Reference Include="Endeca.Logging, Version=6.1.0.0, Culture=neutral, PublicKeyToken=6d02be8724ca751c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartet.Client.2.0.80\lib\Net40-Full\Endeca.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Endeca.Navigation, Version=6.2.0.0, Culture=neutral, PublicKeyToken=6d02be8724ca751c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartet.Client.2.0.80\lib\Net40-Full\Endeca.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Endeca.Navigation.AccessControl, Version=6.2.0.0, Culture=neutral, PublicKeyToken=6d02be8724ca751c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartet.Client.2.0.80\lib\Net40-Full\Endeca.Navigation.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="MaryKay.Configuration, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MaryKay.Configuration.2.2.1\lib\net40\MaryKay.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="MaryKay.Configuration.Autofac, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MaryKay.Configuration.Autofac.2.2.1\lib\net40\MaryKay.Configuration.Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="MaryKay.IBCDataServices.Client, Version=1.2.67.0, Culture=neutral, PublicKeyToken=c9e00d329382b52e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IBCDataServices.Client.1.2.67\lib\Net35-Full\MaryKay.IBCDataServices.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="MaryKay.IBCDataServices.Entities, Version=1.2.67.0, Culture=neutral, PublicKeyToken=c9e00d329382b52e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IBCDataServices.Client.1.2.67\lib\Net35-Full\MaryKay.IBCDataServices.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="MaryKay.IBCDataServices.Services.Contracts, Version=1.2.67.0, Culture=neutral, PublicKeyToken=c9e00d329382b52e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IBCDataServices.Client.1.2.67\lib\Net35-Full\MaryKay.IBCDataServices.Services.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="MaryKay.ServiceModel.Legacy, Version=1.4.10.0, Culture=neutral, PublicKeyToken=aea772b357bdbb1a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\IBCDataServices.Client.1.2.67\lib\Net35-Full\MaryKay.ServiceModel.Legacy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.1.2\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.ElasticSearch">
+      <HintPath>..\packages\NLog.ElasticSearch.1.1\lib\net40\NLog.ElasticSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Extended">
+      <HintPath>..\packages\NLog.Extended.2.0.1.2\lib\net40-full\NLog.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="PhoneNumbers">
+      <HintPath>..\packages\libphonenumber-csharp.4.10.0.62\lib\PhoneNumbers.dll</HintPath>
+    </Reference>
+    <Reference Include="PlainElastic.Net, Version=1.0.43.0, Culture=neutral, PublicKeyToken=0930e76dfc03b7ac, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PlainElastic.Net.1.0.43\lib\Net40\PlainElastic.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartet.Client, Version=2.0.80.0, Culture=neutral, PublicKeyToken=aa50bd906b1d6a83, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartet.Client.2.0.80\lib\Net40-Full\Quartet.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartet.Entities, Version=2.0.80.0, Culture=neutral, PublicKeyToken=aa50bd906b1d6a83, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartet.Client.2.0.80\lib\Net40-Full\Quartet.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartet.Services.Contracts, Version=2.0.80.0, Culture=neutral, PublicKeyToken=aa50bd906b1d6a83, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Quartet.Client.2.0.80\lib\Net40-Full\Quartet.Services.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.2.13.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=2.2.13.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.13.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\ContainerConfig.cs" />
+    <Compile Include="App_Start\LicenseConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\ActivitySummaryController.cs" />
+    <Compile Include="Controllers\Api\CommandsController.cs" />
+    <Compile Include="Controllers\Api\CCPaymentController.cs" />
+    <Compile Include="Controllers\Api\CustomerGroupsController.cs" />
+    <Compile Include="Controllers\Api\CDSController.cs" />
+    <Compile Include="Controllers\Api\eCardsController.cs" />
+    <Compile Include="Controllers\Api\SampleRequestController.cs" />
+    <Compile Include="Controllers\Api\GroupsController.cs" />
+    <Compile Include="Controllers\Api\ValidationController.cs" />
+    <Compile Include="Controllers\Api\NotesController.cs" />
+    <Compile Include="Controllers\Api\CustomerNotesController.cs" />
+    <Compile Include="Controllers\Api\CustomersController.cs" />
+    <Compile Include="Controllers\Api\DashboardController.cs" />
+    <Compile Include="Controllers\Api\LogController.cs" />
+    <Compile Include="Controllers\Api\PrrsController.cs" />
+    <Compile Include="Controllers\Api\QuestionnaireController.cs" />
+    <Compile Include="Controllers\Api\RecentlyOrderedProductsController.cs" />
+    <Compile Include="Controllers\Api\RecommendedProductsController.cs" />
+    <Compile Include="Controllers\Api\TasksController.cs" />
+    <Compile Include="Controllers\Api\SubscriptionsController.cs" />
+    <Compile Include="Controllers\Api\WishListProductsController.cs" />
+    <Compile Include="Controllers\CDSController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\Api\OrdersController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
+    <Compile Include="Controllers\SampleRequestsController.cs" />
+    <Compile Include="Controllers\TermsController.cs" />
+    <Compile Include="Controllers\OmnitureController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\Api\ProductsController.cs" />
+    <Compile Include="Controllers\CustomerImagesController.cs" />
+    <Compile Include="Controllers\ResourcesController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\GroupDetailViewModel.cs" />
+    <Compile Include="Models\SampleRequestDetailViewModel.cs" />
+    <Compile Include="Models\SampleRequestViewModel.cs" />
+    <Compile Include="Models\SocialNetworksConfig.cs" />
+    <Compile Include="Models\EditCustomerViewModel.cs" />
+    <Compile Include="Models\CreateInvoiceViewModel.cs" />
+    <Compile Include="Models\HyperLinkViewModel.cs" />
+    <Compile Include="Models\PaymentStatusViewModel.cs" />
+    <Compile Include="Models\SubscriptionsConfig.cs" />
+    <Compile Include="Models\TaskContent.cs" />
+    <Compile Include="Models\QuestionnaireKeyValueViewModel.cs" />
+    <Compile Include="Models\SiteCatalystTagVM.cs" />
+    <Compile Include="Models\TopicOfInterestsConfig.cs" />
+    <Compile Include="Models\DashboardViewModel.cs" />
+    <Compile Include="Models\ImportedCustomer.cs" />
+    <Compile Include="Models\PendingImportCustomerDTO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\TaskViewModel.cs" />
+    <Content Include="Content\font-awesome-ie7.css" />
+    <Content Include="Content\font-awesome-ie7.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\images\amex.png" />
+    <Content Include="Content\images\animated-overlay.gif" />
+    <Content Include="Content\images\appicon.png" />
+    <Content Include="Content\images\Hero_UK.jpg" />
+    <Content Include="Content\images\Hero_UA.jpg" />
+    <Content Include="Content\images\Hero_SK.jpg" />
+    <Content Include="Content\images\Hero_RU.jpg" />
+    <Content Include="Content\images\Hero_PT.jpg" />
+    <Content Include="Content\images\Hero_PL.jpg" />
+    <Content Include="Content\images\Hero_LT.jpg" />
+    <Content Include="Content\images\Hero_ES.jpg" />
+    <Content Include="Content\images\Hero_CZ.jpg" />
+    <Content Include="Content\images\Hero_AM.jpg" />
+    <Content Include="Content\images\Hero_MD.jpg" />
+    <Content Include="Content\images\Hero_CH.jpg" />
+    <Content Include="Content\images\Hero_DE.jpg" />
+    <Content Include="Content\images\Hero_NL.jpg" />
+    <Content Include="Content\images\discover.png" />
+    <Content Include="Content\images\mastercard.png" />
+    <Content Include="Content\images\MyCustomers_Logo.jpg" />
+    <Content Include="Content\images\socialnetworks\icon_blog.png" />
+    <Content Include="Content\images\socialnetworks\icon_googleplus.png" />
+    <Content Include="Content\images\socialnetworks\icon_instagram.png" />
+    <Content Include="Content\images\socialnetworks\icon_pinterest.png" />
+    <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\images\ui-icons_f6cf3b_256x240.png" />
+    <Content Include="Content\images\visa.png" />
+    <Content Include="Content\jquery-ui.bootstrap.css" />
+    <Content Include="Content\jquery-ui.ie.css" />
+    <Content Include="Content\jquery.ui.progressbar.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Resources\Content\CH\404.de.html" />
+    <Content Include="Resources\Content\CH\500.de.html" />
+    <Content Include="Resources\Content\CH\CustomerDetailHelp.de.html" />
+    <Content Include="Resources\Content\CH\CustomerEditHelp.de.html" />
+    <Content Include="Resources\Content\CH\CustomerListHelp.de.html" />
+    <Content Include="Resources\Content\CH\CustomerNewHelp.de.html" />
+    <Content Include="Resources\Content\CH\OrderDetailHelp.de.html" />
+    <Content Include="Resources\Content\CH\OrderEditHelp.de.html" />
+    <Content Include="Resources\Content\CH\OrderListHelp.de.html" />
+    <Content Include="Resources\Content\CH\OrderNewHelp.de.html" />
+    <Content Include="Resources\Content\CH\ReminderListHelp.de.html" />
+    <Content Include="Resources\Content\CH\Terms.en.html" />
+    <Content Include="Resources\Content\DE\404.de.html" />
+    <Content Include="Resources\Content\DE\500.de.html" />
+    <Content Include="Resources\Content\DE\CustomerDetailHelp.de.html" />
+    <Content Include="Resources\Content\DE\CustomerEditHelp.de.html" />
+    <Content Include="Resources\Content\DE\CustomerListHelp.de.html" />
+    <Content Include="Resources\Content\DE\CustomerNewHelp.de.html" />
+    <Content Include="Resources\Content\DE\OrderDetailHelp.de.html" />
+    <Content Include="Resources\Content\DE\OrderEditHelp.de.html" />
+    <Content Include="Resources\Content\DE\OrderListHelp.de.html" />
+    <Content Include="Resources\Content\DE\OrderNewHelp.de.html" />
+    <Content Include="Resources\Content\DE\ReminderListHelp.de.html" />
+    <Content Include="Resources\Content\DE\Terms.en.html" />
+    <Content Include="Resources\Content\DE\Terms.de.html" />
+    <Content Include="Resources\Content\GroupListHelp.en.html" />
+    <Content Include="Resources\Content\NL\404.nl.html" />
+    <Content Include="Resources\Content\NL\500.nl.html" />
+    <Content Include="Resources\Content\NL\CustomerDetailHelp.nl.html" />
+    <Content Include="Resources\Content\NL\CustomerEditHelp.nl.html" />
+    <Content Include="Resources\Content\NL\CustomerListHelp.nl.html" />
+    <Content Include="Resources\Content\NL\CustomerNewHelp.nl.html" />
+    <Content Include="Resources\Content\NL\OrderDetailHelp.nl.html" />
+    <Content Include="Resources\Content\NL\OrderEditHelp.nl.html" />
+    <Content Include="Resources\Content\NL\OrderListHelp.nl.html" />
+    <Content Include="Resources\Content\NL\OrderNewHelp.nl.html" />
+    <Content Include="Resources\Content\NL\ReminderListHelp.nl.html" />
+    <Content Include="Resources\Content\NL\Terms.nl.html" />
+    <Content Include="Resources\Content\NL\Terms.en.html" />
+    <Content Include="Resources\Content\US\404.es.html" />
+    <Content Include="Resources\Content\US\500.es.html" />
+    <Content Include="Resources\Content\US\CustomerDetailHelp.es.html" />
+    <Content Include="Resources\Content\US\CustomerEditHelp.es.html" />
+    <Content Include="Resources\Content\US\CustomerListHelp.es.html" />
+    <Content Include="Resources\Content\US\CustomerNewHelp.es.html" />
+    <Content Include="Resources\Content\US\GroupCustomersHelp.es.html" />
+    <Content Include="Resources\Content\US\GroupListHelp.es.html" />
+    <Content Include="Resources\Content\US\OrderDetailHelp.es.html" />
+    <Content Include="Resources\Content\US\OrderEditHelp.es.html" />
+    <Content Include="Resources\Content\US\OrderListHelp.es.html" />
+    <Content Include="Resources\Content\US\OrderNewHelp.es.html" />
+    <Content Include="Resources\Content\US\ReminderListHelp.es.html" />
+    <Content Include="Resources\Content\US\SampleRequestInstructions.es.html" />
+    <Content Include="Scripts\app\services\eCardService.js" />
+    <Content Include="Scripts\app\viewmodels\CustomerGroup.js" />
+    <Content Include="Scripts\app\viewmodels\CustomerNote.js" />
+    <Content Include="Scripts\app\viewmodels\CustomerPrrView.js" />
+    <Content Include="Scripts\app\viewmodels\CustomerTask.js" />
+    <Content Include="Scripts\app\viewmodels\DeletedCustomersSearch.js" />
+    <Content Include="Resources\Content\CH\Terms.de.html" />
+    <Compile Include="Services\CustomerTaskActivityMapper.cs" />
+    <Compile Include="Services\CustomerTaskContentMapper.cs" />
+    <Compile Include="Services\DashboardViewModelMapper.cs" />
+    <Compile Include="Services\GroupDetailViewModelMapper.cs" />
+    <Compile Include="Services\HyperLinkViewModelMapper.cs" />
+    <Compile Include="Services\IImportCustomersService.cs" />
+    <Compile Include="Services\ExportServiceBase.cs" />
+    <Compile Include="Services\ImportCustomer.cs" />
+    <Compile Include="Services\ImportedCustomerViewModelMapper.cs" />
+    <Compile Include="Services\SampleRequestViewModelMapper.cs" />
+    <Compile Include="Services\TaskViewModelMapper.cs" />
+    <Compile Include="Models\ConfirmationEmailViewModel.cs" />
+    <Compile Include="Models\AddressViewModel.cs" />
+    <Compile Include="Models\EditOrderViewModel.cs" />
+    <Compile Include="Models\CustomerListViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\NoteContent.cs" />
+    <Compile Include="Models\OrderDetailViewModel.cs" />
+    <Compile Include="Models\PhoneNumberViewModel.cs" />
+    <Compile Include="Models\HCardViewModel.cs" />
+    <Compile Include="Models\CustomerDetailViewModel.cs" />
+    <Compile Include="Services\InvoicingService.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Models\MockLoginConfig.cs" />
+    <Compile Include="Services\MailingService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AddressViewModelMapper.cs" />
+    <Compile Include="Services\CustomerDetailViewModelMapper.cs" />
+    <Compile Include="Services\CustomerExportService.cs" />
+    <Compile Include="Services\HCardViewModelMapper.cs" />
+    <Compile Include="Services\ICustomerExportService.cs" />
+    <Compile Include="Services\IInvoicingService.cs" />
+    <Compile Include="Services\IMailingService.cs" />
+    <Compile Include="Services\OrderViewModelMapper.cs" />
+    <Compile Include="Services\PhoneNumberViewModelMapper.cs" />
+    <Compile Include="Services\IMappingService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <EmbeddedResource Include="Properties\Aspose.Cells.lic" />
+    <EmbeddedResource Include="Properties\Aspose.Words.lic" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css">
+      <DependentUpon>bootstrap-responsive.css</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-timepicker.css" />
+    <Content Include="Content\images\get_adobe_flash_player.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\Header_MKIntouchVertical.png" />
+    <Content Include="Content\images\Hero_KZ.jpg" />
+    <Content Include="Content\images\Hero_Other.jpg" />
+    <Content Include="Content\images\Hero_US.jpg" />
+    <Content Include="Content\images\socialnetworks\icon_facebook.png" />
+    <Content Include="Content\images\socialnetworks\icon_linkedin.png" />
+    <Content Include="Content\images\socialnetworks\icon_other.png" />
+    <Content Include="Content\images\socialnetworks\icon_twitter.png" />
+    <Content Include="Content\images\socialnetworks\icon_vkontakte.png" />
+    <Content Include="Content\images\socialnetworks\icon_youtube.png" />
+    <Content Include="Content\images\MKHeaderBackground.gif" />
+    <Content Include="Content\images\progress_bar_small.gif" />
+    <Content Include="Content\images\progress_bar.gif" />
+    <Content Include="Content\images\spinner.gif" />
+    <Content Include="Resources\ClientStrings.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\MockLogin.config" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\images\Header_MKIntouch.png" />
+    <Content Include="Content\images\Portrait_Blank.png" />
+    <Content Include="Content\images\Product_NoImage.png" />
+    <Content Include="Content\site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Code\LayoutHelpers.cshtml" />
+    <Content Include="Config\App.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\EU\KZ\App.config" />
+    <Content Include="Config\US\App.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\LabelsFormat.config" />
+    <Content Include="Content\fonts\arialuni.ttf" />
+    <Content Include="Config\UploadedCustomerGenerator_OutlookCsv.config" />
+    <Content Include="Config\RegionListItems.config" />
+    <Content Include="Config\EU\App.config" />
+    <Content Include="ExcelTemplates\Customer_ExportList_Designer.xls" />
+    <Content Include="ExcelTemplates\Customer_PrintList_Designer.xls" />
+    <Content Include="ExcelTemplates\Order_InvoiceReceipt_Designer.xls" />
+    <Content Include="Resources\Content\GroupCustomersHelp.en.html" />
+    <Content Include="Resources\Content\KZ\404.ru.html" />
+    <Content Include="Resources\Content\KZ\404.kk.html" />
+    <Content Include="Resources\Content\KZ\500.ru.html" />
+    <Content Include="Resources\Content\KZ\500.kk.html" />
+    <Content Include="Resources\Content\KZ\CustomerNotesHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\CustomerDetailHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\CustomerDetailHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\CustomerEditHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\CustomerEditHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\CustomerListHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\CustomerListHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\CustomerNewHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\CustomerNewHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\CustomerNotesHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\OrderDetailHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\OrderDetailHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\OrderEditHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\OrderEditHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\OrderListHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\OrderListHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\OrderNewHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\OrderNewHelp.kk.html" />
+    <Content Include="Resources\Content\KZ\ReminderListHelp.ru.html" />
+    <Content Include="Resources\Content\KZ\ReminderListHelp.kk.html" />
+    <Content Include="Resources\Content\US\Terms.es.html" />
+    <Content Include="Resources\KZ\ClientStrings.kk.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\KZ\Strings.kk.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\KZ\ClientStrings.ru.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\KZ\Strings.ru.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\fonts\iconic_fill.eot" />
+    <Content Include="Content\fonts\iconic_fill.otf" />
+    <Content Include="Content\fonts\iconic_fill.svg" />
+    <Content Include="Content\fonts\iconic_fill.ttf" />
+    <Content Include="Content\fonts\iconic_fill.woff" />
+    <Content Include="Content\fonts\iconic_stroke.eot" />
+    <Content Include="Content\fonts\iconic_stroke.otf" />
+    <Content Include="Content\fonts\iconic_stroke.svg" />
+    <Content Include="Content\fonts\iconic_stroke.ttf" />
+    <Content Include="Content\fonts\iconic_stroke.woff" />
+    <Content Include="ExcelTemplates\EU\Order_InvoiceReceipt_Designer.xls" />
+    <Content Include="Config\SocialNetworks.config" />
+    <Content Include="Content\copyright\Consent.en-US.pdf" />
+    <Content Include="Content\copyright\Consent.ru-RU.pdf" />
+    <Content Include="Content\copyright\Consent.kk-KZ.pdf" />
+    <Content Include="Config\EU\AM\App.config" />
+    <Content Include="Config\EU\CH\App.config" />
+    <Content Include="Config\EU\CZ\App.config" />
+    <Content Include="Config\EU\DE\App.config" />
+    <Content Include="Config\EU\ES\App.config" />
+    <Content Include="Config\EU\IR\App.config" />
+    <Content Include="Config\EU\LT\App.config" />
+    <Content Include="Config\EU\MD\App.config" />
+    <Content Include="Config\EU\NL\App.config" />
+    <Content Include="Config\EU\PL\App.config" />
+    <Content Include="Config\EU\PT\App.config" />
+    <Content Include="Config\EU\RU\App.config" />
+    <Content Include="Config\EU\SK\App.config" />
+    <Content Include="Config\EU\UA\App.config" />
+    <Content Include="Config\EU\UK\App.config" />
+    <Content Include="Config\AM\App.config" />
+    <Content Include="Config\AM\MX\App.config" />
+    <Content Include="Config\AM\UY\App.config" />
+    <Content Include="Config\AM\CA\App.config" />
+    <Content Include="Config\AM\BR\App.config" />
+    <Content Include="Config\AM\AR\App.config" />
+    <Content Include="Scripts\app\viewmodels\CashPayment.js" />
+    <Content Include="Scripts\app\viewmodels\CheckPayment.js" />
+    <Content Include="Scripts\app\viewmodels\CCPayment.js" />
+    <Content Include="Scripts\app\viewmodels\DeletedOrdersSearch.js" />
+    <Content Include="Scripts\app\viewmodels\EditCCPayment.js" />
+    <Content Include="Scripts\app\viewmodels\NewCCPayment.js" />
+    <Content Include="Scripts\app\viewmodels\Subscription.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.form.min.js" />
+    <Content Include="Scripts\knockout-2.3.0.debug.js">
+      <DependentUpon>knockout-2.3.0.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\knockout-2.3.0.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js">
+      <DependentUpon>toastr.js</DependentUpon>
+    </Content>
+    <Content Include="WebApp.ar.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.br.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.ca.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.mx.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.uy.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.de.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.nl.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.ch.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="Resources\AM\Strings.hy.resx">
+      <LastGenOutput>Strings.hy.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\AM\Strings.ru.resx">
+      <LastGenOutput>Strings.ru.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\CH\Strings.de.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\CZ\Strings.cs.resx" />
+    <Content Include="Resources\DE\Strings.de.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\ES\Strings.es.resx" />
+    <Content Include="Resources\LT\Strings.lt.resx" />
+    <Content Include="Resources\MD\Strings.ro.resx" />
+    <Content Include="Resources\MD\Strings.ru.resx" />
+    <Content Include="Resources\NL\Strings.nl.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\PL\Strings.pl.resx" />
+    <Content Include="Resources\PT\Strings.pt.resx" />
+    <Content Include="Resources\RU\Strings.ru.resx" />
+    <Content Include="Resources\SK\Strings.sk.resx" />
+    <Content Include="Resources\UA\Strings.ru.resx" />
+    <Content Include="Resources\UA\Strings.uk.resx" />
+    <Content Include="Resources\UK\Strings.en.resx" />
+    <Content Include="Resources\AM\ClientStrings.hy.resx" />
+    <Content Include="Resources\AM\ClientStrings.ru.resx" />
+    <Content Include="Resources\CH\ClientStrings.de.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\CZ\ClientStrings.cs.resx" />
+    <Content Include="Resources\DE\ClientStrings.de.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\ES\ClientStrings.es.resx" />
+    <Content Include="Resources\LT\ClientStrings.lt.resx" />
+    <Content Include="Resources\MD\ClientStrings.ro.resx" />
+    <Content Include="Resources\MD\ClientStrings.ru.resx" />
+    <Content Include="Resources\NL\ClientStrings.nl.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\PL\ClientStrings.pl.resx" />
+    <Content Include="Resources\PT\ClientStrings.pt.resx" />
+    <Content Include="Resources\RU\ClientStrings.ru.resx" />
+    <Content Include="Resources\SK\ClientStrings.sk.resx" />
+    <Content Include="Resources\UA\ClientStrings.ru.resx" />
+    <Content Include="Resources\UA\ClientStrings.uk.resx" />
+    <Content Include="Resources\UK\ClientStrings.en.resx" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Views\Shared\_EditAddress.NoState.cshtml" />
+    <Content Include="Views\Shared\_DisplayAddress_Razor_NoState.cshtml" />
+    <Content Include="Views\Shared\_DisplayAddress_KO.cshtml" />
+    <Content Include="Views\Shared\_DisplayAddress_KO_NoState.cshtml" />
+    <Content Include="Config\Subscriptions.config" />
+    <Content Include="ExcelTemplates\EU\DE\Order_InvoiceReceipt_Designer.xls" />
+    <Content Include="Views\Customers\_AssignedGroups.cshtml" />
+    <Content Include="Views\Customers\DetailTabs\_OrdersTab.cshtml" />
+    <Content Include="Views\Customers\DetailTabs\_PreviousPurchaseTab.cshtml" />
+    <Content Include="Views\Customers\DetailTabs\_RecommendedTab.cshtml" />
+    <Content Include="Views\Customers\DetailTabs\_WishlistTab.cshtml" />
+    <Content Include="Views\Customers\DetailTabs\_CustomerInfoTab.cshtml" />
+    <Content Include="Views\Customers\DetailTabs\_NotesTab.cshtml" />
+    <Content Include="Views\Customers\DetailTabs\_PrrTab.cshtml" />
+    <Content Include="Resources\Content\DE\Help.de.pdf" />
+    <Content Include="Resources\Content\CH\Help.de.pdf" />
+    <Content Include="Resources\Content\NL\Help.nl.pdf" />
+    <Content Include="Resources\Content\Help.en.pdf" />
+    <Content Include="Content\copyright\Consent.de-DE.pdf" />
+    <Content Include="Content\copyright\Consent.de-CH.pdf" />
+    <Content Include="Content\copyright\Consent.nl-NL.pdf" />
+    <Content Include="Content\toastr.less" />
+    <EmbeddedResource Include="Resources\US\ClientStrings.es.resx" />
+    <EmbeddedResource Include="Resources\US\Strings.es.resx" />
+    <Content Include="Resources\Content\KZ\Help.kk.pdf" />
+    <Content Include="Resources\Content\KZ\Help.ru.pdf" />
+    <Content Include="ExcelTemplates\EU\CH\Order_InvoiceReceipt_Designer.xls" />
+    <Content Include="ExcelTemplates\EU\NL\Order_InvoiceReceipt_Designer.xls" />
+    <None Include="Web.cz.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.es.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.lt.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.md.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.nl.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ch.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.de.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.pl.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.pt.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ru.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.sk.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ua.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.uk.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.uy.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.mx.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ca.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.br.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.ar.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Resources\Content\404.en.html" />
+    <Content Include="Resources\Content\500.en.html" />
+    <Content Include="Resources\Content\CustomerListHelp.en.html" />
+    <Content Include="Resources\Content\KZ\Terms.ru.html" />
+    <Content Include="Resources\Content\KZ\Terms.kk.html" />
+    <Content Include="Resources\Content\OrderDetailHelp.en.html" />
+    <Content Include="Resources\Content\ReminderListHelp.en.html" />
+    <Content Include="Resources\Content\OrderListHelp.en.html" />
+    <Content Include="Resources\Content\OrderEditHelp.en.html" />
+    <Content Include="Resources\Content\CustomerDetailHelp.en.html" />
+    <Content Include="Resources\Content\CustomerNewHelp.en.html" />
+    <Content Include="Resources\Content\CustomerEditHelp.en.html" />
+    <Content Include="Resources\Content\OrderNewHelp.en.html" />
+    <Content Include="Resources\Content\Terms.en.html" />
+    <Content Include="Resources\Content\SampleRequestInstructions.en.html" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\extensions\ko.observableArray.paging.js" />
+    <Content Include="Scripts\app\viewmodels\GroupCustomers.js" />
+    <Content Include="Scripts\app\viewmodels\Address.js" />
+    <Content Include="Scripts\app\viewmodels\GroupsSearch.js" />
+    <Content Include="Scripts\app\viewmodels\ProfileQuestions.js" />
+    <Content Include="Scripts\app\viewmodels\SampleRequestDetail.js" />
+    <Content Include="Scripts\app\viewmodels\SampleRequestSearch.js" />
+    <Content Include="Scripts\app\viewmodels\SocialNetwork.js" />
+    <Content Include="Scripts\app\viewmodels\ImportantDate.js" />
+    <Content Include="Scripts\app\viewmodels\Spouse.js" />
+    <Content Include="Scripts\app\viewmodels\Task.js" />
+    <Content Include="Scripts\app\viewmodels\UploadCustomers.js" />
+    <Content Include="Scripts\app\viewmodels\AddProductsForm.js" />
+    <Content Include="Scripts\app\viewmodels\Dashboard.js" />
+    <Content Include="Scripts\app\viewmodels\ImportList.js" />
+    <Content Include="Scripts\app\viewmodels\NotesSearch.js" />
+    <Content Include="Scripts\app\viewmodels\WishListProducts.js" />
+    <Content Include="Scripts\app\viewmodels\OrderItem.js" />
+    <Content Include="Scripts\app\viewmodels\PreviouslyOrderedProducts.js" />
+    <Content Include="Scripts\app\viewmodels\Product.js" />
+    <Content Include="Scripts\app\viewmodels\Customer.js" />
+    <Content Include="Scripts\app\viewmodels\PhoneNumber.js" />
+    <Content Include="Scripts\app\services\AjaxService.js" />
+    <Content Include="Scripts\app\services\SearchService.js" />
+    <Content Include="Scripts\app\viewmodels\EditCustomer.js" />
+    <Content Include="Scripts\app\viewmodels\RecommendedProducts.js" />
+    <Content Include="Scripts\FileAPI.exif.js">
+      <DependentUpon>FileAPI.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\FileAPI.flash.image.swf">
+      <DependentUpon>FileAPI.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\FileAPI.flash.swf">
+      <DependentUpon>FileAPI.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\FileAPI.id3.js">
+      <DependentUpon>FileAPI.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\FileAPI.min.js" />
+    <Content Include="Scripts\ie.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js">
+      <DependentUpon>jquery-ui-1.10.3.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.ajaxPoll.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.fileDownload.js" />
+    <Content Include="Scripts\jquery.html5-placeholder-shim.js" />
+    <Content Include="Scripts\jquery.livequery.js" />
+    <Content Include="Scripts\knockout.extensions.js" />
+    <Content Include="Scripts\knockout.validation.i18n.js" />
+    <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\s_code.js" />
+    <Content Include="Scripts\tests\editCustomerBehaviors.js" />
+    <Content Include="Scripts\tests\emailValidationBehaviors.js" />
+    <Content Include="Scripts\tests\importProcessBehaviors.js" />
+    <Content Include="Scripts\timepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.af-ZA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.af.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.am-ET.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.am.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-AE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-BH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-DZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-EG.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-IQ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-JO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-KW.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-LB.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-LY.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-MA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-OM.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-QA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-SA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-SY.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-TN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar-YE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ar.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.arn-CL.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.arn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.as-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.as.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.az-Cyrl-AZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.az-Cyrl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.az-Latn-AZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.az-Latn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.az.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ba-RU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ba.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.be-BY.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.be.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bg-BG.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bg.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bn-BD.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bn-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bo-CN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bo.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.br-FR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.br.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bs-Cyrl-BA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bs-Cyrl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bs-Latn-BA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bs-Latn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.bs.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ca-ES.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ca.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.co-FR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.co.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.cs-CZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.cs.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.cy-GB.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.cy.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.da-DK.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.da.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.de-AT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.de-CH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.de-DE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.de-LI.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.de-LU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.de.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.dsb-DE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.dsb.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.dv-MV.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.dv.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.el-GR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.el.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-029.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-AU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-BZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-CA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-GB.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-IE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-JM.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-MY.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-NZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-PH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-SG.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-TT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-US.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-ZA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.en-ZW.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-AR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-BO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-CL.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-CO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-CR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-DO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-EC.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-ES.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-GT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-HN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-MX.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-NI.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-PA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-PE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-PR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-PY.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-SV.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-US.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-UY.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es-VE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.es.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.et-EE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.et.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.eu-ES.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.eu.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fa-IR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fa.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fi-FI.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fi.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fil-PH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fil.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fo-FO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fo.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fr-BE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fr-CA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fr-CH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fr-FR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fr-LU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fr-MC.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fr.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fy-NL.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.fy.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ga-IE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ga.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.gd-GB.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.gd.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.gl-ES.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.gl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.gsw-FR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.gsw.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.gu-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.gu.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ha-Latn-NG.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ha-Latn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ha.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.he-IL.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.he.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hi-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hi.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hr-BA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hr-HR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hr.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hsb-DE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hsb.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hu-HU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hu.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hy-AM.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.hy.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.id-ID.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.id.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ig-NG.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ig.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ii-CN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ii.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.is-IS.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.is.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.it-CH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.it-IT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.it.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.iu-Cans-CA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.iu-Cans.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.iu-Latn-CA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.iu-Latn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.iu.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ja-JP.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ja.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ka-GE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ka.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.kk-KZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.kk.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.kl-GL.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.kl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.km-KH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.km.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.kn-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.kn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ko-KR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ko.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.kok-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.kok.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ky-KG.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ky.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.lb-LU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.lb.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.lo-LA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.lo.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.lt-LT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.lt.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.lv-LV.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.lv.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mi-NZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mi.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mk-MK.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mk.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ml-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ml.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mn-Cyrl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mn-MN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mn-Mong-CN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mn-Mong.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.moh-CA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.moh.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mr-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mr.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ms-BN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ms-MY.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ms.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mt-MT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.mt.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nb-NO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nb.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ne-NP.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ne.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nl-BE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nl-NL.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nn-NO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.no.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nso-ZA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.nso.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.oc-FR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.oc.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.or-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.or.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.pa-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.pa.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.pl-PL.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.pl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.prs-AF.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.prs.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ps-AF.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ps.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.pt-BR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.pt-PT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.pt.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.qut-GT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.qut.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.quz-BO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.quz-EC.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.quz-PE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.quz.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.rm-CH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.rm.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ro-RO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ro.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ru-RU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ru.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.rw-RW.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.rw.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sa-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sa.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sah-RU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sah.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.se-FI.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.se-NO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.se-SE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.se.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.si-LK.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.si.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sk-SK.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sk.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sl-SI.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sma-NO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sma-SE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sma.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.smj-NO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.smj-SE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.smj.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.smn-FI.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.smn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sms-FI.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sms.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sq-AL.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sq.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Cyrl-BA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Cyrl-CS.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Cyrl-ME.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Cyrl-RS.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Cyrl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Latn-BA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Latn-CS.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Latn-ME.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Latn-RS.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr-Latn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sr.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sv-FI.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sv-SE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sv.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sw-KE.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.sw.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.syr-SY.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.syr.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ta-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ta.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.te-IN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.te.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tg-Cyrl-TJ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tg-Cyrl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tg.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.th-TH.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.th.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tk-TM.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tk.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tn-ZA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tr-TR.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tr.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tt-RU.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tt.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tzm-Latn-DZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tzm-Latn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.tzm.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ug-CN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ug.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.uk-UA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.uk.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ur-PK.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.ur.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.uz-Cyrl-UZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.uz-Cyrl.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.uz-Latn-UZ.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.uz-Latn.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.uz.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.vi-VN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.vi.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.wo-SN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.wo.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.xh-ZA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.xh.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.yo-NG.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.yo.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-CHS.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-CHT.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-CN.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-Hans.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-Hant.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-HK.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-MO.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-SG.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh-TW.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zh.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zu-ZA.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.culture.zu.js">
+      <DependentUpon>globalize.cultures.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-af.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ar-DZ.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ar.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-az.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-be.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-bg.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-bs.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ca.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-cs.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-cy-GB.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-da.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-de.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-el.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-en-AU.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-en-GB.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-en-NZ.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-eo.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-es.js" />
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-et.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-eu.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-fa.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-fi.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-fo.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-fr-CA.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-fr-CH.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-fr.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-gl.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-he.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-hi.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-hr.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-hu.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-hy.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-id.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-is.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-it.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ja.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ka.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-kk.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-km.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ko.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ky.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-lb.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-lt.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-lv.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-mk.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ml.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ms.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-nb.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-nl-BE.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-nl.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-nn.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-no.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-pl.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-pt-BR.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-pt.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-rm.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ro.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ru.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-sk.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-sl.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-sq.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-sr-SR.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-sr.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-sv.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-ta.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-th.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-tj.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-tr.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-uk.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-vi.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-zh-CN.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-zh-HK.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\jquery.ui.datepicker-zh-TW.js">
+      <DependentUpon>jquery.ui.datepicker-es.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\i18n\globalize.cultures.js" />
+    <Content Include="Scripts\globalize.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js">
+      <DependentUpon>jquery-1.9.1.js</DependentUpon>
+    </None>
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js">
+      <DependentUpon>jquery-1.9.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\json2.min.js">
+      <DependentUpon>json2.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jstorage.js" />
+    <Content Include="Scripts\jstorage.min.js">
+      <DependentUpon>jstorage.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\knockout.activity.js" />
+    <Content Include="Scripts\knockout.command.js" />
+    <Content Include="Scripts\knockout.dirtyFlag.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js">
+      <DependentUpon>knockout.mapping-latest.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <None Include="Scripts\linq-vsdoc.js">
+      <DependentUpon>linq.js</DependentUpon>
+    </None>
+    <Content Include="Scripts\linq.js" />
+    <Content Include="Scripts\linq.min.js">
+      <DependentUpon>linq.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\phoneformat.js" />
+    <None Include="Scripts\tests\runner\jasmine.js" />
+    <Content Include="Scripts\tests\importListBehaviors.js" />
+    <Content Include="Scripts\tests\customerListBehaviors.js" />
+    <Content Include="Scripts\tests\runner\jasmine-html.js" />
+    <Content Include="Scripts\tests\runner\jasmine.css" />
+    <Content Include="Scripts\tests\orderListBehaviors.js" />
+    <Content Include="Scripts\tests\orderDetailBehaviors.js" />
+    <Content Include="Scripts\tests\runner\SpecRunner.html" />
+    <Content Include="Scripts\app\viewmodels\CustomerDetail.js" />
+    <Content Include="Scripts\app\viewmodels\ProductCatalog.js" />
+    <Content Include="Scripts\app\viewmodels\CustomerList.js" />
+    <Content Include="Scripts\app\viewmodels\EditOrder.js" />
+    <Content Include="Scripts\app\viewmodels\OrderList.js" />
+    <Content Include="Scripts\app\viewmodels\OrderDetail.js" />
+    <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\app\viewmodels\TaskList.js" />
+    <Content Include="Scripts\tests\taskListBehavior.js" />
+    <Content Include="Views\Customers\_Import.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Error\Unknown.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Orders\Detail.cshtml" />
+    <Content Include="Views\Shared\_HCard.cshtml" />
+    <Content Include="Views\Shared\_PhoneNumber.cshtml" />
+    <Content Include="WebApp.kz.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.us.deploy" />
+    <Content Include="Views\Orders\_Actions.cshtml" />
+    <Content Include="Views\Orders\_ReadOnlyProductList.cshtml" />
+    <Content Include="Views\Shared\_DisplayAddress_Razor.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Shared\_i18n.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Tasks\Index.cshtml" />
+    <Content Include="Views\Shared\_StringPhoneNumber.cshtml" />
+    <Content Include="Views\Customers\ImportList.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Customers\Edit\_FirstLastMiddleName.cshtml" />
+    <Content Include="Views\Customers\Edit\_PhoneNumbers.cshtml" />
+    <Content Include="Views\Customers\Edit\_Photo.cshtml" />
+    <Content Include="Views\Customers\Edit\_Email.cshtml" />
+    <Content Include="Views\Customers\Edit\_Addresses.cshtml" />
+    <Content Include="Views\Customers\Edit\_ProfileDate.cshtml" />
+    <Content Include="Views\Customers\Edit\_PreferredLanguage.cshtml" />
+    <Content Include="Views\Customers\Edit\_Birthday.cshtml" />
+    <Content Include="Views\Customers\Edit\_Anniversary.cshtml" />
+    <Content Include="Views\Customers\Edit\_ImportantDates.cshtml" />
+    <Content Include="Views\Customers\Edit\_Occupation.cshtml" />
+    <Content Include="Views\Customers\Edit\_Note.cshtml" />
+    <Content Include="Views\Customers\Edit\_ProfileQuestions.cshtml" />
+    <Content Include="Views\Customers\Edit\_SocialNetworks.cshtml" />
+    <Content Include="Views\Customers\Edit\_Gender.cshtml" />
+    <Content Include="Views\Customers\Edit\_LearningTopics.cshtml" />
+    <Content Include="Views\Customers\Edit\_ShoppingMethods.cshtml" />
+    <Content Include="Views\Customers\Edit\_ContactTimes.cshtml" />
+    <Content Include="Views\Customers\Edit\_ContactFrequencies.cshtml" />
+    <Content Include="Views\Customers\Edit\_ContactMethods.cshtml" />
+    <Content Include="Views\Customers\Edit\_Spouse.cshtml" />
+    <Content Include="Views\Customers\Edit\_ReferredBy.cshtml" />
+    <Content Include="Views\Customers\Edit\_PlaceOfWork.cshtml" />
+    <Content Include="Views\Customers\Edit\_EmailSubscriptions.cshtml" />
+    <Content Include="Views\Customers\_CustomerProfile.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_ConfirmModal.cshtml" />
+    <Content Include="Views\Shared\_Omniture.cshtml" />
+    <Content Include="Views\Customers\DetailTabs\_ActivitySummaryTab.cshtml" />
+    <Content Include="Views\Orders\Edit\_Header.cshtml" />
+    <Content Include="Views\Orders\Edit\_Fulfillment.cshtml" />
+    <Content Include="Views\Orders\Edit\_Products.cshtml" />
+    <Content Include="Views\Orders\Edit\_Delivery.cshtml" />
+    <Content Include="Views\Orders\Edit\_Payment.cshtml" />
+    <Content Include="Views\Orders\Edit\_Notes.cshtml" />
+    <Content Include="Views\Orders\Edit\_Followups.cshtml" />
+    <Content Include="Views\Orders\Edit\_ProductCatalog.cshtml" />
+    <Content Include="Views\Customers\_ProductSearch.cshtml" />
+    <Content Include="Views\Terms\Index.cshtml" />
+    <Content Include="Views\Customers\Edit\_ContactDays.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Shared\_ProgressModal.cshtml" />
+    <Content Include="Views\Shared\_EditAddress.cshtml" />
+    <Content Include="Views\Shared\_EditAddress.kz.cshtml" />
+    <Content Include="Views\SampleRequests\Detail.cshtml" />
+    <Content Include="Views\Groups\Detail.cshtml" />
+    <Content Include="Views\SampleRequests\_SampleRequestHeader.cshtml" />
+    <Content Include="Views\Customers\_ProfileDateFilter.cshtml" />
+    <Content Include="Views\Customers\_LastOrderDateFilter.cshtml" />
+    <Content Include="Views\Customers\_AdvancedSearchFilter.cshtml" />
+    <None Include="Web.kz.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.us.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Views\Customers\Detail.cshtml" />
+    <Content Include="Views\Customers\_CustomerInformation.cshtml" />
+    <Content Include="WebApp.am.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.cz.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.es.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.lt.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.md.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.pl.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.pt.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.ru.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.sk.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.ua.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+    <Content Include="WebApp.uk.deploy">
+      <DependentUpon>WebApp.us.deploy</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\IR\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GMF.Client\GMF.Client.csproj">
+      <Project>{24df3ba9-3c55-44ad-8280-442a62389f72}</Project>
+      <Name>GMF.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\myCustomers\myCustomers.csproj">
+      <Project>{fb861b5b-3850-48a1-b50c-34992a5a11be}</Project>
+      <Name>myCustomers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Strings.en.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8002</DevelopmentServerPort>
+          <DevelopmentServerVPath>/myCustomers</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8002/myCustomersPilot</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://local.marykayintouch.com/myCustomers</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

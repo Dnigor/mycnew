@@ -1,0 +1,80 @@
+﻿<div class="tab-pane customerdetail-tab-pane-padding" id="historytab" data-bind="css: { active: $root.currentTab() == 'historytab' }">
+
+  <div>
+    <span data-bind="activity: function() { return false; }"></span>
+  </div>
+
+  <div class="alert alert-info" data-bind="if: $root.activities().length == 0, visible: $root.activities().length == 0" style="display: none;">
+    <em>@Resources.GetString("CUSTOMERDETAIL_NOACTIVITYSUMMARY_LABEL")</em>
+  </div>
+
+  <div data-bind="if: $root.activities().length > 0">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>@Resources.GetString("CUSTOMERDETAIL_ACTIVITYSUMMARY_CREATED")</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody data-bind="foreach: $root.activities">
+        <tr>
+          <td style="width: 12%" data-bind="shortMonthDayDate: $data.displayDateUtc"></td>
+          <td style="text-align: left;">
+            <div style="display: none" data-bind="visible: $data.activityType == 'Order'">
+              <a data-bind="click: $root.customerOrderClickedActivity" href="#">@Resources.GetString("CUSTOMERDETAIL_ACTIVITYSUMMARY_ORDER")</a>
+              <span data-bind="text: $data.confirmationCode"></span>&nbsp;@Resources.GetString("CUSTOMERDETAIL_ACTIVITYSUMMARY_CONTAINS")
+              <span data-bind="text: $data.itemCount"></span>&nbsp;@Resources.GetString("CUSTOMERDETAIL_ACTIVITYSUMMARY_ITEMSFOR")
+              <span data-bind="currency: $data.estimatedOrderAmount"></span>. @Resources.GetString("CUSTOMERDETAIL_ACTIVITYSUMMARY_ITSSTATUSIS")
+              <span data-bind="localize: orderStatus, resourceKey: 'ORDERSTATUS_{0}'"></span>.
+            </div>
+            <div style="display: none" data-bind="visible: $data.activityType == 'Note'">
+              @Resources.GetString("CUSTOMERDETAIL_ACTIVITYSUMMARY_ADDEDNOTE")&nbsp;<span data-bind="text: $data.content"></span>
+            </div>
+            <div style="display: none" data-bind="visible: $data.activityType == 'Task'">
+              <div style="display: none" data-bind="visible: $data.isOrderFollowUp">
+                <a data-bind="click: $root.customerOrderClickedActivity" href="#">@Resources.GetString("CUSTOMERDETAIL_ACTIVITYSUMMARY_ORDER")</a>
+                <span data-bind="text: $data.confirmationCode"></span>&nbsp;<span data-bind="text: $data.content"></span>&nbsp;<span data-bind="shortDate: $data.dueDateUtc"></span>
+              </div>
+              <div style="display: none" data-bind="visible: !$data.isOrderFollowUp">
+                <span data-bind="text: $data.content, css: { completedTasks: $data.isComplete }"></span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Pager -->
+    <table class="table table-pager">
+      <tr>
+        <td class="pager-buttons">
+          <button class="btn" type="button" data-bind="command: $root.prevActivityPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+          <button class="btn" type="button" data-bind="command: $root.nextActivityPageCommand">@Resources.GetString("PAGER_NEXT")&nbsp;<i class="icon-caret-right"></i></button>
+          &nbsp;
+          <span data-bind="activity: prevActivityPageCommand.isExecuting"></span>
+          <span data-bind="activity: nextActivityPageCommand.isExecuting"></span>
+          <span data-bind="activity: activityPageSizeTriggeredIsLoading"></span>
+          <span data-bind="activity: activityTabSelectedTriggeredIsLoading"></span>
+        </td>
+        <td class="pager-status">
+          <span data-bind="text: activityItemCount"></span>&nbsp;@Resources.GetString("CUSTOMERDETAIL_PAGER_ACTIVITYPAGETEXT")
+          <span data-bind="text: activityCurrentPage"></span>
+          @Resources.GetString("CUSTOMERDETAIL_PAGER_OF")
+          <span data-bind="text: activityPageCount"></span>
+        </td>
+        <td class="pager-pagesize-label">
+          <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+        </td>
+        <td class="pager-pagesize-select">
+          <select class="input-mini" data-bind="value: activityPageSize">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

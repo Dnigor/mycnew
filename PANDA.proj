@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <UsingTask TaskName="TransformXml" AssemblyFile="\\builds\Packages\PANDA\Deploy\Bin\Microsoft.Web.Publishing.Tasks.dll" />
+
+  <PropertyGroup>
+    <PandaTemplate>\\builds.mkcorp.com\Packages\PANDA\Deploy</PandaTemplate>
+    <WebSitePackages>$(DropLocation)\WebSites</WebSitePackages>
+    <PilotWebSitePackages>$(DropLocation)\PilotWebSites</PilotWebSitePackages>
+    <WebRelPath>D\SubsidiaryRoot</WebRelPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Deployment Include="KZ;MX;UY;BR;AR;CA;AM;CH;CZ;DE;ES;LT;MD;NL;PL;PT;RU;SK;UA;UK" />
+    <PilotDeployment Include="US" />
+
+    <PandaFiles Include="$(PandaTemplate)\v40\deploy.bat;$(PandaTemplate)\v40\deploy_nolog.bat;$(PandaTemplate)\v40\undeploy.bat;$(PandaTemplate)\deploy.targets;$(PandaTemplate)\undeploy.targets;$(PandaTemplate)\Bin\PANDARemoteDeploy.exe.lnk" />
+
+    <WebSite Include="myCustomers.Web">
+      <Name>myCustomers</Name>
+    </WebSite>
+  </ItemGroup>
+
+  <Target Name="PackageBinaries" DependsOnTargets="PackageWebSites;PackagePilotWebSites;CreateNuGetPackages" />
+
+  <Target Name="PackageWebSites">
+    <ItemGroup>
+      <_WebSiteAndDeployment Include="@(WebSite)">
+        <Deployment>%(Deployment.Identity)</Deployment>
+      </_WebSiteAndDeployment>
+
+      <_WebSiteFile Include="$(BinariesRoot)\%(_WebSiteAndDeployment.Identity)\_PublishedWebsites\%(_WebSiteAndDeployment.Identity)\**\*.*"
+                    Exclude="$(BinariesRoot)\%(_WebSiteAndDeployment.Identity)\_PublishedWebsites\%(_WebSiteAndDeployment.Identity)\Web.config;$(BinariesRoot)\%(_WebSiteAndDeployment.Identity)\_PublishedWebsites\%(_WebSiteAndDeployment.Identity)\Web.*.config;$(BinariesRoot)\%(_WebSiteAndDeployment.Identity)\_PublishedWebsites\%(_WebSiteAndDeployment.Identity)\WebApp.*.deploy;$(BinariesRoot)\%(_WebSiteAndDeployment.Identity)\_PublishedWebsites\%(_WebSiteAndDeployment.Identity)\**\*.pdb;$(BinariesRoot)\%(_WebSiteAndDeployment.Identity)\_PublishedWebsites\%(_WebSiteAndDeployment.Identity)\**\*.nuspec;$(BinariesRoot)\%(_WebSiteAndDeployment.Identity)\_PublishedWebsites\%(_WebSiteAndDeployment.Identity)\**\*.nupkg">
+        <Name>%(_WebSiteAndDeployment.Name)</Name>
+        <Deployment>%(_WebSiteAndDeployment.Deployment)</Deployment>
+      </_WebSiteFile>
+    </ItemGroup>
+
+    <!-- Copy PANDA Template files -->
+    <MakeDir Directories="$(WebSitePackages)\%(Deployment.Identity)" ContinueOnError="false" />
+    <Copy SourceFiles="@(PandaFiles)" DestinationFolder="$(WebSitePackages)\%(Deployment.Identity)" />
+
+    <!-- Copy Binaries -->
+    <Copy Condition="'@(_WebSiteFile)' != ''"
+					SourceFiles="@(_WebSiteFile)"
+					DestinationFiles="@(_WebSiteFile -> '$(WebSitePackages)\%(Deployment)\$(WebRelPath)\%(Deployment)\%(Name)\%(RecursiveDir)%(Filename)%(Extension)')" />
+
+    <!-- Copy deployment specific .deploy file -->
+    <Copy Condition="Exists('$(SolutionRoot)\%(_WebSiteAndDeployment.Identity)\WebApp.%(_WebSiteAndDeployment.Deployment).deploy')"
+          SourceFiles="$(SolutionRoot)\%(_WebSiteAndDeployment.Identity)\WebApp.%(_WebSiteAndDeployment.Deployment).deploy"
+          DestinationFiles="$(WebSitePackages)\%(Deployment)\$(WebRelPath)\%(Deployment)\%(Name)\WebApp.deploy" />
+
+    <!-- Run Web.config transforms -->
+    <TransformXml Source="$(SolutionRoot)\%(_WebSiteAndDeployment.Identity)\Web.config"
+                  Transform="$(SolutionRoot)\%(_WebSiteAndDeployment.Identity)\Web.%(_WebSiteAndDeployment.Deployment).config"
+                  Destination="$(WebSitePackages)\%(Deployment)\$(WebRelPath)\%(Deployment)\%(Name)\Web.config"
+                  Condition="Exists('$(SolutionRoot)\%(_WebSiteAndDeployment.Identity)\Web.config') AND Exists('$(SolutionRoot)\%(_WebSiteAndDeployment.Identity)\Web.%(_WebSiteAndDeployment.Deployment).config')" />
+  </Target>
+  
+  <Target Name="PackagePilotWebSites">
+    <ItemGroup>
+      <_PilotWebSiteAndDeployment Include="@(WebSite)">
+        <PilotDeployment>%(PilotDeployment.Identity)</PilotDeployment>
+      </_PilotWebSiteAndDeployment>
+
+      <_PilotWebSiteFile Include="$(BinariesRoot)\%(_PilotWebSiteAndDeployment.Identity)\_PublishedWebsites\%(_PilotWebSiteAndDeployment.Identity)\**\*.*"
+                    Exclude="$(BinariesRoot)\%(_PilotWebSiteAndDeployment.Identity)\_PublishedWebsites\%(_PilotWebSiteAndDeployment.Identity)\Web.config;$(BinariesRoot)\%(_PilotWebSiteAndDeployment.Identity)\_PublishedWebsites\%(_PilotWebSiteAndDeployment.Identity)\Web.*.config;$(BinariesRoot)\%(_PilotWebSiteAndDeployment.Identity)\_PublishedWebsites\%(_PilotWebSiteAndDeployment.Identity)\WebApp.*.deploy;$(BinariesRoot)\%(_PilotWebSiteAndDeployment.Identity)\_PublishedWebsites\%(_PilotWebSiteAndDeployment.Identity)\**\*.pdb;$(BinariesRoot)\%(_PilotWebSiteAndDeployment.Identity)\_PublishedWebsites\%(_PilotWebSiteAndDeployment.Identity)\**\*.nuspec;$(BinariesRoot)\%(_PilotWebSiteAndDeployment.Identity)\_PublishedWebsites\%(_PilotWebSiteAndDeployment.Identity)\**\*.nupkg">
+        <Name>%(_PilotWebSiteAndDeployment.Name)</Name>
+        <PilotDeployment>%(_PilotWebSiteAndDeployment.PilotDeployment)</PilotDeployment>
+      </_PilotWebSiteFile>
+    </ItemGroup>
+
+    <!-- Copy PANDA Template files -->
+    <MakeDir Directories="$(PilotWebSitePackages)\%(PilotDeployment.Identity)" ContinueOnError="false" />
+    <Copy SourceFiles="@(PandaFiles)" DestinationFolder="$(PilotWebSitePackages)\%(PilotDeployment.Identity)" />
+
+    <!-- Copy Binaries -->
+    <Copy Condition="'@(_PilotWebSiteFile)' != ''"
+					SourceFiles="@(_PilotWebSiteFile)"
+					DestinationFiles="@(_PilotWebSiteFile -> '$(PilotWebSitePackages)\%(PilotDeployment)\$(WebRelPath)\%(PilotDeployment)\%(Name)Pilot\%(RecursiveDir)%(Filename)%(Extension)')" />
+
+    <!-- Copy deployment specific .deploy file -->
+    <Copy Condition="Exists('$(SolutionRoot)\%(_PilotWebSiteAndDeployment.Identity)\WebApp.%(_PilotWebSiteAndDeployment.PilotDeployment).deploy')"
+          SourceFiles="$(SolutionRoot)\%(_PilotWebSiteAndDeployment.Identity)\WebApp.%(_PilotWebSiteAndDeployment.PilotDeployment).deploy"
+          DestinationFiles="$(PilotWebSitePackages)\%(PilotDeployment)\$(WebRelPath)\%(PilotDeployment)\%(Name)Pilot\WebApp.deploy" />
+
+    <!-- Run Web.config transforms -->
+    <TransformXml Source="$(SolutionRoot)\%(_PilotWebSiteAndDeployment.Identity)\Web.config"
+                  Transform="$(SolutionRoot)\%(_PilotWebSiteAndDeployment.Identity)\Web.%(_PilotWebSiteAndDeployment.PilotDeployment).config"
+                  Destination="$(PilotWebSitePackages)\%(PilotDeployment)\$(WebRelPath)\%(PilotDeployment)\%(Name)Pilot\Web.config"
+                  Condition="Exists('$(SolutionRoot)\%(_PilotWebSiteAndDeployment.Identity)\Web.config') AND Exists('$(SolutionRoot)\%(_PilotWebSiteAndDeployment.Identity)\Web.%(_PilotWebSiteAndDeployment.PilotDeployment).config')" />
+  </Target>
+
+  <Target Name="CreateNuGetPackages">
+    <Exec Command="&quot;$(SolutionRoot)\.nuget\NuGet.exe&quot; pack &quot;$(BinariesRoot)\GMF.Client\GMF.Client.nuspec&quot; -OutputDirectory &quot;$(DropLocation)&quot;" WorkingDirectory="$(BinariesRoot)\GMF.Client" />
+  </Target>
+</Project>

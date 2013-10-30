@@ -1,0 +1,12 @@
+﻿@model EditCustomerViewModel
+<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_CONTACTFRIQUENCY")</label>
+  <div class="controls">
+    @foreach (var cf in @Model.ContactFrequencies)
+    {
+    <label class="checkbox">
+      <input data-bind="checked: preferredContactFrequencies" type="checkbox" value="@cf.Key" />&nbsp;@cf.Value
+    </label>
+    }
+  </div>
+</div>

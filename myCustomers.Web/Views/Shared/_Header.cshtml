@@ -1,0 +1,89 @@
+﻿@using System.Globalization;
+@using System.Threading;
+@using myCustomers;
+@using myCustomers.Contexts;
+
+@{
+  var subsidiaryAccessor = ServiceLocator.Current.GetInstance<ISubsidiaryAccessor>();
+  var consultantContext = ServiceLocator.Current.GetInstance<IConsultantContext>();
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var inTouchBaseUrl = new Uri(Request.Url, appSettings.GetValue("InTouch.BaseUrl"));
+  var searchUrl = new Uri(inTouchBaseUrl, appSettings.GetValue("InTouch.Search"));
+  var currentLanguage = Thread.CurrentThread.CurrentUICulture;
+  var languages = appSettings.GetValue("Globalization.UICultures").Split(',').Select(l => l.Split('|')).Select(l => new { Language = l[0], MappedCulture = new CultureInfo(CultureMapper.MapCulture(l[0], subsidiaryAccessor.GetSubsidiaryCode())), DisplayLanguage = l.Length > 1 ? l[1] : null });
+  var consultantName = consultantContext.Consultant.FullName;
+}
+
+<div>
+  <div class="nav-logo pull-left" style="white-space:nowrap;overflow:hidden;width:60%;height:86px;background:url('@Url.Content("~/content/images/mkheaderbackground.gif")') no-repeat right top;">
+    <a href="@inTouchBaseUrl">
+      <img src="~/content/images/header_mkintouchvertical.png" style="border:0;margin:10px 30px 0 0;width:136px;height:55px;" class="pull-left">
+    </a>
+    <div class="consultant-name">@Resources.GetString("HEADER_WELCOME")<br />@consultantName</div>
+  </div>
+  <div class="pull-right" style="width: 40%;">
+    @if (appSettings.GetValue<bool>("Feature.InTouch.Search"))
+    {
+      <div class="navbar-search pull-right">
+        <input type="text" id="txtSearch" onkeypress="app.searhInTouchKeyPress(event)" class="search-query" placeholder="@Resources.GetString("SEARCH_PLACEHOLDER")" style="width:310px;" />
+        <i class="icon-search" onclick="app.searchInTouch()" style="cursor:pointer;"></i>
+      </div>
+      <div class="pull-right" style="color: #fff; margin-right: 10px;">
+        <label class="radio inline" style="white-space: nowrap; margin-right: 10px;">
+          <input type="radio" checked="checked" name="searchOption" value="InTouch" />@Resources.GetString("HEADER_SEARCH_INTOUCH")
+        </label>
+        <label class="radio inline" style="white-space: nowrap;">
+          <input type="radio" name="searchOption" value="Product_Central" />@Resources.GetString("HEADER_SEARCH_PRODUCT_CENTRAL")
+        </label>
+      </div>
+    }
+    <div class="pull-right" style="margin-top: 10px;">
+      <ul class="footer-links" style="padding-top: 0px; margin-top: 0px;">
+        @if (appSettings.GetValue<bool>("Feature.InTouch.ShoppingBag"))
+        {
+          <li>@LayoutHelpers.InTouchUrl("InTouch.ShoppingBag", "INTOUCH_SHOPPINGBAG")</li>
+          <li><span class="muted">|</span></li>
+        }
+        @if (appSettings.GetValue<bool>("Feature.InTouch.Profile"))
+        {
+          <li>@LayoutHelpers.InTouchUrl("InTouch.Profile", "INTOUCH_PROFILE")</li>
+          <li><span class="muted">|</span></li>
+        }
+        @if (appSettings.GetValue<bool>("Feature.InTouch.Help"))
+        {
+          <li>@LayoutHelpers.InTouchUrl("InTouch.Help", "INTOUCH_HELP")</li>
+          <li><span class="muted">|</span></li>
+        }
+        @if (appSettings.GetValue<bool>("Feature.Local.Help"))
+        {
+          <li>@LayoutHelpers.LocalUrl(string.Format("Local.{0}.Help", System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName), "INTOUCH_HELP")</li>
+          <li><span class="muted">|</span></li>
+        }
+        @foreach (var language in languages.Where(l => l.MappedCulture.Name != currentLanguage.Name))
+        {
+          <li><a class="muted" href="@Url.Action("language", "dashboard", new { id = language.Language })">@(language.DisplayLanguage ?? language.MappedCulture.NativeName.Substring(0, @language.MappedCulture.NativeName.IndexOf('(')))</a></li>
+          <li><span class="muted">|</span></li>
+        }
+        <li><a class="muted" href="#" onclick="$('#logoutForm').submit()">@Resources.GetString("NAV_LOGOUT")</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+@if (appSettings.GetValue<bool>("Feature.InTouch.Search"))
+{
+  <script type="text/javascript">
+    var app = app || {};
+    app.searchInTouch = function () {
+      if ($.trim($("#txtSearch").val()).length > 0) {
+        var url = "@searchUrl?q=" + $.trim($("#txtSearch").val()) + "&t=" + $("input[name=searchOption]:checked").val();
+        window.location.replace(url);
+      }
+    };
+      app.searhInTouchKeyPress = function (e, func) {
+      var  event = e || window.event;
+      if (event.keyCode == '13') app.searchInTouch();
+    };
+  </script>
+}

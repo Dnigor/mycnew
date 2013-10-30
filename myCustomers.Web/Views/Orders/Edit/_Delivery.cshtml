@@ -1,0 +1,128 @@
+﻿@using myCustomers
+@model EditOrderViewModel
+
+<div class="form-horizontal">
+  <fieldset style="margin-bottom: 20px">
+    <legend>@Resources.GetString("DELIVERY_HEADING")</legend>
+
+    <div class="row">
+      <div class="span12" style="margin-top: 10px;">
+
+        <div class="control-group">
+          <label class="control-label">@Resources.GetString("DATE_LABEL")</label>
+          <div class="controls">
+            <input maxlength="10" type="text" class="input-small" data-bind="enable: canEditDelivery, datepicker: deliveryDate, considerTime: true, showValidationFor: deliveryDate" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">@Resources.GetString("ADDRESS_LABEL")</label>
+
+          <div class="controls" style="margin-left: 180px" data-bind="with: deliveryAddress">
+            @if (Model.IsEligibleForCDS)
+            {
+            <div class="alert alert-error" style="display:none" data-bind="visible: !$parent.deliveryAddressIsValidForCDS()">
+              @Html.Raw(Resources.GetString("VALIDATION_CDSORDER_DELIVERYADDRESS"))
+            </div>
+            }
+            @Html.AppSettingsPartial("PartialView.EditAddress")
+            <div style="display: inline-block">
+              <div>
+                <!-- ko if: $root.canEditDelivery --> 
+                <button type="button" class="btn btn-link" style="display: none; padding: 0" data-bind="click: $parent.removeDeliveryAddress, visible: ($parent.deliveryAddress().notEmpty())">@Resources.GetString("REMOVE")</button>
+                <!-- /ko -->
+              </div>
+            </div>
+
+            <!-- ko if: $parent.addDeliveryAddressToCustomerEnabled() && $root.canEditDelivery() -->
+            <div class="controls controls-row" style="margin: 0">
+              <div class="span4">
+                <label class="checkbox" style="margin: 0; padding: 0">
+                  <input type="checkbox" data-bind="checked: $parent.addDeliveryAddressToCustomer" />
+                  @Resources.GetString("ADDRESS_ADDTOCUSTOMERPROFILE")
+                </label>
+              </div>
+              <div class="span2"></div>
+            </div>
+            <!-- /ko -->
+          </div>
+
+          <div class="controls controls-row">
+            <div class="span10" style="margin: 0;">
+              <!-- ko if: $root.canEditDelivery -->
+              <button type="button" class="btn btn-link" style="padding-left: 0; display: none;" data-bind="visible: selectCustomerAddressLinkVisible, click: function() { customerAddressListVisible(true); }">@Resources.GetString("DELIVERYADDRESS_SELECTCUSTOMERADDRESS")</button>
+              <!-- /ko -->
+
+              <!-- ko if: customerAddressListVisible() && $root.canEditDelivery() -->
+              <div class="well well-small" style="display: none; margin-top: 10px;" data-bind="visible: customerAddressListVisible">
+                <fieldset>
+                  <legend style="margin-bottom: 10px; font-size: 16px; line-height: 20px; font-weight: bold;">
+                    @Resources.GetString("DELIVERYADDRESS_SELECTCUSTOMERADDRESS_TITLE")
+                    <button type="button" class="close" data-bind="click: function() { customerAddressListVisible(false) }">&times;</button>
+                  </legend>
+
+                  <ul class="inline" data-bind="foreach: customerAddresses">
+                    <li style="vertical-align: top;">
+                      <div class="vcard" style="min-height: 80px">
+                        <span class="fn">
+                          <span data-bind="text: addressee"></span>
+                          <span class="label label-info" data-bind="if: isPrimary">@Resources.GetString("PRIMARY_BADGE")</span>
+                        </span>
+                        <div class="adr">
+                          <div class="street-address" style="white-space: nowrap;">
+                            <span data-bind="text: street"></span>
+                            <span data-bind="text: unitNumber"></span>
+                          </div>
+                          <div style="white-space: nowrap;">
+                            <span class="locality" data-bind="text: city"></span>
+                            <span data-bind="if: regionCode() || postalCode()">,</span>
+                            <span class="region" data-bind="text: regionCode"></span>
+                            <span class="postal-code" data-bind="text: postalCode"></span>
+                            @if (@Model.Features.GiftMessage)
+                            { 
+                              <div>
+                                <span class="country-code" data-bind="text: countryCode"></span>
+                              </div>
+                            }
+                          </div>
+                        </div>
+                        <div class="tel" data-bind="phone: telephone"></div>
+                      </div>
+                      <button type="button" class="btn btn-success" style="margin-top: 10px;" data-bind="click: $parent.selectCustomerAddress">@Resources.GetString("DELIVERYADDRESS_SELECTCUSTOMERADDRESS_BUTTON")</button>
+                    </li>
+                  </ul>
+                </fieldset>
+              </div>
+              <!-- /ko -->
+            </div>
+          </div>
+        </div>
+
+        @if (@Model.Features.GiftMessage)
+        {
+          <div class="control-group">
+            <label class="control-label">@Resources.GetString("GIFTORDER_LABEL")</label>
+            <div class="controls">
+              <input type="checkbox" checked="checked" data-bind="checked: isGift, enable: $root.canEditDelivery" />
+
+              <div class="control-group1" style="margin-top: 10px; display: none;" data-bind="visible: isGift">
+                <label class="control-label1">@Resources.GetString("GIFTMESSAGE_LABEL")</label>
+                <div class="controls1">
+                  <div class="maxchar">
+                    <textarea rows="5" cols="80" class="input-xlarge" data-bind="enable: canEditDelivery, value: giftMessage, valueUpdate: 'keyup', attr: { maxlength: giftMessage.maxCharacterCount }"></textarea>
+                    <span data-bind="text: giftMessage.remainingCharacterCount"></span>
+                  </div>
+                  @if (@Model.Features.CDS)
+                  {
+                    <br />
+                    <span style="font-size: 8pt;"><strong>Note:</strong> Message will appear on CDS packing slip</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </fieldset>
+</div>

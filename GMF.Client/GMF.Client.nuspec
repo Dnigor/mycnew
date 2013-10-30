@@ -1,0 +1,26 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>GMF.Client</id>
+    <version>0.2</version>
+    <authors>David Findley</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>GMF Web Service Client</description>
+    <summary>Web Service client for sending emails through the Global Messaging Framework</summary>
+    <dependencies>
+      <group targetFramework="net40">
+        <dependency id="MaryKay.ServiceModel.Legacy" version="1.4" />
+      </group>
+    </dependencies>
+    <releaseNotes>
+      0.2 - Added endpoints for US
+    </releaseNotes>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework="Net40" />
+      <frameworkAssembly assemblyName="System.Runtime.Serialization" targetFramework="Net40" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="GMF.Client.dll" target="lib\net40" /> 
+  </files>    
+</package>

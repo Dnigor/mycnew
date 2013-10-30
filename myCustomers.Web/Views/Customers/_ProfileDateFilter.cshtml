@@ -1,0 +1,15 @@
+﻿<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'ProfileDate'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <form class="form-inline" style="margin: 0">
+    <label>@Resources.GetString("FILTER_PROFILEDATE_LABEL")</label>
+    <div class="input-append" style="display: inline;">
+      <input type="text" data-bind="datepicker: minProfileDate, showValidationFor: minProfileDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+      <button class="btn" data-bind="visible: minProfileDate, click: function(d, e) { minProfileDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+    </div>
+    &nbsp;
+    <div class="input-append" style="display: inline;">
+      <input type="text" data-bind="datepicker: maxProfileDate, showValidationFor: maxProfileDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+      <button class="btn" data-bind="visible: maxProfileDate, click: function(d, e) { maxProfileDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,44 @@
+﻿@model EditOrderViewModel
+
+<div class="form-horizontal">
+  <fieldset style="margin-bottom: 20px;">
+    <legend>@Resources.GetString("ORDERFOLLOWUP_HEADING")</legend>
+
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("ORDERFOLLOWUP_LABEL")</label>
+      <div class="controls">
+
+        <table class="table table-condensed table-autosize">
+          <tr>
+            <td style="border:0;">
+              <select class="input-small" style="width: 130px;" data-bind="value: followupsMode, enable: !isProcessed()">
+                <option value="">@Resources.GetString("ORDERFOLLOWUP_OPTION_NONE")</option>
+                <option value="222">@Resources.GetString("ORDERFOLLOWUP_OPTION_222")</option>
+                <option value="Custom">@Resources.GetString("ORDERFOLLOWUP_OPTION_CUSTOM")</option>
+              </select>
+            </td>
+            <td style="border:0;">
+              <!-- ko if: followupsMode() === 'Custom' -->
+              <table>
+                <tbody data-bind="foreach: followups">
+                  <tr>
+                    <td style="padding:0 0 5px 0;border:0;">
+                      <input maxlength="10" type="text" style="margin:0;" class="input-small" data-bind="datepicker: date, considerTime: true, showValidationFor: date, enable: !$parent.isProcessed()" />
+                    </td>
+                    <td style="padding:0 0 5px 0;border:0;"><button class="btn btn-link" data-bind="command: $parent.removeFollowupCommand, visible: !$parent.isProcessed()">@Resources.GetString("REMOVE")</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              <!-- ko if: addFollowupCommand.canExecute -->
+              <button class="btn btn-link" style="padding:0;" data-bind="command: addFollowupCommand, visible: !isProcessed()">@Resources.GetString("ORDERFOLLOWUP_ADD_BUTTON")</button>
+              <!-- /ko -->
+
+              <!-- /ko -->
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </fieldset>
+</div>

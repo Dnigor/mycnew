@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>Mary Kay Inc.</LicensedTo>
+    <LicenseType>Developer OEM</LicenseType>
+    <LicenseNote>Limited to 3 developers.</LicenseNote>
+    <OrderID>120104075520</OrderID>
+    <OEM>This is a redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Words for .NET</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>f3af1530-77eb-4233-873f-ccd87d7e7f4f</SerialNumber>
+    <SubscriptionExpiry>20130402</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>byLhfcFBtTPHEdo6IuS4LA7/sIIJIhQqR9udteuQHd6MAeb+Pf49h6MZ/qDLF0IB8ALvLpEi1TuIKU49li/KEHGoE6WLxM2fvENHQ5mXEJQA2KlZIR9kQEudgV9b/JU6QLXCPaGf12znq8Y9ZdQTBOQM7Y1GcHgPQJuQszFRjyc=</Signature>
+</License>

@@ -1,0 +1,169 @@
+﻿@model CustomerDetailViewModel
+@{
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var preferredLanguages = appSettings
+    .GetValue("CustomerProfile.PreferredLanguages")
+    .Split(',');
+}
+<fieldset>
+  @if (@Model.HasContactOrPersonalOrProfileInfo)
+  { 
+    <legend style="font-size: 14px; font-weight: bold;">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTPERSONALINFO")</legend>
+  }
+  else
+  {
+    <div class="alert alert-info">
+      <em>@Resources.GetString("CUSTOMERDETAIL_NOCUSTOMERINFO_LABEL")</em>
+    </div>
+  }
+  <div class="customerdetail-nav-content">
+    @if (@Model.Gender.HasValue)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYGENDERIS")</dt>
+        <dd>@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_GENDER_{0}", @Model.Gender)</dd>
+      </dl>
+    }
+    @if (@Model.PreferredShoppingMethods.Length > 0)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_ILIKETOSHOP")</dt>
+        @foreach (var shoppingMethod in @Model.PreferredShoppingMethods)
+        { 
+          <dd>@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_{0}", @shoppingMethod)</dd>
+        }
+      </dl>
+    }
+    @if (@Model.PreferredContactMethods.Length > 0)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_PREFERREDMETHODSOFCONTACT")</dt>
+        @foreach (var contactMethod in @Model.PreferredContactMethods)
+        { 
+          <dd>@Resources.GetSiteTermString(contactMethod.ToString(), "ContactMethod")</dd>
+        }
+      </dl>
+    }
+    @if (@Model.HyperLinks.Length > 0)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_SOCIAL")</dt>
+        @foreach (var hyperlink in @Model.HyperLinks)
+        { 
+          <dd><a href="@hyperlink.Url" target="_blank">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_{0}", @hyperlink.HyperLinkType)</a></dd>
+        }
+      </dl>
+    }
+    @if (@Model.PreferredContactDays.Length > 0)
+    {
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_BESTDAYSTOREACHME")</dt>
+        @foreach (var preferredContactDay in @Model.PreferredContactDays)
+        { 
+          <dd>@Resources.GetSiteTermString(preferredContactDay.ToString(), "ContactDaysPreference")</dd>
+        }
+      </dl>
+    }
+    @if (@Model.PreferredContactTimes.Length > 0)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_BESTTIMETOREACHME")</dt>
+        @foreach (var preferredContactTime in @Model.PreferredContactTimes)
+        { 
+          <dd>@Resources.GetSiteTermString(preferredContactTime.ToString(), "ContactTimePreference")</dd>
+        }
+      </dl>
+    }
+    @if (@Model.PreferredContactFrequencies.Length > 0)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_IPREFERTOHEARFROMMYCONSULTANT")</dt>
+        @foreach (var preferredContactFrequency in @Model.PreferredContactFrequencies)
+        { 
+          <dd>@Resources.GetSiteTermString(preferredContactFrequency.ToString(), "ContactFrequencyPreference")</dd>
+        }
+      </dl>
+    }
+    @if (preferredLanguages.Length > 1 && @Model.HasPreferredLanguage)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_PREFERREDLANGUAGE")</dt>
+        <dd>@(new System.Globalization.CultureInfo(Model.PreferredLanguage).NativeName)</dd>
+      </dl>
+    }
+    @if (@Model.LearningTopicsOfInterest.Length > 0)
+    {
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_IDLIKETOLEARNMOREABOUT")</dt>
+        @foreach (var learningTopicOfInterest in @Model.LearningTopicsOfInterest)
+        { 
+          <dd>@Resources.GetSiteTermString(learningTopicOfInterest.ToString(), "InterestedToLearnMoreAbout")</dd>
+        }
+      </dl>
+    }
+    @if (@Model.SpecialOccasions.Length > 0)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASIONS")</dt>
+        @foreach (var specialOccasion in @Model.SpecialOccasions)
+        {
+          var dateFormat = specialOccasion.Year.HasValue ? appSettings.GetValue("InvoiceDateFormat") : appSettings.GetValue("ShortDateFormat");
+          var date = string.Empty;
+          try { date = new DateTime(specialOccasion.Year.HasValue ? specialOccasion.Year.Value : DateTime.MinValue.Year, specialOccasion.Month, specialOccasion.Day).ToString(dateFormat); } catch {}
+          <dd>
+            @Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_{0}", @specialOccasion.SpecialOccasionType) - @date
+            @if(specialOccasion.SpecialOccasionType == Quartet.Entities.SpecialOccasionType.Other && !string.IsNullOrWhiteSpace(specialOccasion.Description))
+            {
+              <text>:&nbsp;</text>@specialOccasion.Description
+            }
+          </dd>
+        }
+      </dl>
+    }
+    @if (@Model.HasSpouse)
+    { 
+      <dl>
+        @if (Model.HasSpouseName)
+        {
+          <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYSPOUSESPECIALSOMEONEIS")</dt>
+          <dd>@Model.Spouse.SpouseName</dd>
+        }
+        @if (Model.HasSpouseName && (Model.HasSpousePhoneNumber || Model.HasSpouseEmailAddress))
+        { 
+          <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_YOUMAYCONTAACTSPOUSESPECIALSOMEONEHIMHER")</dt>
+        }
+        @if (!Model.HasSpouseName && (Model.HasSpousePhoneNumber || Model.HasSpouseEmailAddress))
+        { 
+          <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_YOUMAYCONTACTSPOUSESPECIALSOMEONE")</dt>
+        }
+        @if (Model.HasSpousePhoneNumber)
+        { 
+          <dd>@Html.Partial("_StringPhoneNumber", @Model.Spouse.PhoneNumber)
+            @if (@Model.HasSpouseExtension)
+            {
+              <text>x</text>@Model.Spouse.Extension
+            }
+          </dd> 
+        }
+        @if (Model.HasSpouseEmailAddress)
+        { 
+          <dd><a href="mailto:@Model.Spouse.EmailAddress">@Model.Spouse.EmailAddress</a></dd> 
+        }
+      </dl>
+    }
+    @if (@Model.HasOccupation)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYOCCUPATIONIS")</dt>
+        <dd>@Model.Occupation</dd>
+      </dl>
+    }
+    @if (@Model.HasEmployer)
+    { 
+      <dl>
+        <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYEMPLOYERIS")</dt>
+        <dd>@Model.Employer</dd>
+      </dl>
+    }
+  </div>
+</fieldset>

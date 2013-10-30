@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GENDER_FEMALE" xml:space="preserve">
+    <value>Женский</value>
+  </data>
+  <data name="GENDER_MALE" xml:space="preserve">
+    <value>Мужской</value>
+  </data>
+  <data name="ABBR_HOMEPHONE" xml:space="preserve">
+    <value>дом:</value>
+  </data>
+  <data name="ABBR_MOBILEPHONE" xml:space="preserve">
+    <value>моб:</value>
+  </data>
+  <data name="ABBR_OTHERPHONE" xml:space="preserve">
+    <value>доп:</value>
+  </data>
+  <data name="ABBR_WORKPHONE" xml:space="preserve">
+    <value>раб:</value>
+  </data>
+  <data name="ADDCUSTOMER_ANNIVERSARY" xml:space="preserve">
+    <value>Юбилей</value>
+  </data>
+  <data name="ADDCUSTOMER_BIRTHDAY" xml:space="preserve">
+    <value>День рождения</value>
+  </data>
+  <data name="ADDCUSTOMER_GRADUATION" xml:space="preserve">
+    <value>Окончание учебы</value>
+  </data>
+  <data name="ADDCUSTOMER_NEWBABY" xml:space="preserve">
+    <value>День рождения ребенка</value>
+  </data>
+  <data name="ADDCUSTOMER_NEWJOB" xml:space="preserve">
+    <value>Новая работа</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER_DESCRIPTION" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="ADDCUSTOMER_VACATION" xml:space="preserve">
+    <value>Отпуск</value>
+  </data>
+  <data name="ADDCUSTOMER_WEDDING" xml:space="preserve">
+    <value>Свадьба</value>
+  </data>
+  <data name="AJAX_ERROR" xml:space="preserve">
+    <value>При выполнении данной операции произошла ошибка. Пожалуйста, попробуйте снова.</value>
+  </data>
+  <data name="AJAX_ERROR_TITLE" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="CONFIRM_MARKCOMPLETE_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите отметить этот заказ как обработанный? &lt;br/&gt;&lt;br/&gt;&lt;small class="muted"&gt;Вы сможете просмотреть и отредактировать этот заказ в любое время. &lt;small/&gt;</value>
+  </data>
+  <data name="CONFIRM_MARKCOMPLETE_TITLE" xml:space="preserve">
+    <value>Подтвердить завершение заказа</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите переместить этот файл в корзину? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Обратите внимание, если вы нажмете "OK", вся информация, связанная с этим клиентом(ми) будет перемещена в корзину, в том числе контактная информация, история заказов, личная информация, его логин на сайте, напоминания о повторном заказе продукции. Для окончательного удаления информации о клиенте, необходимо нажать на иконку «Корзина», а затем нажать кнопку "Окончательно удалить клиента".</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Удалить клиентов</value>
+  </data>
+  <data name="CONFIRM_DELETEFROMGROUP_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить выбранных клиентов из группы?</value>
+  </data>
+  <data name="CONFIRM_RESTORECUSTOMERS_BODY" xml:space="preserve">
+    <value>Вы уверены что хотите восстановить? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Чтобы найти восстановленных клиентов, нажмите на список клиентов.</value>
+  </data>
+  <data name="CONFIRM_RESTORECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Восстановить клиентов</value>
+  </data>
+  <data name="CONFIRM_PURGECUSTOMERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите окончательно удалить выбранного клиента(ов)? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Обратите внимание, если вы нажмете "OK", вы полностью удалите всю информацию, связанную с этим клиентом, включая контактную информацию, историю заказов, личную информацию, его логин на сайте, напоминания о повторном заказе продукции.</value>
+  </data>
+  <data name="CONFIRM_PURGECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Полностью удалить заказы из корзины</value>
+  </data>
+  <data name="CONFIRM_PURGEORDERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите полностью удалить выбранные заказы из корзины?</value>
+  </data>
+  <data name="CONFIRM_PURGEORDERS_TITLE" xml:space="preserve">
+    <value>Полностью удалить клиентов из корзины</value>
+  </data>
+  <data name="CONFIRM_RESTOREORDERS_TITLE" xml:space="preserve">
+    <value>Восcтановить заказы</value>
+  </data>
+  <data name="CONFIRM_RESTOREORDERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите восстановить? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Чтобы найти восстановленные заказы, нажмите на список заказов.</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить этого клиента?</value>
+  </data>
+  <data name="CONFIRM_DELETECUSTOMER_TITLE" xml:space="preserve">
+    <value>Удалить клиента</value>
+  </data>
+  <data name="CONFIRM_DELETEORDERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить выбранные заказы?</value>
+  </data>
+  <data name="CONFIRM_DELETEORDERS_TITLE" xml:space="preserve">
+    <value>Удалить заказы</value>
+  </data>
+  <data name="CONFIRM_DELETEORDER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить этот заказ?</value>
+  </data>
+  <data name="CONFIRM_DELETEORDER_TITLE" xml:space="preserve">
+    <value>Удалить заказ</value>
+  </data>
+  <data name="CONFIRM_REMOVEADDRESS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить адрес?</value>
+  </data>
+  <data name="CONFIRM_REMOVEADDRESS_TITLE" xml:space="preserve">
+    <value>Подтвердить удаление адреса</value>
+  </data>
+  <data name="CONFIRM_REMOVEDELIVERYADDRESS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить адрес доставки?</value>
+  </data>
+  <data name="CONFIRM_REMOVEDELIVERYADDRESS_TITLE" xml:space="preserve">
+    <value>Подтвердить удаление адреса доставки</value>
+  </data>
+  <data name="CONFIRM_REMOVEEMAIL_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить электронный адрес?</value>
+  </data>
+  <data name="CONFIRM_REMOVEEMAIL_TITLE" xml:space="preserve">
+    <value>Подтвердить удаление электронного адреса</value>
+  </data>
+  <data name="CONFIRM_REMOVEFOLLOWUP_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить напоминание о выполнении</value>
+  </data>
+  <data name="CONFIRM_REMOVEFOLLOWUP_TITLE" xml:space="preserve">
+    <value>Подтвердить удаление напоминания о выполнении</value>
+  </data>
+  <data name="CONFIRM_REMOVESOCIALNETWORK_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить ссылку на социальную сеть?</value>
+  </data>
+  <data name="CONFIRM_REMOVESOCIALNETWORK_TITLE" xml:space="preserve">
+    <value>Подтверждение удаления ссылки на социальную сеть</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERITEM_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить продукцию из заказа?</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERITEM_TITLE" xml:space="preserve">
+    <value>Подтвердить удаление продукции</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERNOTES_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить заметки о заказе?</value>
+  </data>
+  <data name="CONFIRM_REMOVEORDERNOTES_TITLE" xml:space="preserve">
+    <value>Подтвердить удаление заметок о заказе</value>
+  </data>
+  <data name="CONFIRM_REMOVEPAYMENT_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить выбранный тип оплаты заказа?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPAYMENT_TITLE" xml:space="preserve">
+    <value>Подтвердить удаление оплаты</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONENUMBER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить номер телефона?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONENUMBER_TITLE" xml:space="preserve">
+    <value>Подтвердить удаление номера телефона</value>
+  </data>
+  <data name="CONFIRM_UNDELETECUSTOMER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите отменить удаление этого клиента?</value>
+  </data>
+  <data name="CONFIRM_UNDELETECUSTOMER_TITLE" xml:space="preserve">
+    <value>Восстановить клиента</value>
+  </data>
+  <data name="CONFIRM_UNDELETEORDER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите отменить удаление этого заказа?</value>
+  </data>
+  <data name="CONFIRM_UNDELETEORDER_TITLE" xml:space="preserve">
+    <value>Отменить удаление заказа</value>
+  </data>
+  <data name="CUSTOMERLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Клиенты - Страница {1} ({2})</value>
+  </data>
+  <data name="IMPORTCUSTOMERSLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Контакты - Страница {1} ({2})</value>
+  </data>
+  <data name="PRODUCTSLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Продукция - Страница {1} ({2})</value>
+  </data>
+  <data name="DELETE_NOTES_CONFIRMATION_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить эту заметку?</value>
+  </data>
+  <data name="DELETE_NOTES_CONFIRMATION_TITLE" xml:space="preserve">
+    <value>Удалить заметку</value>
+  </data>
+  <data name="ERROR_CSV_FILE_EXPECTED" xml:space="preserve">
+    <value>Файл должен быть в формате CSV.</value>
+  </data>
+  <data name="ERROR_NOTIFY_TITLE" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="INVALID_URL_FORMAT" xml:space="preserve">
+    <value>Адрес сайта введён в неправильном формате.</value>
+  </data>
+  <data name="NOTESLIST_ITEM_TITLE" xml:space="preserve">
+    <value>{0} {1} на {2}</value>
+  </data>
+  <data name="NOTESLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Заметки - Страница {1} из {2}</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ORDERDETAIL_DELETE" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ORDERDETAIL_UNDELETE" xml:space="preserve">
+    <value>Вернуть из удалённых</value>
+  </data>
+  <data name="SAVEORDER_SUCCESS" xml:space="preserve">
+    <value>Заказ был успешно сохранён.</value>
+  </data>
+  <data name="CUSTOMER_SAVESUCCESS_MSG" xml:space="preserve">
+    <value>Поздравляем! Вы сохранили данные Вашего клиента.</value>
+  </data>
+  <data name="ORDER_UPDATESTATUS_SUCCESS" xml:space="preserve">
+    <value>Статус заказа изменен</value>
+  </data>
+  <data name="MARKCOMPLETE_SUCCESS" xml:space="preserve">
+    <value>Заказ был успешно изменён и отмечен как "Обработанный".</value>
+  </data>
+  <data name="ORDERLIST_PAGER_STATUSFORMAT" xml:space="preserve">
+    <value>{0} Заказы - Страница {1} из {2}</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_COMPLETED" xml:space="preserve">
+    <value>Полностью оплаченный</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_NA" xml:space="preserve">
+    <value>Неоплаченный</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_PARTIAL" xml:space="preserve">
+    <value>Частично оплаченный</value>
+  </data>
+  <data name="ORDERSOURCE_ONLINE" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_CUSTOMERWILLPICKUP" xml:space="preserve">
+    <value>Выдача</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_DELIVERTOHOMEORWORK" xml:space="preserve">
+    <value>Домашний / Рабочий</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_OTHER" xml:space="preserve">
+    <value>Другой</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SETUPAPPOINTMENTFORCONSULTATIONANDDELIVERY" xml:space="preserve">
+    <value>Назначить встречу для консультации и доставки</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SHIPTOCUSTOMERADDRESS" xml:space="preserve">
+    <value>Доставить клиенту по адресу</value>
+  </data>
+  <data name="ORDERSOURCE_SALESTICKET" xml:space="preserve">
+    <value>Заявка</value>
+  </data>
+  <data name="ORDERSTATUS_PROCESSED" xml:space="preserve">
+    <value>Обработанные</value>
+  </data>
+  <data name="ORDERSTATUS_SHIPPEDDELIVERED" xml:space="preserve">
+    <value>Доставлен</value>
+  </data>
+  <data name="ORDERSTATUS_SUBMITTED" xml:space="preserve">
+    <value>Новый</value>
+  </data>
+  <data name="ORDERSTATUS_UNDERREVIEW" xml:space="preserve">
+    <value>Ожидание</value>
+  </data>
+  <data name="PHONENUMBERTYPE_HOME" xml:space="preserve">
+    <value>Домашний</value>
+  </data>
+  <data name="PHONENUMBERTYPE_MOBILE" xml:space="preserve">
+    <value>Мобильный номер</value>
+  </data>
+  <data name="PHONENUMBERTYPE_OTHER" xml:space="preserve">
+    <value>Другой</value>
+  </data>
+  <data name="PHONENUMBERTYPE_WORK" xml:space="preserve">
+    <value>Рабочий</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_MAKEUP" xml:space="preserve">
+    <value>Декоративная косметика</value>
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_SKINCARE" xml:space="preserve">
+    <value>Уход за кожей</value>
+  </data>
+  <data name="REMINDERS_PREFIX" xml:space="preserve">
+    <value>для</value>
+  </data>
+  <data name="REMINDERS_TITLE_REQUIRED" xml:space="preserve">
+    <value>Необходимо ввести заголовок.</value>
+  </data>
+  <data name="SEARCH_ERROR" xml:space="preserve">
+    <value>При выполнении поиска произошла ошибка. Пожалуйста, попробуйте снова.</value>
+  </data>
+  <data name="SEARCH_ERROR_TITLE" xml:space="preserve">
+    <value>Ошибка поиска</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_SUCCESS" xml:space="preserve">
+    <value>Электронное письмо с подтверждением было выслано успешно.</value>
+  </data>
+  <data name="SORT_AMOUNT" xml:space="preserve">
+    <value>Сумма</value>
+  </data>
+  <data name="SORT_DATEADDED" xml:space="preserve">
+    <value>Дата добавления</value>
+  </data>
+  <data name="SORT_DATEREGISTERED" xml:space="preserve">
+    <value>Дата регистрации</value>
+  </data>
+  <data name="SORT_DIRECTION_TOOLTIP" xml:space="preserve">
+    <value>Переключить порядок сортировки</value>
+  </data>
+  <data name="SORT_LASTORDERDATE" xml:space="preserve">
+    <value>Дата последнего заказа</value>
+  </data>
+  <data name="SORT_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Статус оплаты</value>
+  </data>
+  <data name="SORT_ORDERTYPE" xml:space="preserve">
+    <value>Источник заказа</value>
+  </data>
+  <data name="SORT_RELEVANCE" xml:space="preserve">
+    <value>Актуальный</value>
+  </data>
+  <data name="SUCCESS_DELETE_ORDERS" xml:space="preserve">
+    <value>Заказы были удалены.</value>
+  </data>
+  <data name="SUCCESS_MESSAGE_NEWTASK" xml:space="preserve">
+    <value>Задача добавлена.</value>
+  </data>
+  <data name="SUCCESS_MESSAGE_TITLE" xml:space="preserve">
+    <value>Успех</value>
+  </data>
+  <data name="VALIDATION_ADDRESSEE_REQUIRED" xml:space="preserve">
+    <value>Необходимо ввести адресата.</value>
+  </data>
+  <data name="VALIDATION_FIRSTNAME_PATTERN" xml:space="preserve">
+    <value>Имя не соответствует формату.</value>
+  </data>
+  <data name="VALIDATION_LASTNAME_PATTERN" xml:space="preserve">
+    <value>Фамилия не соответствует формату.</value>
+  </data>
+  <data name="VALIDATION_MIDDLENAME_PATTERN" xml:space="preserve">
+    <value>Отчество не соответствует формату.</value>
+  </data>
+  <data name="VALIDATION_FIRSTNAME_REQUIRED" xml:space="preserve">
+    <value>Необходимо ввести имя.</value>
+  </data>
+  <data name="VALIDATION_LASTNAME_REQUIRED" xml:space="preserve">
+    <value>Необходимо ввести фамилию.</value>
+  </data>
+  <data name="VALIDATION_ADDRESS_ONEOF" xml:space="preserve">
+    <value>Необходимо ввести улицу, город, область/регион и индекс.</value>
+  </data>
+  <data name="VALIDATION_NUMBER" xml:space="preserve">
+    <value>Необходимо ввести номер.</value>
+  </data>
+  <data name="VALIDATION_ORDERDATE_REQUIRED" xml:space="preserve">
+    <value>Необходимо ввести дату заказа.</value>
+  </data>
+  <data name="WRONG_DATE" xml:space="preserve">
+    <value>Неправильная дата.</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_BEAUTENEWS" xml:space="preserve">
+    <value>Новости из мира красоты</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_MKECARDS" xml:space="preserve">
+    <value>Электронные открытки</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_PRODUCTREORDERREMINDER" xml:space="preserve">
+    <value>Напоминание о повторном заказе</value>
+  </data>
+  <data name="INVOICE_CREATE_ERROR" xml:space="preserve">
+    <value>При создании счета-фактуры произошла ошибка. Пожалуйста, попробуйте ещё раз.</value>
+  </data>
+  <data name="VALIDATION_EXTENSION_PATTERN" xml:space="preserve">
+    <value>Добавочный номер введён в неправильном формате. </value>
+  </data>
+  <data name="VALIDATION_URL" xml:space="preserve">
+    <value>Неправильный адрес сайта.</value>
+  </data>
+  <data name="VALIDATION_NUMBER_PATTERN" xml:space="preserve">
+    <value>Номер введён в неправильном формате. </value>
+  </data>
+  <data name="VALIDATION_NUMBER_REQUIRED" xml:space="preserve">
+    <value>Необходимо ввести номер.</value>
+  </data>
+  <data name="VALIDATION_TASKTITLE_REQUIRED" xml:space="preserve">
+    <value>Заголовок обязателен.</value>
+  </data>
+  <data name="VALIDATION_NUMBERTYPE_REQUIRED" xml:space="preserve">
+    <value>Необходимо ввести тип номера.</value>
+  </data>
+  <data name="VALIDATION_SOCIALNETRWORK_PATTERN" xml:space="preserve">
+    <value>Ссылка на социальную сеть не действительна.</value>
+  </data>
+  <data name="PROMPT_DISCARDCHANGES" xml:space="preserve">
+    <value>У вас есть несохранённые изменения.</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONE_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить этот номер телефона?</value>
+  </data>
+  <data name="CONFIRM_REMOVEPHONE_TITLE" xml:space="preserve">
+    <value>Удалить номер телефона</value>
+  </data>
+  <data name="CONFIRM_REMOVESPECIALOCCASION_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить важную дату?</value>
+  </data>
+  <data name="CONFIRM_REMOVESPECIALOCCASION_TITLE" xml:space="preserve">
+    <value>Удалить важную дату</value>
+  </data>
+  <data name="IMPORTANTDATE_GRADUATION" xml:space="preserve">
+    <value>Выпускной</value>
+  </data>
+  <data name="IMPORTANTDATE_NEWBABY" xml:space="preserve">
+    <value>День рождения ребенка</value>
+  </data>
+  <data name="IMPORTANTDATE_NEWJOB" xml:space="preserve">
+    <value>Новая работа</value>
+  </data>
+  <data name="IMPORTANTDATE_OTHER" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="IMPORTANTDATE_VACATION" xml:space="preserve">
+    <value>Отпуск</value>
+  </data>
+  <data name="IMPORTANTDATE_WEDDING" xml:space="preserve">
+    <value>Свадьба</value>
+  </data>
+  <data name="VALIDATION_DUPEMAIL" xml:space="preserve">
+    <value>Этот электронный адрес уже используется другим клиентом.</value>
+  </data>
+  <data name="INVALID_NAME" xml:space="preserve">
+    <value>Имя не должно содержать цифры или специальные символы.</value>
+  </data>
+  <data name="VALIDATION_PHONEEXTENSION" xml:space="preserve">
+    <value>Формат добавочного номера неверен</value>
+  </data>
+  <data name="VALIDATION_PHONENUMBER" xml:space="preserve">
+    <value>Формат номера телефона неверен</value>
+  </data>
+  <data name="ERROR_CSV_FILE_REQUIRED" xml:space="preserve">
+    <value>Файл должен быть в формате CSV.</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите переместить в архив этот заказ?</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDER_TITLE" xml:space="preserve">
+    <value>Переместить в архив заказ</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите вернуть из архива этот заказ?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDER_TITLE" xml:space="preserve">
+    <value>Вернуть заказ из архива</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите переместить в архив выбранные заказы?</value>
+  </data>
+  <data name="CONFIRM_ARCHIVEORDERS_TITLE" xml:space="preserve">
+    <value>Переместить в архив заказы</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите вернуть из архива выбранные заказы?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVEORDERS_TITLE" xml:space="preserve">
+    <value>Вернуть заказы из архива</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите переместить в архив выбранных клиентов? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Чтобы найти клиентов в базе, откройте закладку Клиенты --&gt; Нажмите на фильтр --&gt; Выберите Архив.&lt;/small&gt;</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Переместить в архив клиентов</value>
+  </data>
+  <data name="VALIDATION_REQUIRED" xml:space="preserve">
+    <value>Это поле является обязательным для заполнения.</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите архивировать этого клиента? &lt;small class="muted"&gt; &lt;br/&gt;&lt;br/&gt;Чтобы найти клиентов в базе, откройте закладку Клиенты --&gt; Нажмите на фильтр --&gt; Выберите Архив.&lt;/small&gt;</value>
+  </data>
+  <data name="CONFIRM_ARCHIVECUSTOMER_TITLE" xml:space="preserve">
+    <value>Переместить в архив клиента</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMER_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите вернуть из архива этого клиента?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMER_TITLE" xml:space="preserve">
+    <value>Убрать из базы клиентов</value>
+  </data>
+  <data name="ORDERDETAIL_ARCHIVE" xml:space="preserve">
+    <value>Архив</value>
+  </data>
+  <data name="ORDERDETAIL_UNARCHIVE" xml:space="preserve">
+    <value>Вернуть из архива</value>
+  </data>
+  <data name="EDITCUSTOMER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value>Чтобы сохранить данные этого клиента, вам необходимо исправить ошибки.</value>
+  </data>
+  <data name="EDITCUSTOMER_VALIDATION_MESSAGE_TITLE" xml:space="preserve">
+    <value>Проверка правильности ввода данных клиента</value>
+  </data>
+  <data name="EDITORDER_VALIDATION_MESSAGE" xml:space="preserve">
+    <value>Чтобы сохранить заказ, вам необходимо исправить неправильно введённые данные, отмеченные красным.</value>
+  </data>
+  <data name="EDITORDER_VALIDATION_TITLE" xml:space="preserve">
+    <value>Срок действия заказа истек</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMERS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите вернуть из архива выбранного клиента?</value>
+  </data>
+  <data name="CONFIRM_UNARCHIVECUSTOMERS_TITLE" xml:space="preserve">
+    <value>Вернуть клиента из архива</value>
+  </data>
+  <data name="ARCHIVECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Клиенты успешно добавлены в базу клиентов.</value>
+  </data>
+  <data name="UNARCHIVECUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>Клиенты были успешно возвращены из архива.</value>
+  </data>
+  <data name="ARCHIVEORDERS_SUCCESS" xml:space="preserve">
+    <value>Заказы успешно добавлены в базу заказов.</value>
+  </data>
+  <data name="UNARCHIVEORDERS_SUCCESS" xml:space="preserve">
+    <value>Заказы были успешно возвращены из архива.</value>
+  </data>
+  <data name="PAYMENT_STATUS_SUCCESS" xml:space="preserve">
+    <value>Изменения по статусу оплаты были сделаны успешно! Список будет обновлён через некоторое время.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOTIFY_SUCCESS" xml:space="preserve">
+    <value>Вы успешно импортировали {0} клиента(ов). </value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_INVALIDTYPE" xml:space="preserve">
+    <value>Фото должно быть в формате  jpg, gif, bmp или png</value>
+  </data>
+  <data name="ORDER_UPDATESTATUS_TITLE" xml:space="preserve">
+    <value>Заказ изменен</value>
+  </data>
+  <data name="EDITORDER_TITLE" xml:space="preserve">
+    <value>Редактировать заказ</value>
+  </data>
+  <data name="CUSTOMER_SAVESUCCESS_TITLE" xml:space="preserve">
+    <value>Профиль клиента сохранён. </value>
+  </data>
+  <data name="CONFIRM_UPDATEPAYMENTSTATUS_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите изменить статус выбранных заказов?</value>
+  </data>
+  <data name="CONFIRM_UPDATEPAYMENTSTATUS_TITLE" xml:space="preserve">
+    <value>Изменить статус оплаты</value>
+  </data>
+  <data name="PROGRESS_ARCHIVECUSTOMER" xml:space="preserve">
+    <value>Перенести в архив выбранных клиентов</value>
+  </data>
+  <data name="PROGRESS_ARCHIVEORDER" xml:space="preserve">
+    <value>Перенести в архив выбранные заказы</value>
+  </data>
+  <data name="PROGRESS_UNARCHIVECUSTOMER" xml:space="preserve">
+    <value>Вернуть из архива выбранных клиентов</value>
+  </data>
+  <data name="PROGRESS_UNARCHIVEORDER" xml:space="preserve">
+    <value>Вернуть из архива выбранные заказы</value>
+  </data>
+  <data name="PROGRESS_UPDATEPAYMENTSTATUS" xml:space="preserve">
+    <value>Изменение статуса оплаты для выбранных заказов</value>
+  </data>
+  <data name="INVALID_EMAIL" xml:space="preserve">
+    <value>Неверный адрес e-mail</value>
+  </data>
+  <data name="CONFIRM_MARKSHIPPED_BODY" xml:space="preserve">
+    <value>Вы уверены, что хотите отметить выбранный заказ как доставленный? &lt;br/&gt;&lt;br/&gt;&lt;small class="muted"&gt;Вы можете посмотреть или отредактировать этот заказ в любое время.&lt;small/&gt;</value>
+  </data>
+  <data name="CONFIRM_MARKSHIPPED_TITLE" xml:space="preserve">
+    <value>Подтвердить смену статуса заказа на доставленный</value>
+  </data>
+  <data name="MARKSHIPPED_SUCCESS" xml:space="preserve">
+    <value>Заказ был успешно изменён и отмечен как "Доставленный".</value>
+  </data>
+  <data name="NOTIFY_ADDPRODUCT_SUCCESS" xml:space="preserve">
+    <value>Продукция была успешно добавлена.</value>
+  </data>
+  <data name="NOTIFY_UPDATEPRODUCT_SUCCESS" xml:space="preserve">
+    <value>Вы успешно обновили количество</value>
+  </data>
+  <data name="ORDER_EDIT" xml:space="preserve">
+    <value>Редактировать заказ</value>
+  </data>
+  <data name="SORT_FIRSTNAME" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="SORT_LASTNAME" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="SORT_ORDERDATE" xml:space="preserve">
+    <value>Дата заказа</value>
+  </data>
+  <data name="SORT_ORDERSTATUS" xml:space="preserve">
+    <value>Статус заказа</value>
+  </data>
+  <data name="SORT_PROFILEDATE" xml:space="preserve">
+    <value>Профиль дата</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADD" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGE" xml:space="preserve">
+    <value>Соеденить</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIP" xml:space="preserve">
+    <value>Пропустить</value>
+  </data>
+  <data name="REMOVEWISHLIST_SUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RECOMMENDATION_CATEGORY_FRAGRANCE" xml:space="preserve">
+    <value>Аромат</value>
+  </data>
+  <data name="INVALID_DATE" xml:space="preserve">
+    <value>Неверная дата</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_ERROR">
+    <value>Вы должны исправить существующую ошибку перед подтверждением отправки email</value>
+  </data>
+  <data name="SOCIALNETWORK_FACEBOOK">
+    <value>Нажать для добавления в  Facebook</value>
+  </data>
+  <data name="SOCIALNETWORK_OTHER">
+    <value>Нажать для добавления в другую социальную сеть</value>
+  </data>
+  <data name="SOCIALNETWORK_VK">
+    <value>Нажать для добавления в  ВКонтакте</value>
+  </data>
+  <data name="SOCIALNETWORK_TWITTER">
+    <value></value>
+  </data>
+  <data name="ORDER_LOADING" xml:space="preserve">
+    <value>Загрузка заказа…</value>
+  </data>
+</root>

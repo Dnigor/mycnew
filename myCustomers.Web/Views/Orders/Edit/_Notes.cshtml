@@ -1,0 +1,17 @@
+﻿@model EditOrderViewModel
+
+<div class="form-horizontal">
+  <fieldset style="margin-bottom: 20px;">
+    <legend>@Resources.GetString("ORDERNOTES_HEADING")</legend>
+    <div class="control-group">
+      <label class="control-label">@Resources.GetString("ORDERNOTES_LABEL")</label>
+      <div class="controls" style="padding-top: 5px;">
+        <div class="maxchar">
+          <textarea rows="5" cols="80" maxlength="1000" class="input-xxlarge" data-bind="value: notes, valueUpdate: 'keyup', attr: { maxlength: notes.maxCharacterCount }"></textarea>
+          <span data-bind="text: notes.remainingCharacterCount"></span>
+        </div>
+        <small class="muted" style="display:block">@Resources.GetString("ORDER_NOTES_WARNING")</small>
+      </div>
+    </div>
+  </fieldset>
+</div>

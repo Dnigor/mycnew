@@ -1,0 +1,2519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDDELIVERYADDRESS_LABEL" xml:space="preserve">
+    <value>Жаңа мекен-жайды қосу...</value>
+  </data>
+  <data name="ADDORDERNOTES_LABEL" xml:space="preserve">
+    <value>Жеке жазбаларды қосу</value>
+  </data>
+  <data name="ADDPAYMENT_LABEL" xml:space="preserve">
+    <value>Төлем қосу...</value>
+  </data>
+  <data name="ADDRESS_LABEL" xml:space="preserve">
+    <value>Мекен-жайы:</value>
+  </data>
+  <data name="BTN_ADDCUSTOMER" xml:space="preserve">
+    <value>Жаңа клиент</value>
+  </data>
+  <data name="BTN_ADDORDER" xml:space="preserve">
+    <value>Жаңа тапсырыс</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_COMMENTS_LABEL" xml:space="preserve">
+    <value>Комментарийлер</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_DELIVERYPREFERENCE_LABEL" xml:space="preserve">
+    <value>Жеткізудің қалаулы жолдары</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_FREESAMPLES_LABEL" xml:space="preserve">
+    <value>Өнім үлгілері:</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_FREESAMPLES_TEXT" xml:space="preserve">
+    <value>Иә, мен тегін өнім үлгілерін алғым келеді</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value>Сыйлыққа қоса берілген хат:</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_LABEL" xml:space="preserve">
+    <value>Сатып алған кездегі сыйлық</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_TEXT" xml:space="preserve">
+    <value>Иә, мен тапсырыспен бірге тегін сыйлық алғым келеді</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_TITLE" xml:space="preserve">
+    <value>Нұсқаулықтар:</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_ECARD" xml:space="preserve">
+    <value>Электрондық ашықхат жіберу</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_EXPORT" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT" xml:space="preserve">
+    <value>Қағазға басып шығару</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT_LIST" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT_LABELS" xml:space="preserve">
+    <value>Белгілер</value>
+  </data>
+  <data name="FILTER_ANNIVERSARY_LABEL" xml:space="preserve">
+    <value>Мерейтой:</value>
+  </data>
+  <data name="FILTER_BIRTHDAY_LABEL" xml:space="preserve">
+    <value>Туылған күні</value>
+  </data>
+  <data name="CUSTOMERLIST_ADVANCEDSEARCH_ANNIVERSARY_LABEL" xml:space="preserve">
+    <value>мерейтой:</value>
+  </data>
+  <data name="SEARCH_PLACEHOLDER" xml:space="preserve">
+    <value>Іздеу</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_ADDRESS" xml:space="preserve">
+    <value>Мекен-жай</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_LASTORDERED" xml:space="preserve">
+    <value>Соңғы тапсырыс күні</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_NAMEANDEMAIL" xml:space="preserve">
+    <value>Аты және E-mail</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_PHONE" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="CUSTOMERLIST_HELPMODAL_INFORMATIONALTEXT" xml:space="preserve">
+    <value>Егер Кеңесшіге қандай да бір кеңес қажет болған жағдайда, іздеу функциясының қалай жұмыс істейтінін түсіндіретін анықтамалық ақпаратты қосу</value>
+  </data>
+  <data name="CUSTOMERLIST_HELPMODAL_TITLE" xml:space="preserve">
+    <value>Клиентті іздеу</value>
+  </data>
+  <data name="CUSTOMERLIST_NORESULTS_ALERT" xml:space="preserve">
+    <value>Енгізілген іздеу белгілері бойынша бірде-бір клиент табылмады</value>
+  </data>
+  <data name="CUSTOMERLIST_PAGETITLE" xml:space="preserve">
+    <value>Клиенттер</value>
+  </data>
+  <data name="CUSTOMERLIST_ROWDETAIL_ADDORDER_LINK" xml:space="preserve">
+    <value>Тапсырыс қосу</value>
+  </data>
+  <data name="CUSTOMERLIST_ROWDETAIL_ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтой:</value>
+  </data>
+  <data name="CUSTOMERLIST_ROWDETAIL_BIRTHDAY" xml:space="preserve">
+    <value>Туылған күні:</value>
+  </data>
+  <data name="CUSTOMERLIST_SEARCHING" xml:space="preserve">
+    <value>Іздеу...</value>
+  </data>
+  <data name="ADDCUSTOMER_EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ADDCUSTOMER_EMAIL_LINK_TITLE" xml:space="preserve">
+    <value>Электрондық почта адресін қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_FIRSTNAME" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="ADDCUSTOMER_LASTNAME" xml:space="preserve">
+    <value>Тегі</value>
+  </data>
+  <data name="ADDCUSTOMER_MIDDLENAME" xml:space="preserve">
+    <value>Әкесінің аты</value>
+  </data>
+  <data name="ADDCUSTOMER_PHONE" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="ADDCUSTOMER_PHONE_TYPE_LABEL" xml:space="preserve">
+    <value>Түрі</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO" xml:space="preserve">
+    <value>Сурет</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS" xml:space="preserve">
+    <value>Мекен-жай</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_LINK_TITLE" xml:space="preserve">
+    <value>Мекен-жай қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_STREET_TITLE" xml:space="preserve">
+    <value>Көше</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_CITY_PLACEHOLDER" xml:space="preserve">
+    <value>Қала</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_STATE_PLACEHOLDER" xml:space="preserve">
+    <value>Облыс</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_ZIP_PLACEHOLDER" xml:space="preserve">
+    <value>индекс</value>
+  </data>
+  <data name="ADDCUSTOMER_PROFILE_DATE" xml:space="preserve">
+    <value>Профиль жасалған күн</value>
+  </data>
+  <data name="ADDCUSTOMER_SET_PROFILE_DATE" xml:space="preserve">
+    <value>Профиль жасалған күнді белгілеу</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_LINKTITLE" xml:space="preserve">
+    <value>Сурет қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_SAVE_BUTTON" xml:space="preserve">
+    <value>Клиенттің профилін сақтау</value>
+  </data>
+  <data name="DATE_LABEL" xml:space="preserve">
+    <value>Күні</value>
+  </data>
+  <data name="DELIVERYDATE_MISSING" xml:space="preserve">
+    <value>Анықталмаған</value>
+  </data>
+  <data name="DELIVERYADDRESS_MISSING" xml:space="preserve">
+    <value>Таңдалмаған</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_CUSTOMERWILLPICKUP" xml:space="preserve">
+    <value>Алу</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_DELIVERTOHOMEORWORK" xml:space="preserve">
+    <value>Үй / жұмыс</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_OTHER" xml:space="preserve">
+    <value>басқа</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SETUPAPPOINTMENTFORCONSULTATIONANDDELIVERY" xml:space="preserve">
+    <value>Кеңес беру және жеткізу үшін кездесу белгілеу</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_SHIPTOCUSTOMERADDRESS" xml:space="preserve">
+    <value>Клиенттің мекен-жайына жеткізу</value>
+  </data>
+  <data name="DELIVERY_HEADING" xml:space="preserve">
+    <value>Жеткізу </value>
+  </data>
+  <data name="EDIT_ONLINEORDER" xml:space="preserve">
+    <value>Онлайн-тапсырысты редакциялау</value>
+  </data>
+  <data name="EDIT_SALESTICKET" xml:space="preserve">
+    <value>Тапсырыс бланкін редакциялау</value>
+  </data>
+  <data name="FORMAT_FULLNAME_SHORT" xml:space="preserve">
+    <value>{0} {2}</value>
+  </data>
+  <data name="FULFILLMENTOPTION_CDS" xml:space="preserve">
+    <value>Жеткізу қызметі</value>
+  </data>
+  <data name="FULFILLMENTOPTION_MYINVENTORY" xml:space="preserve">
+    <value>Менің қоймам:</value>
+  </data>
+  <data name="FULFILLMENT_LABEL" xml:space="preserve">
+    <value>Орындау:</value>
+  </data>
+  <data name="GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value>Сыйлыққа қоса берілген хат:</value>
+  </data>
+  <data name="GIFTORDER_LABEL" xml:space="preserve">
+    <value>Сыйлыққа тапсырыс беру:</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_FACEBOOK" xml:space="preserve">
+    <value>Fasebook</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_IMPORT_FRIENDS" xml:space="preserve">
+    <value>Достарды импорттау</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_OUTLOOK" xml:space="preserve">
+    <value>Outlook (CSV)</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_PAGETITLE" xml:space="preserve">
+    <value>Клиенттерді импорттау</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SELECT_CUSTOMERS_FROM" xml:space="preserve">
+    <value>Клиенттерді қайдан таңдағыңыз келеді?</value>
+  </data>
+  <data name="ISGIFT_FALSE" xml:space="preserve">
+    <value>Жоқ</value>
+  </data>
+  <data name="ISGIFT_LABEL" xml:space="preserve">
+    <value>Сыйлық:</value>
+  </data>
+  <data name="ISGIFT_TRUE" xml:space="preserve">
+    <value>Иә</value>
+  </data>
+  <data name="MONTHLIST_SELECT" xml:space="preserve">
+    <value>Таңдаңыз</value>
+  </data>
+  <data name="NAV_CUSTOMERS" xml:space="preserve">
+    <value>Клиенттер</value>
+  </data>
+  <data name="NAV_LOGOUT" xml:space="preserve">
+    <value>Шығу</value>
+  </data>
+  <data name="NAV_ORDERS" xml:space="preserve">
+    <value>Тапсырыстар</value>
+  </data>
+  <data name="INTOUCH_PROFILE" xml:space="preserve">
+    <value>Профиль</value>
+  </data>
+  <data name="NAV_TASKS" xml:space="preserve">
+    <value>Ескертпе</value>
+  </data>
+  <data name="NEW_SALESTICKET" xml:space="preserve">
+    <value>Жаңа сұраным </value>
+  </data>
+  <data name="ORDERDATE_LABEL" xml:space="preserve">
+    <value>Тапсырыс берілген күн:</value>
+  </data>
+  <data name="ORDERFOLLOWUP_HEADING" xml:space="preserve">
+    <value>Орындау туралы ескертпе</value>
+  </data>
+  <data name="ORDERLIST_ADVANCEDSEARCH_DELETED_LABEL" xml:space="preserve">
+    <value>Жойылған</value>
+  </data>
+  <data name="ORDERLIST_ADVANCEDSEARCH_ORDERDATE_LABEL" xml:space="preserve">
+    <value>Тапсырыс берілген күні:</value>
+  </data>
+  <data name="ORDERLIST_ADVANCEDSEARCH_PRODUCT_LABEL" xml:space="preserve">
+    <value>бұл тауар:</value>
+  </data>
+  <data name="ORDERLIST_ADVANCEDSEARCH_PRODUCT_PLACEHOLDER" xml:space="preserve">
+    <value>TimeWise® "Сиқырлы жиынтық"</value>
+  </data>
+  <data name="ORDERLIST_AMOUNT" xml:space="preserve">
+    <value>Сомасы</value>
+  </data>
+  <data name="ORDERLIST_CUSTOMER" xml:space="preserve">
+    <value>Клиент</value>
+  </data>
+  <data name="ORDERLIST_DATE" xml:space="preserve">
+    <value>Күні</value>
+  </data>
+  <data name="ORDERLIST_NORESULTS" xml:space="preserve">
+    <value>Енгізілген іздеу белгілері бойынша бірде-бір тапсырыс табылмады</value>
+  </data>
+  <data name="ORDERLIST_PAYMENT" xml:space="preserve">
+    <value>Төлем</value>
+  </data>
+  <data name="ORDERLIST_SOURCE" xml:space="preserve">
+    <value>Шығу көзі</value>
+  </data>
+  <data name="ORDERLIST_STATUS" xml:space="preserve">
+    <value>Статусы</value>
+  </data>
+  <data name="ORDERLIST_TITLE" xml:space="preserve">
+    <value>Тапсырыстар</value>
+  </data>
+  <data name="ORDERNOTES_HEADING" xml:space="preserve">
+    <value>Тапсырысты белгілеу</value>
+  </data>
+  <data name="ORDERNOTES_LABEL" xml:space="preserve">
+    <value>Жазбалар:</value>
+  </data>
+  <data name="ORDERNUMBER_LABEL" xml:space="preserve">
+    <value>Тапсырыс номері:</value>
+  </data>
+  <data name="ORDERPAYMENTS_LABEL" xml:space="preserve">
+    <value>Төлемдер:</value>
+  </data>
+  <data name="ORDERPAYMENT_STATUS" xml:space="preserve">
+    <value>Статус:</value>
+  </data>
+  <data name="FILTER_ORDERTYPE_LABEL" xml:space="preserve">
+    <value>Тапсырыс жолы:</value>
+  </data>
+  <data name="ORDERSOURCE_ONLINE" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="ORDERSOURCE_SALESTICKET" xml:space="preserve">
+    <value>Сұраным</value>
+  </data>
+  <data name="FILTER_ORDERSTATUS_LABEL" xml:space="preserve">
+    <value>Тапсырыстың статусы:</value>
+  </data>
+  <data name="ORDERSTATUS_SUBMITTED" xml:space="preserve">
+    <value>Жаңа</value>
+  </data>
+  <data name="ORDERSTATUS_UNDERREVIEW" xml:space="preserve">
+    <value>Күту</value>
+  </data>
+  <data name="ORDERSTATUS_PROCESSED" xml:space="preserve">
+    <value>Өңделген</value>
+  </data>
+  <data name="ORDERSTATUS_SHIPPEDDELIVERED" xml:space="preserve">
+    <value>Жеткізілді</value>
+  </data>
+  <data name="ORDER_NOPRODUCTS" xml:space="preserve">
+    <value>Бұл тапсырыста өнім жоқ</value>
+  </data>
+  <data name="PAGER_NEXT" xml:space="preserve">
+    <value>Келесі</value>
+  </data>
+  <data name="PAGER_PAGESIZE_LABEL" xml:space="preserve">
+    <value>Беттегі жол саны</value>
+  </data>
+  <data name="PAGER_PREVIOUS" xml:space="preserve">
+    <value>Алдыңғы</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_COMPLETED" xml:space="preserve">
+    <value>Толығымен төленген</value>
+  </data>
+  <data name="FILTER_ORDERPAYMENTSTATUS_LABEL" xml:space="preserve">
+    <value>Төлем статусы:</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_PARTIAL" xml:space="preserve">
+    <value>Жартылай төленген</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_NA" xml:space="preserve">
+    <value>Төленбеген</value>
+  </data>
+  <data name="PAYMENTS_LABEL" xml:space="preserve">
+    <value>Төлемдер:</value>
+  </data>
+  <data name="PAYMENTS_MISSING" xml:space="preserve">
+    <value>Көрсетілмеген</value>
+  </data>
+  <data name="PAYMENTTYPE_CASH" xml:space="preserve">
+    <value>Қолма-қол </value>
+  </data>
+  <data name="PAYMENTTYPE_CHECK" xml:space="preserve">
+    <value>Чек</value>
+  </data>
+  <data name="PAYMENTTYPE_CREDITCARD" xml:space="preserve">
+    <value>Кредиттік карточка</value>
+  </data>
+  <data name="PAYMENT_HEADING" xml:space="preserve">
+    <value>Төлем</value>
+  </data>
+  <data name="PHONETYPE_HOME" xml:space="preserve">
+    <value>Үй</value>
+  </data>
+  <data name="PHONETYPE_MOBILE" xml:space="preserve">
+    <value>Ұялы </value>
+  </data>
+  <data name="PHONETYPE_OTHER" xml:space="preserve">
+    <value>Басқа</value>
+  </data>
+  <data name="PHONETYPE_WORK" xml:space="preserve">
+    <value>Жұмыс</value>
+  </data>
+  <data name="PRIMARY_BADGE" xml:space="preserve">
+    <value>негізгі</value>
+  </data>
+  <data name="PRODUCTLIST_FOOTER_TOTAL" xml:space="preserve">
+    <value>Бөлшек сауда бағасы</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_NAME" xml:space="preserve">
+    <value>Атауы</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_PARTNUMBER" xml:space="preserve">
+    <value>Өнім коды</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_QUANTITY" xml:space="preserve">
+    <value>Саны</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_REORDERREMINDER" xml:space="preserve">
+    <value>Ескертпелерді ретке келтіру</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_RETAILTOTAL" xml:space="preserve">
+    <value>Барлығы бөлшек бағада</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Ұсынылған бөлшек бағасы</value>
+  </data>
+  <data name="PRODUCTS_HEADING" xml:space="preserve">
+    <value>Өнім</value>
+  </data>
+  <data name="SELECT_NONE" xml:space="preserve">
+    <value>--Таңдаңыз--</value>
+  </data>
+  <data name="SITE_NAME" xml:space="preserve">
+    <value>Менің клиенттерім</value>
+  </data>
+  <data name="REMINDERLIST_TITLE" xml:space="preserve">
+    <value>Ескертпе</value>
+  </data>
+  <data name="REMINDERLIST_PAGETITLE" xml:space="preserve">
+    <value>Ескертпе</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ALL" xml:space="preserve">
+    <value>Барлық категориялар</value>
+  </data>
+  <data name="REMINDERLIST_FILTERTITLE" xml:space="preserve">
+    <value>Жақындағы ескертпелерді көру</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_TITLE" xml:space="preserve">
+    <value>Атауы:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_DESCRIPTION" xml:space="preserve">
+    <value>Сипаттамасы:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_DUEON" xml:space="preserve">
+    <value>Өнім түгесілуге жақын</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_FORCUSTOMER" xml:space="preserve">
+    <value>Клиент үшін:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_SAVE" xml:space="preserve">
+    <value>Ескертпені сақтау</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_CLICK" xml:space="preserve">
+    <value>Мерзімі өткен ескертпелердің барлығын көру үшін</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HERE" xml:space="preserve">
+    <value>осы жерді</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_VIEWALL" xml:space="preserve">
+    <value>басыңыз</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HIDEALL" xml:space="preserve">
+    <value>мерзімі өткен ескертпелердің барлығын жасыру үшін</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_SELECTALL" xml:space="preserve">
+    <value>Жіберілген ескертпелердің барлығын орындалған ретінде белгілеу</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HIDE" xml:space="preserve">
+    <value>Мерзімі өткен ескертпелерді жасыру</value>
+  </data>
+  <data name="REMINDERLIST_VIEWMORE" xml:space="preserve">
+    <value>тағы көру...</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_TITLE" xml:space="preserve">
+    <value>Атауы:</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_DESCRIPTION" xml:space="preserve">
+    <value>Сипаттамасы:</value>
+  </data>
+  <data name="REMINDERLIST_WITHOUTDUEDATE" xml:space="preserve">
+    <value>Күні көрсетілмеген ескертпе</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_DUEON" xml:space="preserve">
+    <value>Өнім түгесілуге жақын</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_SAVE" xml:space="preserve">
+    <value>Өзгерістерді сақтау</value>
+  </data>
+  <data name="REMINDERLIST_UPDATESUCCESS" xml:space="preserve">
+    <value>Ескертпе жаңартылды!</value>
+  </data>
+  <data name="REMINDERLIST_ADDSUCCESS" xml:space="preserve">
+    <value>Ескертпе қосылды!</value>
+  </data>
+  <data name="REMINDERLIST_ACTION_TITLEISREQUIRED" xml:space="preserve">
+    <value>Атауы міндетті алаңша болып табылады</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER" xml:space="preserve">
+    <value>Жаңа ескертпе</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_PREFERRED_LANGUAGE" xml:space="preserve">
+    <value>Сөйлейтін тілді қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_LANGUAGE" xml:space="preserve">
+    <value>Тіл</value>
+  </data>
+  <data name="ADDCUSTOMER_SELECT_LANGUAGE" xml:space="preserve">
+    <value>Тілді таңдаңыз</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_UPLOADFILE" xml:space="preserve">
+    <value>КЛИЕНТТЕРДІ ИМПОРТТАУ</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDOTHERDATES" xml:space="preserve">
+    <value>Басқа күндер мен оқиғаларды қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_ANNIVERSARY" xml:space="preserve">
+    <value>Үйленген күні</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_ANOTHER_SOTIALNET" xml:space="preserve">
+    <value>Тағы қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_BIRTHDAY" xml:space="preserve">
+    <value>Клиенттің туылған күнін қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_NOTE" xml:space="preserve">
+    <value>Клиент туралы жазба қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_OCCUPATION" xml:space="preserve">
+    <value>Айналысатын жұмысының түрін немесе қызметін қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_NOTE" xml:space="preserve">
+    <value>Жазба және пікір</value>
+  </data>
+  <data name="ADDCUSTOMER_OCCUPATION" xml:space="preserve">
+    <value>Айналысатын ісі немесе жұмыс орны</value>
+  </data>
+  <data name="ADDCUSTOMER_OCCUPATION_DESCRIPTION" xml:space="preserve">
+    <value>Атаудың сипаттамасы</value>
+  </data>
+  <data name="ADDCUSTOMER_IMPORTANTDATES" xml:space="preserve">
+    <value>Маңызды күн</value>
+  </data>
+  <data name="ADDCUSTOMER_SHOWMORE" xml:space="preserve">
+    <value>Басқа алаңшаларды көрсету (сіз оларды кейінірек толтыра аласыз)</value>
+  </data>
+  <data name="ADDCUSTOMER_SOTIALNET" xml:space="preserve">
+    <value>Әлеуметтік желілер</value>
+  </data>
+  <data name="PAYMENTTYPE_PERSONALCHECK" xml:space="preserve">
+    <value>Атаулы чек</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_INTERESTS" xml:space="preserve">
+    <value>Клиенттің қызығушылықтарын қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_SHOPPREF" xml:space="preserve">
+    <value>Сатып алудың қалаулы әдісі</value>
+  </data>
+  <data name="ADDCUSTOMER_GENDER" xml:space="preserve">
+    <value>Жынысы</value>
+  </data>
+  <data name="ADDCUSTOMER_GENDER_FEMALE" xml:space="preserve">
+    <value>Әйел</value>
+  </data>
+  <data name="ADDCUSTOMER_GENDER_MALE" xml:space="preserve">
+    <value>Ер</value>
+  </data>
+  <data name="ADDCUSTOMER_INTERESTS" xml:space="preserve">
+    <value>Қызығады</value>
+  </data>
+  <data name="ADDCUSTOMER_SELECT_GENDER" xml:space="preserve">
+    <value>Клиенттің жынысын таңдаңыз</value>
+  </data>
+  <data name="ADDCUSTOMER_SHOPPREF" xml:space="preserve">
+    <value>Сатып алудың қалаулы әдісі</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_CONTACTBY" xml:space="preserve">
+    <value>Байланыс әдісін қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_CONTACTFRIQUENCY" xml:space="preserve">
+    <value>Клиентпен қаншалықты жиі хабарласу керек</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_CONTACTTIME" xml:space="preserve">
+    <value>Хабарласуға қолайлы уақытты қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_PLACEOFWORK" xml:space="preserve">
+    <value>Жұмыс орнын қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_REFERREDBY" xml:space="preserve">
+    <value>Клиентке жолдау</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_SPOUSE" xml:space="preserve">
+    <value>Жұбайы туралы мәліметтер</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_SUBSCRIPTION" xml:space="preserve">
+    <value>Жіберілімдерге жазылуды қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTBY" xml:space="preserve">
+    <value>Хабарласу</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTFRIQUENCY" xml:space="preserve">
+    <value>Жиілік</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTTIME" xml:space="preserve">
+    <value>Хабарласуға қолайлы уақыт</value>
+  </data>
+  <data name="ADDCUSTOMER_PLACEOFWORK" xml:space="preserve">
+    <value>Жұмыс орны</value>
+  </data>
+  <data name="ADDCUSTOMER_PLACEOFWORK_PLACEHOLDER" xml:space="preserve">
+    <value>Коммерциялық кәсіпорын орналасқан жер</value>
+  </data>
+  <data name="ADDCUSTOMER_REFERREDBY" xml:space="preserve">
+    <value>Шақырылды</value>
+  </data>
+  <data name="ADDCUSTOMER_REFERREDBY_NAME" xml:space="preserve">
+    <value>Класс иесінің немесе құрбысының аты</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE" xml:space="preserve">
+    <value>Жұбайы</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_NAME" xml:space="preserve">
+    <value>аты</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_PHONENUMBER" xml:space="preserve">
+    <value>телефон номері</value>
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION" xml:space="preserve">
+    <value>Жазылымдар</value>
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION_BEAUTY" xml:space="preserve">
+    <value>Сұлулық әлемінен жаңалықтар</value>
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION_ECARD" xml:space="preserve">
+    <value>Электрондық ашықхаттар және хаттар</value>
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION_PRODREORDER" xml:space="preserve">
+    <value>Қайтара тапсырыс беру туралы ескертпе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGETITLE" xml:space="preserve">
+    <value>Клиент туралы толық ақпарат</value>
+  </data>
+  <data name="IMPORTLIST_PAGETITLE" xml:space="preserve">
+    <value>Импорттау тізімі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDANOTEABOUT" xml:space="preserve">
+    <value>Жазба қосу:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDTHISNOTE" xml:space="preserve">
+    <value>Қосу</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_CLICKTOEDIT" xml:space="preserve">
+    <value>Редакциялау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_DELETE" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_DELETENOTE" xml:space="preserve">
+    <value>Жазбаны алып тастау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_EDITNOTE" xml:space="preserve">
+    <value>Жазбаны редакциялау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_SAVE" xml:space="preserve">
+    <value>Сақтау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_RETURN" xml:space="preserve">
+    <value>кері</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_ACTIVITYSUMMARY" xml:space="preserve">
+    <value>Әрекет нәтижелері</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFORMATION" xml:space="preserve">
+    <value>Клиент туралы ақпарат</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_NOTES" xml:space="preserve">
+    <value>Жазбалар</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_ORDERS" xml:space="preserve">
+    <value>Тапсырыстар</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED" xml:space="preserve">
+    <value>Бұрынырақ тапсырыс берілгендер</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRODUCTS" xml:space="preserve">
+    <value>Өнім</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDED" xml:space="preserve">
+    <value>Ұсынылатындар</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST" xml:space="preserve">
+    <value>Қалаулар парағы</value>
+  </data>
+  <data name="EXPORTLIST_DOCUMENTTITLE" xml:space="preserve">
+    <value>Клиенттер</value>
+  </data>
+  <data name="EXPORTLIST_DOWNLOADFILENAME" xml:space="preserve">
+    <value>Экспорт-парақ</value>
+  </data>
+  <data name="EXPORTLIST_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Бет &amp;P (&amp;N)</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAILSUBJECT" xml:space="preserve">
+    <value>Тапсырысты растау</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTDELIVERYSTATEMENT" xml:space="preserve">
+    <value>Жеткізудің қолайлы уақытын ұйымдастыру үшін менімен хабарласуыңызды өтінемін.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTPAYMENTSTATEMENT" xml:space="preserve">
+    <value>Келесі төлеміңізді өңдеу үшін маған сіздің көмегіңіз қажет. Өтінемін,менімен хабарласыңыз</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTPROCESSINGSTATEMENT" xml:space="preserve">
+    <value>Тапсырысты ары қарай өңдеу үшін маған сіздің көмегіңіз қажет.  Өтінемін, менімен хабарласыңыз.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEASDESIREDSTATEMENT" xml:space="preserve">
+    <value>Мен сіздің жұмысбастылығыңызды бағалаймын және сіздің уақытыңызды, сатып алудағы қалауларыңызды құрметтеймін. Егер сіз өзіңізге жеке қызмет көрсетілгенін, соның ішінде теріге күтім жасау және сұлулық туралы кеңестер алуды қалайтын болсаңыз, менімен хабарласуыңызды өтінемін.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERISGIFTSTATEMENT" xml:space="preserve">
+    <value>Бұл тапсырыс басқа біреуге сыйлыққа арналған ба? Олай болса, сыйлық жіберілгені туралы хабарлап, қуантатын жеке хабарлама жіберу үшін төмендегі батырманы басыңыз</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERPROCESSEDSTATEMENT" xml:space="preserve">
+    <value>Сіздің тапсырысыңыз өңделеді.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERSHIPPEDSTATEMENT" xml:space="preserve">
+    <value>Сіздің тапсырысыңыз жіберілді</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERTOTAL_STATEMENTFORMAT" xml:space="preserve">
+    <value>Сіздің тапсырысыңыздың жалпы сомасы {1} {0}.</value>
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_PROPOSEDDELIVERYSCHEDULESTATEMENTFORMAT" xml:space="preserve">
+    <value>Мен сіздің тапсырысыңызды  {0} -ден {1}-ге дейін жеткізе аламын. Сізге бұл уақыт ыңғайлы ма? </value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ADDRESSOFSELLER" xml:space="preserve">
+    <value>Сатушының мекен-жайы</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ADJUSTMENTSLABEL" xml:space="preserve">
+    <value>Өзгерістер:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_AMOUNTHEADER" xml:space="preserve">
+    <value>Саны</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_BUYERSSIGNATURELABEL" xml:space="preserve">
+    <value>Сатып алушының мәмілеге қол қойған күні</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_CANCELTRANSACTIONTEXT" xml:space="preserve">
+    <value>ОСЫ АРҚЫЛЫ МЕН БҰЛ ТРАНЗАКЦИЯНЫ ТОҚТАТАМЫН</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_DATEHEADER" xml:space="preserve">
+    <value>Күні</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_DATELABEL" xml:space="preserve">
+    <value>(Күні)</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ESTIMATEDVALUELABEL" xml:space="preserve">
+    <value>Ұсынылатын бөлшек сауда бағасы</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_MARYKAYCONTACTTEXT" xml:space="preserve">
+    <value>«Мэри Кэй (Қазақстан)» ЖШС</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NAMEOFSELLERLABEL" xml:space="preserve">
+    <value>Сатушының аты</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NOTICEOFCANCELLATIONTEXT" xml:space="preserve">
+    <value>жою туралы хабарлама (төлем күнін енгізіңіз)</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ORDERNUMBERLABEL" xml:space="preserve">
+    <value>Тапсырыс #:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH1" xml:space="preserve">
+    <value>Біз өнімдеріміздің сапасына 100 пайыздық кепілдік береміз. Mary Kay® өнімдерін пайдаланатын тұтынушылар әлемдегі ең ниеттес тұтынушылар болып табылады, себебі Mary Kay® өнімдері қауіпсіз, тиімді болып табылады және қалаған нәтижені береді. Сұлулық жөніндегі Тәуелсіз Кеңесшілер сататын өнім үшін «Мэри Кэй (Қазақстан)» ЖШС кепіл болып табылады. Егер қандай да бір себеппен сізді қандай да бір Mary Kay® өнімі қанағаттандырмаса, онда ол сондай өнімге немесе басқасына тегін ауыстырылады немесе сіз ол өнімді сұлулық жөніндегі Тәуелсіз Кеңесшіге қайтарып бергеннен кейін оның толық бағасы қайтарылады.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH3" xml:space="preserve">
+    <value>Өнімді ауыстыру немесе қайтару мәселесіне байланысты ақпарат алу үшін сіз 8-800-080-52-55 номері арқылы клиенттерге арналған анықтамалық қызметке хабарласа аласыз.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH5" xml:space="preserve">
+    <value>Егер сіз келісім-шартты жоятын болсаңыз, мәміле аясында жасалған кез келген төлемді (ақшалай немесе натуралды түрде), өзіңіз қол қойған кез келген құжатты сатушы осы жою туралы хабарламаны алғаннан кейін 10 ЖҰМЫС КҮНІ ішінде қайтарып береді және сол транзакцияны қамтамасыз ететін кез келген кепіл жойылады </value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH6" xml:space="preserve">
+    <value>Егер сіз келісім-шартты жойған болсаңыз, онда сатушының осы келісім-шарт аясында жеткізген барлық тауарларын өзіңіз оларды алған күйінде алып кетуіне рұқсат етуіңіз керек немесе оларды сатушының нұсқаулықтарына сәйкес, оның есебінен өзіңіз апарып бере аласыз</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH8" xml:space="preserve">
+    <value>Бұл тапсырысты жою үшін сатушының атына және заңды мекен-жайға жою туралы хабарламаның қол қойылған (күні көрсетілген) көшірмесін немесе кез келген басқа жазбаша хабарламаны ТАПСЫРЫСТЫҢ ТӨМЕНДЕ КӨРСЕТІЛГЕН КҮНІНЕН КЕЙІНГІ ҮШ ЖҰМЫС КҮНІНЕН КЕШІКТІРМЕЙ жіберіңіз.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRICEDISCLAIMER" xml:space="preserve">
+    <value>* Ұсынылатын бөлшек бағалар</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRICEHEADER" xml:space="preserve">
+    <value>Бағасы*</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRODUCTNAMEHEADER" xml:space="preserve">
+    <value>Өнімнің атауы</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_QTYHEADER" xml:space="preserve">
+    <value>Саны</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SALESTAXLABEL" xml:space="preserve">
+    <value>ҚҚС:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SATISFACTIONGUARANTEEHEADER" xml:space="preserve">
+    <value>Mary Kay® Сапа кепілдігі</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SOLDBYLABEL" xml:space="preserve">
+    <value>Кім сатты</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SOLDTOLABEL" xml:space="preserve">
+    <value>Кімге сатты</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_TOTALLABEL" xml:space="preserve">
+    <value>Барлығы:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_TRADEMARKTEXT" xml:space="preserve">
+    <value>© 2002, 2004, 2005 Mary Kay Inc.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_WORKSHEETHEADER_CONFIRMATIONNUMBER_FORMAT" xml:space="preserve">
+    <value>Тапсырыс #:</value>
+  </data>
+  <data name="PRINTLIST_DOCUMENTTITLE" xml:space="preserve">
+    <value>Клиенттер</value>
+  </data>
+  <data name="PRINTLIST_DOWNLOADFILENAME" xml:space="preserve">
+    <value>Экспорт-парағы</value>
+  </data>
+  <data name="PRINTLIST_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Бет &amp;P (&amp;N)</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDORDER" xml:space="preserve">
+    <value>Тапсырыс қосу</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDRESSES" xml:space="preserve">
+    <value>Мекен-жайлар:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDRESSES_PRIMARY" xml:space="preserve">
+    <value>Бірінші</value>
+  </data>
+  <data name="CUSTOMERDETAIL_CONTACTINFO" xml:space="preserve">
+    <value>Байланыс ақпараты</value>
+  </data>
+  <data name="CUSTOMERDETAIL_CUSTOMERSINCE" xml:space="preserve">
+    <value>Клиент профилін толтырған күн:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_DELETECUSTOMER" xml:space="preserve">
+    <value>Клиентті алып тастау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_EDITCUSTOMER" xml:space="preserve">
+    <value>Клиенттің профилін редакциялау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_EMAIL" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_HIDECUSTOMERSUBSCRIPTIONS" xml:space="preserve">
+    <value>Жазылымдарды жасыру</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NEWVIRTUALMAKEOVER" xml:space="preserve">
+    <value>Жаңа Виртуалды макияж:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ORDERSUNAVAILABLEFORDELETEDCUSTOMERS" xml:space="preserve">
+    <value>Алынып тасталған клиенттер тапсырыс бере алмайды</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_ORDERSPAGETEXT" xml:space="preserve">
+    <value>Тапсырыстар - бет</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PHONE" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REFERREDBY" xml:space="preserve">
+    <value>Шақырылды</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_NOPREVIOUSLYORDEREDPRODUCTS" xml:space="preserve">
+    <value>Клиент бұрын тапсырыстар берген жоқ</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS" xml:space="preserve">
+    <value>Бұрын тапсырыс берілген өнім</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value>Өнім туралы ақпаратты қарау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_NAME" xml:space="preserve">
+    <value>аты</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_ORDERDATE" xml:space="preserve">
+    <value> Тапсырыс күні:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_PARTNUMBER" xml:space="preserve">
+    <value>Өнім коды</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Ұсынылатын баға</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_AMOUNT" xml:space="preserve">
+    <value>Сомасы</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_CLICKTOVIEWORDERDETAILS" xml:space="preserve">
+    <value>Тапсырыстың егжей-тегжейін қарау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_CONFIRMATIONNUMBER" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_DATE" xml:space="preserve">
+    <value>Күні</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_DETAILS" xml:space="preserve">
+    <value>егжей-тегжейі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_NOORDERS" xml:space="preserve">
+    <value>Клиенттің тапсырыстары жоқ</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_PAYMENT" xml:space="preserve">
+    <value>Төлем</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_STATUS" xml:space="preserve">
+    <value>Статусы</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS" xml:space="preserve">
+    <value>Ұсынылған өнім</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value>Өнім туралы ақпаратты қарау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_NAME" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_NOPRODUCTS" xml:space="preserve">
+    <value>Ұсыныстар табылған жоқ</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_PARTNUMBER" xml:space="preserve">
+    <value>Өнім коды</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Ұсынылатын баға</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value>Өнім туралы ақпаратты қарау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_NAME" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_NOPRODUCTS" xml:space="preserve">
+    <value>Бұл клиенттің сақтаған қалаулар парағы жоқ. Өтінеміз, клиентіңіздің орнына "Қалаулар парағына қосу" батырмасын басыңыз немесе ол оны сіздің Жеке бетіңізде өзі жасай алады</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_PARTNUMBER" xml:space="preserve">
+    <value>Өнім коды</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_PRODUCTS" xml:space="preserve">
+    <value>Қалаулар парағындағы өнім</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Ұсынылатын баға</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_WISHLIST" xml:space="preserve">
+    <value>Қалаулар парағы</value>
+  </data>
+  <data name="CUSTOMERDETAIL_UNDELETECUSTOMER" xml:space="preserve">
+    <value>Клиентті қайтару</value>
+  </data>
+  <data name="CUSTOMERDETAIL_VIEWCUSTOMERSUBSCRIPTIONS" xml:space="preserve">
+    <value>Клиенттің жазылымдарын көру</value>
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDIN" xml:space="preserve">
+    <value>Таңдалды</value>
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDOUTBYCONSULTANT" xml:space="preserve">
+    <value>Бас тарту</value>
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDOUTBYCUSTOMER" xml:space="preserve">
+    <value>Бас тарту</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_BEAUTENEWS" xml:space="preserve">
+    <value>Сұлулық әлемінен жаңалық</value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_MKECARDS" xml:space="preserve">
+    <value>Электрондық ашықхаттар </value>
+  </data>
+  <data name="SUBSCRIPTIONTYPE_PRODUCTREORDERREMINDER" xml:space="preserve">
+    <value>Қайтара тапсырыс беру туралы ескертпе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_BESTDAYSTOREACHME" xml:space="preserve">
+    <value>Менімен хабарласуға қолайлы күн:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_BESTTIMETOREACHME" xml:space="preserve">
+    <value>Менімен хабарласуға қолайлы уақыт:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTPERSONALINFO" xml:space="preserve">
+    <value>Байланыс / Жеке ақпарат</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_IDLIKETOLEARNMOREABOUT" xml:space="preserve">
+    <value>Мен мыналар туралы толығырақ білгім келеді:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_ILIKETOSHOP" xml:space="preserve">
+    <value>Мен сатып алғым келеді:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_IPREFERTOHEARFROMMYCONSULTANT" xml:space="preserve">
+    <value>Өзімнің сұлулық жөніндегі Кеңесшімнен естігім келеді:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYEMPLOYERIS" xml:space="preserve">
+    <value>Жұмыс орны:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYGENDERIS" xml:space="preserve">
+    <value>Менің жынысым:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYOCCUPATIONIS" xml:space="preserve">
+    <value>Менің шұғылданатын ісім:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYSPOUSESPECIALSOMEONEIS" xml:space="preserve">
+    <value>Менің жұбайым/жақын адамым:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PREFERREDLANGUAGE" xml:space="preserve">
+    <value>Мен сөйлейтін тіл:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PREFERREDMETHODSOFCONTACT" xml:space="preserve">
+    <value>Маған қолайлы байланыс түрі:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SOCIAL" xml:space="preserve">
+    <value>Әлеуметтік</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASIONS" xml:space="preserve">
+    <value>Жақын арадағы оқиғалар:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_YOUMAYCONTAACTSPOUSESPECIALSOMEONEHIMHER" xml:space="preserve">
+    <value>Сіз бұл адамнан сыйлықтар идеясы туралы сұрай аласыз</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_YOUMAYCONTACTSPOUSESPECIALSOMEONE" xml:space="preserve">
+    <value>Сіз менің жұбайымнан/жақынымнан сыйлықтар идеясы туралы сұрай аласыз</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_FRIDAY" xml:space="preserve">
+    <value>Жұма</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_MONDAY" xml:space="preserve">
+    <value>Дүйсенбі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_SATURDAY" xml:space="preserve">
+    <value>Сенбі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_SUNDAY" xml:space="preserve">
+    <value>Жексенбі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_THURSDAY" xml:space="preserve">
+    <value>Бейсенбі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_TUESDAY" xml:space="preserve">
+    <value>Сейсенбі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTDAYS_WEDNESDAY" xml:space="preserve">
+    <value>Сәрсенбі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_EVERYTHREEMONTHS" xml:space="preserve">
+    <value>Үш ай сайын</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_EVERYTWOMONTHS" xml:space="preserve">
+    <value>Екі ай сайын</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_MONTHLY" xml:space="preserve">
+    <value>Ай сайын</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_ONLYWHENIAMREADY" xml:space="preserve">
+    <value>Мен дайын кезде ғана</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_WHENNEWPRODUCTSAREAVAILABLE" xml:space="preserve">
+    <value>Жаңа өнімді алуға болатын кезде</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_PHONE" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_SOCIAL" xml:space="preserve">
+    <value>Әлеуметтік медиа</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_STANDARDPOST" xml:space="preserve">
+    <value>Хат</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTTIME_AM" xml:space="preserve">
+    <value>Түске дейін</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTTIME_PM" xml:space="preserve">
+    <value>Түстен кейін</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_GENDER_FEMALE" xml:space="preserve">
+    <value>Әйел</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_GENDER_MALE" xml:space="preserve">
+    <value>Ер</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_BOOKMARK" xml:space="preserve">
+    <value>Қосымша бет</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_FACEBOOK" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_GOOGLE" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_LINKEDIN" xml:space="preserve">
+    <value>Linked in</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_OTHER" xml:space="preserve">
+    <value>басқа</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_PINTEREST" xml:space="preserve">
+    <value>Pinterest</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_PROFILEIMAGE" xml:space="preserve">
+    <value>Профильдің суреті</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_TWITTER" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_VK" xml:space="preserve">
+    <value>Вконтакте</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_YOUTUBE" xml:space="preserve">
+    <value>YouTube</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_INPERSON" xml:space="preserve">
+    <value>Жеке</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_ONLINE" xml:space="preserve">
+    <value>OnIine</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_PARTY" xml:space="preserve">
+    <value>Класста</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_PHONE" xml:space="preserve">
+    <value>Телефон арқылы</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтой</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_BIRTHDAY" xml:space="preserve">
+    <value>Туылған күні</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_GRADUATION" xml:space="preserve">
+    <value>Оқуды аяқтау</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_NEWBABY" xml:space="preserve">
+    <value>Сәбидің дүниеге келуі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_NEWJOB" xml:space="preserve">
+    <value>Жаңа жұмыс</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_OTHER" xml:space="preserve">
+    <value>басқа</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_VACATION" xml:space="preserve">
+    <value>еңбек демалысы</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_WEDDING" xml:space="preserve">
+    <value>үйлену тойы</value>
+  </data>
+  <data name="DASHBOARD_CUSTOMERS" xml:space="preserve">
+    <value>Клиенттер</value>
+  </data>
+  <data name="DASHBOARD_CUSTOMERSTEXT" xml:space="preserve">
+    <value>Клиенттеріңіздің тізімін қарап отырыңыз және клиенттеріңіздің профиліндегі ақпаратты толықтырып немесе редакциялап отырыңыз, телефон номерлерін, мекен-жайларын, электрондық почта адрестерін, қалауларын және тағы басқаларды қоса алғанда</value>
+  </data>
+  <data name="DASHBOARD_MANAGECUSTOMERS" xml:space="preserve">
+    <value>Клиенттер тізімін басқару</value>
+  </data>
+  <data name="DASHBOARD_MANAGEORDERS" xml:space="preserve">
+    <value>Тапсырыстарды басқару</value>
+  </data>
+  <data name="DASHBOARD_MANAGEREMINDERS" xml:space="preserve">
+    <value>Ескертпелерді басқару</value>
+  </data>
+  <data name="DASHBOARD_ORDERS" xml:space="preserve">
+    <value>Тапсырыстар</value>
+  </data>
+  <data name="DASHBOARD_ORDERSTEXT" xml:space="preserve">
+    <value> Жеке сайт/«MyMK сайты» арқылы алған сұранымдарыңыз бен тапсырыстарыңызды  басқарыңыз</value>
+  </data>
+  <data name="DASHBOARD_PAGETITLE" xml:space="preserve">
+    <value>Аспаптар панелі</value>
+  </data>
+  <data name="DASHBOARD_REMINDERS" xml:space="preserve">
+    <value>Ескертпе</value>
+  </data>
+  <data name="DASHBOARD_REMINDERSTEXT" xml:space="preserve">
+    <value>Ескертпелер сіздің әрқашан да бизнестегі табыс биігінде болуыңызға көмектеседі! Оған қосымша, біз сіз үшін бірқатар ескертпелерді автоматты түрде жасай аламыз.</value>
+  </data>
+  <data name="DASHBOARD_TITLE" xml:space="preserve">
+    <value>аспаптар панелі</value>
+  </data>
+  <data name="DASHBOARD_WELCOME" xml:space="preserve">
+    <value>«Менің клиенттерім» қосымшасына қош келдіңіз!</value>
+  </data>
+  <data name="DASHBOARD_WELCOMETEXT" xml:space="preserve">
+    <value>Клиенттер тізімін және тапсырыстар туралы ақпаратты бір жерден басқару</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PERSONALPROFILE" xml:space="preserve">
+    <value>Жеке профиль</value>
+  </data>
+  <data name="ADDCHECKPAYMENT_LABEL" xml:space="preserve">
+    <value>Чекпен төлемді қосу</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтойды атап өту</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_BIRTHDAY" xml:space="preserve">
+    <value>Туылған күнді тойлау</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_BUSINESS" xml:space="preserve">
+    <value>Бизнес мүмкіндіктері туралы ақпарат</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_HOST" xml:space="preserve">
+    <value>Классқа қатысуға сұраным</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_MYREMINDERS" xml:space="preserve">
+    <value>Жеке ескертпелер</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ORDERDELIVERY" xml:space="preserve">
+    <value>Тапсырысты жеткізу туралы ескертпе</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ORDERFOLLOWUP" xml:space="preserve">
+    <value>Тапсырысты орындау бойынша ескертпе</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PWSREGISTRATION" xml:space="preserve">
+    <value>Жеке сайтқа тіркелу</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PWSUPDATEREGISTRATION" xml:space="preserve">
+    <value>Жеке сайтта тіркелуді жаңарту</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_SAMPLEDELIVERY" xml:space="preserve">
+    <value>Өнім үлгілерін жеткізу</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_SAMPLEREQUEST" xml:space="preserve">
+    <value>Жеке сайтта өнім үлгілеріне тапсырыс беру</value>
+  </data>
+  <data name="CUSTOMER_ADDRESSHEADER" xml:space="preserve">
+    <value>Мекен-жайы:</value>
+  </data>
+  <data name="CUSTOMER_BIRTHDAYHEADER" xml:space="preserve">
+    <value>Туылған күні</value>
+  </data>
+  <data name="CUSTOMER_BIRTHMONTHHEADER" xml:space="preserve">
+    <value>Туылған айы</value>
+  </data>
+  <data name="CUSTOMER_CELLPHONEHEADER" xml:space="preserve">
+    <value>Ұялы телефон</value>
+  </data>
+  <data name="CUSTOMER_CITYHEADER" xml:space="preserve">
+    <value>Қала</value>
+  </data>
+  <data name="CUSTOMER_EMAILHEADER" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="CUSTOMER_FIRSTNAMEHEADER" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="CUSTOMER_HOMEPHONEHEADER" xml:space="preserve">
+    <value>Үй телефоны</value>
+  </data>
+  <data name="CUSTOMER_LASTNAMEHEADER" xml:space="preserve">
+    <value>Тегі</value>
+  </data>
+  <data name="CUSTOMER_NAMEHEADER" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="CUSTOMER_PHONENUMBERHEADER" xml:space="preserve">
+    <value>Телефондардың номерлері</value>
+  </data>
+  <data name="CUSTOMER_STATEHEADER" xml:space="preserve">
+    <value>Облыс</value>
+  </data>
+  <data name="CUSTOMER_STREETADDRESSHEADER" xml:space="preserve">
+    <value>Көше</value>
+  </data>
+  <data name="CUSTOMER_SUITEHEADER" xml:space="preserve">
+    <value>Пәтер/офис/бөлме номері</value>
+  </data>
+  <data name="CUSTOMER_WORKPHONEHEADER" xml:space="preserve">
+    <value>Жұмыс телефоны</value>
+  </data>
+  <data name="CUSTOMER_ZIPCODEHEADER" xml:space="preserve">
+    <value>индекс</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_PROFILE_QUESTIONS" xml:space="preserve">
+    <value>Профиль сауалнамасын толтыру</value>
+  </data>
+  <data name="ADDCUSTOMER_PROFILE_QUESTIONS" xml:space="preserve">
+    <value>Клиенттің анкетасы:</value>
+  </data>
+  <data name="REMINDERLIST_END_GUEST" xml:space="preserve">
+    <value>және оның қонағы</value>
+  </data>
+  <data name="REMINDERLIST_PREFIX_FOR" xml:space="preserve">
+    <value>үшін</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтойды атап өту</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_BIRTHDAY" xml:space="preserve">
+    <value>Туылған күнді тойлау</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_BUSINESS" xml:space="preserve">
+    <value>Бизнес мүмкіндіктері туралы ақпарат алу</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_DELIVERYREMINDER" xml:space="preserve">
+    <value>Тапсырысты жеткізу туралы ескертпе</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_FOLLOWUP" xml:space="preserve">
+    <value>Орындау</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_HOST" xml:space="preserve">
+    <value>Сұлулық бойынша классқа қатысуға сұраным</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_NEWWEBSITEREGISTRATION" xml:space="preserve">
+    <value>Сайтқа жаңадан тіркелу</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_UPDATEWEBSITEREGISTRATION" xml:space="preserve">
+    <value>Сайттағы тіркеуді жаңарту</value>
+  </data>
+  <data name="REMINDERLIST_URLTEXT_ORDER" xml:space="preserve">
+    <value>Тапсырыс</value>
+  </data>
+  <data name="REMINDERLIST_URLTEXT_PRODUCTSAMPLE" xml:space="preserve">
+    <value>Өнім үлгісі</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOCUSTOMERINFO_LABEL" xml:space="preserve">
+    <value>Қосымша ақпарат жоқ</value>
+  </data>
+  <data name="ORDERLIST_DELETE_BUTTON" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_TYPEAHEAD" xml:space="preserve">
+    <value>Клиентті таңдау үшін енгізіңіз</value>
+  </data>
+  <data name="ADDCUSTOMER_ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтой</value>
+  </data>
+  <data name="ADDCUSTOMER_BIRTHDAY" xml:space="preserve">
+    <value> Туған күні</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER_DESCRIPTION" xml:space="preserve">
+    <value>Сипаттамасы:</value>
+  </data>
+  <data name="REMINDERLIST_REMINDERS_NOTFOUND" xml:space="preserve">
+    <value>Ескертпелер жоқ</value>
+  </data>
+  <data name="REMINDERLIST_WITHOUTDUEDATE_NOTFOUND" xml:space="preserve">
+    <value>Орындалатын күні көрсетілмеген ескертпелер жоқ</value>
+  </data>
+  <data name="VIEW_PROFILE_IMAGES" xml:space="preserve">
+    <value>Профильдің суретін көру</value>
+  </data>
+  <data name="ADDCUSTOMER_CREATE_BUTTON" xml:space="preserve">
+    <value>Клиенттің профилін сақтау</value>
+  </data>
+  <data name="HEADER_HELP" xml:space="preserve">
+    <value>Көмек</value>
+  </data>
+  <data name="HEADER_SEARCH_INTOUCH" xml:space="preserve">
+    <value>InTouch сайтын іздеу</value>
+  </data>
+  <data name="HEADER_SEARCH_PRODUCT_CENTRAL" xml:space="preserve">
+    <value>Орталық өнімді іздеу</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_NOTFOUND" xml:space="preserve">
+    <value>Сізде мерзімі өткен ескертпелер жоқ</value>
+  </data>
+  <data name="HEADER_SHOPPING_BAG" xml:space="preserve">
+    <value>Себет</value>
+  </data>
+  <data name="HEADER_WELCOME" xml:space="preserve">
+    <value>Қош келдіңіз!</value>
+  </data>
+  <data name="ADDCASHPAYMENT_LABEL" xml:space="preserve">
+    <value>Қолма-қол төлемді қосу</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDREMINDER" xml:space="preserve">
+    <value>Ескертпе қосу</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS" xml:space="preserve">
+    <value>Ескертпе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_ADDTASK" xml:space="preserve">
+    <value>Ескертпе қосу</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_DESCRIPTION" xml:space="preserve">
+    <value>Сипаттамасы:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_DUEON" xml:space="preserve">
+    <value>Өнім түгесілуге жақын</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_MORE" xml:space="preserve">
+    <value>тағы...</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_TITLE" xml:space="preserve">
+    <value>Атауы</value>
+  </data>
+  <data name="INTOUCH_CONTACT" xml:space="preserve">
+    <value>Бізбен байланысу</value>
+  </data>
+  <data name="INTOUCH_FAQ" xml:space="preserve">
+    <value>Жиі қойылатын сұрақтар</value>
+  </data>
+  <data name="INTOUCH_HELP" xml:space="preserve">
+    <value>Көмек</value>
+  </data>
+  <data name="INTOUCH_SHOPPINGBAG" xml:space="preserve">
+    <value>Себет</value>
+  </data>
+  <data name="INTOUCH_SITEMAP" xml:space="preserve">
+    <value>Сайт картасы</value>
+  </data>
+  <data name="INTOUCH_TERMS" xml:space="preserve">
+    <value>Шарттар</value>
+  </data>
+  <data name="REMINDERLIST_BUTTON_TODAY" xml:space="preserve">
+    <value>Бүгін</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TASKS_EDITTASK" xml:space="preserve">
+    <value>Тапсырманы өзгерту</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_SAVETASK" xml:space="preserve">
+    <value>Сақтау</value>
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>Жоқ</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_CONTAINS" xml:space="preserve">
+    <value>мазмұны</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ITEMSFOR" xml:space="preserve">
+    <value>өнім(дер)</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ITSSTATUSIS" xml:space="preserve">
+    <value>Статусы -</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ORDER" xml:space="preserve">
+    <value>Тапсырыс</value>
+  </data>
+  <data name="INVITETOREGISTEREMAIL_SUBJECT" xml:space="preserve">
+    <value>Танысқаныма қуаныштымын</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_ACTIVITYPAGETEXT" xml:space="preserve">
+    <value>Әрекеттер - Бет</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_CREATED" xml:space="preserve">
+    <value>Жасалды</value>
+  </data>
+  <data name="ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтой</value>
+  </data>
+  <data name="BIRTHDAY" xml:space="preserve">
+    <value>Туылған күні</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ADDEDNOTE" xml:space="preserve">
+    <value>Қосылған жазба:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOACTIVITYSUMMARY_LABEL" xml:space="preserve">
+    <value>Бұл клиент үшін әрекеттер туралы ақпарат жоқ</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_EARNHOSTESSREWARDS" xml:space="preserve">
+    <value>Класс Иесіне сыйлық туралы ескертпе</value>
+  </data>
+  <data name="REMOVE" xml:space="preserve">
+    <value>жою</value>
+  </data>
+  <data name="ADDRESS_MESSAGE_ATLEASTONE" xml:space="preserve">
+    <value>Мекен-жайдың кем дегенде бір алаңшасын толтыру қажет</value>
+  </data>
+  <data name="ADDRESS_ADDRESSEE_LABEL" xml:space="preserve">
+    <value>Алушы
+</value>
+  </data>
+  <data name="ADDRESS_YES_BUTTON" xml:space="preserve">
+    <value>иә</value>
+  </data>
+  <data name="ADDRESS_NO_BUTTON" xml:space="preserve">
+    <value>жоқ</value>
+  </data>
+  <data name="ADDRESS_STREET_LABEL" xml:space="preserve">
+    <value>Көше</value>
+  </data>
+  <data name="ADDRESS_CITY_LABEL" xml:space="preserve">
+    <value>Қала</value>
+  </data>
+  <data name="ADDRESS_POSTALCODE_LABEL" xml:space="preserve">
+    <value>Почталық индекс</value>
+  </data>
+  <data name="ADDRESS_PHONE_LABEL" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="ADDRESS_ISPRIMARY_LABEL" xml:space="preserve">
+    <value>негізгі</value>
+  </data>
+  <data name="PAGEHEADER_HELP_LINKTEXT" xml:space="preserve">
+    <value>Көмек</value>
+  </data>
+  <data name="PAGEHEADER_IMPORTCUSTOMER_TITLE" xml:space="preserve">
+    <value>Бар клиенттерді импорттау</value>
+  </data>
+  <data name="PAGEHEADER_OR_TITLE" xml:space="preserve">
+    <value>немесе</value>
+  </data>
+  <data name="PAGEHEADER_ADDCUSTOMER_TITLE" xml:space="preserve">
+    <value>Жаңа клиент</value>
+  </data>
+  <data name="PAGEHEADER_EDITCUSTOMER_TITLE" xml:space="preserve">
+    <value>Клиенттің профилін редакциялау</value>
+  </data>
+  <data name="IMPORT_PROMPT" xml:space="preserve">
+    <value>Сіздің тізіміңізге осы дереккөздердегі және/немесе форматтардағы байланыстарды жылдам  импорттау</value>
+  </data>
+  <data name="IMPORT_FROMFACEBOOK_LINKTEXT" xml:space="preserve">
+    <value>Facebook-тен импорттау</value>
+  </data>
+  <data name="IMPORT_FRIENDSFROMFACEBOOK_PROMPT" xml:space="preserve">
+    <value>Сіз Facebook-тегі достарыңыздың байланыс ақпараттарын импорттай аласыз</value>
+  </data>
+  <data name="IMPORT_IMPORTANT_PROMPT" xml:space="preserve">
+    <value>Маңызды:</value>
+  </data>
+  <data name="IMPORT_FROMFACEBOOK_INSTRUCTIONS" xml:space="preserve">
+    <value>Facebook-тағы байланыстарды импорттар алдында сіз Facebook-ке кіру бетіне бағытталасыз. Өтінеміз, Facebook-ке өз есеп жазбаңызбен кіріңіз. Facebook-ке кіргеннен кейін сіз жасалатын әрекеттердің нұсқаларын көре аласыз…</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_LINKTEXT" xml:space="preserve">
+    <value>Outlook-тан импорттау</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_PROMPT" xml:space="preserve">
+    <value>Сіз Outlook 2003, 2007 және Outlook Express-тен достарыңызды импорттай аласыз</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_INSTRUCTIONS" xml:space="preserve">
+    <value>Байланыстарды импорттамас бұрын, өтінеміз, оларды  Outlook CSV форматында экспорттаңыз</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_CHOOSEFILE" xml:space="preserve">
+    <value>Файлды таңдаңыз...</value>
+  </data>
+  <data name="PHONENUMBER_PLACEHOLDER" xml:space="preserve">
+    <value>(000) 0000000</value>
+  </data>
+  <data name="PLACEHOLDER_DATE" xml:space="preserve">
+    <value>күні, айы, жылы</value>
+  </data>
+  <data name="PLACEHOLDER_BIRTHDAY" xml:space="preserve">
+    <value>күні, айы</value>
+  </data>
+  <data name="PLACEHOLDER_ANNIVERSARY" xml:space="preserve">
+    <value>күні, айы</value>
+  </data>
+  <data name="EMAIL_FORMAT_PLACEHOLDER" xml:space="preserve">
+    <value>email@domain.com</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACKNOWLEDGE" xml:space="preserve">
+    <value>Менде байланыс мәліметтерін пайдалануға және сақтауға, соның ішінде Mary Kay компаниясының серверлерінде, бұл клиенттердің рұқсаттары бар екендігін растаймын.&lt;br /&gt;Форманы және клиенттің келісімі туралы нұсқаулықты толтыру үшін {0} басыңыз.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACTION" xml:space="preserve">
+    <value>Әрекет</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADD" xml:space="preserve">
+    <value>Қосу</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADDED" xml:space="preserve">
+    <value>клиент қосылды</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_BEAUTENEWS" xml:space="preserve">
+    <value>Beaut-e-News&lt;br /&gt;Жіберілім</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_CONTACT" xml:space="preserve">
+    <value>Байланыс</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_CUSTOMERS" xml:space="preserve">
+    <value>клиент</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ECARDS" xml:space="preserve">
+    <value>Жеке хаттар&lt;br /&gt;және Электрондық ашықхаттар</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_EXISTINGCUSTOMER" xml:space="preserve">
+    <value>Бар клиент</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_HOWTOUSE" xml:space="preserve">
+    <value>&lt;strong&gt;Бұл бетті қалай пайдалануға болады&lt;/strong&gt;
+      &lt;ol&gt;
+        &lt;li&gt;Байланыстағы адамдардың қайсысы жақсы клиент бола алатынын анықтаңыз&lt;/li&gt;
+        &lt;li&gt;Қалқып шығатын тізімнен "Қосуды" таңдаңыз. Егер сіз "Біріктіру" нұсқасын көретін болсаңыз, бұл сондай байланыс мәліметтері бар клиенттің тізімде бар екенін білдіреді. Сіз "Біріктіру", Өткізіп жіберу" немесе "Жаңа клиентті қосу" нұсқаларының бірін таңдай аласыз.&lt;/li&gt;
+        &lt;li&gt;  Барлық тізімді қарап шығу үшін сіз "Импорттау" және "Өзгерту" батырмаларының үстіндегі беттердің номерлерін немесе тілдерін шертіп,  әртүрлі беттерді қарап шыға аласыз&lt;/li&gt;
+        &lt;li&gt;Қажет клиенттердің барлығын таңдап алғаннан кейін, "Импорттау" батырмасын басыңыз. Егер сіз Клиенттерді импорттау шарттарымен келісетін болсаңыз, myCustomers "Қосу" нұсқасы таңдалған клиентті қосады, "Біріктіру" нұсқасы таңдалған клиентті бұрынғы клиентпен біріктіреді және "Өткізіп жіберу" нұсқасы таңдалған клиент үшін ешқандай да өзгерістер енгізбейді&lt;/li&gt;
+      &lt;/ol&gt;</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_IMPORTCUSTOMERS" xml:space="preserve">
+    <value>Импорттауды аяқтау</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGE" xml:space="preserve">
+    <value>Біріктіру</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_INFO_ALERT" xml:space="preserve">
+    <value>Байланыстар тізімін қараңыз, қосқыңыз, біріктіргіңіз немесе өткізіп жібергіңіз келгенін таңдаңыз</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_WARNING_ALERT" xml:space="preserve">
+    <value>Импортталатын байланыстар жоқ</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_WARNING" xml:space="preserve">
+    <value>Назар аударыңыз!</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGED" xml:space="preserve">
+    <value>клиент біріктірілді</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOTIMPORTED" xml:space="preserve">
+    <value>клиент импортталған жоқ</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_REMINDERS" xml:space="preserve">
+    <value>Қайтара тапсырыс беру туралы ескертпе</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_RESULTSSUBSCRIPTIONS" xml:space="preserve">
+    <value>Клиенттерді импорттау - Нәтиже / Жазылымдар</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SELECTCONTACTS" xml:space="preserve">
+    <value>Клиенттерді импорттау - Импорттау үшін байланыстарды таңдап алыңыз</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIP" xml:space="preserve">
+    <value>Өткізіп жіберу</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIPPED" xml:space="preserve">
+    <value>клиент өткізіліп жіберілді</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SUBMIT_SUBSCRIPTION" xml:space="preserve">
+    <value>Жазылымды растау</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>&lt;strong&gt;Дайын!&lt;/strong&gt;  Клиенттердің тізімі импортталды </value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOIMPORTED" xml:space="preserve">
+    <value>&lt;strong&gt;Ескерту!&lt;/strong&gt;  Бірде-бір клиент импортталған жоқ</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SUMMARY" xml:space="preserve">
+    <value>Импорттау нәтижесі</value>
+  </data>
+  <data name="CLOSE" xml:space="preserve">
+    <value>Жабу</value>
+  </data>
+  <data name="HEADING_LINETOTAL" xml:space="preserve">
+    <value>Бөлшек бағамен барлығы</value>
+  </data>
+  <data name="HEADING_PARTNUMBER" xml:space="preserve">
+    <value>Өнім коды</value>
+  </data>
+  <data name="HEADING_PRICE" xml:space="preserve">
+    <value>Ұсынылатын баға</value>
+  </data>
+  <data name="HEADING_PRODUCTNAME" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="HEADING_QUANTITY" xml:space="preserve">
+    <value>Саны</value>
+  </data>
+  <data name="HEADING_REORDERREMINDERDATE" xml:space="preserve">
+    <value>Ескертпені ретке келтіру</value>
+  </data>
+  <data name="ORDER_TOTAL" xml:space="preserve">
+    <value>Барлығы бөлшек сауда бағасында</value>
+  </data>
+  <data name="PRODUCT_CATALOG" xml:space="preserve">
+    <value>Өнімдер каталогы</value>
+  </data>
+  <data name="ADDPRODUCTS" xml:space="preserve">
+    <value>Өнім қосу</value>
+  </data>
+  <data name="ADDPRODUCT_BUTTON" xml:space="preserve">
+    <value>қосу</value>
+  </data>
+  <data name="MARKAS_COMPLETE" xml:space="preserve">
+    <value>Орындалған ретінде белгілеу</value>
+  </data>
+  <data name="MARKAS_SHIPPED" xml:space="preserve">
+    <value>Жеткізілген ретінде белгілеу</value>
+  </data>
+  <data name="HEADING_ORDERDATE" xml:space="preserve">
+    <value>Тапсырыс берілген күн:</value>
+  </data>
+  <data name="HEADING_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Ұсынылатын баға</value>
+  </data>
+  <data name="PAGE" xml:space="preserve">
+    <value>Бет</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_ALL" xml:space="preserve">
+    <value>Барлық тізім</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_BESTSELLERS" xml:space="preserve">
+    <value>Бестселлерлер</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_BODYANDSUN" xml:space="preserve">
+    <value>Дене және Күн</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_FRAGRANCE" xml:space="preserve">
+    <value>Хош иістер</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_GIFTS" xml:space="preserve">
+    <value>Сыйлықтар</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_MAKEUP" xml:space="preserve">
+    <value>макияж</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_MENS" xml:space="preserve">
+    <value>Ерлерге арналған</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_NEW" xml:space="preserve">
+    <value>Жаңа өнім</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_SKINCARE" xml:space="preserve">
+    <value>Теріге күтім жасау</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_SPECIALOFFERS" xml:space="preserve">
+    <value>Арнайы ұсыныстар</value>
+  </data>
+  <data name="PRODUCTCATALOG_CLICKTOVIEWDETAILS" xml:space="preserve">
+    <value>Өнім туралы ақпаратты қарау</value>
+  </data>
+  <data name="PRODUCTCATALOG_PREVIOUSLYORDERED_NOTFOUND" xml:space="preserve">
+    <value>Клиент бұрын тапсырыстар берген жоқ</value>
+  </data>
+  <data name="PRODUCTCATALOG_RECOMMENDED_NOTFOUND" xml:space="preserve">
+    <value>Ұсынылған өнім көрсетілмеген</value>
+  </data>
+  <data name="PRODUCTCATALOG_SEARCH_NOTFOUND" xml:space="preserve">
+    <value>Берілген іздеу белгілері бойынша бірде-бір тауар табылмады</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_ALL" xml:space="preserve">
+    <value>Барлық тізім</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_PREVIOUSLYORDERED" xml:space="preserve">
+    <value>Бұрын тапсырыс берілгендер</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_RECOMMENDED" xml:space="preserve">
+    <value>Ұсынылатындар</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_WISHLIST" xml:space="preserve">
+    <value>Қалаулар парағы</value>
+  </data>
+  <data name="PRODUCTCATALOG_WISHLIST_NOTFOUND" xml:space="preserve">
+    <value>Клиенттің қалаулар парағы бос</value>
+  </data>
+  <data name="PRODUCTS" xml:space="preserve">
+    <value>Өнім</value>
+  </data>
+  <data name="SAVE_ORDER" xml:space="preserve">
+    <value>Сақтау және тапсырысты көру</value>
+  </data>
+  <data name="SEARCH_CLEAR" xml:space="preserve">
+    <value>Іздеу шарттарын тазарту</value>
+  </data>
+  <data name="WISHLISTPRODUCT_BADGE" xml:space="preserve">
+    <value>Қалаулар парағы</value>
+  </data>
+  <data name="ERROR_CSV_FILE_PARSE" xml:space="preserve">
+    <value>CSV файлды оқу мүмкін емес</value>
+  </data>
+  <data name="ADDRESS_COUNTRY_LABEL" xml:space="preserve">
+    <value>Ел</value>
+  </data>
+  <data name="ADDRESS_REGION_LABEL" xml:space="preserve">
+    <value>Облыс/аймақ</value>
+  </data>
+  <data name="DELIVERYADDRESS_ADD" xml:space="preserve">
+    <value>Жеткізу мекен-жайын қосу</value>
+  </data>
+  <data name="DELIVERYADDRESS_REMOVE" xml:space="preserve">
+    <value>Жеткізу мекен-жайын алып тастау</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS" xml:space="preserve">
+    <value>Клиенттің профилінен мекен-жайды таңдаңыз</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS_BUTTON" xml:space="preserve">
+    <value>Таңдау</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS_TITLE" xml:space="preserve">
+    <value>Клиенттің мекен-жайы</value>
+  </data>
+  <data name="FOOTER_MARYKAY" xml:space="preserve">
+    <value>Mary Kay 2013</value>
+  </data>
+  <data name="REMINDERLIST_MASSUPDATESUCCESS" xml:space="preserve">
+    <value>Тапсырмалар аяқталды</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_TITLE" xml:space="preserve">
+    <value>Әрекет нәтижелері</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ORDERS_TITLE" xml:space="preserve">
+    <value>Клиенттің тапсырыстары</value>
+  </data>
+  <data name="ORDERFOLLOWUP_ADD_BUTTON" xml:space="preserve">
+    <value>Орындалғаны туралы ескертпені қосу</value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_222" xml:space="preserve">
+    <value>2+2+2</value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_CUSTOM" xml:space="preserve">
+    <value>Күнді таңдау</value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_NONE" xml:space="preserve">
+    <value>Жоқ</value>
+  </data>
+  <data name="ORDERDETAILS_ONLINE_TITLE" xml:space="preserve">
+    <value>Онлайн-тапсырыс</value>
+  </data>
+  <data name="ORDERDETAILS_SALESTICKET_TITLE" xml:space="preserve">
+    <value>Тапсырыс бланкі</value>
+  </data>
+  <data name="FILTER" xml:space="preserve">
+    <value>Сүзгі</value>
+  </data>
+  <data name="FILTER_DELETED" xml:space="preserve">
+    <value>Жойылған</value>
+  </data>
+  <data name="FILTER_DELETED_LABEL" xml:space="preserve">
+    <value>Жойылған</value>
+  </data>
+  <data name="FILTER_NONE" xml:space="preserve">
+    <value>Жоқ</value>
+  </data>
+  <data name="FILTER_ORDERDATE" xml:space="preserve">
+    <value>Тапсырыс берілген күн</value>
+  </data>
+  <data name="FILTER_ORDERDATE_FILTER" xml:space="preserve">
+    <value>Тапсырыс берілген күн</value>
+  </data>
+  <data name="FILTER_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Төлем статусы</value>
+  </data>
+  <data name="FILTER_ORDERSTATUS" xml:space="preserve">
+    <value>Тапсырыстың статусы</value>
+  </data>
+  <data name="FILTER_ORDERTYPE" xml:space="preserve">
+    <value>Тапсырыс жолы</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_BUTTON" xml:space="preserve">
+    <value>Төлем статусын өзгерту</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_NEWSTATUS_LABEL" xml:space="preserve">
+    <value>Жаңа статус</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_PROMPT" xml:space="preserve">
+    <value>Операцияны аяқтау үшін төлемнің жаңа статусын таңдап алыңыз</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>Сақтау</value>
+  </data>
+  <data name="SELECTALL_TOOLTIP" xml:space="preserve">
+    <value>Барлығын таңдау</value>
+  </data>
+  <data name="SORT_AMOUNT" xml:space="preserve">
+    <value>Сомасы</value>
+  </data>
+  <data name="SORT_DIRECTION_TOOLTIP" xml:space="preserve">
+    <value>Сұрыптау тәртібін ауыстыру</value>
+  </data>
+  <data name="SORT_FIRSTNAME" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="SORT_LASTNAME" xml:space="preserve">
+    <value>Тегі</value>
+  </data>
+  <data name="SORT_ORDERDATE" xml:space="preserve">
+    <value>Тапсырыс берілген күн</value>
+  </data>
+  <data name="SORT_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Төлем статусы</value>
+  </data>
+  <data name="SORT_ORDERSTATUS" xml:space="preserve">
+    <value>Тапсырыстың статусы</value>
+  </data>
+  <data name="SORT_ORDERTYPE" xml:space="preserve">
+    <value>Тапсырыс көзі</value>
+  </data>
+  <data name="SORT_RELEVANCE" xml:space="preserve">
+    <value>Актуалды</value>
+  </data>
+  <data name="SORT_TOOLTIP" xml:space="preserve">
+    <value>Сұрыптау үшін алаңшаны таңдаңыз</value>
+  </data>
+  <data name="FILTER_ADVANCED" xml:space="preserve">
+    <value>Кеңейтілген</value>
+  </data>
+  <data name="FILTER_ORDERDATE_LABEL" xml:space="preserve">
+    <value>Тапсырыс берілген күн:</value>
+  </data>
+  <data name="ORDERFOLLOWUP_LABEL" xml:space="preserve">
+    <value>Ескертпе:</value>
+  </data>
+  <data name="ORDERSTATUS_LABEL" xml:space="preserve">
+    <value>Тапсырыстың статусы</value>
+  </data>
+  <data name="PAYMENTSTATUS_LABEL" xml:space="preserve">
+    <value>Төлем статусы</value>
+  </data>
+  <data name="CUSTOMERLIST_LISTTAB" xml:space="preserve">
+    <value>Тізім</value>
+  </data>
+  <data name="ORDERLIST_LISTTAB" xml:space="preserve">
+    <value>Тізім</value>
+  </data>
+  <data name="CUSTOMERLIST_NOTESTAB" xml:space="preserve">
+    <value>Жазбалар</value>
+  </data>
+  <data name="CUSTOMERLIST_SELECTCUSTOMER_PAGETITLE" xml:space="preserve">
+    <value>Жаңа тапсырыс - Клиентті таңдау</value>
+  </data>
+  <data name="CUSTOMERLIST_SHOWPROFILEIMAGES_TOOLTIP" xml:space="preserve">
+    <value>Профиль суретін көрсету/жасыру</value>
+  </data>
+  <data name="FILTER_ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтой</value>
+  </data>
+  <data name="FILTER_BIRTHDAY" xml:space="preserve">
+    <value>Туған күні</value>
+  </data>
+  <data name="FILTER_DATEADDED" xml:space="preserve">
+    <value>Қосылған күні</value>
+  </data>
+  <data name="FILTER_DATEADDED_LABEL" xml:space="preserve">
+    <value>Қосылған күні</value>
+  </data>
+  <data name="FILTER_DATEREGISTERED" xml:space="preserve">
+    <value>Тіркелген күні</value>
+  </data>
+  <data name="FILTER_DATEREGISTERED_LABEL" xml:space="preserve">
+    <value>Тіркелген күні</value>
+  </data>
+  <data name="FILTER_LASTORDERDATE" xml:space="preserve">
+    <value>Соңғы тапсырыс күні</value>
+  </data>
+  <data name="FILTER_LASTORDERDATE_LABEL" xml:space="preserve">
+    <value>Соңғы тапсырыс күні</value>
+  </data>
+  <data name="NOTESSEARCH_NORESULTS_ALERT" xml:space="preserve">
+    <value>Енгізілген іздеу белгілері бойынша бірде-бір жазба табылмады</value>
+  </data>
+  <data name="SORT_DATEADDED" xml:space="preserve">
+    <value>Қосылған күні</value>
+  </data>
+  <data name="SORT_DATEREGISTERED" xml:space="preserve">
+    <value>Тіркелген күні</value>
+  </data>
+  <data name="SORT_LASTORDERDATE" xml:space="preserve">
+    <value>Соңғы тапсырыс күні</value>
+  </data>
+  <data name="SORT_PROFILEDATE" xml:space="preserve">
+    <value>Профиль күні</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ORDERS_TYPE" xml:space="preserve">
+    <value>Түрі:</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_CHANGE" xml:space="preserve">
+    <value>өзгерту</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_INVALIDSIZE" xml:space="preserve">
+    <value>Суреттің көлемі тым үлкен!</value>
+  </data>
+  <data name="ADDRESS_ADDTOCUSTOMERPROFILE" xml:space="preserve">
+    <value>Профильге қосу</value>
+  </data>
+  <data name="ACCEPT" xml:space="preserve">
+    <value>қабылдау</value>
+  </data>
+  <data name="EDITORDER_CREATEINVOICE_LABEL" xml:space="preserve">
+    <value>Инвойс жасау</value>
+  </data>
+  <data name="INVOICE_ADDGIFTMESSAGE_LINK" xml:space="preserve">
+    <value>Сыйлыққа қоса берілетін хатты қосу </value>
+  </data>
+  <data name="INVOICE_ADDMESSAGE_LINK" xml:space="preserve">
+    <value>Инвойста көрінетін мәтінді қосу</value>
+  </data>
+  <data name="INVOICE_FORMAT_LABEL" xml:space="preserve">
+    <value>Формат:</value>
+  </data>
+  <data name="INVOICE_GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value>Сыйлыққа қоса берілген хат:</value>
+  </data>
+  <data name="INVOICE_MESSAGE_LABEL" xml:space="preserve">
+    <value>Инвойс мәтіні</value>
+  </data>
+  <data name="CUSTOMERDETAIL_SUBSCRIPTIONS" xml:space="preserve">
+    <value>Жазылымдар</value>
+  </data>
+  <data name="INVOICE_CREATE_BUTTON" xml:space="preserve">
+    <value>Инвойс жасау</value>
+  </data>
+  <data name="INVOICE_CREATE_LINK" xml:space="preserve">
+    <value>Инвойс жасау</value>
+  </data>
+  <data name="ORDERINVOICE_CREATED" xml:space="preserve">
+    <value>&lt;strong&gt;Дайын!&lt;/strong&gt;  Инвойс жасалды</value>
+  </data>
+  <data name="ORDER_AT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_AVAILABLE" xml:space="preserve">
+    <value>Менімен хабарласа аласыз</value>
+  </data>
+  <data name="ORDER_CONVENIENTTIME" xml:space="preserve">
+    <value>Қолайлы жеткізу уақытын таңдау үшін менімен хабарласаңыз</value>
+  </data>
+  <data name="ORDER_DESIREDSERVICE" xml:space="preserve">
+    <value>Мен сіздің жұмысбастылығыңызды бағалаймын және сіздің уақытыңызды, сатып алудағы қалауларыңызды құрметтеймін. Егер сіз өзіңізге жеке қызмет көрсетілгенін, соның ішінде теріге күтім жасау және сұлулық туралы кеңестер алуды қалайтын болсаңыз, сондай-ақ толық қанағаттанғыңыз келсе, өтінемін, менімен өзіңізге қолайлы кез келген уақытта хабарласуыңызға болады.</value>
+  </data>
+  <data name="ORDER_EDIT" xml:space="preserve">
+    <value>Тапсырысты редакциялау</value>
+  </data>
+  <data name="ORDER_MARK_PROCESSED" xml:space="preserve">
+    <value>Өңделген ретінде белгілеу</value>
+  </data>
+  <data name="ORDER_MARK_SHIPPED" xml:space="preserve">
+    <value>Жеткізілген ретінде белгілеу</value>
+  </data>
+  <data name="ORDER_ISGIFT" xml:space="preserve">
+    <value>Бұл тапсырыс басқа біреуге сыйлыққа арналған ба? Олай болса, сыйлық жіберілгені туралы хабарлап, қуантатын жеке хабарлама жіберу үшін төмендегі батырманы басыңыз</value>
+  </data>
+  <data name="ORDER_ISTIMECONVENIENT" xml:space="preserve">
+    <value>Сіздің тапсырысыңызды жеткізеді. Бұл уақыт сізге ыңғайлы ма?</value>
+  </data>
+  <data name="ORDER_PROCESSED" xml:space="preserve">
+    <value>Сіздің тапсырысыңыз өңделеді.</value>
+  </data>
+  <data name="ORDER_PROCESSORDER" xml:space="preserve">
+    <value>Тапсырысты ары қарай өңдеу үшін маған сіздің көмегіңіз қажет. Өтінемін, менімен хабарласыңыз, </value>
+  </data>
+  <data name="ORDER_PROCESSPAYMENT" xml:space="preserve">
+    <value>Ары қарай төлеміңізді өңдеу үшін маған сіздің көмегіңіз қажет. Өтінемін, менімен хабарласыңыз</value>
+  </data>
+  <data name="ORDER_SAVED" xml:space="preserve">
+    <value>&lt;strong&gt;Дайын!&lt;/strong&gt;  Тапсырыс сақталды</value>
+  </data>
+  <data name="ORDER_SELECTMESSAGES" xml:space="preserve">
+    <value>Клиентке тапсырысты растау туралы хат жіберу үшін хабарламалардың бірін таңдап алыңыз:</value>
+  </data>
+  <data name="ORDER_SENDCONFIRMATIONEMAIL" xml:space="preserve">
+    <value>Растау туралы хат жіберу</value>
+  </data>
+  <data name="ORDER_SENT" xml:space="preserve">
+    <value>&lt;strong&gt;Дайын!&lt;/strong&gt; Тапсырыстың расталғаны туралы хат жіберілді.</value>
+  </data>
+  <data name="ORDER_SHIPPED" xml:space="preserve">
+    <value>Сіздің тапсырыңыз жіберілді</value>
+  </data>
+  <data name="ORDER_TOTAL_IS" xml:space="preserve">
+    <value>Сіздің тапсырысыңыздың жалпы сомасы</value>
+  </data>
+  <data name="SEND_EMAIL" xml:space="preserve">
+    <value>E-mail жіберу</value>
+  </data>
+  <data name="SMS_BUTTON_TEXT" xml:space="preserve">
+    <value>СМС</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_PHONE" xml:space="preserve">
+    <value>Телефон номерін қосу</value>
+  </data>
+  <data name="MAKE_PRIMARY" xml:space="preserve">
+    <value>негізгі ету</value>
+  </data>
+  <data name="PRIMARY" xml:space="preserve">
+    <value>негізгі</value>
+  </data>
+  <data name="ADDCUSTOMER_PHONE_NUMBER_LABEL" xml:space="preserve">
+    <value>Номер</value>
+  </data>
+  <data name="ADDCUSTOMER_ADD_SPECIALOCCASION" xml:space="preserve">
+    <value>Маңызды күнді қосу</value>
+  </data>
+  <data name="SPECIALOCCASION_DESCRIPTION_PLACEHOLDER" xml:space="preserve">
+    <value>мектеп бітіру кеші, сәбидің дүниеге келуі, жаңа жұмыс, еңбек демалысы, үйлену тойы және т.б.</value>
+  </data>
+  <data name="ADDRESS_STATE_LABEL" xml:space="preserve">
+    <value>Облыс</value>
+  </data>
+  <data name="ADDRESS_UNITNUMBER_LABEL" xml:space="preserve">
+    <value>Үйдің номері / Ғимарат / Пәтер / Подъезд / Қабат / Подъездің коды</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_ADD" xml:space="preserve">
+    <value>Тағы бір мекен-жайды қосу</value>
+  </data>
+  <data name="ADDCUSTOMER_SOCIALNETWORK" xml:space="preserve">
+    <value>Әлеуметтік желілер</value>
+  </data>
+  <data name="GENDER_FEMALE" xml:space="preserve">
+    <value>Әйел</value>
+  </data>
+  <data name="GENDER_MALE" xml:space="preserve">
+    <value>Ер</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTDAY" xml:space="preserve">
+    <value>Хабарласатын күндер</value>
+  </data>
+  <data name="ADDCUSTOMER_CANSENDSMS" xml:space="preserve">
+    <value>СМС</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PROFILEANSWERLABEL_OTHER" xml:space="preserve">
+    <value>Басқалар:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PROFILEANSWERLABEL_OTHERS" xml:space="preserve">
+    <value>Басқалар:</value>
+  </data>
+  <data name="SORT_BY" xml:space="preserve">
+    <value>Сұрыптау:</value>
+  </data>
+  <data name="ARCHIVE_ORDER" xml:space="preserve">
+    <value>Архив</value>
+  </data>
+  <data name="UNARCHIVE_ORDER" xml:space="preserve">
+    <value>Архивтен шығару</value>
+  </data>
+  <data name="ARCHIVE_ORDERS" xml:space="preserve">
+    <value>Архив</value>
+  </data>
+  <data name="UNARCHIVE_ORDERS" xml:space="preserve">
+    <value>Архивтен шығару</value>
+  </data>
+  <data name="DELETE_ORDERS" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="DELETEDORDERS_DELETE" xml:space="preserve">
+    <value>Тапсырысты себеттен толық алып тастау</value>
+  </data>
+  <data name="DELETEDORDERS_RESTORE" xml:space="preserve">
+    <value>Қалпына келтіру</value>
+  </data>
+  <data name="ORDERLIST_DELETEDORDERS_TOOLTIP" xml:space="preserve">
+    <value>Тапсырыстарды жою</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_DELETE" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="CUSTOMERLIST_DELETEDCUSTOMERS_TOOLTIP" xml:space="preserve">
+    <value>Клиенттерді алып тастау</value>
+  </data>
+  <data name="DELETEDCUSTOMERS_RESTORE" xml:space="preserve">
+    <value>Қалпына келтіру</value>
+  </data>
+  <data name="DELETEDCUSTOMERS_DELETE" xml:space="preserve">
+    <value>Клиентті себеттен толық алып тастау</value>
+  </data>
+  <data name="DELETEDCUSTOMERS_NORESULTS_ALERT" xml:space="preserve">
+    <value>Алынып тасталған клиенттер табылған жоқ</value>
+  </data>
+  <data name="DELETEDORDERS_NORESULTS_ALERT" xml:space="preserve">
+    <value>Жойылған тапсырыстар табылған жоқ</value>
+  </data>
+  <data name="ARCHIVE_CUSTOMERS" xml:space="preserve">
+    <value>Архив</value>
+  </data>
+  <data name="PRINTLIST_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="PRINTLIST_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="IMPORTCUSTOMERS_RESULTS" xml:space="preserve">
+    <value>Клиенттерді импорттау - Нәтижелер</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ARCHIVECUSTOMER" xml:space="preserve">
+    <value>Клиентті архивтеу</value>
+  </data>
+  <data name="CUSTOMERDETAIL_UNARCHIVECUSTOMER" xml:space="preserve">
+    <value>Клиентті архивтен шығару</value>
+  </data>
+  <data name="FILTER_ARCHIVED" xml:space="preserve">
+    <value>Архивтелген</value>
+  </data>
+  <data name="FILTER_ARCHIVED_LABEL" xml:space="preserve">
+    <value>Архивтелген</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NEWVIRTUALMAKEOVER_AGREEMENT" xml:space="preserve">
+    <value>Мен Mary Kay® Виртуалды макияжында виртуалды макияж жасау мақсатымен клиенттің суреттерін пайдалану үшін одан рұқсат алуым керектігін түсінемін. Клиенттің суреттерін тек оның айқын рұқсатымен ғана жүктеймін</value>
+  </data>
+  <data name="DECLINE" xml:space="preserve">
+    <value>қабылдамау</value>
+  </data>
+  <data name="UNARCHIVE_CUSTOMER" xml:space="preserve">
+    <value>Архивтен шығару</value>
+  </data>
+  <data name="UNARCHIVE_CUSTOMERS" xml:space="preserve">
+    <value>Архивтен шығару</value>
+  </data>
+  <data name="ERROR_500_TITLE" xml:space="preserve">
+    <value>сервердің белгісіз қателігі</value>
+  </data>
+  <data name="ERROR_404_TITLE" xml:space="preserve">
+    <value>Бет табылған жоқ</value>
+  </data>
+  <data name="REGISTERED" xml:space="preserve">
+    <value>Тіркелді</value>
+  </data>
+  <data name="FILTER_PRODUCT" xml:space="preserve">
+    <value>Өнім </value>
+  </data>
+  <data name="FILTER_PRODUCT_LABEL" xml:space="preserve">
+    <value>Өнім</value>
+  </data>
+  <data name="ADDCUSTOMER_SAVE_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Клиентті сақтау батырмасын басу арқылы, мен клиенттер туралы бұл ақпаратты енгізуге және сақтауға, соның ішінде Mary Kay компаниясының серверлерінде, сәйкес рұқсатым бар.
+Форманы және клиенттің келісімі туралы нұсқаулықты толтыру үшін {0} басыңыз.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Жазбаларда сіздің клиенттеріңіз туралы құпия ақпарат болмауы керек (мысалы, кредиттік картаның номері)</value>
+  </data>
+  <data name="SAVE_ORDER_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Бұл тапсырысты сақтай отырып, мен клиент туралы ақпаратты енгізуге және сақтауға қажетті өкілеттіктер мен келісімнің бар екенін растаймын</value>
+  </data>
+  <data name="INVOICE_CREATE_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Тапсырыс сомасы, жеткізу бағасы және салықтар сомасы сіздің компьютеріңіздегі жеке инвойсыңызда ғана сақталады</value>
+  </data>
+  <data name="DELIVERY_ADDRESS_ADDRESSEE_LABEL" xml:space="preserve">
+    <value>Алушының аты</value>
+  </data>
+  <data name="FLASH_REQUIRED" xml:space="preserve">
+    <value>Суретті жүктеу үшін Adobe Flash қосымшасын орнату қажет. Браузеріңізді жаңартыңыз немесе Adobe Flash-ты мына жерден жүктеңіз:</value>
+  </data>
+  <data name="EXPORTLIST_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EXPORTLIST_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OF" xml:space="preserve">
+    <value>из</value>
+  </data>
+  <data name="REMINDERLIST_PREFIX_FROM" xml:space="preserve">
+    <value>кімнен</value>
+  </data>
+  <data name="REMINDERLIST_PREFIX_WITH" xml:space="preserve">
+    <value>қайда</value>
+  </data>
+  <data name="PHONETYPE_HOME_ABBR" xml:space="preserve">
+    <value>Үй</value>
+  </data>
+  <data name="PHONETYPE_MOBILE_ABBR" xml:space="preserve">
+    <value>Ұялы </value>
+  </data>
+  <data name="PHONETYPE_OTHER_ABBR" xml:space="preserve">
+    <value>Басқа</value>
+  </data>
+  <data name="PHONETYPE_WORK_ABBR" xml:space="preserve">
+    <value>Жұмыс</value>
+  </data>
+  <data name="REMINDERLIST_INCORRECT_CUSTOMERID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_PCP" xml:space="preserve">
+    <value>Клиентке ұнайтын бағдарлама</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_OF" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVALID_ANNIVERSARY" xml:space="preserve">
+    <value>Мерейтой дұрыс көрсетілмеген</value>
+  </data>
+  <data name="INVALID_BIRTHDAY" xml:space="preserve">
+    <value>Туылған күні дұрыс көрсетілмеген</value>
+  </data>
+  <data name="LABEL_CASH" xml:space="preserve">
+    <value>Қолма-қол төлемдер:</value>
+  </data>
+  <data name="LABEL_CHECKS" xml:space="preserve">
+    <value> Чекпен төлемдер:</value>
+  </data>
+  <data name="AMOUNT" xml:space="preserve">
+    <value>Сомасы</value>
+  </data>
+  <data name="DATE" xml:space="preserve">
+    <value>Күні</value>
+  </data>
+  <data name="CHECKNUMBER" xml:space="preserve">
+    <value>Номерді тексеру</value>
+  </data>
+  <data name="ANNIVERSARY_DAY" xml:space="preserve">
+    <value>Күні</value>
+  </data>
+  <data name="ANNIVERSARY_YEAR" xml:space="preserve">
+    <value>жылы</value>
+  </data>
+  <data name="BIRTHDAY_DAY" xml:space="preserve">
+    <value>Күні</value>
+  </data>
+  <data name="BIRTHDAY_YEAR" xml:space="preserve">
+    <value>жылы</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_UNDO" xml:space="preserve">
+    <value>өзгерту</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_REMOVE" xml:space="preserve">
+    <value>жою </value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADD_WISHLIST" xml:space="preserve">
+    <value>Қалау парағына қосу</value>
+  </data>
+  <data name="ORDER_NOTES_WARNING" xml:space="preserve">
+    <value>Жазбалар сіздің файлыңызда сақталады және клиентке арналған чекте көрсетілмейді</value>
+  </data>
+  <data name="FORMAT_FULLNAME" xml:space="preserve">
+    <value>{0} {1} {2}</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_EXCEL_FILENAME" xml:space="preserve">
+    <value>Customers_{0:yyyyMMdd}.xls</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_LABELS_FILENAME" xml:space="preserve">
+    <value>CustomerLabels_{0:yyyyMMdd}.pdf</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_PRINT_FILENAME" xml:space="preserve">
+    <value>Customers_{0:yyyyMMdd}.pdf</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_ODNOKLASSNIKI" xml:space="preserve">
+    <value>Odnoklassniki</value>
+  </data>
+  <data name="SOCIALNETWORK_OTHER" xml:space="preserve">
+    <value>Басқа</value>
+  </data>
+  <data name="SOCIALNETWORK_FACEBOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_TWITTER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SOCIALNETWORK_VK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_EMAIL_LEGALMESSAGE" xml:space="preserve">
+    <value>Жоғарыда клиенттің e-mail-ін көрсету арқылы, мен сол адреске Mary Kay компаниясы менің атымнан жаңалықтар алып отыруға жазылу туралы ұсыныспен хат жіберетінін түсінемін.&lt;br/&gt;Назар аударыңыз! Егер сізде бұл клиенттің жіберілімдер алып отыруға рұқсаты болмаса, өтінеміз, бұл алаңшаны бос қалдырыңыз.</value>
+  </data>
+  <data name="ADDCUSTOMER_CHANGE_PHOTO_CONFIRMCOPY" xml:space="preserve">
+    <value>Мен осы суретті жүктеуді растаймын</value>
+  </data>
+  <data name="ADDCUSTOMER_LEGALMESSAGE_LINK" xml:space="preserve">
+    <value>мына жерді</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACKNOWLEDGE_LINK" xml:space="preserve">
+    <value>мына жерді</value>
+  </data>
+  <data name="FILTER_PROFILEDATE" xml:space="preserve">
+    <value>Профиль жасау күні</value>
+  </data>
+  <data name="FILTER_PROFILEDATE_LABEL" xml:space="preserve">
+    <value>Профиль толтырылған күн</value>
+  </data>
+  <data name="ORDER_INVALID_DELIVERY_DATE" xml:space="preserve">
+    <value>Жеткізу күні бос болмайды</value>
+  </data>
+  <data name="ORDER_INVALID_TOTAL_AMOUNT" xml:space="preserve">
+    <value>Тапсырыстың жалпы сомасы бос болмайды</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NOTETEXT" xml:space="preserve">
+    <value>4 000 теңгеден жоғары сомаға сауда жасасаңыз, сіз, сатып алушы ретінде бұл мәмілені сатып алған сәттен бастап үшін күнтізбелік күн ішінде кез келген уақытта жоя аласыз. Қосымша берілген тапсырысты жою операциясы туралы және осы құқықты түсіндіретін форма-хабарламаны қараңыз. </value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH7" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERPAYMENT_REMOVE" xml:space="preserve">
+    <value>жою</value>
+  </data>
+  <data name="ORDERPAYMENT_REMOVE_TITLE" xml:space="preserve">
+    <value>Чекпен төлемді жою</value>
+  </data>
+  <data name="ORDERPAYMENT_REMOVE_CASH_TITLE" xml:space="preserve">
+    <value>Қолма-қол төлемді жою</value>
+  </data>
+  <data name="INVOICE_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Бет &amp;P (&amp;N)</value>
+  </data>
+  <data name="INVOICE_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="INVOICE_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRR" xml:space="preserve">
+    <value>Тапсырыс туралы ескертпе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_CANCELPRRUPDATELINK" xml:space="preserve">
+    <value>Жою</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_DELEELINK" xml:space="preserve">
+    <value>Өшіру</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_EDITLINK" xml:space="preserve">
+    <value>Өзгерту</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_PARTNUMBER" xml:space="preserve">
+    <value>Тапсырыстың номері</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_PRODUCTNAME" xml:space="preserve">
+    <value>Өнім</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_REMINDERDATE" xml:space="preserve">
+    <value>Күні туралы ескертпе</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_SAVEPRRUPDATELINK" xml:space="preserve">
+    <value>Сақтау</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PRR" xml:space="preserve">
+    <value>Тапсырыс туралы ескертпелер</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_PRR" xml:space="preserve">
+    <value>Тапсырыс туралы ескертпе</value>
+  </data>
+</root>

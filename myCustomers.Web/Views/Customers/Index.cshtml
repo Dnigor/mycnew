@@ -1,0 +1,665 @@
+﻿@using System.Globalization
+@using myCustomers
+@using myCustomers.Contexts
+@model CustomerListViewModel
+@{
+  ViewBag.Title = Model.Mode == CustomerListMode.Search ? Resources.GetString("CUSTOMERLIST_PAGETITLE") : Resources.GetString("CUSTOMERLIST_SELECTCUSTOMER_PAGETITLE");
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var subsidiary = ServiceLocator.Current.GetInstance<ISubsidiaryAccessor>().GetSubsidiaryCode();
+  var consultantContext = ServiceLocator.Current.GetInstance<IConsultantContext>();
+
+}
+
+<div class="navbar" style="margin-top: 10px;">
+  <div class="navbar-inner">
+    <a class="brand" href="#">@ViewBag.Title</a>
+    @if (Model.Mode == CustomerListMode.Search)
+    {
+      <ul class="nav">
+        <li data-bind="css: { active: selectedTab() === 'List' }"><a href="#" data-bind="  click: showCustomers">@Resources.GetString("CUSTOMERLIST_LISTTAB")</a></li>
+        <li data-bind="css: { active: selectedTab() === 'Notes' }"><a href="#" data-bind="  click: showNotes">@Resources.GetString("CUSTOMERLIST_NOTESTAB")</a></li>
+        @if (appSettings.GetValue<bool>("Feature.CustomerList.Groups"))
+        {
+          <li data-bind="css: { active: selectedTab() === 'Groups' }"><a href="#" data-bind="  click: showGroups">Groups</a></li>
+        }
+        @if (appSettings.GetValue<bool>("Feature.CustomerList.Delete"))
+        {
+          <li data-bind="css: { active: selectedTab() === 'Deleted'}">
+            <a class="btn-link" title="@Resources.GetString("CUSTOMERLIST_DELETEDCUSTOMERS_TOOLTIP")" data-bind="click: showDeletedCustomers, css: {'link-disabled': deletedCustomersSearch().itemCount() === 0}">
+              <i class="icon-trash icon-large"></i>&nbsp;<span class="badge badge-important" style="display: none; font-size: 8px; vertical-align: super; padding: 0px 5px 0px 5px; margin: 0" data-bind="visible: deletedCustomersSearch().itemCount() > 0, text: deletedCustomersSearch().itemCount"></span>
+            </a>
+          </li>
+        }
+      </ul>
+    }
+    <ul class="nav pull-right">
+      <li data-bind="busy: isBusy">
+        <div style="display: inline-block; margin-right: 5px; margin-top: 10px;">
+          <img src="~/content/images/spinner.gif" />
+        </div>
+      </li>
+      <li style="display: none; margin: 5px 0 0 0;" data-bind="visible: selectedTab() === 'List'">
+        <div class="input-append" style="display: inline;">
+          <div class="btn-group">
+            <button class="btn btn-link" type="button" style="display: none;" data-bind="visible: queryString, click: function(d, e) { queryString(''); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+            <input type="text" class="input-large" placeholder="@Resources.GetString("SEARCH_PLACEHOLDER")" data-bind="value: queryString, updateOnEnter: true" />
+            <button class="btn" type="button" data-bind="click: searchCommand.execute"><i class="icon-search"></i></button>
+          </div>
+        </div>
+      </li>
+      <li class="divider-vertical" style="display: none;" data-bind="visible: selectedTab() === 'List'"></li>
+      <li class="dropdown" style="display: none;" data-bind="visible: selectedTab() === 'List'">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="padding-left: 5px; padding-right: 5px"><i class="icon-filter"></i>&nbsp;@Resources.GetString("FILTER")</a>
+        <ul class="dropdown-menu">
+          <!-- ko if: filterMode -->
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, null)">@Resources.GetString("FILTER_NONE")</a></li>
+          <li class="divider"></li>
+          <!-- /ko -->
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'ProfileDate')">@Resources.GetString("FILTER_PROFILEDATE")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'OrderDate')">@Resources.GetString("FILTER_LASTORDERDATE")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'Birthday')">@Resources.GetString("FILTER_BIRTHDAY")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'Anniversary')">@Resources.GetString("FILTER_ANNIVERSARY")</a></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'Archived')">@Resources.GetString("FILTER_ARCHIVED")</a></li>
+          <li class="divider"></li>
+          <li><a tabindex="-1" href="#" data-bind="click: filterMode.bind($data, 'Advanced')">@Resources.GetString("FILTER_ADVANCED")</a></li>
+        </ul>
+      </li>
+
+      <!-- ko with: notesSearch -->
+      <li style="display: none; margin: 5px 0 0 0;" data-bind="visible: $parent.selectedTab() === 'Notes'">
+        <div class="input-append" style="display: inline;">
+          <div class="btn-group">
+            <button class="btn btn-link btn-help" type="button" style="display: none;" data-bind="visible: queryString, click: function(d, e) { queryString(''); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+            <input type="text" class="input-large" placeholder="@Resources.GetString("SEARCH_PLACEHOLDER")" data-bind="value: queryString, updateOnEnter: true" />
+            <button class="btn" type="button" data-bind="click: searchCommand.execute"><i class="icon-search"></i></button>
+          </div>
+        </div>
+      </li>
+      <!-- /ko -->
+
+      <li class="divider-vertical"></li>
+      <li><a style="padding-left: 0; padding-right: 0" class="btn-help" href="#" onclick=" $('#helpContent').toggle(); return false; "><i class="icon-question-sign"></i>&nbsp;@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ko if: selectedTab() === 'List' -->
+<div style="display: none;" data-bind="visible: selectedTab() === 'List'">
+  <div id="helpContent" class="well" style="display: none;">
+    <button type="button" class="close" onclick=" $('#helpContent').hide();return false; ">&times;</button>
+    @Html.Raw(Resources.GetLocalizedContent("CustomerListHelp"))
+  </div>
+
+  <!-- ko if: filterMode() === 'ProfileDate' -->
+  @Html.Partial("_ProfileDateFilter")
+  <!-- /ko -->
+
+  <!-- ko if: function() { filterMode() === 'OrderDate' } -->
+  @Html.Partial("_LastOrderDateFilter")
+  <!-- /ko -->
+
+  <!-- ko if: filterMode() === 'Birthday' -->
+  <div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'Birthday'">
+    <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+    <form class="form-inline" style="margin: 0">
+      <label>@Resources.GetString("FILTER_BIRTHDAY_LABEL")</label>
+      <select class="input-medium" data-bind="value: selectedBirthMonth">
+        <option value="">@Resources.GetString("MONTHLIST_SELECT")</option>
+        @for (int i = 0; i < CultureInfo.CurrentUICulture.DateTimeFormat.Calendar.GetMonthsInYear(DateTime.Now.Year); i++)
+        {
+          string monthName = CultureInfo.CurrentUICulture.DateTimeFormat.MonthNames[i];
+          <option value="@(i + 1)">@monthName</option>
+        }
+      </select>
+    </form>
+  </div>
+  <!-- /ko -->
+
+  <!-- ko if: filterMode() === 'Anniversary' -->
+  <div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'Anniversary'">
+    <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+    <form class="form-inline" style="margin: 0">
+      <label>@Resources.GetString("FILTER_ANNIVERSARY_LABEL")</label>
+      <select class="input-medium" data-bind="value: selectedAnniversaryMonth">
+        <option value="">@Resources.GetString("MONTHLIST_SELECT")</option>
+        @for (int i = 0; i < CultureInfo.CurrentUICulture.DateTimeFormat.Calendar.GetMonthsInYear(DateTime.Now.Year); i++)
+        {
+          string monthName = CultureInfo.CurrentUICulture.DateTimeFormat.MonthNames[i];
+          <option value="@(i + 1)">@monthName</option>
+        }
+      </select>
+    </form>
+  </div>
+  <!-- /ko -->
+
+  <!-- ko if: filterMode() === 'Archived' -->
+  <div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'Archived'">
+    <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+    <form class="form-inline" style="margin: 0">
+      <label class="checkbox">
+        <input type="checkbox" data-bind="checked: isArchived" />
+        @Resources.GetString("FILTER_ARCHIVED_LABEL")
+      </label>
+    </form>
+  </div>
+  <!-- /ko -->
+
+  <!-- ko if: filterMode() === 'Advanced' -->
+  @Html.Partial("_AdvancedSearchFilter")
+  <!-- /ko -->
+
+  @if (Model.Features.Rolodex)
+  {
+    <ul class="nav nav-pills" style="margin: 10px 0 5px 0;">
+      <li data-bind="css: { active: lastNamePrefix() === null }"><a href="#" style="padding: 8px;" data-bind="  click: function () { lastNamePrefix(null); }">All</a></li>
+      <!-- ko foreach: rolodex -->
+      <li data-bind="css: { active: $parent.lastNamePrefix() === $data }"><a href="#" style="padding: 8px;" data-bind="  text: $data, click: function () { $parent.lastNamePrefix($data); }"></a></li>
+      <!-- /ko -->
+    </ul>
+  }
+
+  <!-- No Search Results -->
+  <div class="row" style="display: none;" data-bind="visible: noResults">
+    <div class="span12">
+      <div class="alert alert-info">
+        <em>@Resources.GetString("CUSTOMERLIST_NORESULTS_ALERT")</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="display: none;" data-bind="visible: hasResults">
+    <div class="span12">
+      <button class="btn" type="button" data-bind="click: toggleImages, css: { active: showImages }" title="@Resources.GetString("CUSTOMERLIST_SHOWPROFILEIMAGES_TOOLTIP")"><i class="icon-user"></i></button>
+
+      @if (Model.Mode == CustomerListMode.Search)
+      {
+        <!-- ko if: !printCommand.canExecute() && !labelsCommand.canExecute() -->
+        <a class="btn disabled" href="#">
+          <i class="icon-print"></i>
+          @Resources.GetString("CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT")
+          <span class="caret"></span>
+        </a>
+        <!-- /ko -->
+        <!-- ko if: printCommand.canExecute() || labelsCommand.canExecute() -->
+        <div class="btn-group">
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="icon-print"></i>
+            @Resources.GetString("CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT")
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-bind="command: printCommand "><i class="icon-list"></i>&nbsp;@Resources.GetString("CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT_LIST")</a></li>
+            <li><a href="#" data-bind="command: labelsCommand"><i class="icon-tags"></i>&nbsp;@Resources.GetString("CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT_LABELS")</a></li>
+          </ul>
+        </div>
+        <!-- /ko -->
+        
+        <button class="btn" data-bind="command: exportCommand"><i class="icon-download-alt"></i>&nbsp;@Resources.GetString("CUSTOMERLIST_ACTIONBUTTONGROUP_EXPORT")</button>
+        if (appSettings.GetValue<bool>("Feature.CustomerList.Groups"))
+        {
+        <button class="btn" data-bind="command: addToGroupCommand"><i class="icon-group"></i>&nbsp;@Resources.GetString("CUSTOMERLIST_ACTIONBUTTONGROUP_ADDTOGROUP")</button>
+        }
+        if (Model.Features.Ecards)
+        {
+        <button class="btn" data-bind="command: sendeCardCommand"><i class="icon-envelope"></i>&nbsp;@Resources.GetString("CUSTOMERLIST_SENDECARD")</button>
+        }
+        <button class="btn" data-bind="command: archiveCustomersCommand, visible: !isArchived()"><i class="icon-folder-open"></i>&nbsp;@Resources.GetString("ARCHIVE_CUSTOMERS")</button>
+        <button class="btn" data-bind="command: unarchiveCustomersCommand, visible: isArchived()"><i class="icon-folder-open"></i>&nbsp;@Resources.GetString("UNARCHIVE_CUSTOMERS")</button>
+        if (appSettings.GetValue<bool>("Feature.CustomerList.Delete"))
+        {
+        <button class="btn" data-bind="command: deleteCustomersCommand"><i class="icon-remove"></i>&nbsp;@Resources.GetString("CUSTOMERLIST_ACTIONBUTTONGROUP_DELETE")</button>
+        }
+      }
+    </div>
+  </div>
+
+  <div class="row" style="display: none;" data-bind="visible: hasResults">
+    <div class="span12">
+      <div class="pull-right">
+        <table>
+          <tr>
+            <td>
+              <div style="padding-bottom: 2px;">@Resources.GetString("SORT_BY")</div>
+            </td>
+            <td>
+              <ul class="nav nav-pills" style="margin-bottom: 0;">
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <span data-bind="text: sortField"></span>
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- ko if: queryString -->
+                    <li><a href="#" data-bind="click: sortField.bind($data, null)">@Resources.GetString("SORT_RELEVANCE")</a></li>
+                    <li class="divider"></li>
+                    <!-- /ko -->
+                    <li><a href="#" data-bind="click: sortField.bind($data, 'FirstName.Sort')">@Resources.GetString("SORT_FIRSTNAME")</a></li>
+                    <li><a href="#" data-bind="click: sortField.bind($data, 'LastName.Sort')">@Resources.GetString("SORT_LASTNAME")</a></li>
+                    <li><a href="#" data-bind="click: sortField.bind($data, 'ProfileDateUtc')">@Resources.GetString("SORT_PROFILEDATE")</a></li>
+                    <li><a href="#" data-bind="click: sortField.bind($data, 'DateAddedUtc')">@Resources.GetString("SORT_DATEADDED")</a></li>
+                    <li><a href="#" data-bind="click: sortField.bind($data, 'LastOrderDateUtc')">@Resources.GetString("SORT_LASTORDERDATE")</a></li>
+                  </ul>
+                </li>
+                <!-- ko if: sortDescending() !== null -->
+                <li>
+                  <a href="#" class="btn btn-link" style="margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;" data-bind="click: function () { sortDescending(!sortDescending()); }"><i data-bind="  css: { 'icon-circle-arrow-down': sortDescending, 'icon-circle-arrow-up': !sortDescending() }"></i></a>
+                </li>
+                <!-- /ko -->
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="display: none;" data-bind="visible: hasResults">
+    <div class="span12">
+      <table class="table table-hover" style="cursor: pointer;" data-bind="with: searchResults">
+        <thead>
+          <tr>
+            @if (Model.Mode == CustomerListMode.Search)
+            {
+              <th>
+                <input type="checkbox" data-bind="checked: $root.selectAll" title="@Resources.GetString("SELECTALL_TOOLTIP")" />
+              </th>
+            }
+            <th>@Resources.GetString("CUSTOMERLIST_COLUMNTITLES_NAMEANDEMAIL")</th>
+            <th>@Resources.GetString("CUSTOMERLIST_COLUMNTITLES_ADDRESS")</th>
+            <th>@Resources.GetString("CUSTOMERLIST_COLUMNTITLES_PHONE")</th>
+            <th style="text-align: right;">@Resources.GetString("CUSTOMERLIST_COLUMNTITLES_LASTORDERED")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: $data">
+          <tr data-bind="with: _source, click: $root.onCustomerRowClick, clickBubble: false">
+            @if (Model.Mode == CustomerListMode.Search)
+            {
+              <td style="width: 24px;" data-bind="click: function () { return true; }, clickBubble: false">
+                <input type="checkbox" data-bind="checked: $root.customerChecked($data)" />
+              </td>
+            }
+            <td style="overflow-x: hidden; white-space: nowrap; width: 349px;">
+              <div style="min-height: 64px; overflow-x: hidden; padding: 0; width: 349px;">
+                <span data-bind="if: $root.showImages" style="float: left; height: 100%; margin-right: 10px">
+                  <img class="img-polaroid pull-left" data-bind="attr: { src: $root.profileImageUrl($data) }" width="51" height="64" />
+                </span>
+                <div data-bind="style: { 'margin-left': $root.showImages() ? '61px' : '0px' }">
+                  <div>
+                    <strong data-bind="text: [$data.FirstName, $data.MiddleName, $data.LastName].join(' ')"></strong>
+                  </div>
+                  <div>
+                    @if (Model.Mode == CustomerListMode.Search && Model.Features.UseMailtoLinks)
+                    {
+                      <a data-bind="text: $data.Email, attr: { href: 'mailto:' + $data.Email }, click: function () { return true; }, clickBubble: false"></a>
+                    }
+                    else
+                    {
+                      <span data-bind="text: $data.Email"></span>
+                    }
+                  </div>
+                  <div data-bind="if: $data.BirthMonth">
+                    @Resources.GetString("BIRTHDAY")&nbsp;<span data-bind="text: app.formatSpecialDate($data.BirthMonth, $data.BirthDay)"></span>
+                  </div>
+                  <div data-bind="if: $data.AnniversaryMonth">
+                    @Resources.GetString("ANNIVERSARY")&nbsp;<span data-bind="text: app.formatSpecialDate($data.AnniversaryMonth, $data.AnniversaryDay)"></span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td style="overflow-x: hidden; white-space: nowrap; width: 244px;">
+              @Html.AppSettingsPartial("PartialView.DisplayAddress_KO", Model.Features.ShowCountryCodeWithAddress)
+            </td>
+            <td style="overflow-x: hidden; white-space: nowrap; width: 139px;">
+              <ul data-bind="foreach: PhoneNumbers" class="unstyled">
+                <li>
+                  <abbr data-bind="attr: { title: app.localize('PHONENUMBERTYPE_{0}', PhoneNumberType) }">
+                    <span data-bind="text: app.formatPhoneTypeAbbr(PhoneNumberType)"></span>
+                    <span data-bind="phone: Number"></span>
+                    <!-- ko if: Extension -->
+                    &nbsp;x<span data-bind="text: Extension"></span>
+                    <!-- /ko -->
+                  </abbr>
+                </li>
+              </ul>
+            </td>
+            <td style="overflow-x: hidden; text-align: right; white-space: nowrap; width: 104px;" data-bind="click: function () { return true; }, clickBubble: false">
+              <div data-bind="shortDate: $data.LastOrderDateUtc"></div>
+              @if (Model.Mode == CustomerListMode.Search)
+              {
+                <button class="btn btn-link" style="padding: 0;" type="button" data-bind="click: $root.onNewOrderClick">@Resources.GetString("CUSTOMERLIST_ROWDETAIL_ADDORDER_LINK")</button>
+              }
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pager -->
+      <table class="table">
+        <tr>
+          <td class="pager-buttons">
+            <button class="btn" type="button" data-bind="command: prevPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+            <button class="btn" type="button" data-bind="command: nextPageCommand">@Resources.GetString("PAGER_NEXT") <i class="icon-caret-right"></i></button>
+          </td>
+          <td class="pager-status" data-bind="text: app.localizeFormat('CUSTOMERLIST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+          <td class="pager-pagesize-label">
+            <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+          </td>
+          <td class="pager-pagesize-select">
+            <select class="input-mini" data-bind="value: pageSize">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- /ko -->
+
+<!-- ko if: selectedTab() === 'Notes' -->
+<!-- ko with: notesSearch -->
+<div style="display: none;" data-bind="visible: $root.selectedTab() === 'Notes'">
+  <div id="helpContent" class="well" style="border-top: none; display: none;">
+    @Html.Raw(Resources.GetLocalizedContent("CustomerNotesHelp"))
+  </div>
+
+  <!-- No Search Results -->
+  <div class="row" style="display: none;" data-bind="visible: noResults">
+    <div class="span12">
+      <div class="alert alert-info">
+        @Resources.GetString("NOTESSEARCH_NORESULTS_ALERT")
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="display: none;" data-bind="visible: hasResults">
+    <div class="span12">
+      <!-- Pager -->
+      <table class="table table-pager" style="margin-bottom: 0;">
+        <tr>
+          <td class="pager-buttons">
+            <button class="btn" type="button" data-bind="command: prevPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+            <button class="btn" type="button" data-bind="command: nextPageCommand">@Resources.GetString("PAGER_NEXT")&nbsp;<i class="icon-caret-right"></i></button>
+          </td>
+          <td class="pager-status" data-bind="text: app.localizeFormat('NOTESLIST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+          <td class="pager-pagesize-label">
+            <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+          </td>
+          <td class="pager-pagesize-select">
+            <select class="input-mini" data-bind="value: pageSize">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+
+      <table class="table table-hover" style="cursor: pointer;" data-bind="with: searchResults">
+        <tbody data-bind="foreach: $data">
+          <tr data-bind="with: _source, click: $root.onNoteRowClick, clickBubble: false">
+            <td>
+              <strong data-bind="text: app.localizeFormat('NOTESLIST_ITEM_TITLE', $data.FirstName, $data.LastName, app.formatShortDate($data.DateCreatedUtc))"></strong>
+              <pre class="pre-no-border" data-bind="text: Content"></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+
+<!-- ko if: selectedTab() === 'Groups' -->
+<!-- ko with: groupsSearch -->
+<div style="display: none;" data-bind="visible: $root.selectedTab() === 'Groups'">
+  <div id="helpContent" class="well" style="display: none;">
+    <button type="button" class="close" onclick=" $('#helpContent').hide();return false; ">&times;</button>
+    <strong>Need Help?</strong>
+    @* @Html.Raw(Resources.GetLocalizedContent("GroupListHelp"))*@
+  </div>
+
+  <!-- No Search Results -->
+  <div class="row" style="display: none;" data-bind="visible: noResults">
+    <div class="span12">
+      <div class="alert alert-info">
+        @Resources.GetString("GROUPSSEARCH_NORESULTS_ALERT")
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="display: none;" data-bind="visible: hasResults">
+    <div class="span12">
+      <button class="btn" type="button" data-bind="enable: deleteGroupsCommand.canExecute, command: deleteGroupsCommand"><i class="icon-download-alt"></i>&nbsp;@Resources.GetString("GROUPLIST_DELETE_BUTTON")</button>
+      <table class="table table-hover" style="cursor: pointer;" data-bind="with: searchResults">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" data-bind="checked: $parent.selectAll" title="@Resources.GetString("SELECTALL_TOOLTIP")" />
+            </th>
+            <th>@Resources.GetString("GROUPLIST_NAME")</th>
+            <th>@Resources.GetString("GROUPLIST_DESCRIPTION")</th>
+            <th style="text-align: right;">@Resources.GetString("GROUPLIST_CUSTOMERCOUNT")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: $data">
+          <tr data-bind="click: $root.onGroupRowClick, clickBubble: false">
+            <td data-bind="click: function() {return true}, clickBubble: false">
+              <input type="checkbox" data-bind="checked: $parents[1].groupChecked($data)" />
+            </td>
+            <td>
+              <span data-bind="text: Name"></span>
+            </td>
+            <td>
+              <span data-bind="text: Description"></span>
+            </td>
+            <td style="text-align: right;">
+              <span data-bind="text: CustomerCount"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+
+<!-- ko if: selectedTab() === 'Deleted' -->
+<!-- ko with: deletedCustomersSearch -->
+<div style="display: none;" data-bind="visible: $root.selectedTab() === 'Deleted'">
+  <div id="helpContent" class="well" style="display: none;">
+    <button type="button" class="close" onclick=" $('#helpContent').hide();return false; ">&times;</button>
+    <strong>Need Help?</strong>
+    @* @Html.Raw(Resources.GetLocalizedContent("DeletedCustomersListHelp"))*@
+  </div>
+
+  <!-- No Search Results -->
+  <div class="row" style="display: none;" data-bind="visible: noResults">
+    <div class="span12">
+      <div class="alert alert-info">
+        @Resources.GetString("DELETEDCUSTOMERS_NORESULTS_ALERT")
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="display: none;" data-bind="visible: hasResults">
+    <div class="span12">
+      <button class="btn" type="button" data-bind="enable: unDeleteCustomersCommand.canExecute, command: unDeleteCustomersCommand"><i class="icon-level-up"></i>&nbsp;@Resources.GetString("DELETEDCUSTOMERS_RESTORE")</button>
+      <button class="btn" type="button" data-bind="enable: purgeCustomersCommand.canExecute, command: purgeCustomersCommand"><i class="icon-remove"></i>&nbsp;@Resources.GetString("DELETEDCUSTOMERS_DELETE")</button>
+      <table class="table table-hover" style="cursor: pointer;" data-bind="with: searchResults">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" data-bind="checked: $parent.selectAll" title="@Resources.GetString("SELECTALL_TOOLTIP")" />
+            </th>
+            <th>@Resources.GetString("CUSTOMERLIST_COLUMNTITLES_NAMEANDEMAIL")</th>
+            <th>@Resources.GetString("CUSTOMERLIST_COLUMNTITLES_ADDRESS")</th>
+            <th>@Resources.GetString("CUSTOMERLIST_COLUMNTITLES_PHONE")</th>
+            <th style="text-align: right;">@Resources.GetString("CUSTOMERLIST_COLUMNTITLES_LASTORDERED")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: $data">
+          <tr data-bind="with: _source, clickBubble: false" style="cursor:default">
+            <td style="width: 24px;" data-bind="click: function () { return true; }, clickBubble: false">
+              <input type="checkbox" data-bind="checked: $parents[2].customerDeletedChecked($data)" />
+            </td>
+            <td style="overflow-x: hidden; white-space: nowrap; width: 349px;">
+              <div style="min-height: 64px; overflow-x: hidden; padding: 0; width: 349px;">
+                <span data-bind="if: $root.showImages" style="float: left; height: 100%; margin-right: 10px">
+                  <img class="img-polaroid pull-left" data-bind="attr: { src: $root.profileImageUrl($data) }" width="51" height="64" />
+                </span>
+                <div data-bind="style: { 'margin-left': $root.showImages() ? '61px' : '0px' }">
+                  <div>
+                    <strong data-bind="text: [$data.FirstName, $data.MiddleName, $data.LastName].join(' ')"></strong>
+                  </div>
+                  <div>
+                    @if (Model.Features.UseMailtoLinks)
+                    {
+                      <a data-bind="text: $data.Email, attr: { href: 'mailto:' + $data.Email }, click: function () { return true; }, clickBubble: false"></a>
+                    }
+                    else
+                    {
+                      <span data-bind="text: $data.Email"></span>
+                    }
+                  </div>
+                  <div data-bind="if: $data.BirthMonth">
+                    @Resources.GetString("BIRTHDAY")&nbsp;<span data-bind="text: app.formatSpecialDate($data.BirthMonth, $data.BirthDay)"></span>
+                  </div>
+                  <div data-bind="if: $data.AnniversaryMonth">
+                    @Resources.GetString("ANNIVERSARY")&nbsp;<span data-bind="text: app.formatSpecialDate($data.AnniversaryMonth, $data.AnniversaryDay)"></span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td style="overflow-x: hidden; white-space: nowrap; width: 244px;">
+              @Html.AppSettingsPartial("PartialView.DisplayAddress_KO", Model.Features.ShowCountryCodeWithAddress)
+            </td>
+            <td style="overflow-x: hidden; white-space: nowrap; width: 139px;">
+              <ul data-bind="foreach: PhoneNumbers" class="unstyled">
+                <li>
+                  <abbr data-bind="attr: { title: app.localize('PHONENUMBERTYPE_{0}', PhoneNumberType) }">
+                    <span data-bind="text: app.formatPhoneTypeAbbr(PhoneNumberType)"></span>
+                    <span data-bind="phone: Number"></span>
+                    <!-- ko if: Extension -->
+                    &nbsp;x<span data-bind="text: Extension"></span>
+                    <!-- /ko -->
+                  </abbr>
+                </li>
+              </ul>
+            </td>
+            <td style="overflow-x: hidden; text-align: right; white-space: nowrap; width: 104px;" data-bind="click: function () { return true; }, clickBubble: false">
+              <div data-bind="shortDate: $data.LastOrderDateUtc"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pager -->
+      <table class="table">
+        <tr>
+          <td class="pager-buttons">
+            <button class="btn" type="button" data-bind="command: prevPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+            <button class="btn" type="button" data-bind="command: nextPageCommand">@Resources.GetString("PAGER_NEXT") <i class="icon-caret-right"></i></button>
+          </td>
+          <td class="pager-status" data-bind="text: app.localizeFormat('CUSTOMERLIST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+          <td class="pager-pagesize-label">
+            <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+          </td>
+          <td class="pager-pagesize-select">
+            <select class="input-mini" data-bind="value: pageSize">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+
+@*Add To Group Modal Body*@
+<div id="addToGroupModal" style="display: none">
+  <div data-bind="with: groupsSearch">
+    <select name="addToGroupSelect" data-bind="foreach: searchResults">
+      <option data-bind="text: Name, value: GroupId"></option>
+    </select>
+  </div>
+</div>
+
+@section scripts {
+  @Html.Partial("_ConfirmModal")
+  @Html.Partial("_ProgressModal")
+
+  <script type="text/javascript">
+    var searchModel = null;
+    $(function () {
+        var config = {
+          ajaxService            : new myc.AjaxService(),
+          enablePersistence      : @(appSettings.GetValue<bool>("Feature.Search.Persistence") ? "true" : "false"),
+          apiUrl                 : '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "customers" })',
+          defaultProfileImageUrl : '@Url.Content("~/content/images/portrait_blank.png")',
+          profileImageUrl        : '@Url.Action("profile", "customerimages", new { customerId = "_id_" })',
+          targetUrlFormat        : '@Model.TargetUrlFormat',
+          newOrderUrl            : '@Url.Action("add", "orders", new { customerId = "_id_" })',
+          deleteCustomersUrl     : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "deletecustomers" })',
+          undeleteCustomersUrl   : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "undeletecustomers" })',
+          exportUrl              : '@Url.Action("export")',
+          printUrl               : '@Url.Action("print")',
+          labelsUrl              : '@Url.Action("labels")',
+          archiveApiUrl          : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "archivecustomers" })',
+          unarchiveApiUrl        : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "unarchivecustomers" })',
+          groupUrl               : '@Url.Action("detail", "groups", new { groupId = "_id_" })',
+          addToGroupApiUrl       : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "addtogroup" })',
+
+          notesSearch : new myc.NotesSearch({
+            ajaxService : new myc.AjaxService(),
+            apiUrl      : '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "notes" })'
+          }),
+
+          groupsSearch : new myc.GroupsSearch({
+            ajaxService         : new myc.AjaxService(),
+            apiUrl              : '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "groups" })',
+            deleteGroupsApiUrl  : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "deletegroups" })',
+          }),
+
+          deletedCustomersSearch : new myc.DeletedCustomersSearch({
+            ajaxService           : new myc.AjaxService(),
+            apiUrl                : '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "customers" })',
+            unDeleteCustomersUrl  : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "undeletecustomers" })',
+            purgeCustomersUrl     : '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "purgecustomers" })'
+          }),
+
+          isEcardsEnabled : @(Model.Features.Ecards ? "true" : "false"),
+          @if (Model.Features.Ecards)
+          {
+            <text>
+            eCards: {
+              ecardService   : new myc.eCardService({ url: '@Url.RouteUrl(new { httproute = "eCardsApi", controller = "ecards", action = "submit" })' }),
+              contentId      : '@appSettings.GetValue("eCards.ContentId")',
+              subsidiaryCode : '@subsidiary',
+              returnUrl      : document.location.href,
+              contentMode    : 'AnySansDefault'
+            }
+            </text>
+          }
+        };
+
+        var model = new myc.CustomerList(config);
+        searchModel = model;
+        ko.applyBindings(model);
+      });
+  </script>
+}

@@ -1,0 +1,319 @@
+﻿@{
+  ViewBag.Title = Resources.GetString("REMINDERLIST_PAGETITLE");
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+}
+
+<div class="navbar" style="margin-top: 10px;">
+  <div class="navbar-inner">
+    <a class="brand" href="#">@ViewBag.Title</a>
+    <ul class="nav pull-right">
+      <li class="divider-vertical"></li>
+      <li><a style="padding-left: 0; padding-right: 0" class="btn-help" href="#" onclick="$('#helpContent').toggle(); return false;"><i class="icon-question-sign"></i>&nbsp;@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="helpContent" class="well" style="display: none;">
+  <button type="button" class="close" onclick="$('#helpContent').hide();return false;">&times;</button>
+  @Html.Raw(Resources.GetLocalizedContent("ReminderListHelp"))
+</div>
+
+<div class="row">
+  <div class="span9">
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" style="white-space: nowrap; padding-right: 1em; width: auto;">@Resources.GetString("REMINDERLIST_FILTERTITLE")</label>
+        <div class="controls">
+          <select data-bind="value: filterType">
+            <option value="">@Resources.GetString("REMINDERLIST_FILTER_ALL")</option>
+            <option value="Consultant,Customer">@Resources.GetString("REMINDERLIST_FILTER_MYREMINDERS")</option>
+            <option value="NewCustomerRegistrationFollowUp">@Resources.GetString("REMINDERLIST_FILTER_PWSREGISTRATION")</option>
+            <option value="ProfileUpdatedByCustomerFollowUp">@Resources.GetString("REMINDERLIST_FILTER_PWSUPDATEREGISTRATION")</option>
+            <option value="InterestedInMkOpportunityFollowUp">@Resources.GetString("REMINDERLIST_FILTER_BUSINESS")</option>
+            <option value="OrderFollowUp">@Resources.GetString("REMINDERLIST_FILTER_ORDERFOLLOWUP")</option>
+            <option value="OrderDelivery">@Resources.GetString("REMINDERLIST_FILTER_ORDERDELIVERY")</option>
+            <option value="BirthdayFollowUp">@Resources.GetString("REMINDERLIST_FILTER_BIRTHDAY")</option>
+            <option value="AnniversaryFollowUp">@Resources.GetString("REMINDERLIST_FILTER_ANNIVERSARY")</option>
+            <option value="HostAPartyFollowup">@Resources.GetString("REMINDERLIST_FILTER_HOST")</option>
+            @if (appSettings.GetValue<bool>("Feature.Tasks.CustomerSampleFilter"))
+            {
+              <option value="ProductSampleDelivery">@Resources.GetString("REMINDERLIST_FILTER_SAMPLEDELIVERY")</option>
+              <option value="ProductSampleRequestFollowUp">@Resources.GetString("REMINDERLIST_FILTER_SAMPLEREQUEST")</option>
+            }
+            <option value="ProductReorderReminder">@Resources.GetString("REMINDERLIST_FILTER_PRR")</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="span3" style="margin-left: 0; float: right;">
+    <a class="btn btn-primary pull-right" href="#" data-bind="click: function() { $root.addTask(); }"><i style="margin-right: 5px" class="icon-plus-sign icon-white"></i>@Resources.GetString("REMINDERLIST_NEWREMINDER")</a>
+  </div>
+</div>
+
+<!-- ko foreach: newTask -->
+<div class="row">
+  <div class="span12">
+    <div class="well" style="display: none;" data-bind="visible: Title != null">
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label">@Resources.GetString("REMINDERLIST_NEWREMINDER_TITLE")</label>
+          <div class="controls">
+            <input type="text" maxlength="64" class="input-large" data-bind="value: $root.newTaskTitleInput, showValidationFor: $root.newTaskTitleInput, valueUpdate: 'keyup'" />
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">@Resources.GetString("REMINDERLIST_NEWREMINDER_DESCRIPTION")</label>
+          <div class="controls">
+            <textarea rows="3" class="input-large" data-bind="value: $root.newTaskDescriptionInput"></textarea>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">@Resources.GetString("REMINDERLIST_NEWREMINDER_DUEON")</label>
+          <div class="controls">
+            <input type="text" class="input-small" data-bind="datepicker: $root.newTaskDueDateUtcInput, showValidationFor: $root.newTaskDueDateUtcInput" />
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">@Resources.GetString("REMINDERLIST_NEWREMINDER_FORCUSTOMER")</label>
+          <div class="controls">
+            <div>
+              <input id="taskText" type="text" class="input-xlarge" data-bind="typeAhead: CustomerId, typeAheadSource: $root.typeAheadSource, value: Name" placeholder="@Resources.GetString("REMINDERLIST_NEWREMINDER_TYPEAHEAD")" />
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 20px;" class="form-actions">
+          <button class="btn btn-primary" data-bind="enable: $root.newTaskDueDateUtcInput.isValid() && $root.newTaskTitleHasContent, click: $root.addNewTask, activity: $root.addCommand.isExecuting">@Resources.GetString("REMINDERLIST_NEWREMINDER_SAVE")</button>
+          <button class="btn btn-link" data-bind="click: function() { $root.newTask(null); }, enable: !$root.addCommand.isExecuting()">@Resources.GetString("CANCEL")</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- /ko -->
+
+<div style="display: none;" class="alert alert-warning" data-bind="visible: overDueTasks().length > 0">
+  <div style="display: none;" data-bind="visible: overDueTasks.currentPageData().length == 0">
+    @Resources.GetString("REMINDERLIST_OVERDUE_CLICK")&nbsp;<a href="#" data-bind="click: overDueTasks.viewAll">@Resources.GetString("REMINDERLIST_OVERDUE_HERE")</a>&nbsp;@Resources.GetString("REMINDERLIST_OVERDUE_VIEWALL")
+  </div>
+  <div style="margin-top: 10px; display: none;" data-bind="visible: overDueTasks.currentPageData().length > 0">
+    <div style="margin-bottom: 15px;">
+      <button class="btn" data-bind="enable: $root.updateMassStatusCommand.canExecute, activity: $root.updateMassStatusCommand.isExecuting, click: selectAll">@*<i style="margin-right: 5px;" class="icon-check"></i>*@@Resources.GetString("REMINDERLIST_OVERDUE_SELECTALL")</button>
+      <button class="btn" data-bind="enable: $root.updateMassStatusCommand.canExecute, visible: overDueTasks.currentPageData().length > 0, click: hideOverDueTasks">@Resources.GetString("REMINDERLIST_OVERDUE_HIDE")</button>
+    </div>
+    <!-- ko foreach: overDueTasks.currentPageData -->
+    <div data-bind="template: { name: $root.overDueTemplate }"></div>
+    <!-- /ko -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12" data-bind="activity: $root.searchIsBusy">
+    <h4 style="display: inline;" data-bind="text: weekText"></h4>
+    <div class="pull-right">
+      <button class="btn" data-bind="enable: searchCommand.canExecute(), click: resetToToday">@Resources.GetString("REMINDERLIST_BUTTON_TODAY")</button>
+      <div class="btn-group">
+        <button class="btn" data-bind="command: prevPageCommand"><i class="icon-chevron-left"></i></button>
+        <button class="btn" data-bind="command: nextPageCommand"><i class="icon-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <h5 data-bind="text: todayText"></h5>
+    <!-- ko foreach: todayTasks -->
+    <div data-bind="template: { name: $root.template }"></div>
+    <!-- /ko -->
+    <span class="item-reminder" style="display: none;" data-bind="visible: todayTasks().length == 0">@Resources.GetString("REMINDERLIST_REMINDERS_NOTFOUND")</span>
+    <h5 data-bind="text: firstDayText"></h5>
+    <!-- ko foreach: firstDayTasks.currentPageData -->
+    <div data-bind="template: { name: $root.template }"></div>
+    <!-- /ko -->
+    <span class="item-reminder" style="display: none;" data-bind="visible: firstDayTasks().length == 0">@Resources.GetString("REMINDERLIST_REMINDERS_NOTFOUND")</span>
+    <button style="display: none;" class="btn-link item-reminder" data-bind="click: firstDayTasks.viewAll, visible: firstDayTasks.pageCount() > firstDayTasks.currentPage()">@Resources.GetString("REMINDERLIST_VIEWMORE")</button>
+    <h5 data-bind="text: secondDayText"></h5>
+    <!-- ko foreach: secondDayTasks.currentPageData -->
+    <div data-bind="template: { name: $root.template }"></div>
+    <!-- /ko -->
+    <span class="item-reminder" style="display: none;" data-bind="visible: secondDayTasks().length == 0">@Resources.GetString("REMINDERLIST_REMINDERS_NOTFOUND")</span>
+    <button style="display: none;" class="btn-link item-reminder" data-bind="click: secondDayTasks.viewAll, visible: secondDayTasks.pageCount() > secondDayTasks.currentPage()">@Resources.GetString("REMINDERLIST_VIEWMORE")</button>
+    <h5 data-bind="text: thirdDayText"></h5>
+    <!-- ko foreach: thirdDayTasks.currentPageData -->
+    <div data-bind="template: { name: $root.template }"></div>
+    <!-- /ko -->
+    <span class="item-reminder" style="display: none;" data-bind="visible: thirdDayTasks().length == 0">@Resources.GetString("REMINDERLIST_REMINDERS_NOTFOUND")</span>
+    <button style="display: none;" class="btn-link item-reminder" data-bind="click: thirdDayTasks.viewAll, visible: thirdDayTasks.pageCount() > thirdDayTasks.currentPage()">@Resources.GetString("REMINDERLIST_VIEWMORE")</button>
+    <h5 data-bind="text: fourthDayText"></h5>
+    <!-- ko foreach: fourthDayTasks.currentPageData -->
+    <div data-bind="template: { name: $root.template }"></div>
+    <!-- /ko -->
+    <span class="item-reminder" style="display: none;" data-bind="visible: fourthDayTasks().length == 0">@Resources.GetString("REMINDERLIST_REMINDERS_NOTFOUND")</span>
+    <button style="display: none;" class="btn-link item-reminder" data-bind="click: fourthDayTasks.viewAll, visible: fourthDayTasks.pageCount() > fourthDayTasks.currentPage()">@Resources.GetString("REMINDERLIST_VIEWMORE")</button>
+    <h5 data-bind="text: fifthDayText"></h5>
+    <!-- ko foreach: fifthDayTasks.currentPageData -->
+    <div data-bind="template: { name: $root.template }"></div>
+    <!-- /ko -->
+    <span class="item-reminder" style="display: none;" data-bind="visible: fifthDayTasks().length == 0">@Resources.GetString("REMINDERLIST_REMINDERS_NOTFOUND")</span>
+    <button style="display: none;" class="btn-link item-reminder" data-bind="click: fifthDayTasks.viewAll, visible: fifthDayTasks.pageCount() > fifthDayTasks.currentPage()">@Resources.GetString("REMINDERLIST_VIEWMORE")</button>
+    <h5 data-bind="text: sixthDayText"></h5>
+    <!-- ko foreach: sixthDayTasks.currentPageData -->
+    <div data-bind="template: { name: $root.template }"></div>
+    <!-- /ko -->
+    <span class="item-reminder" style="display: none;" data-bind="visible: sixthDayTasks().length == 0">@Resources.GetString("REMINDERLIST_REMINDERS_NOTFOUND")</span>
+    <button style="display: none;" class="btn-link item-reminder" data-bind="click: sixthDayTasks.viewAll, visible: sixthDayTasks.pageCount() > sixthDayTasks.currentPage()">@Resources.GetString("REMINDERLIST_VIEWMORE")</button>
+    <hr />
+    <h5>@Resources.GetString("REMINDERLIST_WITHOUTDUEDATE")</h5>
+    <!-- ko foreach: withoutDueDateTasks.currentPageData -->
+    <div data-bind="template: { name: $root.template }"></div>
+    <!-- /ko -->
+    <span class="item-reminder" style="display: none;" data-bind="visible: withoutDueDateTasks().length == 0">@Resources.GetString("REMINDERLIST_WITHOUTDUEDATE_NOTFOUND")</span>
+    <button style="display: none;" class="btn-link item-reminder" data-bind="click: withoutDueDateTasks.viewAll, visible: withoutDueDateTasks.pageCount() > withoutDueDateTasks.currentPage()">@Resources.GetString("REMINDERLIST_VIEWMORE")</button>
+  </div>
+
+</div>
+
+@section scripts {
+  <script type="text/html" id="task-template">
+    <span class="checkbox item-reminder" data-bind="css: { completedTasks: IsComplete } ">
+      <input type="checkbox" data-bind="enable: $root.updateStatusCommand.canExecute(), checked: IsComplete, click: $parent.completeTask" /><i class="icon-pencil icon-pointer" data-bind="  click: $root.editTask"></i>
+      <a style="margin-right: 3px;" data-bind="attr: { href: TargetUrl }, text: UrlText"></a>
+      <span style="margin-right: 3px;" data-bind="text: Title"></span>
+      <span style="margin-right: 3px;" data-bind="text: PrefixText"></span>
+      <a data-bind="attr: { href: ProfileUrl }, css: { withoutLink: ProfileUrl() == null }"><span style="margin-right: 3px;" data-bind="  text: Name"></span></a>
+      <span data-bind="text: EndText"></span>
+    </span>
+  </script>
+  <script type="text/html" id="taskEdit-template">
+    <label class="checkbox item-reminder">
+      <input disabled="disabled" type="checkbox" data-bind="checked: IsComplete, click: $parent.completeTask" /><i class="icon-pencil"></i>
+      <a style="margin-right: 3px;" data-bind="attr: { href: TargetUrl }, text: UrlText"></a>
+      <span style="margin-right: 3px;" data-bind="text: Title"></span>
+      <span style="margin-right: 3px;" data-bind="text: PrefixText"></span>
+      <a data-bind="attr: { href: ProfileUrl }, css: { withoutLink: ProfileUrl() == null }"><span style="margin-right: 3px;" data-bind="  text: Name"></span></a>
+      <span data-bind="text: EndText"></span>
+    </label>
+    <div data-bind="with: $root.selectedTask">
+      <div class="well">
+        <form>
+          <label>@Resources.GetString("REMINDERLIST_EDITREMINDER_TITLE")</label>
+          <input type="text" maxlength="64" class="input-large" data-bind="value: $root.editTaskTitleInput, showValidationFor: $root.editTaskTitleInput, valueUpdate: 'keyup'" />
+          <label>@Resources.GetString("REMINDERLIST_EDITREMINDER_DESCRIPTION")</label>
+          <textarea rows="3" class="input-large" data-bind="value: $root.editTaskDescriptionInput"></textarea>
+          <label>@Resources.GetString("REMINDERLIST_EDITREMINDER_DUEON")</label>
+          <input type="text" class="input-small datepicker" data-bind="datepicker: $root.editTaskDueDateUtcInput, showValidationFor: $root.editTaskDueDateUtcInput" />
+        </form>
+        <div>
+          <button class="btn btn-primary" data-bind="enable: $root.editTaskDueDateUtcInput.isValid() && $root.editTaskTitleHasContent, click: $root.saveTask, activity: $root.saveCommand.isExecuting">@Resources.GetString("REMINDERLIST_EDITREMINDER_SAVE")</button>
+          <button class="btn btn-link" data-bind="click: $root.cancelEditTask">@Resources.GetString("CANCEL")</button>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script type="text/html" id="taskEdit-template-automat">
+    <label class="checkbox item-reminder">
+      <input disabled="disabled" type="checkbox" data-bind="checked: IsComplete, click: $parent.completeTask" /><i class="icon-pencil"></i>
+      <a style="margin-right: 3px;" data-bind="attr: { href: TargetUrl }, text: UrlText"></a>
+      <span style="margin-right: 3px;" data-bind="text: Title"></span>
+      <span style="margin-right: 3px;" data-bind="text: PrefixText"></span>
+      <a data-bind="attr: { href: ProfileUrl }, css: { withoutLink: ProfileUrl() == null }"><span style="margin-right: 3px;" data-bind="  text: Name"></span></a>
+      <span data-bind="text: EndText"></span>
+    </label>
+    <div data-bind="with: $root.selectedTask">
+      <div class="well">
+        <form>
+          <label>@Resources.GetString("REMINDERLIST_EDITREMINDER_DUEON")</label>
+          <input type="text" class="input-small datepicker" data-bind="datepicker: $root.editTaskDueDateUtcInput, showValidationFor: $root.editTaskDueDateUtcInput" />
+        </form>
+        <div>
+          <button class="btn btn-primary" data-bind="enable: $root.editTaskDueDateUtcInput.isValid(), click: $root.saveTask, activity: $root.saveCommand.isExecuting">@Resources.GetString("REMINDERLIST_EDITREMINDER_SAVE")</button>
+          <button class="btn btn-link" data-bind="click: $root.cancelEditTask">@Resources.GetString("CANCEL")</button>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script type="text/html" id="task-overDueTemplate">
+    <span class="checkbox overdue-reminder" data-bind="css: { completedTasks: IsComplete } ">
+      <input type="checkbox" data-bind="checked: IsComplete, click: $parent.completeTask, enable: $root.updateMassStatusCommand.canExecute" /><i class="icon-pencil icon-pointer" data-bind="  click: $root.editTask"></i>
+      <a style="margin-right: 3px;" data-bind="attr: { href: TargetUrl }, text: UrlText"></a>
+      <span style="margin-right: 3px;" data-bind="text: Title"></span>
+      <span style="margin-right: 3px;" data-bind="text: PrefixText"></span>
+      <a data-bind="attr: { href: ProfileUrl }, css: { withoutLinkOverDue: ProfileUrl() == null }"><span style="margin-right: 3px;" data-bind="  text: Name"></span></a>
+      <span data-bind="text: EndText"></span>
+      <span data-bind="shortDate: DueDateUtc"></span>
+    </span>
+  </script>
+  <script type="text/html" id="taskEdit-overDueTemplate">
+    <label class="checkbox overdue-reminder">
+      <input disabled="disabled" type="checkbox" data-bind="checked: IsComplete" /><i class="icon-pencil"></i>
+      <a style="margin-right: 3px;" data-bind="attr: { href: TargetUrl }, text: UrlText"></a>
+      <span style="margin-right: 3px;" data-bind="text: Title"></span>
+      <span style="margin-right: 3px;" data-bind="text: PrefixText"></span>
+      <a data-bind="attr: { href: ProfileUrl }, css: { withoutLink: ProfileUrl() == null }"><span style="margin-right: 3px;" data-bind="  text: Name"></span></a>
+      <span data-bind="text: EndText"></span>
+      <span data-bind="shortDate: DueDateUtc"></span>
+    </label>
+    <div data-bind="with: $root.selectedTask">
+      <div class="well">
+        <form>
+          <label>@Resources.GetString("REMINDERLIST_EDITREMINDER_TITLE")</label>
+          <input type="text" maxlength="64" class="input-large" data-bind="value: $root.editTaskTitleInput, showValidationFor: $root.editTaskTitleInput, valueUpdate: 'keyup'" />
+          <label>@Resources.GetString("REMINDERLIST_EDITREMINDER_DESCRIPTION")</label>
+          <textarea rows="3" class="input-large" data-bind="value: $root.editTaskDescriptionInput"></textarea>
+          <label>@Resources.GetString("REMINDERLIST_EDITREMINDER_DUEON")</label>
+          <input type="text" class="input-small datepicker" data-bind="datepicker: $root.editTaskDueDateUtcInput, showValidationFor: $root.editTaskDueDateUtcInput" />
+        </form>
+        <div>
+          <button class="btn btn-primary" data-bind="enable: $root.editTaskDueDateUtcInput.isValid() && $root.editTaskTitleHasContent, click: $root.saveTask, activity: $root.saveCommand.isExecuting">@Resources.GetString("REMINDERLIST_EDITREMINDER_SAVE")</button>
+          <button class="btn btn-link" data-bind="click: $root.cancelEditTask">@Resources.GetString("CANCEL")</button>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script type="text/html" id="taskEdit-overDueTemplate-automat">
+    <label class="checkbox overdue-reminder">
+      <input disabled="disabled" type="checkbox" data-bind="checked: IsComplete" /><i class="icon-pencil"></i>
+      <a style="margin-right: 3px;" data-bind="attr: { href: TargetUrl }, text: UrlText"></a>
+      <span style="margin-right: 3px;" data-bind="text: Title"></span>
+      <span style="margin-right: 3px;" data-bind="text: PrefixText"></span>
+      <a data-bind="attr: { href: ProfileUrl }, css: { withoutLink: ProfileUrl() == null }"><span style="margin-right: 3px;" data-bind="  text: Name"></span></a>
+      <span data-bind="text: EndText"></span>
+      <span data-bind="shortDate: DueDateUtc"></span>
+    </label>
+    <div data-bind="with: $root.selectedTask">
+      <div class="well">
+        <form>
+          <label>@Resources.GetString("REMINDERLIST_EDITREMINDER_DUEON")</label>
+          <input type="text" class="input-small datepicker" data-bind="datepicker: $root.editTaskDueDateUtcInput, showValidationFor: $root.editTaskDueDateUtcInput" />
+        </form>
+        <div>
+          <button class="btn btn-primary" data-bind="enable: $root.editTaskDueDateUtcInput.isValid(), click: $root.saveTask, activity: $root.saveCommand.isExecuting">@Resources.GetString("REMINDERLIST_EDITREMINDER_SAVE")</button>
+          <button class="btn btn-link" data-bind="click: $root.cancelEditTask">@Resources.GetString("CANCEL")</button>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      var config = {
+        actions: {
+          search: '@Url.Action("search")',
+          saveTask: '@Url.Action("save")',
+          addTask: '@Url.Action("add")',
+          getCustomerList: '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "customers" })',
+          updateTaskStatus: '@Url.Action("updatetaskstatus")',
+          updateMassTaskStatus: '@Url.Action("updatemasstaskstatus")'
+        },
+        data: {
+          profileUrl: '@appSettings.GetValue("TaskItemProfile_TargetUrl")',
+                remindersCount: '@appSettings.GetValue("RemindersCount")'
+              }
+      };
+
+      var model = new myc.TaskList(config);
+      ko.applyBindings(model);
+    });
+  </script>
+}

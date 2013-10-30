@@ -1,0 +1,15 @@
+﻿@using Quartet.Entities;
+@using System.Globalization;
+
+<!-- ko foreach: ['Graduation', 'NewBaby', 'NewJob', 'Vacation', 'Wedding', 'Other'] -->
+<div class="control-group" data-bind="with: $parent.getImportantDate($data)">
+  <label class="control-label" data-bind="localize: type, resourceKey: 'IMPORTANTDATE_{0}'"></label>
+
+  <div class="controls">
+    <input data-bind="datepicker: date, showValidationFor: date" type="text" maxlength="10" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+    <!-- ko if: type() === 'Other' -->
+    <input data-bind="value: description, showValidationFor: description" maxlength="256" type="text" placeholder="@Resources.GetString("ADDCUSTOMER_OTHER_DESCRIPTION")" />
+    <!-- /ko -->
+  </div>
+</div>
+<!-- /ko -->

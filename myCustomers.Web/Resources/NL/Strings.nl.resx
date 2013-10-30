@@ -1,0 +1,2475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDRESS_LABEL" xml:space="preserve">
+    <value>Adres:</value>
+  </data>
+  <data name="BTN_ADDCUSTOMER" xml:space="preserve">
+    <value>Nieuwe klant</value>
+  </data>
+  <data name="BTN_ADDORDER" xml:space="preserve">
+    <value>Nieuwe bestelling</value>
+  </data>
+  <data name="CUSTOMERDIRECTIONS_COMMENTS_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDIRECTIONS_DELIVERYPREFERENCE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDIRECTIONS_FREESAMPLES_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDIRECTIONS_FREESAMPLES_TEXT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDIRECTIONS_GIFTWITHPURCHASE_TEXT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDIRECTIONS_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_ECARD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_EXPORT" xml:space="preserve">
+    <value>Exporteren</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT" xml:space="preserve">
+    <value>Printen</value>
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT_LIST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_PRINT_LABELS" xml:space="preserve">
+    <value>Labels</value>
+  </data>
+  <data name="FILTER_ANNIVERSARY_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILTER_BIRTHDAY_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SEARCH_PLACEHOLDER" xml:space="preserve">
+    <value>Zoeken</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_ADDRESS" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_LASTORDERED" xml:space="preserve">
+    <value>Laatste bestelling</value>
+  </data>
+  <data name="DELETEDCUSTOMERS_RESTORE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEDORDERS_RESTORE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEDCUSTOMERS_DELETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEDORDERS_DELETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_NAMEANDEMAIL" xml:space="preserve">
+    <value>Naam &amp; e-mail</value>
+  </data>
+  <data name="CUSTOMERLIST_COLUMNTITLES_PHONE" xml:space="preserve">
+    <value>Telefoon</value>
+  </data>
+  <data name="CUSTOMERLIST_NORESULTS_ALERT" xml:space="preserve">
+    <value>Geen klanten gevonden die bij de zoekcriteria passen</value>
+  </data>
+  <data name="CUSTOMERLIST_PAGETITLE" xml:space="preserve">
+    <value>Klanten</value>
+  </data>
+  <data name="CUSTOMERLIST_ROWDETAIL_ADDORDER_LINK" xml:space="preserve">
+    <value>Bestelling toevoegen</value>
+  </data>
+  <data name="ADDCUSTOMER_EMAIL" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ADDCUSTOMER_FIRSTNAME" xml:space="preserve">
+    <value>Voornaam</value>
+  </data>
+  <data name="ADDCUSTOMER_LASTNAME" xml:space="preserve">
+    <value>Achternaam</value>
+  </data>
+  <data name="ADDCUSTOMER_MIDDLENAME" xml:space="preserve">
+    <value>Tweede voornaam</value>
+  </data>
+  <data name="ADDCUSTOMER_PHONE" xml:space="preserve">
+    <value>Telefoon</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="ADDCUSTOMER_PROFILE_DATE" xml:space="preserve">
+    <value>Profieldatum</value>
+  </data>
+  <data name="ADDCUSTOMER_SAVE_BUTTON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DATE_LABEL" xml:space="preserve">
+    <value>Datum:</value>
+  </data>
+  <data name="DELIVERYDATE_MISSING" xml:space="preserve">
+    <value>Niet van toepassing</value>
+  </data>
+  <data name="DELIVERYADDRESS_MISSING" xml:space="preserve">
+    <value>Niet van toepassing</value>
+  </data>
+  <data name="DELIVERYPREFERENCE_CUSTOMERWILLPICKUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_DELIVERTOHOMEORWORK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_SETUPAPPOINTMENTFORCONSULTATIONANDDELIVERY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYPREFERENCE_SHIPTOCUSTOMERADDRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERY_HEADING" xml:space="preserve">
+    <value>Levering</value>
+  </data>
+  <data name="EDIT_ONLINEORDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EDIT_SALESTICKET" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FULFILLMENTOPTION_CDS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FULFILLMENTOPTION_CDS_INELIGIBLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROPAY_SIGNUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROPAY_SIGNUP_BUTTON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FULFILLMENTOPTION_MYINVENTORY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FULFILLMENT_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GIFTORDER_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_FACEBOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_IMPORT_FRIENDS" xml:space="preserve">
+    <value>Vrienden en vriendinnen importeren</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_OUTLOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_PAGETITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ISGIFT_FALSE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ISGIFT_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ISGIFT_TRUE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MONTHLIST_SELECT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NAV_CUSTOMERS" xml:space="preserve">
+    <value>Klanten</value>
+  </data>
+  <data name="NAV_LOGOUT" xml:space="preserve">
+    <value>Uitloggen</value>
+  </data>
+  <data name="NAV_ORDERS" xml:space="preserve">
+    <value>Bestellingen</value>
+  </data>
+  <data name="INTOUCH_PROFILE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NAV_TASKS" xml:space="preserve">
+    <value>Herinneringen</value>
+  </data>
+  <data name="NEW_SALESTICKET" xml:space="preserve">
+    <value>Kaartje nieuwe verkoop</value>
+  </data>
+  <data name="ORDERDATE_LABEL" xml:space="preserve">
+    <value>Besteldatum</value>
+  </data>
+  <data name="ORDERFOLLOWUP_HEADING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERLIST_AMOUNT" xml:space="preserve">
+    <value>Bedrag</value>
+  </data>
+  <data name="ORDERLIST_CUSTOMER" xml:space="preserve">
+    <value>Klant</value>
+  </data>
+  <data name="ORDERLIST_DATE" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="ORDERLIST_NORESULTS" xml:space="preserve">
+    <value>Geen bestellingen gevonden die bij de zoekcriteria passen</value>
+  </data>
+  <data name="ORDERLIST_PAYMENT" xml:space="preserve">
+    <value>Betaling</value>
+  </data>
+  <data name="ORDERLIST_SOURCE" xml:space="preserve">
+    <value>Bron</value>
+  </data>
+  <data name="ORDERLIST_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ORDERLIST_TITLE" xml:space="preserve">
+    <value>Bestellingen</value>
+  </data>
+  <data name="ORDERNOTES_HEADING" xml:space="preserve">
+    <value>Bestellingsnotities</value>
+  </data>
+  <data name="ORDERNOTES_LABEL" xml:space="preserve">
+    <value>Notities:</value>
+  </data>
+  <data name="ORDERNUMBER_LABEL" xml:space="preserve">
+    <value>Bestelnummer:</value>
+  </data>
+  <data name="ORDERPAYMENT_STATUS" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="FILTER_ORDERTYPE_LABEL" xml:space="preserve">
+    <value>Bestellingsbron:</value>
+  </data>
+  <data name="ORDERSOURCE_ONLINE" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="ORDERSOURCE_SALESTICKET" xml:space="preserve">
+    <value>Verkoopkaartje</value>
+  </data>
+  <data name="FILTER_ORDERSTATUS_LABEL" xml:space="preserve">
+    <value>Bestelstatus:</value>
+  </data>
+  <data name="ORDERSTATUS_SUBMITTED" xml:space="preserve">
+    <value>Nieuw</value>
+  </data>
+  <data name="ORDERSTATUS_UNDERREVIEW" xml:space="preserve">
+    <value>Onafgehandeld</value>
+  </data>
+  <data name="ORDERSTATUS_PROCESSED" xml:space="preserve">
+    <value>Afgehandeld</value>
+  </data>
+  <data name="ORDERSTATUS_SHIPPEDDELIVERED" xml:space="preserve">
+    <value>Verzonden/geleverd</value>
+  </data>
+  <data name="ORDER_NOPRODUCTS" xml:space="preserve">
+    <value>Deze bestelling bevat geen producten.</value>
+  </data>
+  <data name="PAGER_NEXT" xml:space="preserve">
+    <value>Volgende</value>
+  </data>
+  <data name="PAGER_PAGESIZE_LABEL" xml:space="preserve">
+    <value>Paginagrootte:</value>
+  </data>
+  <data name="PAGER_PREVIOUS" xml:space="preserve">
+    <value>Vorige</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_COMPLETED" xml:space="preserve">
+    <value>Volledig betaald</value>
+  </data>
+  <data name="FILTER_ORDERPAYMENTSTATUS_LABEL" xml:space="preserve">
+    <value>Betalingsstatus:</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_PARTIAL" xml:space="preserve">
+    <value>Gedeeltelijk betaald</value>
+  </data>
+  <data name="ORDERPAYMENTSTATUS_NA" xml:space="preserve">
+    <value>Onbetaald</value>
+  </data>
+  <data name="PAYMENTTYPE_CASH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTTYPE_CHECK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTTYPE_CREDITCARD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENT_HEADING" xml:space="preserve">
+    <value>Betaling</value>
+  </data>
+  <data name="PHONETYPE_HOME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PHONETYPE_HOME_ABBR" xml:space="preserve">
+    <value>Vaste telefoon</value>
+  </data>
+  <data name="PHONETYPE_MOBILE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PHONETYPE_MOBILE_ABBR" xml:space="preserve">
+    <value>Mobiel</value>
+  </data>
+  <data name="PHONETYPE_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PHONETYPE_OTHER_ABBR" xml:space="preserve">
+    <value>Ander</value>
+  </data>
+  <data name="PHONETYPE_WORK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PHONETYPE_WORK_ABBR" xml:space="preserve">
+    <value>Kantoor</value>
+  </data>
+  <data name="PRIMARY_BADGE" xml:space="preserve">
+    <value>Voornaamste</value>
+  </data>
+  <data name="PRODUCTLIST_FOOTER_TOTAL" xml:space="preserve">
+    <value>Geschatte detailhandel totaal:</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_NAME" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_PARTNUMBER" xml:space="preserve">
+    <value>Artikelnummer</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_QUANTITY" xml:space="preserve">
+    <value>Hoeveelheid</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_REORDERREMINDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTLIST_HEADER_RETAILTOTAL" xml:space="preserve">
+    <value>Detailhandel totaal</value>
+  </data>
+  <data name="PRODUCTLIST_HEADER_SUGGESTEDRETAIL" xml:space="preserve">
+    <value>Advies-detailhandelsprijs</value>
+  </data>
+  <data name="PRODUCTS_HEADING" xml:space="preserve">
+    <value>Producten</value>
+  </data>
+  <data name="SELECT_NONE" xml:space="preserve">
+    <value>-- Selecteren --</value>
+  </data>
+  <data name="SITE_NAME" xml:space="preserve">
+    <value>MijnKlanten</value>
+  </data>
+  <data name="REMINDERLIST_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_PAGETITLE" xml:space="preserve">
+    <value>Herinneringen</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ALL" xml:space="preserve">
+    <value>--Alle categorieën--</value>
+  </data>
+  <data name="REMINDERLIST_FILTERTITLE" xml:space="preserve">
+    <value>Komende herinneringen bekijken:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_DESCRIPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_DUEON" xml:space="preserve">
+    <value>vervalt op:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_FORCUSTOMER" xml:space="preserve">
+    <value>Voor klant:</value>
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_SAVE" xml:space="preserve">
+    <value>Herinnering opslaan</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_CLICK" xml:space="preserve">
+    <value>Klik</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HERE" xml:space="preserve">
+    <value>hier</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_VIEWALL" xml:space="preserve">
+    <value>om al uw achterstallige herinneringen te zien</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HIDEALL" xml:space="preserve">
+    <value>om alle achterstallige herinneringen te verstoppen</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_SELECTALL" xml:space="preserve">
+    <value>Alle achterstallige herinneringen als afgesloten markeren</value>
+  </data>
+  <data name="REMINDERLIST_OVERDUE_HIDE" xml:space="preserve">
+    <value>Achterstallige herinneringen verbergen</value>
+  </data>
+  <data name="REMINDERLIST_VIEWMORE" xml:space="preserve">
+    <value>meer bekijken...</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_DESCRIPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_WITHOUTDUEDATE" xml:space="preserve">
+    <value>Herinneringen zonder afloop datum</value>
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_DUEON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_EDITREMINDER_SAVE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_UPDATESUCCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_ADDSUCCESS" xml:space="preserve">
+    <value>Herinnering toegevoegd</value>
+  </data>
+  <data name="REMINDERLIST_ACTION_TITLEISREQUIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER" xml:space="preserve">
+    <value>Nieuwe herinnering</value>
+  </data>
+  <data name="ADDCUSTOMER_LANGUAGE" xml:space="preserve">
+    <value>Taal</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_UPLOADFILE" xml:space="preserve">
+    <value>Klanten importeren</value>
+  </data>
+  <data name="ADDCUSTOMER_NOTE" xml:space="preserve">
+    <value>Notitie of commentaar</value>
+  </data>
+  <data name="ADDCUSTOMER_OCCUPATION" xml:space="preserve">
+    <value>Beroep / titel</value>
+  </data>
+  <data name="ADDCUSTOMER_SHOWMORE" xml:space="preserve">
+    <value>Toon verdere velden (U kann deze later invullen)</value>
+  </data>
+  <data name="ADDCUSTOMER_SOTIALNET" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTTYPE_PERSONALCHECK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_GENDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_GENDER_FEMALE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_GENDER_MALE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_INTERESTS" xml:space="preserve">
+    <value>Belangstelling voor</value>
+  </data>
+  <data name="ADDCUSTOMER_SHOPPREF" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_CONTACTBY" xml:space="preserve">
+    <value>Contact door</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTFRIQUENCY" xml:space="preserve">
+    <value>Contactfrequentie</value>
+  </data>
+  <data name="ADDCUSTOMER_CONTACTTIME" xml:space="preserve">
+    <value>Contacttijd</value>
+  </data>
+  <data name="ADDCUSTOMER_PLACEOFWORK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_PLACEOFWORK_PLACEHOLDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_REFERREDBY" xml:space="preserve">
+    <value>Doorverwezen door</value>
+  </data>
+  <data name="ADDCUSTOMER_REFERREDBY_NAME" xml:space="preserve">
+    <value>Naam gastvrouw of vriendin</value>
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_EMAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_NAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_SPOUSE_PHONENUMBER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_SUBSCRIPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_PAGETITLE" xml:space="preserve">
+    <value>Klantdetail</value>
+  </data>
+  <data name="IMPORTLIST_PAGETITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_ADDANOTEABOUT" xml:space="preserve">
+    <value>Voeg een notitie toe over</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDTHISNOTE" xml:space="preserve">
+    <value>Deze notitie toevoegen</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_CLICKTOEDIT" xml:space="preserve">
+    <value>klik om bij te werken</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_SAVE" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_ACTIVITYSUMMARY" xml:space="preserve">
+    <value>Activiteitenoverzicht</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFORMATION" xml:space="preserve">
+    <value>Klantinformatie</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_NOTES" xml:space="preserve">
+    <value>Notities</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_ORDERS" xml:space="preserve">
+    <value>Bestellingen</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRODUCTS" xml:space="preserve">
+    <value>Producten</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EXPORTLIST_DOCUMENTTITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EXPORTLIST_DOWNLOADFILENAME" xml:space="preserve">
+    <value>Exportlijst</value>
+  </data>
+  <data name="EXPORTLIST_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Pagina &amp;P van &amp;N</value>
+  </data>
+  <data name="EXPORTLIST_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EXPORTLIST_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAILSUBJECT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTDELIVERYSTATEMENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTPAYMENTSTATEMENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEABOUTPROCESSINGSTATEMENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_CONTACTMEASDESIREDSTATEMENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERISGIFTSTATEMENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERPROCESSEDSTATEMENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERSHIPPEDSTATEMENT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_ORDERTOTAL_STATEMENTFORMAT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERCONFIRMATIONEMAIL_PROPOSEDDELIVERYSCHEDULESTATEMENTFORMAT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ADDRESSOFSELLER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ADJUSTMENTSLABEL" xml:space="preserve">
+    <value>Bijwerkingen:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_AMOUNTHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_BUYERSSIGNATURELABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_CANCELTRANSACTIONTEXT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_DATEHEADER" xml:space="preserve">
+    <value>Datum:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_DATELABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ESTIMATEDVALUELABEL" xml:space="preserve">
+    <value>Waarschijnlijk aanbevolen verkoopwaarde:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_MARYKAYCONTACTTEXT" xml:space="preserve">
+    <value>+49-(0)89 800 900 115</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NAMEOFSELLERLABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NOTETEXT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_NOTICEOFCANCELLATIONTEXT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_ORDERNUMBERLABEL" xml:space="preserve">
+    <value>Opdracht nummer:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH1" xml:space="preserve">
+    <value>Mary Kay Inc. staat volledig achter de producten die de zelfstandige Mary Kay schoonheidsconsulentes verkopen. Als u om welke reden dan ook niet helemaal tevreden bent over een Mary Kay®-product, dan wordt het gratis vervangen, omgeruild of krijgt u het aankoopbedrag terug. U dient het product wel eerst met het aankoopbewijs aan uw zelfstandige Mary Kay schoonheidsconsulente, of als zij niet meer actief is, aan het bedrijf terug te geven.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH2" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH3" xml:space="preserve">
+    <value>Neem a.u.b. contact met de klantenservice op omtrend aanwijzingen voor het ruilen of geld terug van producten. </value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH4" xml:space="preserve">
+    <value>U kann deze transaktie binnen 3 dagen annuleren zonder straf of verplichting, geldig vanaf bovenstaand datum.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH5" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH6" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH7" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PARAGRAPH8" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRICEDISCLAIMER" xml:space="preserve">
+    <value>* Alle prijzen zijn aanbevolen adviesprijzen.</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRICEHEADER" xml:space="preserve">
+    <value>Prijs*</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_PRODUCTNAMEHEADER" xml:space="preserve">
+    <value>Productnaam</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_QTYHEADER" xml:space="preserve">
+    <value>Aantal</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SALESTAXLABEL" xml:space="preserve">
+    <value>BTW</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SATISFACTIONGUARANTEEHEADER" xml:space="preserve">
+    <value>Tevredenheidsgarantie</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SOLDBYLABEL" xml:space="preserve">
+    <value>Verkocht door</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_SOLDTOLABEL" xml:space="preserve">
+    <value>verkocht aan</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_TOTALLABEL" xml:space="preserve">
+    <value>Totaal:</value>
+  </data>
+  <data name="ORDER_INVOICERECEIPT_TRADEMARKTEXT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_INVOICERECEIPT_WORKSHEETHEADER_CONFIRMATIONNUMBER_FORMAT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRINTLIST_DOCUMENTTITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRINTLIST_DOWNLOADFILENAME" xml:space="preserve">
+    <value>Lijst afdrukken</value>
+  </data>
+  <data name="PRINTLIST_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Pagina &amp;P van &amp;N</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDORDER" xml:space="preserve">
+    <value>Bestelling toevoegen</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDRESSES" xml:space="preserve">
+    <value>Adressen:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDRESSES_PRIMARY" xml:space="preserve">
+    <value>Voornaamste</value>
+  </data>
+  <data name="CUSTOMERDETAIL_CONTACTINFO" xml:space="preserve">
+    <value>Contactinfo</value>
+  </data>
+  <data name="CUSTOMERDETAIL_CUSTOMERSINCE" xml:space="preserve">
+    <value>Profieldatum:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_DELETECUSTOMER" xml:space="preserve">
+    <value>Klant verwijderen</value>
+  </data>
+  <data name="CUSTOMERDETAIL_EDITCUSTOMER" xml:space="preserve">
+    <value>Klant bewerken</value>
+  </data>
+  <data name="CUSTOMERDETAIL_EMAIL" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NEWVIRTUALMAKEOVER" xml:space="preserve">
+    <value>Nieuwe virtual makeover</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ORDERSUNAVAILABLEFORDELETEDCUSTOMERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_OF" xml:space="preserve">
+    <value>van</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_ORDERSPAGETEXT" xml:space="preserve">
+    <value>Bestellingen - pagina</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PHONE" xml:space="preserve">
+    <value>Telefoon:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REFERREDBY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_NOPREVIOUSLYORDEREDPRODUCTS" xml:space="preserve">
+    <value>Deze klant heeft nog niet eerder producten gekocht.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS" xml:space="preserve">
+    <value>Eerder gekochte producten</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value>Klik om product details te zien</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_NAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_ORDERDATE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_PARTNUMBER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDEREDPRODUCTS_SUGGESTEDRETAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_AMOUNT" xml:space="preserve">
+    <value>Bedrag</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_CLICKTOVIEWORDERDETAILS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_CONFIRMATIONNUMBER" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_DATE" xml:space="preserve">
+    <value>Datum:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_DETAILS" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_NOORDERS" xml:space="preserve">
+    <value>Deze klant heeft geen opdrachten.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_PAYMENT" xml:space="preserve">
+    <value>Betaling</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_STATUS" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS" xml:space="preserve">
+    <value>Aanbevolen producten</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_NAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_NOPRODUCTS" xml:space="preserve">
+    <value>Geen aanbevolen producten.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_PARTNUMBER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_RECOMMENDEDPRODUCTS_SUGGESTEDRETAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_CLICKTOVIEWPRODUCTDETAILS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_NAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_NOPRODUCTS" xml:space="preserve">
+    <value>Actueel heeft uw klant geen opgeslagen verlanglijstje. Klik a.u.b. "Aan verlanglijstje toevoegen" om er een voor haar aan te maken; zij kan er ook op uw persoonlijke website een aanmaken.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_PARTNUMBER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_PRODUCTS" xml:space="preserve">
+    <value>Producten voor verlanglijstje</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_SUGGESTEDRETAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_WISHLIST_WISHLIST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_NOPRRPRODUCTS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_PARTNUMBER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_PRODUCTNAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_REMINDERDATE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_DELEELINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_EDITLINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_SAVEPRRUPDATELINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_PRRPRODUCT_CANCELPRRUPDATELINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_UNDELETECUSTOMER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_VIEWCUSTOMERSUBSCRIPTIONS" xml:space="preserve">
+    <value>Klantinschrijvingen bekijken</value>
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDIN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDOUTBYCONSULTANT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONSTATUS_OPTEDOUTBYCUSTOMER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_BEAUTENEWS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_MKECARDS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBSCRIPTIONTYPE_PRODUCTREORDERREMINDER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_BESTDAYSTOREACHME" xml:space="preserve">
+    <value>De beste dagen om mij te bereiken zijn:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_BESTTIMETOREACHME" xml:space="preserve">
+    <value>De beste tijd om mij te bereiken is:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTPERSONALINFO" xml:space="preserve">
+    <value>Contact / persoonlijke info</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_IDLIKETOLEARNMOREABOUT" xml:space="preserve">
+    <value>Ik will graag meer weten over:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_ILIKETOSHOP" xml:space="preserve">
+    <value>Ik koop graag in:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_IPREFERTOHEARFROMMYCONSULTANT" xml:space="preserve">
+    <value>Ik will graag van mijn schoonheidsconsulente will horen via:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYEMPLOYERIS" xml:space="preserve">
+    <value>werkplaats</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYGENDERIS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYOCCUPATIONIS" xml:space="preserve">
+    <value>Mijn beroep is:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_MYSPOUSESPECIALSOMEONEIS" xml:space="preserve">
+    <value>Mijn echtgenoot/bijzondere persoon is:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PREFERREDLANGUAGE" xml:space="preserve">
+    <value>Voor communicatie geef ik de voorkeur aan de taal:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PREFERREDMETHODSOFCONTACT" xml:space="preserve">
+    <value>Mijn voorkeur van contact is:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SOCIAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASIONS" xml:space="preserve">
+    <value>Ik heb binnenkort deze bijzondere gebeurtenissen:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_YOUMAYCONTAACTSPOUSESPECIALSOMEONEHIMHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_YOUMAYCONTACTSPOUSESPECIALSOMEONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_EVERYTHREEMONTHS" xml:space="preserve">
+    <value>Elke drie maanden</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_EVERYTWOMONTHS" xml:space="preserve">
+    <value>Elke twee maanden</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_MONTHLY" xml:space="preserve">
+    <value>Elke maand</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_ONLYWHENIAMREADY" xml:space="preserve">
+    <value>als ik er klaar voor ben.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTFREQUENCY_WHENNEWPRODUCTSAREAVAILABLE" xml:space="preserve">
+    <value>Als er nieuwe producten zijn.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_SOCIAL" xml:space="preserve">
+    <value>Social Media</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTMETHOD_STANDARDPOST" xml:space="preserve">
+    <value>Standaard post</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTTIME_AM" xml:space="preserve">
+    <value>s morgens</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_CONTACTTIME_PM" xml:space="preserve">
+    <value>Namiddag / avond</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_GENDER_FEMALE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_GENDER_MALE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_BOOKMARK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_FACEBOOK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_GOOGLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_LINKEDIN" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_ODNOKLASSNIKI" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_PINTEREST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_PROFILEIMAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_TWITTER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_VK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_HYPERLINKTYPE_YOUTUBE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_INPERSON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_ONLINE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_PARTY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SHOPPINGMETHOD_PHONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_ANNIVERSARY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_BIRTHDAY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_GRADUATION" xml:space="preserve">
+    <value>graduatie</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_NEWBABY" xml:space="preserve">
+    <value>Nieuwbaby</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_NEWJOB" xml:space="preserve">
+    <value>Nieuwebaan</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_VACATION" xml:space="preserve">
+    <value>Vakantie</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_SPECIALOCCASION_WEDDING" xml:space="preserve">
+    <value>Huwelijk</value>
+  </data>
+  <data name="DASHBOARD_CUSTOMERS" xml:space="preserve">
+    <value>Klanten</value>
+  </data>
+  <data name="DASHBOARD_CUSTOMERSTEXT" xml:space="preserve">
+    <value>Uw klantenlijst bekijken en uw klantenprofielinformatie toevoegen, bewerken en veranderen – met inbegrip van telefoonnummers, e-mailadressen, productvoorkeur en meer.</value>
+  </data>
+  <data name="DASHBOARD_MANAGECUSTOMERS" xml:space="preserve">
+    <value>Uw klanten beheren</value>
+  </data>
+  <data name="DASHBOARD_MANAGEORDERS" xml:space="preserve">
+    <value>Uw bestellingen beheren</value>
+  </data>
+  <data name="DASHBOARD_MANAGEREMINDERS" xml:space="preserve">
+    <value>Uw herinneringen beheren</value>
+  </data>
+  <data name="DASHBOARD_ORDERS" xml:space="preserve">
+    <value>Bestellingen</value>
+  </data>
+  <data name="DASHBOARD_ORDERSTEXT" xml:space="preserve">
+    <value>Uw nieuwe, onafgehandelde of afgehandelde bestellingen van uw persoonlijke website/My Mary Kay website of van verkoopkaartjes die u heeft aangemaakt beheren.</value>
+  </data>
+  <data name="DASHBOARD_REMINDERS" xml:space="preserve">
+    <value>Herinneringen</value>
+  </data>
+  <data name="DASHBOARD_REMINDERSTEXT" xml:space="preserve">
+    <value>Maak herinneringen aan om bij te blijven met uw business. In dit gedeelte worden zelfs automatisch herinneringen voor u aangemaakt!</value>
+  </data>
+  <data name="DASHBOARD_TITLE" xml:space="preserve">
+    <value>Overzicht</value>
+  </data>
+  <data name="DASHBOARD_WELCOME" xml:space="preserve">
+    <value>Welkom bij MijnKlanten</value>
+  </data>
+  <data name="DASHBOARD_WELCOMETEXT" xml:space="preserve">
+    <value>Uw klantenlijst en bestelinformatie op één gemakkelijk te bereiken locatie beheren.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TAB_CUSTOMERINFO_PERSONALPROFILE" xml:space="preserve">
+    <value>Persoonlijk profiel</value>
+  </data>
+  <data name="ADDCHECKPAYMENT_LABEL" xml:space="preserve">
+    <value>Betaling met cheque toevoegen</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ANNIVERSARY" xml:space="preserve">
+    <value>Trouwdagviering</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_BIRTHDAY" xml:space="preserve">
+    <value>Verjaardagsfeest</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_BUSINESS" xml:space="preserve">
+    <value>Website verzoek businessmogelijkheid</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_HOST" xml:space="preserve">
+    <value>Website verzoek gastvrouw worden van een party</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PRR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_FILTER_MYREMINDERS" xml:space="preserve">
+    <value>Persoonlijke herinneringen</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ORDERDELIVERY" xml:space="preserve">
+    <value>Herinnering levering bestelling</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_ORDERFOLLOWUP" xml:space="preserve">
+    <value>Follow-up bestelling</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PWSREGISTRATION" xml:space="preserve">
+    <value>PWS website registratie</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_PWSUPDATEREGISTRATION" xml:space="preserve">
+    <value>PWS geactualiseerde registratie</value>
+  </data>
+  <data name="REMINDERLIST_FILTER_SAMPLEDELIVERY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_FILTER_SAMPLEREQUEST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_ADDRESSHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_BIRTHDAYHEADER" xml:space="preserve">
+    <value>Geboortedag</value>
+  </data>
+  <data name="CUSTOMER_BIRTHMONTHHEADER" xml:space="preserve">
+    <value>Geboortemaand</value>
+  </data>
+  <data name="CUSTOMER_CELLPHONEHEADER" xml:space="preserve">
+    <value>Mobiel</value>
+  </data>
+  <data name="CUSTOMER_CITYHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_EMAILHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_FIRSTNAMEHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_HOMEPHONEHEADER" xml:space="preserve">
+    <value>Thuis</value>
+  </data>
+  <data name="CUSTOMER_LASTNAMEHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_NAMEHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_PHONENUMBERHEADER" xml:space="preserve">
+    <value>Telefoonnummers</value>
+  </data>
+  <data name="CUSTOMER_STATEHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_STREETADDRESSHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_SUITEHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_WORKPHONEHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMER_ZIPCODEHEADER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_PROFILE_QUESTIONS" xml:space="preserve">
+    <value>Profielvragen</value>
+  </data>
+  <data name="REMINDERLIST_END_GUEST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_INCORRECT_CUSTOMERID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_PREFIX_FOR" xml:space="preserve">
+    <value>voor</value>
+  </data>
+  <data name="REMINDERLIST_PREFIX_FROM" xml:space="preserve">
+    <value>van</value>
+  </data>
+  <data name="REMINDERLIST_PREFIX_WITH" xml:space="preserve">
+    <value>met</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_ANNIVERSARY" xml:space="preserve">
+    <value>Trouwdagviering</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_BIRTHDAY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_REMTITLE_BUSINESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_REMTITLE_DELIVERYREMINDER" xml:space="preserve">
+    <value>Herinnering levering</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_FOLLOWUP" xml:space="preserve">
+    <value>Follow-up</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_HOST" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_REMTITLE_NEWWEBSITEREGISTRATION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_REMTITLE_UPDATEWEBSITEREGISTRATION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_URLTEXT_ORDER" xml:space="preserve">
+    <value>Bestelling</value>
+  </data>
+  <data name="REMINDERLIST_URLTEXT_PRODUCTSAMPLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_NOCUSTOMERINFO_LABEL" xml:space="preserve">
+    <value>Deze klant heeft geen verdere details.</value>
+  </data>
+  <data name="ORDERLIST_DELETE_BUTTON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_NEWREMINDER_TYPEAHEAD" xml:space="preserve">
+    <value>Toets in om een klant te kiezen</value>
+  </data>
+  <data name="ADDCUSTOMER_ANNIVERSARY" xml:space="preserve">
+    <value>Trouwdag</value>
+  </data>
+  <data name="ADDCUSTOMER_BIRTHDAY" xml:space="preserve">
+    <value>Verjaardag</value>
+  </data>
+  <data name="ADDCUSTOMER_OTHER_DESCRIPTION" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="REMINDERLIST_REMINDERS_NOTFOUND" xml:space="preserve">
+    <value>Geen herinneringen voor vandaag</value>
+  </data>
+  <data name="REMINDERLIST_WITHOUTDUEDATE_NOTFOUND" xml:space="preserve">
+    <value>Geen herinneringen zonder vervaldatum</value>
+  </data>
+  <data name="ADDCUSTOMER_CREATE_BUTTON" xml:space="preserve">
+    <value>Klant opslaan</value>
+  </data>
+  <data name="HEADER_HELP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADER_SEARCH_INTOUCH" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADER_SEARCH_PRODUCT_CENTRAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_OVERDUE_NOTFOUND" xml:space="preserve">
+    <value>Er zijn geen achterstallige herinneringen</value>
+  </data>
+  <data name="HEADER_SHOPPING_BAG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADER_WELCOME" xml:space="preserve">
+    <value>Welkom</value>
+  </data>
+  <data name="ADDCASHPAYMENT_LABEL" xml:space="preserve">
+    <value>Contante betaling toevoegen</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ADDREMINDER" xml:space="preserve">
+    <value>Herinnering toevoegen</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS" xml:space="preserve">
+    <value>Herinneringen</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_ADDTASK" xml:space="preserve">
+    <value>Herinnering toevoegen</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_DESCRIPTION" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_DUEON" xml:space="preserve">
+    <value>Vervalt op</value>
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_MORE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_TITLE" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="INTOUCH_CONTACT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INTOUCH_FAQ" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INTOUCH_HELP" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="INTOUCH_SHOPPINGBAG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INTOUCH_REPORTS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INTOUCH_HOME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INTOUCH_SITEMAP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INTOUCH_TERMS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_BUTTON_TODAY" xml:space="preserve">
+    <value>Vandaag</value>
+  </data>
+  <data name="CUSTOMERDETAIL_TASKS_EDITTASK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_REMINDERS_SAVETASK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CANCEL" xml:space="preserve">
+    <value>ANNULEREN</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_CONTAINS" xml:space="preserve">
+    <value>bevat</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ITEMSFOR" xml:space="preserve">
+    <value>artikel(en) voor</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ITSSTATUSIS" xml:space="preserve">
+    <value>De status is</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ORDER" xml:space="preserve">
+    <value>Bestelling</value>
+  </data>
+  <data name="INVITETOREGISTEREMAIL_SUBJECT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_PAGER_ACTIVITYPAGETEXT" xml:space="preserve">
+    <value>Activiteiten - pagina</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_CREATED" xml:space="preserve">
+    <value>Aangemaakt</value>
+  </data>
+  <data name="ANNIVERSARY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="BIRTHDAY" xml:space="preserve">
+    <value>Verjaardag</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ACTIVITYSUMMARY_ADDEDNOTE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_NOACTIVITYSUMMARY_LABEL" xml:space="preserve">
+    <value>Bij deze klant is geen informatie over een activiteitenoverzicht te zien</value>
+  </data>
+  <data name="REMINDERLIST_REMTITLE_EARNHOSTESSREWARDS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMINDERLIST_REMTITLE_PRR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMOVE" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="ADDRESS_ADDRESSEE_LABEL" xml:space="preserve">
+    <value>Geadresseerde</value>
+  </data>
+  <data name="ADDRESS_STREET_LABEL" xml:space="preserve">
+    <value>Straat</value>
+  </data>
+  <data name="ADDRESS_CITY_LABEL" xml:space="preserve">
+    <value>Stad</value>
+  </data>
+  <data name="ADDRESS_POSTALCODE_LABEL" xml:space="preserve">
+    <value>Postcode</value>
+  </data>
+  <data name="ADDRESS_PHONE_LABEL" xml:space="preserve">
+    <value>Telefoon</value>
+  </data>
+  <data name="PAGEHEADER_HELP_LINKTEXT" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="PAGEHEADER_IMPORTCUSTOMER_TITLE" xml:space="preserve">
+    <value>Bestaande klanten importeren</value>
+  </data>
+  <data name="PAGEHEADER_OR_TITLE" xml:space="preserve">
+    <value>of</value>
+  </data>
+  <data name="PAGEHEADER_ADDCUSTOMER_TITLE" xml:space="preserve">
+    <value>Nieuwe klant</value>
+  </data>
+  <data name="PAGEHEADER_EDITCUSTOMER_TITLE" xml:space="preserve">
+    <value>Klant bijwerken</value>
+  </data>
+  <data name="IMPORT_PROMPT" xml:space="preserve">
+    <value>Snel contacten uit uw klantenlijst vanuit de volgende bronnen en formaten importeren.</value>
+  </data>
+  <data name="IMPORT_FROMFACEBOOK_LINKTEXT" xml:space="preserve">
+    <value>Vanuit Facebook importeren</value>
+  </data>
+  <data name="IMPORT_FRIENDSFROMFACEBOOK_PROMPT" xml:space="preserve">
+    <value>U kunt uw vrienden van Facebook importeren.</value>
+  </data>
+  <data name="IMPORT_IMPORTANT_PROMPT" xml:space="preserve">
+    <value>Belangrijk:</value>
+  </data>
+  <data name="IMPORT_FROMFACEBOOK_INSTRUCTIONS" xml:space="preserve">
+    <value>Voordat u uw Facebook vrienden kunt importeren, wordt u naar een Facebook login doorverwezen. Log desgevraagd in met de informatie van uw Facebook account.</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_LINKTEXT" xml:space="preserve">
+    <value>Vanuit e-mail importeren</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_PROMPT" xml:space="preserve">
+    <value>U kunt uw contacten vanuit e-mail accounts importeren zoals Yahoo!, Gmail of hotmail en nog veel meer.</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_INSTRUCTIONS" xml:space="preserve">
+    <value>Voordat u uw e-mail contacten kunt importeren moet u ze eerst naar een Outlook CSV bestand exporteren.</value>
+  </data>
+  <data name="IMPORT_FROMOUTLOOK_CHOOSEFILE" xml:space="preserve">
+    <value>Kies bestand ...</value>
+  </data>
+  <data name="PLACEHOLDER_DATE" xml:space="preserve">
+    <value>DD-MM-JJJJ</value>
+  </data>
+  <data name="PLACEHOLDER_BIRTHDAY" xml:space="preserve">
+    <value>DD-MM</value>
+  </data>
+  <data name="PLACEHOLDER_ANNIVERSARY" xml:space="preserve">
+    <value>DD-MM</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACKNOWLEDGE" xml:space="preserve">
+    <value>Ik bevestig, dat ik de bemachtiging van deze klanten heb deze contact informaties te gebruiken en op te slaan, inklusief op Mary Kay systemen. Klik hier voor een klanten bemachtigings formulier en aanwijzingen.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACTION" xml:space="preserve">
+    <value>aktie</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADD" xml:space="preserve">
+    <value>toevoegen</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ADDED" xml:space="preserve">
+    <value>klant(en) toegevoegd.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_BEAUTENEWS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_CONTACT" xml:space="preserve">
+    <value>contact</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_CUSTOMERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_ECARDS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_EXISTINGCUSTOMER" xml:space="preserve">
+    <value>bestaande klant</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_HOWTOUSE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_IMPORTCUSTOMERS" xml:space="preserve">
+    <value>Import afsluiten</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGE" xml:space="preserve">
+    <value>samenvoegen</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_INFO_ALERT" xml:space="preserve">
+    <value>en haak aan of u deze wilt toeveogen, samenvoegen of overslaan voor iedere contact.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_WARNING_ALERT" xml:space="preserve">
+    <value>Er zijn geen contacten te importeren.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_WARNING" xml:space="preserve">
+    <value>Waarschuwing!</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_MERGED" xml:space="preserve">
+    <value>klant(en) samengevoegd.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOTIMPORTED" xml:space="preserve">
+    <value>klant(en) konden niet worden geimporteerd.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_REMINDERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_RESULTSSUBSCRIPTIONS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_SELECTCONTACTS" xml:space="preserve">
+    <value>Klanten importeren - Kies te importerende contacten. </value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIP" xml:space="preserve">
+    <value>overslaan</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SKIPPED" xml:space="preserve">
+    <value>klant(en) overgeslagen.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SUBMIT_SUBSCRIPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_SUCCESS" xml:space="preserve">
+    <value>&lt;strong&gt;Success!&lt;/strong&gt; U heeft geimporteerd:</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_NOIMPORTED" xml:space="preserve">
+    <value>&lt;strong&gt;Opgelet,&lt;/strong&gt; er zijn geen contacten geimporteerd.</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_SUMMARY" xml:space="preserve">
+    <value>Import samenvatting:</value>
+  </data>
+  <data name="CLOSE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADING_LINETOTAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADING_PARTNUMBER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADING_PRICE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADING_PRODUCTNAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADING_QUANTITY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADING_REORDERREMINDERDATE" xml:space="preserve">
+    <value>Nabestellings herinnering</value>
+  </data>
+  <data name="ORDER_TOTAL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCT_CATALOG" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDPRODUCTS" xml:space="preserve">
+    <value>Producten toevoegen</value>
+  </data>
+  <data name="ADDPRODUCT_BUTTON" xml:space="preserve">
+    <value>toevoegen</value>
+  </data>
+  <data name="MARKAS_COMPLETE" xml:space="preserve">
+    <value>Als voltooid markeren</value>
+  </data>
+  <data name="MARKAS_SHIPPED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADING_ORDERDATE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HEADING_SUGGESTEDRETAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_ALL" xml:space="preserve">
+    <value>Alle</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_BESTSELLERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_BODYANDSUN" xml:space="preserve">
+    <value>Lichaam &amp; Zon</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_FRAGRANCE" xml:space="preserve">
+    <value>Geur</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_GIFTS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_MAKEUP" xml:space="preserve">
+    <value>Makeup</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_MENS" xml:space="preserve">
+    <value>Heren</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_NEW" xml:space="preserve">
+    <value>Nieuwe producten</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_SKINCARE" xml:space="preserve">
+    <value>Huidverzorging</value>
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_SPECIALOFFERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_CLICKTOVIEWDETAILS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_PREVIOUSLYORDERED_NOTFOUND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_RECOMMENDED_NOTFOUND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_SEARCH_NOTFOUND" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_TAB_ALL" xml:space="preserve">
+    <value>Product catalogus</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_PREVIOUSLYORDERED" xml:space="preserve">
+    <value>Eerder besteld</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_RECOMMENDED" xml:space="preserve">
+    <value>Aanbevolen</value>
+  </data>
+  <data name="PRODUCTCATALOG_TAB_WISHLIST" xml:space="preserve">
+    <value>Verlanglijstje</value>
+  </data>
+  <data name="PRODUCTCATALOG_WISHLIST_NOTFOUND" xml:space="preserve">
+    <value>Deze klant heeft geen producten op de wenslijst</value>
+  </data>
+  <data name="PRODUCTS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAVE_ORDER" xml:space="preserve">
+    <value>Bestelling opslaan en controleren</value>
+  </data>
+  <data name="SEARCH_CLEAR" xml:space="preserve">
+    <value>zoekopdracht wissen</value>
+  </data>
+  <data name="WISHLISTPRODUCT_BADGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ERROR_CSV_FILE_PARSE" xml:space="preserve">
+    <value>Fout bij het opzetten van het csv-bestand</value>
+  </data>
+  <data name="ADDRESS_COUNTRY_LABEL" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS" xml:space="preserve">
+    <value>Kies adres uit klanten-profiel</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS_BUTTON" xml:space="preserve">
+    <value>Selecteren</value>
+  </data>
+  <data name="DELIVERYADDRESS_SELECTCUSTOMERADDRESS_TITLE" xml:space="preserve">
+    <value>Klantenadressen</value>
+  </data>
+  <data name="FOOTER_MARYKAY" xml:space="preserve">
+    <value>Mary Kay 2013</value>
+  </data>
+  <data name="REMINDERLIST_MASSUPDATESUCCESS" xml:space="preserve">
+    <value>Taken zijn klaar</value>
+  </data>
+  <data name="ORDERFOLLOWUP_ADD_BUTTON" xml:space="preserve">
+    <value>navervolging toevoegen</value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_222" xml:space="preserve">
+    <value>2+2+2</value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_CUSTOM" xml:space="preserve">
+    <value>Individueel</value>
+  </data>
+  <data name="ORDERFOLLOWUP_OPTION_NONE" xml:space="preserve">
+    <value>Geen</value>
+  </data>
+  <data name="ORDERDETAILS_ONLINE_TITLE" xml:space="preserve">
+    <value>Online bestelling</value>
+  </data>
+  <data name="ORDERDETAILS_SALESTICKET_TITLE" xml:space="preserve">
+    <value>Verkoop bon</value>
+  </data>
+  <data name="FILTER" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="FILTER_NONE" xml:space="preserve">
+    <value>Geen</value>
+  </data>
+  <data name="FILTER_ORDERDATE" xml:space="preserve">
+    <value>Besteldatum</value>
+  </data>
+  <data name="FILTER_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Betalingsstatus</value>
+  </data>
+  <data name="FILTER_ORDERSTATUS" xml:space="preserve">
+    <value>Bestelstatus</value>
+  </data>
+  <data name="FILTER_ORDERTYPE" xml:space="preserve">
+    <value>Bestellingsbron</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_BUTTON" xml:space="preserve">
+    <value>Betalingsstatus veranderen</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_NEWSTATUS_LABEL" xml:space="preserve">
+    <value>Nieuwe status:</value>
+  </data>
+  <data name="ORDERLIST_CHANGEPAYMENTSTATUS_PROMPT" xml:space="preserve">
+    <value>Nieuwe betalingsstatus selecteren om deze handeling af te sluiten.</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="SELECTALL_TOOLTIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SORT_AMOUNT" xml:space="preserve">
+    <value>Bedrag</value>
+  </data>
+  <data name="SORT_DIRECTION_TOOLTIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SORT_FIRSTNAME" xml:space="preserve">
+    <value>Voornaam</value>
+  </data>
+  <data name="SORT_LASTNAME" xml:space="preserve">
+    <value>Achternaam</value>
+  </data>
+  <data name="SORT_ORDERDATE" xml:space="preserve">
+    <value>Besteldatum</value>
+  </data>
+  <data name="SORT_ORDERPAYMENTSTATUS" xml:space="preserve">
+    <value>Betalingsstatus</value>
+  </data>
+  <data name="SORT_ORDERSTATUS" xml:space="preserve">
+    <value>Bestelstatus</value>
+  </data>
+  <data name="SORT_ORDERTYPE" xml:space="preserve">
+    <value>Bestellingsbron</value>
+  </data>
+  <data name="SORT_RELEVANCE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SORT_TOOLTIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILTER_ADVANCED" xml:space="preserve">
+    <value>Gevorderd</value>
+  </data>
+  <data name="FILTER_ORDERDATE_LABEL" xml:space="preserve">
+    <value>Besteldatum</value>
+  </data>
+  <data name="ORDERFOLLOWUP_LABEL" xml:space="preserve">
+    <value>Follow-up:</value>
+  </data>
+  <data name="ORDERSTATUS_LABEL" xml:space="preserve">
+    <value>Bestelstatus</value>
+  </data>
+  <data name="PAYMENTSTATUS_LABEL" xml:space="preserve">
+    <value>Betalingsstatus:</value>
+  </data>
+  <data name="CUSTOMERLIST_LISTTAB" xml:space="preserve">
+    <value>Lijst</value>
+  </data>
+  <data name="CUSTOMERLIST_NOTESTAB" xml:space="preserve">
+    <value>Notities</value>
+  </data>
+  <data name="CUSTOMERLIST_DELETEDCUSTOMERS_TOOLTIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERLIST_DELETEDORDERS_TOOLTIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_SELECTCUSTOMER_PAGETITLE" xml:space="preserve">
+    <value>Nieuwe bestelling - klant selecteren</value>
+  </data>
+  <data name="CUSTOMERLIST_SHOWPROFILEIMAGES_TOOLTIP" xml:space="preserve">
+    <value>tonen/verbergen van profiel beelden</value>
+  </data>
+  <data name="FILTER_ANNIVERSARY" xml:space="preserve">
+    <value>Trouwdag</value>
+  </data>
+  <data name="FILTER_BIRTHDAY" xml:space="preserve">
+    <value>Verjaardag</value>
+  </data>
+  <data name="FILTER_LASTORDERDATE" xml:space="preserve">
+    <value>Datum laatste bestelling</value>
+  </data>
+  <data name="FILTER_LASTORDERDATE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NOTESSEARCH_NORESULTS_ALERT" xml:space="preserve">
+    <value>Geen notities gevonden die bij de zoekcriteria passen</value>
+  </data>
+  <data name="GROUPSSEARCH_NORESULTS_ALERT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEDCUSTOMERS_NORESULTS_ALERT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELETEDORDERS_NORESULTS_ALERT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPLIST_DELETE_BUTTON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPLIST_NAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPLIST_DESCRIPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPLIST_CUSTOMERCOUNT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SORT_DATEADDED" xml:space="preserve">
+    <value>Datum toevoeging</value>
+  </data>
+  <data name="SORT_LASTORDERDATE" xml:space="preserve">
+    <value>Datum laatste bestelling</value>
+  </data>
+  <data name="SORT_PROFILEDATE" xml:space="preserve">
+    <value>Profieldatum</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ORDERS_TYPE" xml:space="preserve">
+    <value>Type :</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_CHANGE" xml:space="preserve">
+    <value>Veranderen</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_INVALIDSIZE" xml:space="preserve">
+    <value>plaatje te groot!</value>
+  </data>
+  <data name="ADDRESS_ADDTOCUSTOMERPROFILE" xml:space="preserve">
+    <value>Aan klantenprofiel toevoegen</value>
+  </data>
+  <data name="ACCEPT" xml:space="preserve">
+    <value>Accepteren</value>
+  </data>
+  <data name="INVOICE_ADDGIFTMESSAGE_LINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVOICE_ADDMESSAGE_LINK" xml:space="preserve">
+    <value>Factuurmededeling toevoegen</value>
+  </data>
+  <data name="INVOICE_FORMAT_LABEL" xml:space="preserve">
+    <value>Formaat:</value>
+  </data>
+  <data name="INVOICE_GIFTMESSAGE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVOICE_MESSAGE_LABEL" xml:space="preserve">
+    <value>Factuurmededeling:</value>
+  </data>
+  <data name="CUSTOMERDETAIL_SUBSCRIPTIONS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVOICE_CREATE_BUTTON" xml:space="preserve">
+    <value>Factuur aanmaken</value>
+  </data>
+  <data name="INVOICE_CREATE_LINK" xml:space="preserve">
+    <value>Factuur aanmaken</value>
+  </data>
+  <data name="ORDER_AT" xml:space="preserve">
+    <value>om</value>
+  </data>
+  <data name="ORDER_AVAILABLE" xml:space="preserve">
+    <value>Ik ben bereikbaar op</value>
+  </data>
+  <data name="ORDER_CONVENIENTTIME" xml:space="preserve">
+    <value>Neem a.u.b. contact met mij op om een passende tijd voor de levering te regelen. </value>
+  </data>
+  <data name="ORDER_DESIREDSERVICE" xml:space="preserve">
+    <value>Ik heb respect voor uw zaken en zal zorgzaam met uw tijd en uw inkoop behoeftes omgaan. Als u ooit graag persoonlijke service, inclusief huidverzorging en schoonheidsadvies wilt hebben, gelieve dan graag contact met mij op te nemen.</value>
+  </data>
+  <data name="ORDER_EDIT" xml:space="preserve">
+    <value>Bestelling bewerken</value>
+  </data>
+  <data name="ORDER_MARK_PROCESSED" xml:space="preserve">
+    <value>Als afgehandeld markeren</value>
+  </data>
+  <data name="ORDER_MARK_SHIPPED" xml:space="preserve">
+    <value>Als verstuurd / geleverd markeren</value>
+  </data>
+  <data name="ORDER_ISGIFT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDER_ISTIMECONVENIENT" xml:space="preserve">
+    <value>uw bestelling te brengen. Is dat een goede tijd voor u?</value>
+  </data>
+  <data name="ORDER_PROCESSED" xml:space="preserve">
+    <value>Uw opdracht is verwerkt</value>
+  </data>
+  <data name="ORDER_PROCESSORDER" xml:space="preserve">
+    <value>Neem a.u.b. contact met mij op. Ik heb vragen mbt de bestelling.</value>
+  </data>
+  <data name="ORDER_PROCESSPAYMENT" xml:space="preserve">
+    <value>Neem a.u.b. contact met mij op. Ik heb vragen mbt de betaling.</value>
+  </data>
+  <data name="ORDER_SAVED" xml:space="preserve">
+    <value>&lt;strong&gt;Success!&lt;/strong&gt; De opdracht is opgeslagen!</value>
+  </data>
+  <data name="ORDER_SELECTMESSAGES" xml:space="preserve">
+    <value>om uw klant een bevestigings-email voor deze opdracht te sturen</value>
+  </data>
+  <data name="ORDER_SENDCONFIRMATIONEMAIL" xml:space="preserve">
+    <value>Stuur bevestigings-email</value>
+  </data>
+  <data name="ORDER_SHIPPED" xml:space="preserve">
+    <value>Uw opdracht is verstuurd.</value>
+  </data>
+  <data name="ORDER_TOTAL_IS" xml:space="preserve">
+    <value>Het totale bedrag is</value>
+  </data>
+  <data name="SEND_EMAIL" xml:space="preserve">
+    <value>Email versturen</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_EXCEL_FILENAME" xml:space="preserve">
+    <value>Klanten_{0:yyyyMMdd}.xls</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_LABELS_FILENAME" xml:space="preserve">
+    <value>KlantenLabels_{0:yyyyMMdd}.pdf</value>
+  </data>
+  <data name="EXPORTCUSTOMERS_PRINT_FILENAME" xml:space="preserve">
+    <value>Klanten_{0:yyyyMMdd}.pdf</value>
+  </data>
+  <data name="SMS_BUTTON_TEXT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_ADD_PHONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MAKE_PRIMARY" xml:space="preserve">
+    <value>als eerste zetten</value>
+  </data>
+  <data name="PRIMARY" xml:space="preserve">
+    <value>Voornaamste</value>
+  </data>
+  <data name="ADDRESS_STATE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDRESS_UNITNUMBER_LABEL" xml:space="preserve">
+    <value>Unitnummer</value>
+  </data>
+  <data name="ADDCUSTOMER_ADDRESS_ADD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_SOCIALNETWORK" xml:space="preserve">
+    <value>Sociale netwerken</value>
+  </data>
+  <data name="GENDER_FEMALE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GENDER_MALE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_CONTACTDAY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_CANSENDSMS" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="CUSTOMERDETAIL_PROFILEANSWERLABEL_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_PROFILEANSWERLABEL_OTHERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SORT_BY" xml:space="preserve">
+    <value>Sorteren op</value>
+  </data>
+  <data name="ARCHIVE_ORDER" xml:space="preserve">
+    <value>Archiveren</value>
+  </data>
+  <data name="UNARCHIVE_ORDER" xml:space="preserve">
+    <value>uit het archief herstellen</value>
+  </data>
+  <data name="ARCHIVE_ORDERS" xml:space="preserve">
+    <value>Archiveren</value>
+  </data>
+  <data name="UNARCHIVE_ORDERS" xml:space="preserve">
+    <value>uit het archief herstellen</value>
+  </data>
+  <data name="DELETE_ORDERS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ARCHIVE_CUSTOMERS" xml:space="preserve">
+    <value>Archiveren</value>
+  </data>
+  <data name="PRINTLIST_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRINTLIST_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERS_RESULTS" xml:space="preserve">
+    <value>Import klanten - samenvatting</value>
+  </data>
+  <data name="CUSTOMERDETAIL_ARCHIVECUSTOMER" xml:space="preserve">
+    <value>Klant archiveren</value>
+  </data>
+  <data name="CUSTOMERDETAIL_UNARCHIVECUSTOMER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILTER_ARCHIVED" xml:space="preserve">
+    <value>Gearchiveerd</value>
+  </data>
+  <data name="FILTER_ARCHIVED_LABEL" xml:space="preserve">
+    <value>Gearchiveerd</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NEWVIRTUALMAKEOVER_AGREEMENT" xml:space="preserve">
+    <value>Ik begrijp dat ik de uitdrukkelijke toestemming van mijn klant nodig heb om haar foto op de Mary Kay® Virtual Makeover over te dragen en daarmee een virtual makeover als voorbeeld aan te maken.  Als ik een foto upload, gebruik ik deze alleen op de door mijn klant uitdrukkelijk goedgekeurde wijze.</value>
+  </data>
+  <data name="DECLINE" xml:space="preserve">
+    <value>Weigeren</value>
+  </data>
+  <data name="UNARCHIVE_CUSTOMER" xml:space="preserve">
+    <value>uit het archief herstellen</value>
+  </data>
+  <data name="UNARCHIVE_CUSTOMERS" xml:space="preserve">
+    <value>uit het archief herstellen</value>
+  </data>
+  <data name="ERROR_500_TITLE" xml:space="preserve">
+    <value>onbekende server fout</value>
+  </data>
+  <data name="ERROR_404_TITLE" xml:space="preserve">
+    <value>Pagina niet gevonden</value>
+  </data>
+  <data name="REGISTERED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILTER_PRODUCT" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="FILTER_PRODUCT_LABEL" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="ADDCUSTOMER_SAVE_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Door op Klant opslaan te klikken bevestig ik dat ik de vereiste toestemming en goedkeuring heb om deze klanteninformatie in te voeren en op te slaan, ook op Mary Kay systemen.  {0} voor een klanten-toestemmingsformulier en instructies.</value>
+  </data>
+  <data name="ADDCUSTOMER_LEGALMESSAGE_LINK" xml:space="preserve">
+    <value>Hier klikken</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Notities mogen niet worden gebruikt om vertrouwelijke informatie over uw klant op te slaan, zoals creditcardnummers.</value>
+  </data>
+  <data name="ORDER_NOTES_WARNING" xml:space="preserve">
+    <value>* Notities alleen voor uw documenten - worden niet op ontvangstbewijs voor klanten afgedrukt.</value>
+  </data>
+  <data name="SAVE_ORDER_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Door deze bestelling op te slaan bevestig ik dat ik de vereiste toestemming en goedkeuring heb om deze klantinformatie in te voeren en op te slaan.</value>
+  </data>
+  <data name="INVOICE_CREATE_BUTTON_CONFIRMCOPY" xml:space="preserve">
+    <value>* Totaal bestelling; verzendingskosten en belasting worden alleen op uw computer bij uw factuur opgeslagen.</value>
+  </data>
+  <data name="FLASH_REQUIRED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FILTER_PROFILEDATE" xml:space="preserve">
+    <value>Profieldatum</value>
+  </data>
+  <data name="FILTER_PROFILEDATE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LABEL_CASH" xml:space="preserve">
+    <value>Contante betalingen:</value>
+  </data>
+  <data name="LABEL_CHECKS" xml:space="preserve">
+    <value>Betalingen met cheque:</value>
+  </data>
+  <data name="AMOUNT" xml:space="preserve">
+    <value>Bedrag</value>
+  </data>
+  <data name="DATE" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="CHECKNUMBER" xml:space="preserve">
+    <value>Chequenummer</value>
+  </data>
+  <data name="ANNIVERSARY_DAY" xml:space="preserve">
+    <value>dag</value>
+  </data>
+  <data name="ANNIVERSARY_YEAR" xml:space="preserve">
+    <value>jaar</value>
+  </data>
+  <data name="BIRTHDAY_DAY" xml:space="preserve">
+    <value>dag</value>
+  </data>
+  <data name="BIRTHDAY_YEAR" xml:space="preserve">
+    <value>jaar</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_UNDO" xml:space="preserve">
+    <value>annuleer</value>
+  </data>
+  <data name="ADDCUSTOMER_PHOTO_REMOVE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERDETAIL_ADD_WISHLIST" xml:space="preserve">
+    <value>Aan verlanglijstje toevoegen</value>
+  </data>
+  <data name="SOCIALNETWORK_OTHER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCUSTOMER_EMAIL_LEGALMESSAGE" xml:space="preserve">
+    <value>Door het aangeven van een email-adres hier boven, begrijp ik dat er automatisch een email aan dit email-adres word gestuurd die de klant de mogelijkheid bied, Mary Kay™ promotie emails te aboneren, die door een automatisch systeem in mijn naam worden verstuurd. Als u niet de bemachtiging heeft van deze klant of als u geen automatische emails wilt versturen aan deze klant, laat dit veld leeg.</value>
+  </data>
+  <data name="ADDCUSTOMER_CHANGE_PHOTO_CONFIRMCOPY" xml:space="preserve">
+    <value>Ik geef toestemming deze foto te uploaden</value>
+  </data>
+  <data name="IMPORTCUSTOMERS_ACKNOWLEDGE_LINK" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERLIST_LISTTAB" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERLIST_SAMPLEREQUESTTAB" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_NORESULTS_ALERT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_CUSTOMERNAME" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_DATEREQUESTED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUESTDETAIL_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPCUSTOMERS_ACTIONBUTTONGROUP_DELETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPCUSTOMERS_COLUMNTITLES_ADDRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPCUSTOMERS_COLUMNTITLES_NAMEANDEMAIL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPCUSTOMERS_COLUMNTITLES_PHONE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPCUSTOMERS_NORESULTS_ALERT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GROUPCUSTOMERS_PAGETITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERPAYMENT_REMOVE" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="SAMPLEREQUEST_DATEREQUESTED_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_DELIVERYDATE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_STATUS_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_STATUS_COMPLETED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_STATUS_INCOMPLETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_TABLE_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_TABLECOL_DESCRIPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_TABLECOL_QUANTITY" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_TABLECOL_FOLLOWUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_FORM_SAVEANDCLOSE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SAMPLEREQUEST_FORM_CANCEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_ADDTOGROUP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_ACTIONBUTTONGROUP_DELETE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYADDRESS_RECOMMEND_ACCEPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYADDRESS_RECOMMEND_CURRENT_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYADDRESS_RECOMMEND_DESCRIPTION" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYADDRESS_RECOMMEND_NEW_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYADDRESS_RECOMMEND_REJECT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DELIVERYADDRESS_RECOMMEND_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERPAYMENT_REMOVE_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ORDERPAYMENT_REMOVE_CASH_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_CDSSAMPLES_FREE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PRODUCTCATALOG_CATEGORY_CDSSAMPLES_PAID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LABEL_CDSSAMPLE_FREE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LABEL_CDSSAMPLE_PAID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDCCPAYMENT_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LABEL_CREDITCARD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_AMEX" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_DISCOVER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_MASTER" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCTYPE_VISA" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FULFILLMENTMETHOD_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTSTATUS_APPROVED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTSTATUS_DECLINED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTSTATUS_ERROR" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTSTATUS_NA" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTSTATUS_NOTPROCESSED" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PAYMENTSTATUS_PENDING" xml:space="preserve">
+    <value />
+  </data>
+  <data name="REMOVECCPAYMENT_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVOICE_FOOTERCENTERSCRIPT" xml:space="preserve">
+    <value>Pagina &amp;P van &amp;N</value>
+  </data>
+  <data name="INVOICE_FOOTERLEFTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="INVOICE_FOOTERRIGHTSCRIPT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_AMOUNT_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_BILLINGADDRESS_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_BILLINGZIP_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_CARDHOLDERNAME_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_CCEXPDATE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_CCTYPE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_INVOICEID_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_LAST4DIGITS_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_PAYMENTDATE_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_TRANSACTIONID_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CHANGECCPAYMENT_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PROPAYREQUIRED_ALERT" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CCPAYMENT_CCNUMBER_LABEL" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EDITCCPAYMENT_PROCESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EDITCCPAYMENT_SAVE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="EDITCCPAYMENT_TITLE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UNAVAILABLEFORCDS_BADGE" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UNAVAILABLEFORCDS_TIP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SUBMIT_CDS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_CDSORDER_DELIVERYADDRESS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_CDSORDER_PAYMENTS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_CDSORDER_PRODUCTS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ADDGWP_BUTTON" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ALERT_ADDGWP" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_CDSORDER_SAMPLEPRODUCTS" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CUSTOMERLIST_SENDECARD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IMPORTCUSTOMERLIST_PAGER_OF_LABEL" xml:space="preserve">
+    <value>van</value>
+  </data>
+  <data name="CUSTOMERDETAIL_SENDECARD" xml:space="preserve">
+    <value />
+  </data>
+  <data name="VALIDATION_TASKTITLE_REQUIRED" xml:space="preserve">
+    <value>Titel is nodig</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_SUCCESS" xml:space="preserve">
+    <value>Bevestigings-email verstuurd</value>
+  </data>
+  <data name="SEND_CONFIRMATION_EMAIL_ERROR" xml:space="preserve">
+    <value>U moet de validatie fouten korrigeren voordat u de bevestigings-email kunt versturen</value>
+  </data>
+  <data name="REMINDERS_PREFIX" xml:space="preserve">
+    <value>voor</value>
+  </data>
+  <data name="INVALID_ADDRESS" xml:space="preserve">
+    <value>Adres moet een ontvanger en tenminste een van de volgende vereisden hebben: straat, stadt, provincie, postcode of land.</value>
+  </data>
+  <data name="CUSTOMERDETAIL_NOTES_DELETE" xml:space="preserve">
+    <value>Wissen</value>
+  </data>
+</root>

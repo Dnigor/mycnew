@@ -1,0 +1,12 @@
+﻿@model EditCustomerViewModel
+<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_INTERESTS")</label>
+  <div class="controls">
+    @foreach (var topic in Model.TopicsOfInterest)
+    {
+    <label class="checkbox">
+      <input data-bind="checked: learningTopicsOfInterest" type="checkbox" value="@topic.Key" />&nbsp;@topic.Value
+    </label>
+    }
+  </div>
+</div>

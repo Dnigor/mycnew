@@ -1,0 +1,15 @@
+﻿<div class="well well-small" style="display: none;" data-bind="visible: filterMode() === 'OrderDate'">
+  <button type="button" class="close" data-bind="click: filterMode.bind($data, null)">&times;</button>
+  <form class="form-inline" style="margin: 0">
+    <label>@Resources.GetString("FILTER_LASTORDERDATE_LABEL")</label>
+    <div class="input-append" style="display: inline;">
+      <input type="text" data-bind="datepicker: minLastOrderDate, showValidationFor: minLastOrderDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+      <button class="btn" data-bind="visible: minLastOrderDate, click: function(d, e) { minLastOrderDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+    </div>
+    &nbsp;
+    <div class="input-append" style="display: inline;">
+      <input type="text" data-bind="datepicker: maxLastOrderDate, showValidationFor: maxLastOrderDate" class="input-small" placeholder="@Resources.GetString("PLACEHOLDER_DATE")" />
+      <button class="btn" data-bind="visible: maxLastOrderDate, click: function(d, e) { maxLastOrderDate(null); $(e.target).parent().find('input').change(); }"><i class="icon-remove"></i></button>
+    </div>
+  </form>
+</div>

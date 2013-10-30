@@ -1,0 +1,224 @@
+﻿@model EditOrderViewModel
+
+<!-- ko if: $root.isProductCatalogVisible() && $root.canEditProducts() -->
+<div id="productCatalog" class="well well-small" style="margin:0 0 20px 0;">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#searchProducts" data-toggle="tab">@Resources.GetString("PRODUCTCATALOG_TAB_ALL")</a></li>
+    <li><a href="#previouslyOrderedProducts" data-toggle="tab">@Resources.GetString("PRODUCTCATALOG_TAB_PREVIOUSLYORDERED")</a></li>
+    <li><a href="#recommendedProducts" data-toggle="tab">@Resources.GetString("PRODUCTCATALOG_TAB_RECOMMENDED")</a></li>
+    <li><a href="#wishListProducts" data-toggle="tab">@Resources.GetString("PRODUCTCATALOG_TAB_WISHLIST")</a></li>
+    <li class="pull-right"><i class="icon-remove" style="color:#808080;cursor:pointer" title="@Resources.GetString("CLOSE")" data-bind="click: $root.closeProductCatalog"></i></li>
+  </ul>
+
+  <div class="tab-content" data-bind="with: addProductsForm" style="padding:0 10px 10px 10px">
+    <div class="tab-pane active" id="searchProducts" data-bind="with: productCatalog">
+      <div class="input-append">
+        <div class="btn-group">
+          <input type="text" maxlength="120" class="input-large" placeholder="@Resources.GetString("SEARCH_PLACEHOLDER")" data-bind="value: queryString, updateOnEnter: true" />
+          <button class="btn" type="button" data-bind="command: searchCommand"><i class="icon-search"></i></button>
+          <button class="btn" type="button" data-bind="visible: queryString, click: function() { queryString(''); searchCommand.execute(); }" title="@Resources.GetString("SEARCH_CLEAR")"><i class="icon-remove"></i></button>
+
+          <select class="input-large" style="margin-left:20px;" data-bind="value: cat">
+            <option value="">@Resources.GetString("PRODUCTCATALOG_CATEGORY_ALL")</option>
+            <option value="NewProduct">@Resources.GetString("PRODUCTCATALOG_CATEGORY_NEW")</option>
+            <option value="SkinCare">@Resources.GetString("PRODUCTCATALOG_CATEGORY_SKINCARE")</option>
+            <option value="Makeup">@Resources.GetString("PRODUCTCATALOG_CATEGORY_MAKEUP")</option>
+            <option value="Body&Sun">@Resources.GetString("PRODUCTCATALOG_CATEGORY_BODYANDSUN")</option>
+            <option value="Fragrance">@Resources.GetString("PRODUCTCATALOG_CATEGORY_FRAGRANCE")</option>
+            <option value="Mens">@Resources.GetString("PRODUCTCATALOG_CATEGORY_MENS")</option>
+            @if (Model.IsEligibleForCDS)
+            {
+            <option value="CDSSamplesFree" data-bind="visible: enableCDSSamples">@Resources.GetString("PRODUCTCATALOG_CATEGORY_CDSSAMPLES_FREE")</option>
+            <option value="CDSSamplesPaid" data-bind="visible: enableCDSSamples">@Resources.GetString("PRODUCTCATALOG_CATEGORY_CDSSAMPLES_PAID")</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div class="alert alert-info" style="display:none" data-bind="visible: isEmpty">
+        @Resources.GetString("PRODUCTCATALOG_SEARCH_NOTFOUND")
+      </div>
+
+      <table class="table table-condensed table-hover-well products" style="margin:15px 0 0 0;display:none;" data-bind="visible: !isEmpty()">
+        <thead>
+          <tr>
+            <th></th>
+            <th style="white-space:nowrap;">@Resources.GetString("HEADING_PARTNUMBER")</th>
+            <th>@Resources.GetString("HEADING_PRODUCTNAME")</th>
+            <th style="text-align: right;white-space:nowrap">@Resources.GetString("HEADING_SUGGESTEDRETAIL")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: products">
+          <tr style="cursor: pointer;" data-bind="click: toggleDetail" title="@Resources.GetString("PRODUCTCATALOG_CLICKTOVIEWDETAILS")">
+            <td style="white-space:nowrap"><button class="btn btn-success" data-bind="click: $root.addProduct, clickBubble: false">@Resources.GetString("ADDPRODUCT_BUTTON")</button></td>
+            <td data-bind="text: dispPartId"></td>
+            <td class="description" style="width:100%;">
+              <span data-bind="html: name"></span>
+              <span data-bind="html: shade"></span>
+              @if (Model.IsEligibleForCDS)
+              {
+              <span class="label label-important" style="display:none;cursor:help" data-bind="visible: !availableForCDS()" title="@Resources.GetString("UNAVAILABLEFORCDS_TIP")"><i class="icon-ban-circle"></i>&nbsp;@Resources.GetString("UNAVAILABLEFORCDS_BADGE")</span>
+              <span class="label label-info" style="display:none" data-bind="visible: cdsFree">@Resources.GetString("LABEL_CDSSAMPLE_FREE")</span>
+              <span class="label label-info" style="display:none" data-bind="visible: cdsPaid">@Resources.GetString("LABEL_CDSSAMPLE_PAID")</span>
+              }
+            </td>
+            <td style="text-align: right;" data-bind="currency: price"></td>
+          </tr>
+          <tr class="detail" style="border:0;margin:0;padding:0;">
+            <td colspan="4" style="border:0;padding:0;margin:0;" data-bind="if: isDetailVisible">
+              <div class="media" style="padding:10px;border-top:solid #DDD 1px;">
+                <img class="pull-right" style="width:114px;height:152px;" data-bind="attr: { src: listImage }" />
+                <div class="media-body" data-bind="html: desc"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table table-condensed table-pager" style="display:none;margin:0;" data-bind="visible: !isEmpty()">
+        <tr>
+          <td class="pager-buttons">
+            <button class="btn" type="button" data-bind="command: prevPageCommand"><i class="icon-caret-left"></i> @Resources.GetString("PAGER_PREVIOUS")</button>
+            <button class="btn" type="button" data-bind="command: nextPageCommand">@Resources.GetString("PAGER_NEXT") <i class="icon-caret-right"></i></button>
+            &nbsp;
+            <span data-bind="activity: prevPageCommand.isExecuting"></span>
+            <span data-bind="activity: nextPageCommand.isExecuting"></span>
+          </td>
+          <td class="pager-status" style="text-align: left" data-bind="text: app.localizeFormat('PRODUCTSLIST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tab-pane" id="previouslyOrderedProducts" data-bind="with: previouslyOrdered">
+      <div class="alert alert-info" style="display:none;" data-bind="visible: isEmpty">
+        @Resources.GetString("PRODUCTCATALOG_PREVIOUSLYORDERED_NOTFOUND")
+      </div>
+
+      <table class="table table-condensed table-hover-well products" style="margin-top:15px;display:none;" data-bind="visible: !isEmpty()">
+        <thead>
+          <tr>
+            <th></th>
+            <th style="white-space:nowrap;">@Resources.GetString("HEADING_PARTNUMBER")</th>
+            <th>@Resources.GetString("HEADING_PRODUCTNAME")</th>
+            <th style="text-align: right;white-space:nowrap">@Resources.GetString("HEADING_SUGGESTEDRETAIL")</th>
+            <th style="text-align: right;white-space:nowrap">@Resources.GetString("HEADING_ORDERDATE")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: products">
+          <tr style="cursor: pointer;" data-bind="click: toggleDetail" title="@Resources.GetString("PRODUCTCATALOG_CLICKTOVIEWDETAILS")">
+            <td style="white-space:nowrap"><button class="btn btn-success" data-bind="click: $root.addProduct, clickBubble: false">@Resources.GetString("ADDPRODUCT_BUTTON")</button></td>
+            <td data-bind="text: dispPartId"></td>
+            <td class="description" style="width:100%;">
+              <span data-bind="html: name"></span>
+              <span data-bind="html: shade"></span>
+              @if (Model.IsEligibleForCDS)
+              {
+              <span class="label label-important" style="display:none;cursor:help" data-bind="visible: !availableForCDS()" title="@Resources.GetString("UNAVAILABLEFORCDS_TIP")"><i class="icon-ban-circle"></i>&nbsp;@Resources.GetString("UNAVAILABLEFORCDS_BADGE")</span>
+              <span class="label label-info" style="display:none" data-bind="visible: cdsFree">@Resources.GetString("LABEL_CDSSAMPLE_FREE")</span>
+              <span class="label label-info" style="display:none" data-bind="visible: cdsPaid">@Resources.GetString("LABEL_CDSSAMPLE_PAID")</span>
+              }
+            </td>
+            <td style="text-align: right;" data-bind="currency: price"></td>
+            <td style="text-align: right;" data-bind="shortDate: lastOrderDateUtc"></td>
+          </tr>
+          <tr class="detail" style="border:0;margin:0;padding:0;">
+            <td colspan="5" style="border:0;padding:0;margin:0;" data-bind="if: isDetailVisible">
+              <div class="media" style="padding:10px;border-top:solid #DDD 1px;">
+                <img class="pull-right" style="width:114px;height:152px;" data-bind="attr: { src: listImage }" />
+                <div class="media-body" data-bind="html: desc"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane" id="recommendedProducts" data-bind="foreach: recommendedProducts.cats">
+      <h4 data-bind="text: cat"></h4>
+
+      <div class="alert alert-info" style="display:none;" data-bind="visible: isEmpty">
+        @Resources.GetString("PRODUCTCATALOG_RECOMMENDED_NOTFOUND")
+      </div>
+
+      <table class="table table-condensed table-hover-well products" style="margin-top:15px;display:none;" data-bind="visible: !isEmpty">
+        <thead>
+          <tr>
+            <th></th>
+            <th style="white-space:nowrap;">@Resources.GetString("HEADING_PARTNUMBER")</th>
+            <th>@Resources.GetString("HEADING_PRODUCTNAME")</th>
+            <th style="text-align: right;white-space:nowrap">@Resources.GetString("HEADING_SUGGESTEDRETAIL")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: products">
+          <tr style="cursor: pointer;" data-bind="click: toggleDetail" title="@Resources.GetString("PRODUCTCATALOG_CLICKTOVIEWDETAILS")">
+            <td style="white-space:nowrap"><button class="btn btn-success" data-bind="click: $root.addProduct, clickBubble: false">@Resources.GetString("ADDPRODUCT_BUTTON")</button></td>
+            <td data-bind="text: dispPartId"></td>
+            <td class="description" style="width:100%;">
+              <span data-bind="html: name"></span>
+              <span data-bind="html: shade"></span>
+              @if (Model.IsEligibleForCDS)
+              {
+              <span class="label label-important" style="display:none;cursor:help" data-bind="visible: !availableForCDS()" title="@Resources.GetString("UNAVAILABLEFORCDS_TIP")"><i class="icon-ban-circle"></i>&nbsp;@Resources.GetString("UNAVAILABLEFORCDS_BADGE")</span>
+              <span class="label label-info" style="display:none" data-bind="visible: cdsFree">@Resources.GetString("LABEL_CDSSAMPLE_FREE")</span>
+              <span class="label label-info" style="display:none" data-bind="visible: cdsPaid">@Resources.GetString("LABEL_CDSSAMPLE_PAID")</span>
+              }
+            </td>
+            <td style="text-align: right;" data-bind="currency: price"></td>
+          </tr>
+          <tr class="detail" style="border:0;margin:0;padding:0;">
+            <td colspan="4" style="border:0;padding:0;margin:0;" data-bind="if: isDetailVisible">
+              <div class="media" style="padding:10px;border-top:solid #DDD 1px;">
+                <img class="pull-right" style="width:114px;height:152px;" data-bind="attr: { src: listImage }" />
+                <div class="media-body" data-bind="html: desc"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane" id="wishListProducts" data-bind="with: wishListProducts">
+      <div class="alert alert-info" style="display:none;" data-bind="visible: isEmpty">
+        @Resources.GetString("PRODUCTCATALOG_WISHLIST_NOTFOUND")
+      </div>
+
+      <table class="table table-condensed table-hover-well products" style="margin-top:15px;display:none;" data-bind="visible: !isEmpty()">
+        <thead>
+          <tr>
+            <th></th>
+            <th style="white-space:nowrap;">@Resources.GetString("HEADING_PARTNUMBER")</th>
+            <th>@Resources.GetString("HEADING_PRODUCTNAME")</th>
+            <th style="text-align: right;white-space:nowrap">@Resources.GetString("HEADING_SUGGESTEDRETAIL")</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: products">
+          <tr style="cursor: pointer;" data-bind="click: toggleDetail" title="@Resources.GetString("PRODUCTCATALOG_CLICKTOVIEWDETAILS")">
+            <td style="white-space:nowrap"><button class="btn btn-success" data-bind="click: $root.addProduct, clickBubble: false">@Resources.GetString("ADDPRODUCT_BUTTON")</button></td>
+            <td data-bind="text: dispPartId"></td>
+            <td class="description" style="width:100%;">
+              <span data-bind="html: name"></span>
+              <span data-bind="html: shade"></span>
+              <span class="label label-info" style="display:none;" data-bind="visible: isWishList">@Resources.GetString("WISHLISTPRODUCT_BADGE")</span>
+              @if (Model.IsEligibleForCDS)
+              {
+              <span class="label label-important" style="display:none;cursor:help" data-bind="visible: !availableForCDS()" title="@Resources.GetString("UNAVAILABLEFORCDS_TIP")"><i class="icon-ban-circle"></i>&nbsp;@Resources.GetString("UNAVAILABLEFORCDS_BADGE")</span>
+              <span class="label label-info" style="display:none" data-bind="visible: cdsFree">@Resources.GetString("LABEL_CDSSAMPLE_FREE")</span>
+              <span class="label label-info" style="display:none" data-bind="visible: cdsPaid">@Resources.GetString("LABEL_CDSSAMPLE_PAID")</span>
+              }
+            </td>
+            <td style="text-align: right;" data-bind="currency: price"></td>
+          </tr>
+          <tr class="detail" style="border:0;margin:0;padding:0;">
+            <td colspan="4" style="border:0;padding:0;margin:0;" data-bind="if: isDetailVisible">
+              <div class="media" style="padding:10px;border-top:solid #DDD 1px;">
+                <img class="pull-right" style="width:114px;height:152px;" data-bind="attr: { src: listImage }" />
+                <div class="media-body" data-bind="html: desc"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- /ko -->

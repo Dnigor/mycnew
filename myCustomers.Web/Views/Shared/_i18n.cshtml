@@ -1,0 +1,29 @@
+﻿@using System.Globalization;
+@using System.Threading;
+@using Microsoft.Practices.ServiceLocation
+@{
+  var appSettings        = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var subsidiaryAccessor = ServiceLocator.Current.GetInstance<ISubsidiaryAccessor>();
+  var uiCulture          = Thread.CurrentThread.CurrentUICulture;
+  var subsidiary         = subsidiaryAccessor.GetSubsidiaryCode();
+}
+
+@if (File.Exists(Server.MapPath(string.Format("~/scripts/i18n/globalize.culture.{0}.js", uiCulture))))
+{
+  <script type="text/javascript" src="~/scripts/i18n/globalize.culture.@(uiCulture).js"></script>
+}
+else if (File.Exists(Server.MapPath(string.Format("~/scripts/i18n/globalize.culture.{0}.js", uiCulture.TwoLetterISOLanguageName))))
+{
+  <script type="text/javascript" src="~/scripts/i18n/globalize.culture.@(uiCulture.TwoLetterISOLanguageName).js"></script>
+}
+
+@if (File.Exists(Server.MapPath(string.Format("~/scripts/i18n/jquery.ui.datepicker-{0}.js", uiCulture))))
+{
+  <script type="text/javascript" src="~/scripts/i18n/jquery.ui.datepicker-@(uiCulture).js"></script>
+}
+else if (File.Exists(Server.MapPath(string.Format("~/scripts/i18n/jquery.ui.datepicker-{0}.js", uiCulture.TwoLetterISOLanguageName))))
+{
+  <script type="text/javascript" src="~/scripts/i18n/jquery.ui.datepicker-@(uiCulture.TwoLetterISOLanguageName).js"></script>
+}
+
+<script type="text/javascript" src="@Url.Action("index", "resources", new { name = "ClientStrings", sub = subsidiary, lang = uiCulture.TwoLetterISOLanguageName })"></script>

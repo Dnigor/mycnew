@@ -1,0 +1,33 @@
+﻿<div><span data-bind="activity: getQuestionnaireAnswersCommand.isExecuting"></span></div>
+<fieldset style="display: none;" data-bind="visible: hasQuestionnaireAnswers">
+  <legend style="font-size: 14px; font-weight: bold;">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFO_PERSONALPROFILE")</legend>
+  <div class="customerdetail-nav-content">
+    <div data-bind="foreach: questionnaireAnswers">
+      <p data-bind="text: text" style="font-weight: bold;"></p>
+      <div style="padding-left: 22px;" data-bind="foreach: questions">
+        <dl>
+          <dt class="muted" data-bind="text: text"></dt>
+          <dd data-bind="if: answers">
+            <div data-bind="foreach: answers">
+              <span data-bind="text: text"></span>
+              <div data-bind="if: imagePath" style="margin-top:5px;">
+                <img data-bind="attr: { src: imagePath, alt: text }" src="#" alt="#" />
+              </div>
+            </div>
+          </dd>
+          <dd data-bind="if: key == 'LifestyleInterests' && freeTextAnswer">
+            <div>@Resources.GetString("CUSTOMERDETAIL_PROFILEANSWERLABEL_OTHER")&nbsp;
+              <span data-bind="text: freeTextAnswer"></span></div>
+          </dd>
+          <dd data-bind="if: (key == 'StyleInspiration' || key == 'MakeupMustHaves') && freeTextAnswer">
+            <div><span data-bind="text: freeTextAnswer"></span></div>
+          </dd>
+          <dd data-bind="if: key == 'DailyRoutineProducts' && freeTextAnswer">
+            <div>@Resources.GetString("CUSTOMERDETAIL_PROFILEANSWERLABEL_OTHERS")&nbsp;
+              <span data-bind="text: freeTextAnswer"></span></div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</fieldset>

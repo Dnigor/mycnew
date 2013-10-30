@@ -1,0 +1,75 @@
+﻿@using System.Web.Mvc
+@using Microsoft.Practices.ServiceLocation
+@using MaryKay.Configuration
+@using myCustomers.Globalization
+
+@functions
+{
+  static WebViewPage _ = CurrentPage as WebViewPage;
+
+  static Tuple<int, int> GetImageDimensions(int height)
+  {
+    if (height > 200 || height <= 1)
+      height = 200;
+
+    return new Tuple<int, int>(height, (int)(height * 0.8M));
+  }
+}
+
+@helper PageHeader(string title)
+{
+  <fieldset>
+    <legend>
+      @title
+      <button class="btn pull-right" style="margin-top:5px;" onclick="$('#helpContent').toggle(); return false;"><i class="icon-question-sign"></i></button>
+    </legend>
+  </fieldset>
+}
+
+@helper ProfileImage(DateTime? lastUpdatedDateUtc, string firstName, string lastName, Guid customerId, int height)
+{
+  // ensure that utc time is used for the cache buster parameter
+  if (lastUpdatedDateUtc.HasValue)
+  {
+    if (lastUpdatedDateUtc.Value.Kind == DateTimeKind.Local)
+    {
+      lastUpdatedDateUtc = lastUpdatedDateUtc.Value.ToUniversalTime();
+    }
+    lastUpdatedDateUtc = DateTime.SpecifyKind(lastUpdatedDateUtc.Value, DateTimeKind.Utc);
+  }
+  var dims = GetImageDimensions(height);
+  var url = lastUpdatedDateUtc.HasValue ? _.Url.RouteUrl("CustomerImages", new { action = "profile", customerId = customerId, h = height, ts = lastUpdatedDateUtc.Value.ToString("yyyy-MM-ddTHH:mm:ssZ") }) : _.Url.Content("~/Content/images/Portrait_Blank.png");
+  <img class="img-polaroid" src="@url" alt="@firstName @lastName" />
+}
+
+@helper InTouchUrl(string urlKey, string textKey, bool targetBlank = true)
+{
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var inTouchBaseUrl = new Uri(Request.Url, appSettings.GetValue("InTouch.BaseUrl"));
+  var urlValue = String.IsNullOrEmpty(urlKey) ? String.Empty : appSettings.GetValue(urlKey);
+  var url = new Uri(inTouchBaseUrl, urlValue);
+  if (targetBlank)
+  {
+    <a class="muted" target="_blank" href="@url">@Resources.GetString(textKey)</a>
+  }
+  else
+  {
+    <a class="muted" href="@url">@Resources.GetString(textKey)</a>
+  }
+
+}
+
+@helper LocalUrl(string urlKey, string textKey, bool targetBlank = true)
+{
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var relativeUrl = appSettings.GetValue(urlKey);
+  var helpUrl = VirtualPathUtility.ToAbsolute(relativeUrl);
+  if (targetBlank)
+  {
+    <a class="muted" target="_blank" href="@helpUrl">@Resources.GetString(textKey)</a>
+  }
+  else
+  {
+    <a class="muted" href="@helpUrl">@Resources.GetString(textKey)</a>
+  }
+}

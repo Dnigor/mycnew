@@ -1,0 +1,32 @@
+﻿<ul class="inline" style="margin-top:10px;">
+  <!-- ko foreach: $root.assignedGroups -->
+  <li class="group-spacing" data-bind="visible: hasName" style="display:none;padding:0;">
+    <span class="label label-info group-label" style="white-space:nowrap;margin-right:5px;">
+      <span data-bind="text: name" style="margin:0;"></span>
+      <a class="group-close" data-bind="command: $root.removeFromGroupCommand" title="Remove from group"><i class="icon-remove"></i></a>
+    </span>
+  </li>
+  <!-- /ko -->
+
+  <li id="groupSelector" class="dropdown" data-bind="visible: $root.groupSelectorIsVisible()">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Add to group<b class="caret"></b></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <!-- ko foreach: $root.availableGroups -->
+      <li data-bind="command: $root.addToGroupCommand"><a href="#"><span data-bind="  text: name"></span></a></li>
+      <!-- /ko -->
+      <li class="divider"></li>
+      <li data-bind="click: $root.showGroupEntry"><a href="#">Create new group</a></li>
+    </ul>
+  </li>
+
+  <li id="groupEntry" style="display: none; padding-top: 3px;" data-bind="visible: $root.groupEntryIsVisible() || !$root.hasGroupsToSelectFrom()">
+    <div class="input-append" style="display: inline;">
+      <div class="btn-group">
+        <button class="btn btn-link" type="button" style="display: none;"><i class="icon-remove"></i></button>
+        <input type="text" class="input-medium" data-bind="value: $root.newGroupName, showValidationFor: $root.newGroupName, valueUpdate: 'afterkeydown', validationPlacement: 'bottom'" maxlength="256" placeholder="New group name" />
+        <button class="btn" type="submit" title="add to new group" data-bind="command: $root.addGroupCommand"><i class="icon-tag"></i></button>
+        <button class="btn" type="submit" title="cancel" data-bind="click: $root.hideGroupEntry, visible: $root.hasGroupsToSelectFrom()"><i class="icon-remove"></i></button>
+      </div>
+    </div>
+  </li>
+</ul>

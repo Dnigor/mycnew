@@ -1,0 +1,35 @@
+﻿
+<div class="well" style="display:none" data-bind="visible: showImportForm">
+  <button type="button" class="close" data-bind="click: showImportForm.bind($data, false)">&times;</button>
+  <p>@Resources.GetString("IMPORT_PROMPT")</p>
+  <div class="indented">
+    <div style="margin-bottom: 20px;">
+      <a href="#" onclick="$('#importFacebook').show();return false;" style="font-size: 16px; text-decoration: underline;">@Resources.GetString("IMPORT_FROMFACEBOOK_LINKTEXT")</a><br />
+      <span class="muted">@Resources.GetString("IMPORT_FRIENDSFROMFACEBOOK_PROMPT")</span>
+      <div id="importFacebook" class="well" style="background-color: #fff; display: none;">
+        <p><strong>@Resources.GetString("IMPORT_IMPORTANT_PROMPT")</strong> @Resources.GetString("IMPORT_FROMFACEBOOK_INSTRUCTIONS")</p>
+        <div>
+          @Html.ActionLink(Resources.GetString("IMPORTCUSTOMERS_IMPORT_FRIENDS"), "ImportFacebookFriends", null, new { Class = "btn btn-primary" })          
+          <button type="button" class="btn btn-link" onclick="$('#importFacebook').hide();return false;">@Resources.GetString("CANCEL")</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <a href="#" onclick="$('#importCSV').show();return false;" style="font-size: 16px; text-decoration: underline;">@Resources.GetString("IMPORT_FROMOUTLOOK_LINKTEXT")</a><br />
+      <span class="muted">@Resources.GetString("IMPORT_FROMOUTLOOK_PROMPT")</span>
+      <div id="importCSV" class="well" style="background-color: #fff; display: none;" data-bind="with: importForm">
+        <p><strong>@Resources.GetString("IMPORT_IMPORTANT_PROMPT")</strong> @Resources.GetString("IMPORT_FROMOUTLOOK_INSTRUCTIONS")</p>
+        @using (Html.BeginForm("UploadCSVFile", "Customers", FormMethod.Post, new { enctype = "multipart/form-data", id = "uploadCsvForm" }))
+        {
+          <input type="text" style="margin-top:10px;" data-bind="value: csvfilename" readonly>
+          <span class="btn btn-file">@Resources.GetString("IMPORT_FROMOUTLOOK_CHOOSEFILE")<input type="file" name="csvinputfile" data-bind="event: { change: updateCsvFileName }"></span>
+          
+          <div style="margin-top:10px;">
+            <button type="button" class="btn btn-primary" data-bind="command: uploadCsvFileCommand, activity: uploadCsvFileCommand.isExecuting">@Resources.GetString("IMPORTCUSTOMERS_UPLOADFILE")</button>
+            <button type="button" class="btn btn-link" onclick="$('#importCSV').hide();return false;">@Resources.GetString("CANCEL")</button>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+﻿@model AddressViewModel
+@{
+  var skipWrapperObj = ViewData["skipWrapper"];
+  var skipWrapper = false;
+  if (skipWrapperObj != null)
+  {
+    bool.TryParse(skipWrapperObj.ToString(), out skipWrapper);
+  }
+}
+
+@* Using hcard micro-format http://microformats.org/wiki/hcard*@
+
+@helper UseWrapper()
+{
+  <div class="vcard">
+    @UseBody()
+  </div>
+}
+
+@helper UseBody()
+{
+  <div class="adr">
+    <div class="street-address">@Model.Street @Model.UnitNumber</div>
+    <span class="locality">@Model.City</span>,
+    <span class="region">@Model.RegionCode</span>
+    <span class="postal-code">@Model.PostalCode</span>
+    @if (@Model.Features.ShowCountryCodeWithAddress)
+    {
+      <div>
+        <span class="country-code">@Model.CountryCode</span>
+      </div>
+    }
+  </div>
+}
+
+
+@if (skipWrapper)
+{
+  @UseBody();
+}
+else
+{
+  @UseWrapper();
+}

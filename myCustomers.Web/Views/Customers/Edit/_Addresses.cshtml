@@ -1,0 +1,20 @@
+﻿@using myCustomers
+<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_ADDRESS")</label>
+
+  <div class="controls" data-bind="foreach: addresses">
+    @Html.AppSettingsPartial("PartialView.EditAddress")
+    <!-- ko ifnot: $root.isNew -->
+    <div style="display:inline-block">
+      <span class="label label-info" style="display:none;" data-bind="visible: isPrimary">@Resources.GetString("PRIMARY")</span>      
+      <div><button type="button" class="btn btn-link" style="display:none;padding:0" data-bind="command: $parent.removeAddressCommand, visible: $parent.addresses().length > 1 || notEmpty">@Resources.GetString("REMOVE")</button></div>
+      <div><button class="btn btn-link" type="button" style="display:none;padding:0" data-bind="click: $parent.setPrimaryAddress, visible: !isPrimary()">@Resources.GetString("MAKE_PRIMARY")</button></div>
+    </div>
+    <!-- /ko -->
+  </div>
+  <!-- ko ifnot: $root.isNew -->
+  <div class="controls form-address-buttons">
+    <button type="button" class="btn btn-link" data-bind="command: addAddressCommand, visible: addAddressCommand.canExecute">@Resources.GetString("ADDCUSTOMER_ADDRESS_ADD")</button>
+  </div>
+  <!-- /ko -->
+</div>

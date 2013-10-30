@@ -1,0 +1,55 @@
+﻿@model EditCustomerViewModel
+<div class="control-group">
+  <label class="control-label">@Resources.GetString("ADDCUSTOMER_PHONE")</label>
+
+  <div class="controls">
+    <table style="display:none" data-bind="visible:true">
+      <tbody data-bind="foreach: phoneNumbers">
+        <tr>
+          <td style="border:none;padding:2px 5px 2px 0">
+            <select class="input-small" data-bind="options: $parent.getAvailablePhoneNumberTypes($data), optionsText: function(t) { return app.localize('PHONENUMBERTYPE_{0}', t); }, value: phoneNumberType"></select>
+          </td>
+          <td style="border:none;white-space:nowrap;padding:2px 2px 2px 5px">
+            <table>
+              <tr>
+                <td>
+                  <input type="text" maxlength="20" class="input-medium" data-bind="value: number, valueUpdate: 'keyup', hasfocus: hasFocus, showValidationFor: number" />
+                </td>
+                <td>
+                  <!-- ko if: isWorkPhone -->
+                  <input type="text" maxlength="10" class="input-small" data-bind="value: extension, valueUpdate: 'keyup', showValidationFor: extension" placeholder="ext" />
+                  <!-- /ko -->
+                </td>
+                <td>
+                  <!-- ko if: isMobile -->
+                  <label class="checkbox" style="margin:0">
+                    <input type="checkbox" data-bind="checked: $root.customer().canSendSMSToCell" />
+                    @Resources.GetString("ADDCUSTOMER_CANSENDSMS")
+                  </label>
+                  <!-- /ko -->
+                </td>
+                <td>
+                  <!-- ko if: isPrimary -->
+                  <span class="label label-info" style="display:none;" data-bind="visible: isPrimary">@Resources.GetString("PRIMARY")</span>
+                  <!-- /ko -->
+
+                  <!-- ko if: $parent.phoneNumbers().length > 1 -->
+                  <!-- ko ifnot: isPrimary -->
+                  <button class="btn btn-link" type="button" style="display:none;padding:0" data-bind="click: $parent.setPrimaryPhoneNumber, visible: !isPrimary()">@Resources.GetString("MAKE_PRIMARY")</button>
+                  <!-- /ko -->
+
+                  <!-- ko if: $parent.phoneNumbers().length > 1 -->
+                  <button class="btn btn-link" style="padding:0;" data-bind="command: $parent.removePhoneNumberCommand">@Resources.GetString("REMOVE")</button>
+                  <!-- /ko -->
+                  <!-- /ko -->
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="btn btn-link" style="padding-left:0;" data-bind="visible: addPhoneNumberCommand.canExecute, command: addPhoneNumberCommand">@Resources.GetString("ADDCUSTOMER_ADD_PHONE")</button>
+  </div>
+</div>

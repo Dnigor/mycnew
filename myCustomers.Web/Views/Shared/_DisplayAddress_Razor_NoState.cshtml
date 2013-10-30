@@ -1,0 +1,15 @@
+﻿@model AddressViewModel
+
+@* Using hcard micro-format http://microformats.org/wiki/hcard*@
+<div class="vcard">
+  <div class="adr">
+    <div class="street-address">@Model.Street @Model.UnitNumber</div>
+    <span class="postal-code locality">@Model.PostalCode @Model.City</span>
+    @if (@Model.Features.ShowCountryCodeWithAddress)
+    {
+      <div>
+        <span class="country-code">@Model.CountryCode</span>
+      </div>
+    }
+  </div>
+</div>

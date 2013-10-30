@@ -1,0 +1,147 @@
+﻿@using myCustomers
+@model GroupDetailViewModel
+@{
+  ViewBag.Title = Resources.GetString("GROUPCUSTOMERS_PAGETITLE");
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+}
+
+<div class="navbar" style="margin-top: 10px;">
+  <div class="navbar-inner">
+    <a class="brand" href="#">@Model.GroupName</a>
+
+    <ul class="nav pull-right">
+      <li data-bind="busy: isBusy">
+        <div style="display: inline-block; margin-top: 10px; margin-right: 5px;">
+          <img src="~/content/images/spinner.gif" />
+        </div>
+      </li>
+
+      <li class="divider-vertical"></li>
+      <li><a style="padding-left: 0; padding-right: 0" class="btn-help" href="#" onclick="$('#helpContent').toggle(); return false;"><i class="icon-question-sign"></i>&nbsp;@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="helpContent" class="well" style="display: none;">
+  <button type="button" class="close" onclick="$('#helpContent').hide();return false;">&times;</button>
+  @Html.Raw(Resources.GetLocalizedContent("GroupCustomersHelp"))
+</div>
+
+<!-- No Search Results -->
+  <div class="row" style="display: none;" data-bind="visible: noResults">
+    <div class="span12">
+      <div class="alert alert-info">
+        <em>@Resources.GetString("GROUPCUSTOMERS_NORESULTS_ALERT")</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="display: none;" data-bind="visible: hasResults">
+    <div class="span7">      
+      <button class="btn" data-bind="enable: deleteFromGroup.canExecute, command: deleteFromGroup, activity: deleteFromGroup.isExecuting"><i class="icon-print"></i>&nbsp;@Resources.GetString("GROUPCUSTOMERS_ACTIONBUTTONGROUP_DELETE")</button> 
+    </div>
+  </div>
+
+  <div class="row" style="display: none;" data-bind="visible: hasResults">
+    <div class="span12">
+      <table class="table table-hover" style="cursor: pointer;" data-bind="with: searchResults">
+        <thead>
+          <tr>           
+              <th>
+                <input type="checkbox" data-bind="checked: $root.selectAll" title="@Resources.GetString("SELECTALL_TOOLTIP")" />
+              </th>            
+            <th>@Resources.GetString("GROUPCUSTOMERS_COLUMNTITLES_NAMEANDEMAIL")</th>
+            <th>@Resources.GetString("GROUPCUSTOMERS_COLUMNTITLES_ADDRESS")</th>
+            <th>@Resources.GetString("GROUPCUSTOMERS_COLUMNTITLES_PHONE")</th>            
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: $data">
+          <tr data-bind="click: $root.onCustomerRowClick, clickBubble: false">           
+            <td style="width: 24px;" data-bind="click: function () { return true; }, clickBubble: false">
+              <input type="checkbox" data-bind="checked: $root.customerChecked($data)" />
+            </td>
+            
+            <td style="white-space: nowrap; width: 349px; overflow-x: hidden;">
+              <div>
+                <strong data-bind="text: [$data.FirstName, $data.MiddleName, $data.LastName].join(' ')"></strong>
+              </div>
+                <div>
+                    @if (Model.Features.UseMailtoLinks)
+                    {
+                        <a data-bind="text: $data.EmailAddress, attr: { href: 'mailto:' + $data.EmailAddress }, click: function () { return true; }, clickBubble: false"></a>
+                    }
+                    else
+                    {
+                        <span data-bind="text: $data.EmailAddress"></span>
+                    }
+                </div>                               
+            </td>
+
+            <td style="white-space: nowrap; width: 244px; overflow-x: hidden;">
+              @Html.AppSettingsPartial("PartialView.DisplayAddress_KO", true)
+            </td>
+
+            <td style="white-space: nowrap; width: 139; overflow-x: hidden;">
+              <ul data-bind="foreach: PhoneNumbers" class="unstyled">
+                <li>
+                  <abbr data-bind="attr: { title: app.localize('PHONENUMBERTYPE_{0}', PhoneNumberType) }">
+                    <span data-bind="text: app.formatPhoneTypeAbbr(PhoneNumberType)"></span>
+                    <span data-bind="phone: Number"></span>
+                    <!-- ko if: Extension -->
+                    &nbsp;x<span data-bind="text: Extension"></span>
+                    <!-- /ko -->
+                  </abbr>
+                </li>
+              </ul>
+            </td>
+
+           
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pager -->
+      <table class="table">
+        <tr>
+          <td class="pager-buttons">
+            <button class="btn" type="button" data-bind="command: prevPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+            <button class="btn" type="button" data-bind="command: nextPageCommand">@Resources.GetString("PAGER_NEXT") <i class="icon-caret-right"></i></button>
+          </td>
+          <td class="pager-status" data-bind="text: app.localizeFormat('CUSTOMERLIST_PAGER_STATUSFORMAT', itemCount(), currentPage(), pageCount())"></td>
+          <td class="pager-pagesize-label">
+            <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+          </td>
+          <td class="pager-pagesize-select">
+            <select class="input-mini" data-bind="value: pageSize">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  
+@section scripts {
+  @Html.Partial("_ConfirmModal")
+  @Html.Partial("_ProgressModal")
+
+  <script type="text/javascript">
+    $(function () {
+      var config = {
+        ajaxService: new myc.AjaxService(),
+        groupId: '@Model.GroupId',       
+        apiUrl: '@Url.RouteUrl(new { httproute = "CustomerGroupsApi", controller = "CustomerGroups" })',  
+        deleteFromGroupUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "deletefromgroup" })'       
+      };
+
+      var model = new myc.GroupCustomers(config);
+      ko.applyBindings(model);
+      model.searchCommand.execute();
+    });
+  </script>
+}

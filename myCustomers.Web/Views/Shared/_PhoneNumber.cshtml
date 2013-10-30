@@ -1,0 +1,19 @@
+﻿@model PhoneNumberViewModel
+@{
+  var settings    = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var phoneRegion = settings.GetValue("Globalization.PhoneRegion");
+}
+<abbr title="@Resources.GetString("PHONETYPE_" + @Model.PhoneNumberType)">
+  <span class="type">@Resources.GetString(string.Format("PHONETYPE_{0}_ABBR", Model.PhoneNumberType).ToUpper()):</span>
+  <span class="value">
+    @PhoneFormatter.FormatLocal(Model.Number, phoneRegion)
+    @if (!string.IsNullOrEmpty(Model.Extension))
+    {
+     <text>x</text>@Model.Extension
+    }
+  </span>
+</abbr>
+@if (Model.IsPrimary)
+{
+<span class="label label-info">@Resources.GetString("PRIMARY")</span>
+}

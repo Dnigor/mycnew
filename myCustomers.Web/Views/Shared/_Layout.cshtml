@@ -1,0 +1,140 @@
+﻿@using System.Threading;
+@using myCustomers.Contexts;
+@{
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+  var consultantContext = ServiceLocator.Current.GetInstance<IConsultantContext>();
+  var subsidiaryAccessor = ServiceLocator.Current.GetInstance<ISubsidiaryAccessor>();
+}
+<!DOCTYPE html>
+<html lang="@Thread.CurrentThread.CurrentUICulture">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/png" href="~/content/images/appicon.png" />
+  <title>@ViewBag.Title</title>
+    <script type="text/javascript">
+        function getCookie(name) {
+            var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        if (getCookie('.ASPXAUTH') == undefined || getCookie('.ASPXAUTH') == "") {
+            location.href = '@Url.Action("login", "account")';
+        }
+    </script>
+  @Styles.Render("~/content/css")
+  @Scripts.Render("~/script/modernizr")
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner" style="background-color: #000; background-image: none;">
+      <div class="container">@Html.Partial("_Header")</div>
+    </div>
+  </div>
+  <div class="navbar navbar-inverse navbar-static-top navbar-secondary">
+    <div class="navbar-inner">
+      <div class="container">
+        <a href="~/" class="brand" style="color: #ffffff">@Resources.GetString("SITE_NAME")</a>
+
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            @if (appSettings.GetValue<bool>("Feature.InTouch.Home"))
+            {
+              <li>@LayoutHelpers.InTouchUrl(String.Empty, "INTOUCH_HOME", false)</li>
+            }
+            <li>@Html.ActionLink(Resources.GetString("NAV_CUSTOMERS"), "index", "customers")</li>
+            <li>@Html.ActionLink(Resources.GetString("NAV_ORDERS"), "index", "orders")</li>
+            <li>@Html.ActionLink(Resources.GetString("NAV_TASKS"), "index", "tasks")</li>
+            @if (appSettings.GetValue<bool>("Feature.InTouch.Reports"))
+            {
+              <li>@LayoutHelpers.InTouchUrl("InTouch.Reports", "INTOUCH_REPORTS", false)</li>
+            }
+          </ul>
+          <div class="pull-right">
+            <a class="btn" href="@Url.Action("select", "customers", new { r = Url.Action("add", "orders", new { customerId = "_id_" }) })">
+              <i class="icon-plus-sign" style="margin-right: 5px;"></i>@Resources.GetString("BTN_ADDORDER")
+            </a>
+            <a class="btn" href="@Url.Action("add", "customers", new { })">
+              <i class="icon-plus-sign" style="margin-right: 5px;"></i>@Resources.GetString("BTN_ADDCUSTOMER")
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="background-color: #FFF;">
+    @RenderBody()
+    @Html.Partial("_Footer")
+  </div>
+
+  <form id="logoutForm" style="display:none;" method="post" action="@Url.Action(@appSettings.GetValue("Logout.Action"), "account")"></form>
+
+  @Scripts.Render("~/script/globalize")
+  @Scripts.Render("~/script/jquery")
+  @Scripts.Render("~/script/jqueryui")
+  @Scripts.Render("~/script/knockout")
+  @Scripts.Render("~/script/bootstrap")
+  @Scripts.Render("~/script/utils")
+
+  @Html.Partial("_i18n")
+
+  <div id="validationMessage" class="bgform popover right" style="display:none">
+    <div class="arrow"></div>
+    <span></span>
+  </div>
+
+  <script type="text/javascript">
+    ko.validation.configure({
+      insertMessages: false,
+      errorsAsTitle: false,
+      messagesOnModified: false
+    });
+
+    toastr.options = {
+      positionClass: 'toast-top-right',
+      timeOut: 0,
+      fadeIn: 0,
+      fadeOut: 0,
+      extendedTimeOut: 0,
+      onclick: null
+    };
+
+    var app = app || {};
+    app.Config = app.Config || {};
+
+    app.language = '@Thread.CurrentThread.CurrentUICulture';
+    app.language2 = '@Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName';
+
+    app.logUrl = '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "log" })';
+    app.consultantId = '@consultantContext.Consultant.ConsultantID';
+    app.subsidiary = '@subsidiaryAccessor.GetSubsidiaryCode()';
+
+    app.settings = {
+      currencyFormat:         '@appSettings.GetValue("Globalization.CurrencyFormatClient")',
+      phoneRegion:            '@appSettings.GetValue("Globalization.PhoneRegion")',
+      formatFullDayMonthDate: '@appSettings.GetValue("Globalization.FormatFullDayMonthDate")'
+    };
+
+    app.showValidationErrors = ko.observable(false);
+
+    // set default culture
+    Globalize.culture(app.language);
+  </script>
+
+  @Scripts.Render("~/script/app")
+  @RenderSection("scripts", required: false)
+
+  <script type="text/javascript">
+    $(function () { app.processNotifications(); });
+  </script>
+
+  @if (Request.Browser.Browser == "IE")
+  {
+    <script type="text/javascript" src="~/scripts/ie.js"></script>
+  }
+
+  @Html.Action("index", "omniture")
+</body>
+</html>

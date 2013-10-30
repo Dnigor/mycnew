@@ -1,0 +1,45 @@
+﻿@model OrderDetailViewModel
+
+<div class="row">
+  <div class="span12">
+    <table class="table productlist">
+      <thead>
+        <tr>
+          <th>@Resources.GetString("PRODUCTLIST_HEADER_PARTNUMBER")</th>
+          <th>@Resources.GetString("PRODUCTLIST_HEADER_NAME")</th>
+          <th style="text-align: right;">@Resources.GetString("PRODUCTLIST_HEADER_QUANTITY")</th>
+          <th style="text-align: right;">@Resources.GetString("PRODUCTLIST_HEADER_SUGGESTEDRETAIL")</th>
+          <th style="text-align: right;">@Resources.GetString("PRODUCTLIST_HEADER_RETAILTOTAL")</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var item in Model.Order.Items)
+        {
+        <tr>
+          <td>@item.DispPartId</td>
+          <td>
+            @item.Name&nbsp;@item.Shade
+            @if (item.CDSFree)
+            {
+              <span class="label label-info">@Resources.GetString("LABEL_CDSSAMPLE_FREE")</span>
+            }
+            @if (item.CDSPaid)
+            {
+              <span class="label label-info">@Resources.GetString("LABEL_CDSSAMPLE_PAID")</span>
+            }
+          </td>
+          <td style="text-align: right;">@item.Qty</td>
+          <td style="text-align: right;">@string.Format(Model.CurrencyFormat, item.Price)</td>
+          <td style="text-align: right;">@string.Format(Model.CurrencyFormat, item.Total)</td>
+        </tr>
+        }
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" style="text-align: right">@Resources.GetString("PRODUCTLIST_FOOTER_TOTAL")</td>
+          <td style="text-align: right;">@string.Format(Model.CurrencyFormat, Model.Order.EstimatedRetailTotal)</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

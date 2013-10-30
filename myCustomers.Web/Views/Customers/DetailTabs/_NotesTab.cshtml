@@ -1,0 +1,43 @@
+﻿<div class="tab-pane customerdetail-tab-pane-padding" data-bind="css: { active: $root.currentTab() == 'notestab' }" id="notestab">
+
+  <div class="control-group" style="margin-bottom: 30px;">
+    <label class="control-label"><strong>@Resources.GetString("CUSTOMERDETAIL_ADDANOTEABOUT")&nbsp;@Model.FirstName</strong></label>
+    <div class="maxchar">
+      <textarea style="height: 130px; overflow: auto; width: 590px;" maxlength="1000" data-bind="value: $root.newNoteInput, valueUpdate: 'afterkeydown', attr: { maxlength: $root.newNoteInput.maxCharacterCount } "></textarea>
+      <span data-bind="text: $root.newNoteInput.remainingCharacterCount"></span>
+    </div>
+    <table>
+      <tr>
+        <td style="width: 70%;">
+          <small class="muted">@Resources.GetString("CUSTOMERDETAIL_NOTES_BUTTON_CONFIRMCOPY")</small>
+        </td>
+        <td>
+          <button data-bind="command: $root.addNewNoteCommand, activity: addNewNoteCommand.isExecuting" type="button" class="btn btn-primary pull-right" style="margin-right: 20px;">@Resources.GetString("CUSTOMERDETAIL_ADDTHISNOTE")</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <table class="table table-hover" data-bind="if: $root.hasNotes, visible: $root.hasNotes" style="display: none;">
+    <tbody data-bind="foreach: $root.notes">
+      <tr>
+        <td>
+          <div id="viewNote1" title="@Resources.GetString("CUSTOMERDETAIL_NOTES_CLICKTOEDIT")" style="cursor: pointer;" data-bind="visible: $data.isNotEditing, click: enableEditNote, clickBubble: false">
+            <strong><span style="padding-right: 20px;" data-bind="fullDayMonthDate: $data.dateCreatedUtc"></span></strong>
+            <i class="icon-pencil" data-bind="click: enableEditNote, clickBubble: false" title="@Resources.GetString("CUSTOMERDETAIL_NOTES_CLICKTOEDIT")"></i>
+            <p style="padding-top: 10px;">
+              <pre class="pre-no-border" data-bind="text: $data.content"></pre>
+            </p>
+          </div>
+          <div id="editNote1" style="display: none;" data-bind="visible: $data.isEditing">
+            <textarea rows="5" class="input-xxlarge" maxlength="1000" data-bind="value: $data.editModeContent, valueUpdate: 'afterkeydown'" style="width: 95%"></textarea>
+            <br />
+            <button class="btn btn-primary" data-bind="command: $root.updateNoteCommand, clickBubble: false, enable: $data.hasEditModeContent">@Resources.GetString("CUSTOMERDETAIL_NOTES_SAVE")</button>
+            <button class="btn btn-danger" data-bind="command: $root.deleteNoteCommand, clickBubble: false">@Resources.GetString("CUSTOMERDETAIL_NOTES_DELETE")</button>
+            <button class="btn btn-link" data-bind="click: disableEditNote, clickBubble: false">@Resources.GetString("CANCEL")</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

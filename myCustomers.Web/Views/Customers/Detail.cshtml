@@ -1,0 +1,378 @@
+﻿@using myCustomers
+@model CustomerDetailViewModel
+@{
+  ViewBag.Title = Resources.GetString("CUSTOMERDETAIL_PAGETITLE");
+  var subsidiary = ServiceLocator.Current.GetInstance<ISubsidiaryAccessor>().GetSubsidiaryCode();
+  var appSettings = ServiceLocator.Current.GetInstance<IAppSettings>();
+}
+
+<div class="navbar" style="margin-top: 10px;">
+  <div class="navbar-inner">
+    <a class="brand" href="#">@ViewBag.Title</a>
+    <ul class="nav pull-right">
+      <li class="divider-vertical"></li>
+      <li><a style="padding-left: 0; padding-right: 0" class="btn-help" href="#" onclick="$('#helpContent').toggle(); return false;"><i class="icon-question-sign"></i>&nbsp;@Resources.GetString("PAGEHEADER_HELP_LINKTEXT")</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="helpContent" class="well" style="display: none;">
+  <button type="button" class="close" onclick="$('#helpContent').hide();return false;">&times;</button>
+  @Html.Raw(Resources.GetLocalizedContent("CustomerDetailHelp"))
+</div>
+
+<div class="row">
+  <div class="span8">
+    <table>
+      <tr>
+        <td style="vertical-align:top;width:72px;padding-right:15px;">
+          @LayoutHelpers.ProfileImage(@Model.PictureLastUpdatedDateUtc, @Model.FirstName, @Model.LastName, @Model.CustomerId, 96)
+        </td>
+        <td style="vertical-align:top;padding-left:5px;padding-right:10px;">
+          <h3 style="margin: 0; line-height: 20px;">@Model.FirstName @Model.MiddleName @Model.LastName
+            @if (Model.IsRegisteredForPws)
+            {
+              <span class="label label-info" style="vertical-align: middle">@Resources.GetString("REGISTERED")</span>
+            }
+          </h3>
+          @if (!@Model.IsDeleted && appSettings.GetValue<bool>("Feature.CustomerList.Groups"))
+          {
+            @Html.Partial("_AssignedGroups")
+          }
+        </td>
+      </tr>
+    </table>
+
+    @if (!@Model.IsDeleted)
+    {
+      <div style="margin-top: 20px">
+        <ul class="nav nav-tabs" style="margin-bottom: 0; padding-left: 10px;">
+          <li data-bind="css: { active: $root.currentTab() == 'notestab' }, click: $root.setCurrentTab.bind($data, 'notestab')"><a href="#notestab" data-toggle="tab">@Resources.GetString("CUSTOMERDETAIL_TAB_NOTES")</a></li>
+          <li data-bind="css: { active: $root.currentTab() == 'customerinfotab' }, click: $root.setCurrentTab.bind($data, 'customerinfotab')"><a href="#customerinfotab" data-toggle="tab">@Resources.GetString("CUSTOMERDETAIL_TAB_CUSTOMERINFORMATION")</a></li>
+          <li data-bind="css: { active: $root.currentTab() == 'orderstab' }, click: $root.setCurrentTab.bind($data, 'orderstab')"><a href="#orderstab" data-toggle="tab">@Resources.GetString("CUSTOMERDETAIL_TAB_ORDERS")</a></li>
+          <li class="dropdown" data-bind="css: { active: $root.currentTab() == 'prevPurchasedTab' || $root.currentTab() == 'recommendedTab' || $root.currentTab() == 'wishlistTab' }">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">@Resources.GetString("CUSTOMERDETAIL_TAB_PRODUCTS")&nbsp;<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#prevPurchasedTab" data-toggle="tab"
+                  data-bind="click: $root.setCurrentTab.bind($data, 'prevPurchasedTab')">@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED")</a>
+              </li>
+              <li>
+                <a href="#recommendedTab" data-toggle="tab"
+                  data-bind="click: $root.setCurrentTab.bind($data, 'recommendedTab')">@Resources.GetString("CUSTOMERDETAIL_TAB_RECOMMENDED")</a>
+              </li>
+              <li>
+                <a href="#wishlistTab" data-toggle="tab"
+                  data-bind="click: $root.setCurrentTab.bind($data, 'wishlistTab')">@Resources.GetString("CUSTOMERDETAIL_TAB_WISHLIST")</a>
+              </li>
+              <li>
+                <a href="#prrTab" data-toggle="tab"
+                  data-bind="click: $root.setCurrentTab.bind($data, 'prrTab')">@Resources.GetString("CUSTOMERDETAIL_TAB_PRR")</a>
+              </li>
+
+            </ul>
+          </li>
+          <li data-bind="css: { active: $root.currentTab() == 'historytab' }, click: $root.setCurrentTab.bind($data, 'historytab')"><a href="#historytab" data-toggle="tab">@Resources.GetString("CUSTOMERDETAIL_TAB_ACTIVITYSUMMARY")</a></li>
+        </ul>
+
+        <div class="tab-content" style="padding-top: 0; padding-right: 10px">
+          @Html.Partial("DetailTabs/_NotesTab")
+          @Html.Partial("DetailTabs/_CustomerInfoTab")
+          @Html.Partial("DetailTabs/_OrdersTab")
+          @Html.Partial("DetailTabs/_PreviousPurchaseTab")
+          @Html.Partial("DetailTabs/_RecommendedTab")
+          @Html.Partial("DetailTabs/_WishlistTab")
+          @Html.Partial("DetailTabs/_ActivitySummaryTab")
+          @Html.Partial("DetailTabs/_PrrTab")
+        </div>
+      </div>
+    }
+  </div>
+
+  @if (!@Model.IsDeleted)
+  {
+    <div class="span4" style="background-color: #F5F5F5; margin-left: 0px; width: 320px; margin-top: 0px;">
+      <div style="border: 1px solid #ddd;">
+        <ul class="nav nav-pills nav-stacked" style="margin: 10px;">
+          <li><a href="@Url.Action("add", "orders", new { customerId = @Model.CustomerId })">@Resources.GetString("CUSTOMERDETAIL_ADDORDER")</a></li>
+          <li><a href="@Url.Action("edit", "customers", new { id = @Model.CustomerId })">@Resources.GetString("CUSTOMERDETAIL_EDITCUSTOMER")</a></li>
+          <li data-bind="command: $root.archiveCustomerCommand, visible: $root.customerIsNotArchived"><a href="#">@Resources.GetString("CUSTOMERDETAIL_ARCHIVECUSTOMER")</a></li>
+          <li data-bind="command: $root.unarchiveCustomerCommand, visible: $root.customerIsArchived" style="display: none;"><a href="#">@Resources.GetString("CUSTOMERDETAIL_UNARCHIVECUSTOMER")</a></li>
+          <li data-bind="command: $root.deleteCustomerCommand"><a href="#">@Resources.GetString("CUSTOMERDETAIL_DELETECUSTOMER")</a></li>
+
+          @if (Model.Features.Ecards && Model.HasEmailAddress && Model.IsOptedInToEcards)
+          {
+          <li data-bind="command: $root.sendeCardCommand"><a href="#">@Resources.GetString("CUSTOMERDETAIL_SENDECARD")</a></li>
+          }
+
+          @if (@Model.Features.ExactTargetSuscriptionManagement)
+          {
+            if (@Model.HasEmailAddress)
+            {
+            <li><a href="@ViewBag.ExternalETUrl" target="_blank">@Resources.GetString("CUSTOMERDETAIL_VIEWCUSTOMERSUBSCRIPTIONS")</a></li>
+            }
+          }
+
+          <li><a href="#" onclick=" $('#vmModal').show() ">@Resources.GetString("CUSTOMERDETAIL_NEWVIRTUALMAKEOVER")</a></li>
+        </ul>
+
+        @if (!@Model.Features.ExactTargetSuscriptionManagement)
+        {
+          if (@Model.HasOptedInSubscriptions)
+          {
+          <div class="customerdetail-nav-header">@Resources.GetString("CUSTOMERDETAIL_SUBSCRIPTIONS")
+          </div>
+          <div class="customerdetail-nav-content">
+            @foreach (var subscription in @Model.OptedInSubscriptions)
+            {
+              <div>
+                <span>@Resources.GetString("SUBSCRIPTIONTYPE_{0}", subscription.SubscriptionType)</span>
+              </div>
+            }
+          </div>
+          }
+        }
+
+        <div class="customerdetail-nav-header">@Resources.GetString("CUSTOMERDETAIL_REMINDERS")
+          <span style="padding-left: 20px" data-bind="activity: $root.taskIOIsExecuting">&nbsp;</span>
+        </div>
+
+        <div class="customerdetail-nav-content">
+          <div style="display: none;" data-bind="visible: $root.hasTasks">
+            <div data-bind="foreach: $root.tasks">
+              <label class="checkbox" data-bind="css: { completedTasks: isComplete }">
+                <input type="checkbox" data-bind="checked: isComplete, command: $root.updateTaskCompleteStatusCommand" />
+                <i class="icon-pencil" data-bind="click: enableEditTask" title="@Resources.GetString("CUSTOMERDETAIL_TASKS_EDITTASK")"></i>
+                <span data-bind="text: title"></span>
+              </label>
+              <div id="editTaskForm" class="well well-nobackground" style="display: none;" data-bind="visible: isEditing">
+                <div>
+                  <div data-bind="visible: isCustomerTaskType">
+                    <label>@Resources.GetString("CUSTOMERDETAIL_REMINDERS_TITLE")</label>
+                    <input type="text" class="input-large" data-bind="value: editTaskTitleInput, valueUpdate: 'afterkeydown'" />
+
+                    <label>@Resources.GetString("CUSTOMERDETAIL_REMINDERS_DESCRIPTION")</label>
+                    <textarea rows="3" class="input-large" data-bind="value: editTaskDescriptionInput"></textarea>
+                  </div>
+                  <label>@Resources.GetString("CUSTOMERDETAIL_REMINDERS_DUEON")</label>
+                  <input type="text" class="input-small datepicker" data-bind="datepicker: editTaskDueDateUtcInput" />
+                </div>
+                <div>
+                  <button class="btn btn-primary" data-bind="enable: editTaskTitleHasContent, command: $root.updateTaskCommand">@Resources.GetString("CUSTOMERDETAIL_REMINDERS_SAVETASK")</button>
+                  <button class="btn btn-link" data-bind="click: disableEditTask">@Resources.GetString("CANCEL")</button>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-link" style="padding-left: 0;" data-bind="command: getAllTasksCommand, enable: $root.showMoreTasksLinks, visible: $root.showMoreTasksLinks">@Resources.GetString("CUSTOMERDETAIL_REMINDERS_MORE")</button>
+          </div>
+
+          <div id="taskListButtons">
+            <button class="btn btn-link" style="padding-left: 0;" data-bind="click: addTaskClicked, visible: !$root.isInAddTaskMode()">@Resources.GetString("CUSTOMERDETAIL_ADDREMINDER")</button>
+          </div>
+
+          <div id="addTaskForm" class="well well-nobackground" style="display: none;" data-bind="visible: $root.isInAddTaskMode">
+            <div>
+              <label>@Resources.GetString("CUSTOMERDETAIL_REMINDERS_TITLE")</label>
+              <input type="text" class="input-large" data-bind="value: $root.newTaskTitleInput, valueUpdate: 'afterkeydown'" />
+
+              <label>@Resources.GetString("CUSTOMERDETAIL_REMINDERS_DESCRIPTION")</label>
+              <textarea rows="3" class="input-large" data-bind="value: $root.newTaskDescriptionInput"></textarea>
+
+              <label>@Resources.GetString("CUSTOMERDETAIL_REMINDERS_DUEON")</label>
+              <input type="text" class="input-small datepicker" data-bind="datepicker: $root.newTaskDueDateUtcInput" />
+            </div>
+            <div>
+              <button class="btn btn-primary" data-bind="command: addTaskCommand, enable: $root.hasNewTaskInputContent">@Resources.GetString("CUSTOMERDETAIL_REMINDERS_ADDTASK")</button>
+              <button class="btn btn-link" data-bind="click: cancelAddTaskClicked">@Resources.GetString("CANCEL")</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="customerdetail-nav-header">@Resources.GetString("CUSTOMERDETAIL_CONTACTINFO")</div>
+        <div class="customerdetail-nav-content">
+          @if (@Model.HasProfileDate)
+          {
+            <dl>
+              <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_CUSTOMERSINCE")</dt>
+              <dd class="utcDate" style="display: none;">@Model.ProfileDateUtc.ToStrictIsoDate()</dd>
+            </dl>
+          }
+          @if (@Model.HasReferredBy)
+          {
+            <dl>
+              <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_REFERREDBY")</dt>
+              <dd>@Model.ReferredBy</dd>
+            </dl>
+          }
+          @if (@Model.HasEmailAddress)
+          {
+            <dl>
+              <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_EMAIL")</dt>
+              <dd><span>@Model.EmailAddress</span></dd>
+              <dd></dd>
+            </dl>
+          }
+          @if (@Model.HasPhoneNumbers)
+          {
+            <dl>
+              <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_PHONE")</dt>
+              @foreach (var phoneNumber in @Model.PhoneNumbers)
+              {
+                <dd>
+                  @Html.Partial("_PhoneNumber", phoneNumber)&nbsp;
+                                    @if (@Model.CanSendSMSToCell && phoneNumber.PhoneNumberType.Equals(Quartet.Entities.PhoneNumberType.Mobile.ToString(), StringComparison.InvariantCultureIgnoreCase))
+                                    {
+                                      <span class="label label-info">@Resources.GetString("SMS_BUTTON_TEXT")</span>
+                                    }
+                </dd>
+              }
+            </dl>
+          }
+          @if (@Model.HasAddresses)
+          {
+            <dl>
+              <dt class="muted">@Resources.GetString("CUSTOMERDETAIL_ADDRESSES")</dt>
+              @foreach (var address in @Model.Addresses)
+              {
+                <dd>
+                  <address>
+                    @if (address.HasAddressee)
+                    {
+                      @address.Addressee
+                    }
+                    @if (address.IsPrimary)
+                    {
+                      <span class="label label-info">@Resources.GetString("CUSTOMERDETAIL_ADDRESSES_PRIMARY")</span>
+                    }
+                    @if (address.IsPrimary || address.HasAddressee)
+                    {
+                      <br />
+                    }
+                    @Html.AppSettingsPartial("PartialView.DisplayAddress_Razor", address)
+                    @if (address.HasTelephone)
+                    {
+                      @Html.Partial("_StringPhoneNumber", address.Telephone)
+                    }
+                  </address>
+                </dd>
+              }
+            </dl>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+<div id="vmModal" style="display: none;" class="modal">
+  <div class="modal-header">
+    <button type="button" class="close" onclick="$('#vmModal').hide()" aria-hidden="true">&times;</button>
+    <h3>@Resources.GetString("CUSTOMERDETAIL_NEWVIRTUALMAKEOVER")</h3>
+  </div>
+  <div class="modal-body">
+    <p>@Resources.GetString("CUSTOMERDETAIL_NEWVIRTUALMAKEOVER_AGREEMENT")</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary" data-bind="click: $root.vmoLinkClicked" onclick="$('#vmModal').hide()">@Resources.GetString("ACCEPT")</a>
+    <a href="#" class="btn btn-link" onclick="$('#vmModal').hide()">@Resources.GetString("DECLINE")</a>
+  </div>
+</div>
+
+@section scripts {
+  @Html.Partial("_ConfirmModal")
+  @Html.Partial("_ProgressModal")
+
+  <script type="text/javascript">
+    $(function() {
+      $(".utcDate").text(function(i, d) {
+        return app.formatShortDate(d);
+      }).show();
+
+      var ajaxService = new myc.AjaxService();
+      var config = {
+        customerIsDeleted: '@Model.IsDeleted',
+        customerIsArchived: '@Model.IsArchived',
+        orderPageSize: 5,
+        stateService: myc.SessionStateService,
+        ajaxService: ajaxService,
+        baseUrl: '@Url.Content("~/")',
+        customerId: '@Model.CustomerId',
+        firstName: '@Model.FirstName',
+        lastName: '@Model.LastName',
+        consultantKey: '@Model.ConsultantKey',
+        groupsApiUrl: '@Url.RouteUrl(new { httproute = "GroupsApi", controller = "groups", groupId = (object)null })',
+        customerGroupsApiUrl: '@Url.RouteUrl(new { httproute = "CustomerGroupsApi", controller = "CustomerGroups", custid = @Model.CustomerId, id = (object)null })',
+        notesApiUrl: '@Url.RouteUrl(new { httproute = "CustomerNotesApi", controller = "CustomerNotes", custid = @Model.CustomerId, id = (object)null })',
+        
+        productsData: new myc.AddProductsForm({
+          productCatalog: new myc.ProductCatalog({
+              apiUrl: '@Url.RouteUrl(new { httproute = "DefaultApi", controller = "products" })',
+              ajaxService: ajaxService,
+              pageSize: 5
+          }),
+          previouslyOrdered: new myc.PreviouslyOrderedProducts({
+            apiUrl: '@Url.RouteUrl(new { httproute = "RecentlyOrderedProductsApi", controller = "RecentlyOrderedProducts", custid = @Model.CustomerId })',
+            ajaxService: ajaxService,
+          }),
+          recommendedProducts: new myc.RecommendedProducts({
+            apiUrl: '@Url.RouteUrl(new { httproute = "RecommendedProductsApi", controller = "RecommendedProducts", custid = @Model.CustomerId })',
+            ajaxService: ajaxService,
+          }),
+          wishListProducts: new myc.WishListProducts({
+            apiUrl: '@Url.RouteUrl(new { httproute = "WishListProductsApi", controller = "WishListProducts", custid = @Model.CustomerId })',
+            ajaxService: ajaxService,
+          })
+        }),
+
+        customersListUrl: '@Url.Action("Index", "Customers")',
+        customersApiUrl: '@Url.Content("~/api/customers/")',
+        customerOrdersApiUrl: '@Url.Content("~/api/orders?cid=" + @Model.CustomerId)',
+        orderDetailUrl: '@Url.Action("detail", "orders", new { id = "_0_" })',
+        editOrderUrl: '@Url.Action("edit", "orders", new { id = "_0_" })',
+        deleteCustomerUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "deletecustomer" })',
+        undeleteCustomerUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "undeletecustomer" })',
+        archiveCustomerUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "archivecustomer" })',
+        unarchiveCustomerUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "unarchivecustomer" })',
+        prrApiUrl: '@Url.RouteUrl(new { httproute = "defaultapi", controller = "prrs", id = Model.CustomerId })',
+        questionnaireAnswersUrl: '@Url.Content("~/api/customers/" + @Model.CustomerId + "/questionnaireanswers")',
+        vmoUrl: '@ViewBag.VmoUrl',
+        tasksUrl: '@Url.Content("~/api/customers/" + @Model.CustomerId + "/reminders")',
+        taskPageSize: 10,
+        markTaskCompleteUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "marktaskcomplete" })',
+        markTaskNotCompleteUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "marktasknotcomplete" })',
+        updateTaskUrl: '@Url.RouteUrl(new { httproute = "CommandsApi", controller = "Commands", action = "UpdateTaskDescriptionTitleDueDateUtc" })',
+        activitySummaryUrl: '@Url.Content("~/api/activitysummary/")',
+        activityPageSize: 10,
+        wishListUrl: '@Url.Content("~/api/customers/" + @Model.CustomerId + "/wishlist")',
+      
+        isEcardsEnabled : @(Model.Features.Ecards ? "true" : "false"),
+        @if (Model.Features.Ecards)
+        {
+          <text>
+          eCards: {
+            ecardService   : new myc.eCardService({ url: '@Url.RouteUrl(new { httproute = "eCardsApi", controller = "ecards", action = "submit" })' }),
+            contentId      : '@appSettings.GetValue("eCards.ContentId")',
+            subsidiaryCode : '@subsidiary',
+            returnUrl      : document.location.href,
+            contentMode    : 'AnySansDefault',
+            customerId     : '@Model.CustomerId.ToString()',
+            firstName      : '@Model.FirstName',
+            lastName       : '@Model.LastName',
+            email          : '@Model.EmailAddress'
+          }
+          </text>
+        }
+      };
+
+      var model = new myc.CustomerDetail(config);
+      model.setCurrentTab('notestab');
+
+      model.closeAddToWishListForm = function() {
+        $('#productSearchButton, #productSearch, #productSearchCloseButton').toggle();
+      };
+
+      ko.applyBindings(model);
+    })
+  </script>
+}

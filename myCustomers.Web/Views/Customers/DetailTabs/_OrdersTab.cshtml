@@ -1,0 +1,71 @@
+﻿<div class="tab-pane customerdetail-tab-pane-padding" id="orderstab" data-bind="css: { active: $root.currentTab() == 'orderstab' }">
+
+  <div data-bind="visible: customerIsNotDeleted">
+    <div class="alert alert-info" style="display: none;" data-bind="visible: hasNoCustomerOrders">
+      <em>@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_NOORDERS")</em>
+    </div>
+    <div style="display: none;" data-bind="visible: hasCustomerOrders">
+      <table class="table table-hover-well" style="cursor: default;" data-bind="if: hasCustomerOrders">
+        <thead>
+          <tr>
+            <th style="white-space: nowrap">@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_CONFIRMATIONNUMBER")</th>
+            <th>@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_DETAILS")</th>
+            <th>@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_STATUS")</th>
+            <th>@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_PAYMENT")</th>
+            <th style="text-align: right;">@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_AMOUNT")</th>
+          </tr>
+        </thead>
+        <tbody style="cursor: pointer;" data-bind="foreach: customerOrders">
+          <tr data-bind="with: _source, click: $root.customerOrderClicked" title="@Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_CLICKTOVIEWORDERDETAILS")">
+            <td style="white-space: nowrap; width: 70px;">
+              <span data-bind="text: $data.ConfirmationNumber.toUpperCase()"></span>
+            </td>
+            <td style="width: 155px;">
+              @Resources.GetString("CUSTOMERDETAIL_TAB_PREVIOUSLYORDERED_DATE")&nbsp;<span data-bind="shortDate: $data.OrderDateUtc"></span>
+            <br>
+            @Resources.GetString("CUSTOMERDETAIL_ORDERS_TYPE")&nbsp;<span data-bind="localize: $data.OrderSource, resourceKey: 'ORDERSOURCE_{0}'"></span>
+          </td>
+          <td style="width: 160px;"><span data-bind="localize: $data.OrderStatus, resourceKey: 'ORDERSTATUS_{0}'"></span></td>
+          <td style="width: 92px;"><span data-bind="localize: $data.PaymentStatus, resourceKey: 'ORDERPAYMENTSTATUS_{0}'"></span></td>
+          <td style="text-align: right; width: 60px;" data-bind="currency: $data.EstimatedOrderAmount"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pager -->
+    <table class="table table-pager">
+      <tr>
+        <td class="pager-buttons">
+          <button class="btn" type="button" data-bind="command: prevOrderPageCommand"><i class="icon-caret-left"></i>&nbsp;@Resources.GetString("PAGER_PREVIOUS")</button>
+          <button class="btn" type="button" data-bind="command: nextOrderPageCommand">@Resources.GetString("PAGER_NEXT")&nbsp;<i class="icon-caret-right"></i></button>
+          &nbsp;
+          <span style="padding-left: 5px;" data-bind="activity: $root.orderSearchIsExecuting"></span>
+        </td>
+        <td class="pager-status">
+          <span data-bind="text: orderItemCount"></span>&nbsp;@Resources.GetString("CUSTOMERDETAIL_PAGER_ORDERSPAGETEXT")
+          <span data-bind="text: orderCurrentPage"></span>
+          @Resources.GetString("CUSTOMERDETAIL_PAGER_OF")
+          <span data-bind="text: orderPageCount"></span>
+        </td>
+        <td class="pager-pagesize-label">
+          <label style="display: inline;">@Resources.GetString("PAGER_PAGESIZE_LABEL")</label>
+        </td>
+        <td class="pager-pagesize-select">
+          <select class="input-mini" data-bind="value: orderPageSize">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="alert alert-info" style="display: none;" data-bind="visible: customerIsDeleted">
+  @Resources.GetString("CUSTOMERDETAIL_ORDERSUNAVAILABLEFORDELETEDCUSTOMERS")
+</div>
+
+</div>
